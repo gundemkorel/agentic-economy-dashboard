@@ -176,10 +176,15 @@ function requestResultSummary(label, result) {
 }
 
 async function loadTicker(ticker) {
+  const profileResult = await Promise.allSettled([
+    requestEulerpool("/api/1/equity/profile/" + encodeURIComponent(ticker), "equity profile")
+  ]);
+  const profileRecords = profileResult[0].status === "fulfilled" ? recordsFrom(profileResult[0].value, ["profile", "profiles"]) : [];
+  const identifier = firstText(profileRecords[0], ["isin", "ISIN", "securityIdentifier"]) || ticker;
   const [quoteResult, estimateResult, targetResult] = await Promise.allSettled([
     requestEulerpool("/api/1/market/last-quote/" + encodeURIComponent(ticker), "last quote"),
-    requestEulerpool("/api/1/equity/estimates/" + encodeURIComponent(ticker), "analyst estimates"),
-    requestEulerpool("/api/1/equity/price-target-consensus/" + encodeURIComponent(ticker), "price-target consensus")
+    requestEulerpool("/api/1/equity/estimates/" + encodeURIComponent(identifier), "analyst estimates"),
+    requestEulerpool("/api/1/equity/price-target-consensus/" + encodeURIComponent(identifier), "price-target consensus")
   ]);
 
   const quoteRecords = quoteResult.status === "fulfilled" ? recordsFrom(quoteResult.value, ["quote", "quotes"]) : [];

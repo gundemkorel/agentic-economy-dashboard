@@ -1,0 +1,11 @@
+{
+  "sources": [
+    { "name": "Cloudflare Radar", "role": "Internet traffic, bots, and application-layer trend proxies", "cadence": "weekly / monthly", "url": "https://radar.cloudflare.com/" },
+    { "name": "Fastly research & observability", "role": "Edge traffic, delivery, and developer workload context", "cadence": "monthly / quarterly", "url": "https://www.fastly.com/resources" },
+    { "name": "Akamai investor relations", "role": "Security, delivery, compute commentary and financial capture", "cadence": "quarterly", "url": "https://investors.akamai.com/" },
+    { "name": "Zscaler research", "role": "Zero-trust, policy, and enterprise security demand signals", "cadence": "monthly / quarterly", "url": "https://www.zscaler.com/resources" },
+    { "name": "Anthropic Economic Index", "role": "Observed patterns of AI task use and augmentation vs. automation", "cadence": "periodic", "url": "https://www.anthropic.com/economic-index" },
+    { "name": "Model Context Protocol Registry", "role": "Tool and server ecosystem breadth as a machine-action proxy", "cadence": "weekly", "url": "https://registry.modelcontextprotocol.io/" },
+    { "name": "Company IR & SEC filings", "role": "Revenue, retention, margin, capex, customer commentary, and estimates", "cadence": "quarterly", "url": "https://www.sec.gov/edgar/search/" }
+  ]
+}

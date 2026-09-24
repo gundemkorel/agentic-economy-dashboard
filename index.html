@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A research dashboard for tracking evidence of the agentic economy." />
+    <title>Agentic Economy Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Agentic Economy Dashboard home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Agentic Economy<br /><strong>Dashboard</strong></span>
+        </a>
+        <nav class="topnav" aria-label="Primary navigation">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#methodology">Methodology</a>
+          <a href="#sources">Sources</a>
+          <a class="repo-link" href="https://github.com/gundemkorel/agentic-economy-dashboard" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" id="dashboard">
+          <div class="eyebrow"><span class="live-dot"></span> Wave 2 evidence monitor <span class="slash">/</span> baseline release</div>
+          <div class="hero-grid">
+            <div>
+              <h1>From human intent<br /><em>to machine activity.</em></h1>
+              <p class="hero-copy">A living research instrument for measuring whether autonomous software is creating incremental demand across traffic, compute, data, telemetry, security, and communication.</p>
+            </div>
+            <aside class="thesis-card">
+              <p class="card-kicker">Working thesis</p>
+              <p>As one human intent creates more machine actions, infrastructure consumption should compound before consensus models fully reflect it.</p>
+              <div class="thesis-meta"><span>Signal horizon</span><strong>6–24 months</strong></div>
+            </aside>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-item"><span>Last refresh</span><strong id="last-updated">Loading…</strong></div>
+            <div class="snapshot-item"><span>Dashboard stance</span><strong class="stance">Observe / build evidence</strong></div>
+            <div class="snapshot-item"><span>Data confidence</span><strong id="confidence">Baseline only</strong></div>
+            <div class="snapshot-item action-item"><a href="#methodology">How to read this →</a></div>
+          </div>
+        </section>
+
+        <section class="section-intro">
+          <div><p class="section-number">01 — 06</p><h2>Evidence layers</h2></div>
+          <p>Keep the macro signal separate from company capture. A strong Wave 2 signal does not guarantee that a specific stock monetizes it.</p>
+        </section>
+
+        <section class="metric-grid" id="metric-grid" aria-live="polite">
+          <div class="loading-state">Loading evidence layers…</div>
+        </section>
+
+        <section class="section-block expectation-block" id="expectations">
+          <div class="section-heading"><div><p class="section-number">04</p><h2>Market expectations</h2></div><span class="tag neutral">Valuation lens</span></div>
+          <p class="section-lede">What the market already assumes about agentic demand. This is the denominator for the expectation gap.</p>
+          <div class="expectation-grid" id="expectation-grid"></div>
+        </section>
+
+        <section class="section-block gap-block" id="gap">
+          <div class="section-heading"><div><p class="section-number">05</p><h2>Expectation gap</h2></div><span class="tag accent">Where edge may exist</span></div>
+          <p class="section-lede">The investable question is not whether agents grow. It is whether the operating evidence is moving faster than estimates and multiples.</p>
+          <div class="gap-table-wrap"><table class="gap-table"><thead><tr><th>Theme</th><th>Operating evidence</th><th>Consensus embed</th><th>Gap read</th></tr></thead><tbody id="gap-table-body"></tbody></table></div>
+        </section>
+
+        <section class="section-block breakers-block" id="breakers">
+          <div class="section-heading"><div><p class="section-number">06</p><h2>Thesis breakers</h2></div><span class="tag warning">Disconfirming evidence</span></div>
+          <p class="section-lede">A dashboard is useful only if it can falsify the thesis. These are the conditions that would make us reduce conviction.</p>
+          <div class="breaker-grid" id="breaker-grid"></div>
+        </section>
+
+        <section class="section-block methodology-block" id="methodology">
+          <div class="section-heading"><div><p class="section-number">Read me</p><h2>Methodology &amp; update rhythm</h2></div></div>
+          <div class="method-grid">
+            <div class="method-card"><span class="method-index">A</span><h3>Separate signal from capture</h3><p>Layers 01–02 measure whether machine activity and enterprise control are changing. Layer 03 measures whether named companies monetize that change.</p></div>
+            <div class="method-card"><span class="method-index">B</span><h3>Prefer observable proxies</h3><p>Use public telemetry, product disclosures, usage reports, earnings commentary, and filings. Record the source, period, direction, and confidence for every metric.</p></div>
+            <div class="method-card"><span class="method-index">C</span><h3>Do not composite too early</h3><p>Keep the six layers separate until enough history exists to test whether a composite index adds information instead of fake precision.</p></div>
+          </div>
+          <div class="cadence-row"><div><span class="cadence-label">Weekly</span><strong>Fast proxies</strong><small>traffic, registry activity, incident notes</small></div><div><span class="cadence-label">Monthly</span><strong>Adoption pulse</strong><small>usage disclosures, releases, security signals</small></div><div><span class="cadence-label">Quarterly</span><strong>Company capture</strong><small>10-K/10-Q, earnings, estimates, valuation</small></div></div>
+        </section>
+
+        <section class="section-block sources-block" id="sources">
+          <div class="section-heading"><div><p class="section-number">Appendix</p><h2>Source register</h2></div><span class="tag neutral">Public sources</span></div>
+          <div class="source-list" id="source-list"></div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> research framework</span><span class="muted">Built for repeatable updates · <a href="https://github.com/gundemkorel/agentic-economy-dashboard" target="_blank" rel="noreferrer">open source on GitHub ↗</a></span></footer>
+    </div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

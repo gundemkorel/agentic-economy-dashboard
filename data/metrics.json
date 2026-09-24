@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "lastUpdated": "2026-09-23T00:00:00Z",
+    "release": "baseline-0.1",
+    "confidence": "Baseline only",
+    "notes": "Initial structure and watchlist. Numeric values are directional placeholders until the first dated ingestion pass. Replace observations in this file without changing the UI."
+  },
+  "layers": [
+    {
+      "id": "machine-activity",
+      "number": "01",
+      "title": "Machine activity",
+      "description": "Are autonomous systems creating more requests, tool calls, data movement, traces, and machine-to-machine communication?",
+      "status": "Build series",
+      "tone": "positive",
+      "signal": "Pending",
+      "direction": "Evidence forming",
+      "progressLabel": "Coverage readiness",
+      "progress": 28,
+      "sources": [
+        { "label": "Cloudflare Radar", "url": "https://radar.cloudflare.com/" },
+        { "label": "Fastly research", "url": "https://www.fastly.com/resources" },
+        { "label": "MCP Registry", "url": "https://registry.modelcontextprotocol.io/" }
+      ]
+    },
+    {
+      "id": "enterprise-control",
+      "number": "02",
+      "title": "Enterprise adoption & control",
+      "description": "Are enterprises moving from demos to governed deployments with identity, permissions, observability, and policy controls?",
+      "status": "Observe",
+      "tone": "neutral",
+      "signal": "Early",
+      "direction": "Mixed evidence",
+      "progressLabel": "Coverage readiness",
+      "progress": 22,
+      "sources": [
+        { "label": "Anthropic Economic Index", "url": "https://www.anthropic.com/economic-index" },
+        { "label": "Zscaler insights", "url": "https://www.zscaler.com/resources" },
+        { "label": "Company IR", "url": "https://investors.akamai.com/" }
+      ]
+    },
+    {
+      "id": "company-capture",
+      "number": "03",
+      "title": "Company capture",
+      "description": "Which public companies convert agentic workload growth into durable revenue, margin, retention, or free-cash-flow improvement?",
+      "status": "Watchlist",
+      "tone": "accent",
+      "signal": "Unpriced?",
+      "direction": "Needs earnings proof",
+      "progressLabel": "Coverage readiness",
+      "progress": 18,
+      "sources": [
+        { "label": "Akamai IR", "url": "https://investors.akamai.com/" },
+        { "label": "Elastic IR", "url": "https://ir.elastic.co/" },
+        { "label": "DigitalOcean IR", "url": "https://investors.digitalocean.com/" }
+      ]
+    }
+  ],
+  "expectations": [
+    { "theme": "AI infrastructure is already priced", "assumption": "Consensus recognizes training and inference demand, but may underweight the second-order request, telemetry, security, and data footprint of agents.", "watchlist": "Watch: AKAM · FSLY · NET" },
+    { "theme": "Security spend follows risk", "assumption": "Enterprise controls may become a budget line only after identity, data-loss, and agent-permission incidents become visible.", "watchlist": "Watch: ZS · PANW · CRWD" },
+    { "theme": "Application vendors capture first", "assumption": "The application layer may retain the highest willingness-to-pay while infrastructure remains a cost center. This is the key counter-case.", "watchlist": "Watch: ESTC · DT · DDOG" }
+  ],
+  "gaps": [
+    { "theme": "Machine requests", "evidence": "No dated series yet", "consensus": "Mostly implicit", "read": "Build measurement", "readTone": "" },
+    { "theme": "Agent governance", "evidence": "Product releases / early controls", "consensus": "Low-to-medium", "read": "Potential gap", "readTone": "" },
+    { "theme": "Infrastructure capture", "evidence": "Company-specific proof required", "consensus": "Varies by name", "read": "Do not generalize", "readTone": "caution" },
+    { "theme": "Security externality", "evidence": "Incident and policy series pending", "consensus": "Likely under-modeled", "read": "Watch for catalyst", "readTone": "" }
+  ],
+  "breakers": [
+    { "severity": "Breaker 01 · macro", "title": "Agents stay assistive, not operational", "description": "Usage grows, but humans remain in the loop for every meaningful action; machine actions per intent fail to compound." },
+    { "severity": "Breaker 02 · economics", "title": "Consumption is bundled away", "description": "Platforms absorb traffic, logs, and security events into flat-price products, preventing infrastructure vendors from capturing the activity." },
+    { "severity": "Breaker 03 · company", "title": "Target companies miss the mix shift", "description": "Wave 2 grows, but workloads consolidate into hyperscaler-native services or accrue to companies outside the watchlist." }
+  ]
+}

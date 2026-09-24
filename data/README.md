@@ -8,7 +8,7 @@ public source -> raw dated pull -> normalized observation -> reviewed snapshot -
 
 Cloudflare Radar is a deliberate exception to any temptation to label all values as volumes: its AI-bot endpoint returns `MIN0_MAX`-normalized values. The derived observation keeps the returned normalization, request windows, and prior-window comparison, and it must not be compared as a raw-value series across separate retrievals.
 
-`data/processed/eulerpool-market-expectations.json` is created only by the Eulerpool personal-use workflow. It is a current, normalized display snapshot—not a raw pull and not a historical archive. The file is ignored by Git and is created inside the Pages build workspace, so it is served by the approved deployment without being committed to public repository history. Do not create or commit it manually; use the protected workflow, preserve the `Data by Eulerpool` attribution, and follow `docs/EULERPOOL_SETUP.md`.
+`data/processed/eulerpool-market-expectations-<build>.json` is created only by the Eulerpool personal-use workflow. It is a current, normalized display snapshot—not a raw pull and not a historical archive. The file is ignored by Git and is created inside the Pages build workspace, so it is served by the approved deployment without being committed to public repository history. Do not create or commit it manually; use the protected workflow, preserve the `Data by Eulerpool` attribution, and follow `docs/EULERPOOL_SETUP.md`.
 
 `data/processed/fmp-market-expectations.json` remains an inactive, gated fallback. Do not create or commit it manually; use the protected workflow and follow `docs/FMP_SETUP.md` if its agreement is ever completed.
 

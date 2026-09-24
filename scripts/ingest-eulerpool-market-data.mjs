@@ -11,7 +11,12 @@ if (!apiKey) {
 const root = process.cwd();
 const expectationPath = path.join(root, "data", "manual", "expectations-gap.json");
 const processedDirectory = path.join(root, "data", "processed");
-const outputPath = path.join(processedDirectory, "eulerpool-market-expectations.json");
+const buildVersion = process.env.MARKET_SNAPSHOT_VERSION?.trim();
+if (buildVersion && !/^[A-Za-z0-9_-]+$/.test(buildVersion)) {
+  throw new Error("MARKET_SNAPSHOT_VERSION may contain only letters, numbers, underscores, and hyphens.");
+}
+const outputFilename = buildVersion ? "eulerpool-market-expectations-" + buildVersion + ".json" : "eulerpool-market-expectations.json";
+const outputPath = path.join(processedDirectory, outputFilename);
 const retrievedAt = new Date().toISOString();
 const asOfDate = retrievedAt.slice(0, 10);
 const apiOrigin = "https://api.eulerpool.com";

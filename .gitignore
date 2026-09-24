@@ -3,4 +3,4 @@
 .env.*
 !.env.example
 data/processed/fmp-market-expectations.json
-data/processed/eulerpool-market-expectations.json
+data/processed/eulerpool-market-expectations*.json

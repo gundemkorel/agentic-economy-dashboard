@@ -1,4 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
+const marketSnapshotVersion = "__MARKET_SNAPSHOT_VERSION__";
+const eulerpoolSnapshotPath = marketSnapshotVersion.startsWith("__") ? "data/processed/eulerpool-market-expectations.json" : "data/processed/eulerpool-market-expectations-" + marketSnapshotVersion + ".json";
 
 const formatDate = (iso) => {
   if (!iso) return "Not yet observed";
@@ -253,7 +255,7 @@ async function initExpectations() {
   const [data, providerMap, eulerpoolSnapshot, fmpSnapshot] = await Promise.all([
     fetchJson("data/manual/expectations-gap.json"),
     fetchJson("config/market-data-providers.json").catch(() => ({ providers: [] })),
-    fetchJson("data/processed/eulerpool-market-expectations.json").catch(() => null),
+    fetchJson(eulerpoolSnapshotPath).catch(() => null),
     fetchJson("data/processed/fmp-market-expectations.json").catch(() => null)
   ]);
   const snapshots = [eulerpoolSnapshot, fmpSnapshot];

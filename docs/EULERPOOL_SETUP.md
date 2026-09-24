@@ -19,7 +19,7 @@ This document records the dashboard's implementation boundaries. Eulerpool's cur
 3. Run **Actions → Deploy dashboard to GitHub Pages → Run workflow**, or push a change to `main`.
 4. On the live Expectations Gap page, verify all four tickers, the retrieval date, the fiscal-period labels, and the visible [Data by Eulerpool](https://eulerpool.com/) links.
 
-The pipeline requests the current watchlist (AKAM, ESTC, DT, and FFIV) once per deployment and creates `data/processed/eulerpool-market-expectations.json` only inside the Pages build workspace. The file is ignored by Git: it is served in the deployment artifact but never committed to the public repository. The daily scheduled deployment runs at 22:17 UTC.
+The pipeline requests the current watchlist (AKAM, ESTC, DT, and FFIV) once per deployment and creates a deployment-specific `data/processed/eulerpool-market-expectations-<build>.json` only inside the Pages build workspace. The page binds itself to that immutable asset path, so a visitor cannot receive an older CDN-cached snapshot after a successful daily deployment. The file is ignored by Git: it is served in the deployment artifact but never committed to the public repository. The daily scheduled deployment runs at 22:17 UTC.
 
 ## What is displayed
 

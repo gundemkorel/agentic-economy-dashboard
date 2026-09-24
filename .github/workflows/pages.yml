@@ -29,6 +29,7 @@ jobs:
       EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
       FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
       FMP_PUBLIC_DISPLAY_APPROVED: ${{ vars.FMP_PUBLIC_DISPLAY_APPROVED }}
+      MARKET_SNAPSHOT_VERSION: ${{ github.run_id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,6 +59,8 @@ jobs:
       - name: Explain omitted FMP snapshot
         if: env.FMP_API_KEY == '' || env.FMP_PUBLIC_DISPLAY_APPROVED != 'true'
         run: echo "FMP snapshot omitted. Configure FMP_API_KEY and set FMP_PUBLIC_DISPLAY_APPROVED=true only after written public-display and retention rights are confirmed."
+      - name: Bind current market snapshot to this deployment
+        run: node scripts/bind-market-snapshot.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare public artifact

@@ -40,21 +40,21 @@
       "layer": "Enterprise Adoption & Control",
       "title": "Enterprise AI transactions",
       "description": "Observed enterprise AI/ML transaction and data-transfer signals, with policy and control-plane context.",
-      "status": "Manual update",
+      "status": "Observed",
       "dataType": "Observed enterprise network proxy",
       "sourceId": "zscaler",
-      "methodology": "Use Zscaler as one longitudinal enterprise sample. Revalidate every figure, period, and definition."
+      "methodology": "Zscaler is one longitudinal enterprise sample. The initial observation is a calendar-2025 report; revalidate every figure, period, and definition before adding a new point."
     },
     {
       "id": "ai_mediation",
       "number": "05",
       "layer": "AI Mediation",
-      "title": "Inference on existing activity",
-      "description": "Whether routine enterprise events increasingly receive model processing for classification, routing, policy, retrieval, or action.",
-      "status": "Sparse / proxy only",
-      "dataType": "AI-mediation proxy",
+      "title": "Claude artifact yield",
+      "description": "Share of sampled Claude Chat and Cowork conversations classified as producing a concrete output artifact.",
+      "status": "Observed",
+      "dataType": "Observed product-usage sample",
       "sourceId": "anthropic-economic-index",
-      "methodology": "This branch is intentionally early. It should use proxies and remain visibly incomplete rather than imply a precise penetration rate."
+      "methodology": "A useful output-production proxy from a named product sample. It is not a measure of autonomy, agent count, enterprise adoption, or total inference volume."
     },
     {
       "id": "automation_composition",
@@ -62,10 +62,10 @@
       "layer": "Enterprise Adoption & Control",
       "title": "Automation composition",
       "description": "Task mix, automation/augmentation balance, and longer-running task indicators from longitudinal product-usage samples.",
-      "status": "Manual update",
+      "status": "Observed qualitative",
       "dataType": "Observed product-usage sample",
       "sourceId": "anthropic-economic-index",
-      "methodology": "Treat the Economic Index as a longitudinal sample, not a census of all AI activity."
+      "methodology": "Treat the Economic Index as a longitudinal product-usage sample, not a census of all AI activity. Preserve qualitative evidence as qualitative when a comparable scalar is unavailable."
     }
   ]
 }

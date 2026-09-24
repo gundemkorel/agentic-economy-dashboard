@@ -16,6 +16,10 @@ Cloudflare Radar is the first network telemetry adapter. It uses a `CLOUDFLARE_R
 
 Fastly, Akamai, Zscaler, Anthropic, company investor relations, and filings should initially be added through reviewed manual observations. Every manual observation must include a primary source URL, period, retrieval date, and methodological caveat.
 
+The first reviewed enterprise-adoption baseline lives in `data/manual/enterprise-adoption-observations.json`. It records a Zscaler network-sample observation plus two Anthropic product-usage observations. The Zscaler report covers calendar 2025; the Anthropic report covers an April–June 2026 sample. Neither source is a census of enterprises, agents, or AI activity, so values must retain their source-specific definitions rather than being combined into a synthetic index.
+
+`data/manual/evidence-log.json` is a separate, rolling record of material developments. Each entry states whether it is confirming, contrary, mixed, or measurement-only and links directly to its source. Do not turn a qualitative source statement into a numerical observation.
+
 ## Market expectations
 
 No price, valuation, or consensus data are currently published. A future provider must support consistent retrieval dates, fiscal-year conventions, and definition labels. Do not add figures merely to fill a dashboard.

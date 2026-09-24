@@ -1,0 +1,75 @@
+{
+  "asOfDate": "2026-09-24",
+  "definition": "Reviewed, manually maintained observations from primary public reports. These are source-specific samples, not a composite index or an estimate of all agentic activity.",
+  "observations": [
+    {
+      "metricId": "enterprise_ai_transactions",
+      "metricName": "Enterprise AI/ML transactions",
+      "category": "enterprise_adoption_control",
+      "value": 83,
+      "unit": "% year-over-year growth in AI/ML transactions",
+      "displayValue": "83%",
+      "periodStart": "2024-01-01",
+      "periodEnd": "2025-12-31",
+      "asOfDate": "2025-12-31",
+      "sourceName": "Zscaler ThreatLabz 2026 AI Security Report",
+      "sourceUrl": "https://www.zscaler.com/blogs/security-research/ai-now-default-enterprise-accelerator-takeaways-threatlabz-2026-ai-security",
+      "sourceType": "enterprise network telemetry report",
+      "retrievalDate": "2026-09-24T03:20:00Z",
+      "methodology": "Zscaler reported 83% year-over-year growth in enterprise AI/ML transactions during calendar 2025, based on nearly one trillion AI/ML transactions observed across its Zero Trust Exchange. This dashboard records the reported growth rate without extrapolating it to all enterprises or to agent-only workloads.",
+      "isObserved": true,
+      "isEstimate": false,
+      "comparison": {
+        "basis": "calendar 2025 versus calendar 2024, as reported by Zscaler",
+        "displayChange": "2025 vs 2024"
+      },
+      "notes": "The report also cited 3,400+ AI/ML applications and a 39% AI/ML access-block rate. Its customer/network sample includes general AI use, embedded features, and non-agent workloads; it is not an enterprise census or a measure of autonomous actions."
+    },
+    {
+      "metricId": "ai_mediation",
+      "metricName": "Claude artifact yield",
+      "category": "ai_mediation",
+      "value": 93,
+      "unit": "% of sampled Claude Chat and Cowork conversations",
+      "displayValue": "93%",
+      "periodStart": "2026-04-10",
+      "periodEnd": "2026-06-10",
+      "asOfDate": "2026-06-10",
+      "sourceName": "Anthropic Economic Index: Cadences",
+      "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report",
+      "sourceType": "product-usage sample",
+      "retrievalDate": "2026-09-24T03:20:00Z",
+      "methodology": "Anthropic's classifier identified 93% of sampled Claude Chat and Cowork conversations as producing an artifact during April 10–June 10, 2026. The dashboard uses it as an output-production proxy, not as a measure of enterprise adoption, autonomy, agent count, or inference volume.",
+      "isObserved": true,
+      "isEstimate": false,
+      "comparison": {
+        "basis": "sampled Chat and Cowork conversations, Apr. 10–Jun. 10, 2026",
+        "displayChange": "Apr–Jun 2026 sample"
+      },
+      "notes": "An artifact may be an explanation, document, guidance, code, or another output. It does not imply that Claude completed a task without human involvement, and the source's consumer/product sample is not a census of the AI economy."
+    },
+    {
+      "metricId": "automation_composition",
+      "metricName": "Long-running agentic task signal",
+      "category": "enterprise_adoption_control",
+      "value": null,
+      "unit": "reported usage pattern",
+      "displayValue": "Qualitative",
+      "periodStart": "2026-04-10",
+      "periodEnd": "2026-06-10",
+      "asOfDate": "2026-06-26",
+      "sourceName": "Anthropic Economic Index: Cadences",
+      "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report",
+      "sourceType": "product-usage sample",
+      "retrievalDate": "2026-09-24T03:20:00Z",
+      "methodology": "Anthropic reported that the rapid growth of Claude Code and Cowork means sessions increasingly consist of long-running agentic tasks. The source does not publish one comparable headline automation-share figure in this report, so the dashboard preserves this as a qualitative observation rather than inventing a trend line.",
+      "isObserved": true,
+      "isEstimate": false,
+      "comparison": {
+        "basis": "June 2026 report versus Anthropic's prior usage framing",
+        "displayChange": "Agentic tasks increasingly common"
+      },
+      "notes": "Anthropic defines automation as directive or feedback-loop conversations in which Claude is asked to complete a task with little to no user input. That definition is useful, but its reported pattern is not a measure of all enterprise automation."
+    }
+  ]
+}

@@ -2,11 +2,14 @@ const $ = (selector) => document.querySelector(selector);
 
 const formatDate = (iso) => {
   if (!iso) return "Not yet observed";
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(String(iso));
+  const parsed = new Date(dateOnly ? iso + "T12:00:00Z" : iso);
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "numeric",
-    year: "numeric"
-  }).format(new Date(iso));
+    year: "numeric",
+    timeZone: "UTC"
+  }).format(parsed);
 };
 
 const fetchJson = async (path) => {
@@ -39,7 +42,9 @@ function renderPulseCard(metric, source, currentObservation, observationCount) {
   const value = observed ? (observed.displayValue || new Intl.NumberFormat("en-US").format(observed.value)) : "—";
   const direction = observed ? (observed.comparison?.displayChange || "First observed point") : metric.status;
   const asOf = observed ? formatDate(observed.asOfDate) : "No published value";
-  const sourceLink = source ? "<a href=\"" + source.url + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.name) + " ↗</a>" : "";
+  const sourceName = observed?.sourceName || source?.name;
+  const sourceUrl = observed?.sourceUrl || source?.url;
+  const sourceLink = sourceName && sourceUrl ? "<a href=\"" + escapeHtml(sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(sourceName) + " ↗</a>" : "";
   const historyNote = observed && observationCount < 2 ? "History begins with this observation" : (observationCount > 1 ? observationCount + " dated observations" : "No history yet");
   return "<article class=\"metric-card metric-card-wide\" id=\"" + escapeHtml(metric.id) + "\">" +
     "<div class=\"metric-top\"><span class=\"metric-number\">" + escapeHtml(metric.number) + " · " + escapeHtml(metric.layer) + "</span><span class=\"tag " + statusTone(metric.status) + "\">" + escapeHtml(metric.status) + "</span></div>" +
@@ -61,6 +66,14 @@ function renderGap(item) {
 
 function renderBreaker(item) {
   return "<article class=\"breaker\"><span class=\"severity\">" + escapeHtml(item.severity) + "</span><strong>" + escapeHtml(item.title) + "</strong><p>" + escapeHtml(item.description) + "</p></article>";
+}
+
+function renderEvidenceEntry(entry) {
+  const tone = entry.tone || "neutral";
+  const source = entry.sourceUrl ? "<a href=\"" + escapeHtml(entry.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(entry.sourceLabel || "Primary source") + " ↗</a>" : "";
+  return "<article class=\"evidence-entry evidence-" + escapeHtml(tone) + "\">" +
+    "<div class=\"evidence-meta\"><span>" + escapeHtml(formatDate(entry.date)) + "</span><span>" + escapeHtml(entry.layer) + "</span></div>" +
+    "<div class=\"evidence-copy\"><span class=\"evidence-direction\">" + escapeHtml(entry.direction) + "</span><h3>" + escapeHtml(entry.title) + "</h3><p>" + escapeHtml(entry.summary) + "</p><p class=\"evidence-read\"><span>Thesis read</span>" + escapeHtml(entry.thesisRead) + "</p>" + source + "</div></article>";
 }
 
 function renderCompany(company) {
@@ -93,7 +106,8 @@ async function initPulse() {
     fetchJson("data/processed/mcp-registry-current.json").catch(() => null),
     fetchJson("data/processed/mcp-registry-history.json").catch(() => ({ observations: [] })),
     fetchJson("data/processed/cloudflare-ai-bot-current.json").catch(() => null),
-    fetchJson("data/processed/cloudflare-ai-bot-history.json").catch(() => ({ observations: [] }))
+    fetchJson("data/processed/cloudflare-ai-bot-history.json").catch(() => ({ observations: [] })),
+    fetchJson("data/manual/enterprise-adoption-observations.json").catch(() => ({ observations: [] }))
   ]);
   const framework = data[0];
   const pulse = data[1];
@@ -102,15 +116,21 @@ async function initPulse() {
   const mcpHistory = data[4];
   const currentCloudflare = data[5];
   const cloudflareHistory = data[6];
-  const observations = [currentMcp, currentCloudflare].filter(Boolean);
+  const manualEnterprise = data[7];
+  const manualObservations = Array.isArray(manualEnterprise.observations) ? manualEnterprise.observations : [];
+  const observations = [currentMcp, currentCloudflare, ...manualObservations].filter(Boolean);
   const histories = {
     mcp_registered_server_count: mcpHistory.observations,
     ai_bot_request_volume: cloudflareHistory.observations
   };
-  const observedCount = observations.length;
-  const mostRecent = observations.sort((a, b) => String(b.retrievalDate).localeCompare(String(a.retrievalDate)))[0];
+  manualObservations.forEach((observation) => {
+    histories[observation.metricId] = [observation];
+  });
+  const observedCount = pulse.metrics.filter((metric) => observations.some((item) => item.metricId === metric.id)).length;
+  const stagedCount = pulse.metrics.length - observedCount;
+  const mostRecent = [...observations].sort((a, b) => String(b.retrievalDate).localeCompare(String(a.retrievalDate)))[0];
   $("#last-updated").textContent = mostRecent ? formatDate(mostRecent.retrievalDate) : formatDate(pulse.asOfDate);
-  $("#confidence").textContent = observedCount + " observed / " + pulse.metrics.length + " staged";
+  $("#confidence").textContent = observedCount + " observed / " + stagedCount + " staged";
   $("#metric-grid").innerHTML = pulse.metrics.map((metric) => {
     const observation = observations.find((item) => item.metricId === metric.id);
     const history = histories[metric.id] || [];
@@ -133,8 +153,15 @@ async function initExpectations() {
 }
 
 async function initBreakers() {
-  const data = await fetchJson("data/metrics.json");
-  $("#breaker-grid").innerHTML = data.breakers.map(renderBreaker).join("");
+  const data = await Promise.all([
+    fetchJson("data/metrics.json"),
+    fetchJson("data/manual/evidence-log.json").catch(() => ({ entries: [] }))
+  ]);
+  const framework = data[0];
+  const evidenceLog = data[1];
+  $("#breaker-grid").innerHTML = framework.breakers.map(renderBreaker).join("");
+  $("#evidence-window").textContent = evidenceLog.windowStart && evidenceLog.asOfDate ? formatDate(evidenceLog.windowStart) + " – " + formatDate(evidenceLog.asOfDate) : "Current review window";
+  $("#evidence-log").innerHTML = evidenceLog.entries.length ? evidenceLog.entries.map(renderEvidenceEntry).join("") : "<div class=\"loading-state\">No dated evidence entries yet.</div>";
 }
 
 async function initMethodology() {

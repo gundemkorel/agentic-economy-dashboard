@@ -29,6 +29,8 @@ Every entry must be one of:
 
 These are never mixed without labels. Each observation must retain metric name, category, value, unit, period, source, retrieval date, methodology, and notes.
 
+Qualitative product or company disclosures are valid evidence when no reproducible scalar is available, but they must remain visibly qualitative. A report describing a growing pattern is not permission to invent a growth rate.
+
 ## Source interpretation
 
 No one provider represents the entire internet or enterprise economy. Cloudflare, Fastly, Akamai, and Zscaler are complementary samples. A disagreement may be a clue rather than noise.
@@ -40,3 +42,5 @@ Cloudflare's initial AI-bot observation is particularly constrained: it is a `MI
 ## History
 
 The initial backfill target is January 2026 to the current date where legitimate source history exists. Sparse, date-stamped time series are preferable to synthetic monthly data.
+
+The rolling evidence log is complementary to the time series. It records material confirmations, counter-evidence, and unresolved observations without collapsing them into an early composite score.

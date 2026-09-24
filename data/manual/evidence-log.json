@@ -1,0 +1,62 @@
+{
+  "asOfDate": "2026-09-24",
+  "windowStart": "2026-06-25",
+  "definition": "Rolling evidence log for material, source-linked observations. Entries may confirm, contradict, or simply sharpen the measurement plan; they do not constitute a score or a recommendation.",
+  "entries": [
+    {
+      "date": "2026-09-24",
+      "direction": "Neutral / build evidence",
+      "tone": "neutral",
+      "layer": "Machine Activity",
+      "title": "First Cloudflare AI-bot observation recorded",
+      "summary": "The dashboard now holds a 30-day AI-bot traffic index of 72.4, down 10.7% versus the prior 30-day control window returned in the same query.",
+      "thesisRead": "One normalized network point improves observability but establishes neither a trend nor a conclusion about total agentic activity.",
+      "sourceLabel": "Cloudflare Radar API observation",
+      "sourceUrl": "https://developers.cloudflare.com/radar/"
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "Confirming",
+      "tone": "confirming",
+      "layer": "Company Capture",
+      "title": "Akamai disclosed sharply growing cloud-infrastructure demand",
+      "summary": "Akamai reported CIS revenue up 39% year over year and cited more than $2.8 billion of year-to-date CIS commitments, including a greater-than-$600 million four-year robotics-related contract.",
+      "thesisRead": "This is company-specific evidence that a relevant infrastructure supplier can win large AI/robotics-adjacent commitments; it is not an agent-specific revenue disclosure.",
+      "sourceLabel": "Akamai Q2 2026 results",
+      "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "Counter-evidence",
+      "tone": "contrary",
+      "layer": "Company Capture",
+      "title": "Akamai's delivery mix and margins did not uniformly improve",
+      "summary": "In the same quarter, Delivery and other cloud applications revenue declined 6% year over year and non-GAAP operating margin fell five percentage points to 25%.",
+      "thesisRead": "A growing AI-adjacent category does not automatically produce broad delivery growth or operating leverage. Keep macro demand and shareholder capture separate.",
+      "sourceLabel": "Akamai Q2 2026 results",
+      "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
+    },
+    {
+      "date": "2026-07-27",
+      "direction": "Mixed",
+      "tone": "mixed",
+      "layer": "Company Capture",
+      "title": "F5 reported product growth but no AI Gateway monetization metric",
+      "summary": "F5 reported 19% product-revenue growth and 11% total-revenue growth, while its agentic-ready gateway remains a product-relevance disclosure rather than a separately reported revenue stream.",
+      "thesisRead": "The relevant control-plane product exists, but the investment question remains whether it changes growth, mix, retention, or margin in disclosed results.",
+      "sourceLabel": "F5 Q3 FY2026 results",
+      "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
+    },
+    {
+      "date": "2026-06-26",
+      "direction": "Confirming",
+      "tone": "confirming",
+      "layer": "Enterprise Adoption & Control",
+      "title": "Anthropic reports a shift toward long-running agentic tasks",
+      "summary": "Anthropic said that growth in Claude Code and Cowork means its sessions increasingly consist of long-running agentic tasks, and it expanded its telemetry to study the evolving pattern.",
+      "thesisRead": "This is supporting product-usage evidence for deeper workflows, not proof of enterprise-wide deployment, revenue capture, or an aggregate automation rate.",
+      "sourceLabel": "Anthropic Economic Index: Cadences",
+      "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report"
+    }
+  ]
+}

@@ -4,14 +4,14 @@
 
 1. Review automated MCP Registry output and confirm the raw snapshot committed.
 2. Review the automated Cloudflare Radar observation and confirm the API's current/prior 30-day comparison, normalization, and caveat remain valid.
-3. Log material network, agent-platform, identity, security, or gateway developments as dated notes.
-4. Record new contrary evidence in Thesis Breakers.
+3. Log material network, agent-platform, identity, security, gateway, and company-capture developments in `data/manual/evidence-log.json` as dated notes.
+4. Record new contrary evidence alongside confirming evidence; preserve the original entry rather than rewriting history.
 
 ## Monthly
 
 1. Review MCP ecosystem breadth and changes in integrations.
-2. Review Fastly, Zscaler, and Anthropic materials when a new report or dataset appears.
-3. Update AI-mediation proxies only when definitions are sufficiently clear.
+2. Review Fastly, Zscaler, and Anthropic materials when a new report or dataset appears. Add a source-linked point to `data/manual/enterprise-adoption-observations.json` only when its period and definition are reproducible.
+3. Update AI-mediation proxies only when definitions are sufficiently clear. Keep qualitative statements qualitative.
 
 ## Quarterly
 

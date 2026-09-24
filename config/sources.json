@@ -51,7 +51,7 @@
       "supports": ["enterprise_ai_transactions", "enterprise_ai_data_transfer", "zscaler_company_capture"],
       "updateFrequency": "quarterly / periodic",
       "accessMethod": "manual research review",
-      "automationStatus": "manual",
+      "automationStatus": "manual reviewed (annual report baseline)",
       "dataType": "observed enterprise network proxy and company-reported",
       "caveat": "Zscaler only sees its own customer base. Use its traffic and security observations as a longitudinal sample, not the entire enterprise economy."
     },
@@ -59,10 +59,10 @@
       "id": "anthropic-economic-index",
       "name": "Anthropic Economic Index",
       "url": "https://www.anthropic.com/economic-index",
-      "supports": ["automation_share", "task_duration", "task_composition"],
+      "supports": ["ai_mediation", "automation_composition", "automation_share", "task_duration", "task_composition"],
       "updateFrequency": "periodic",
       "accessMethod": "official reports and datasets",
-      "automationStatus": "manual",
+      "automationStatus": "manual reviewed (periodic report baseline)",
       "dataType": "observed product-usage sample",
       "caveat": "This is a valuable longitudinal sample, not a census of the AI economy."
     },

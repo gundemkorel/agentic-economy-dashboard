@@ -37,6 +37,50 @@
       "sourceUrl": "https://www.akamai.com/blog/security/2026/sep/introducing-more-granular-controls-ai-bot-traffic"
     },
     {
+      "date": "2026-08-28",
+      "direction": "Counter-evidence",
+      "tone": "contrary",
+      "layer": "Company Capture",
+      "title": "Elastic's cloud mix carried a visible hosting-cost trade-off",
+      "summary": "Elastic's Q1 10-Q showed Elastic Cloud revenue up 20% and 49% of total revenue, while total gross margin fell to 74% from 77% and subscription gross margin fell to 80% from 82% as cloud hosting costs rose faster than subscription revenue.",
+      "thesisRead": "Consumption exposure is relevant to the thesis, but value capture requires margin and cash-flow discipline. Elastic Cloud growth must not be assumed to be agent-driven or automatically high-margin.",
+      "sourceLabel": "Elastic Q1 FY2027 Form 10-Q",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000054/estc-20260731.htm"
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "Confirming / product and consumption",
+      "tone": "confirming",
+      "layer": "Company Capture",
+      "title": "Elastic reported cloud and contracted growth alongside agentic workflows",
+      "summary": "Elastic reported Q1 revenue growth of 15%, sales-led subscription growth of 18%, cRPO growth of 21%, and agentic Kubernetes investigations plus MCP-based observability skills.",
+      "thesisRead": "This establishes a plausible route from agentic activity to Elastic's paid cloud and subscription products. It does not disclose agent-specific revenue, usage, pricing, or retention.",
+      "sourceLabel": "Elastic Q1 FY2027 results",
+      "sourceUrl": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/"
+    },
+    {
+      "date": "2026-08-18",
+      "direction": "Mixed / product readiness",
+      "tone": "mixed",
+      "layer": "Company Capture",
+      "title": "F5 added MCP governance to its AI Gateway control plane",
+      "summary": "F5's AI Gateway update combined model access and cost optimization, MCP agent-to-tool controls, and AI Guardrails within its AI Security Platform.",
+      "thesisRead": "The product has a credible enforcement-point role in agentic infrastructure. F5 did not disclose commercial availability, customer adoption, attach rates, revenue, or margin for this offering.",
+      "sourceLabel": "F5 AI Gateway update",
+      "sourceUrl": "https://www.f5.com/company/news/press-releases/f5-unleashes-next-generation-agentic-ready-ai-gateway-to-optimize-the-economics-and-governance-of-enterprise-ai-costs"
+    },
+    {
+      "date": "2026-08-13",
+      "direction": "Mixed / strategic expansion",
+      "tone": "mixed",
+      "layer": "Company Capture",
+      "title": "Dynatrace proposed an AI-observability acquisition with a stated margin trade-off",
+      "summary": "Dynatrace announced a proposed $915 million Arize acquisition and said it expected roughly 200 basis points of FY2027 ARR-growth accretion alongside about 175 basis points of non-GAAP operating-margin dilution.",
+      "thesisRead": "The proposal strengthens AI-observability relevance, but it remains forward-looking and subject to closing and integration. The expected margin dilution makes execution, not narrative, the key test.",
+      "sourceLabel": "Dynatrace proposed Arize acquisition",
+      "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/435/dynatrace-to-acquire-ai-observability-leader-arize"
+    },
+    {
       "date": "2026-08-07",
       "direction": "Counter-evidence",
       "tone": "contrary",
@@ -46,6 +90,17 @@
       "thesisRead": "CIS growth alone is insufficient. The shareholder-capture case needs evidence that contract conversion, gross margin, and cash generation overcome the capacity investment curve.",
       "sourceLabel": "Akamai Q2 2026 Form 10-Q",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm"
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "Counter-evidence / company risk",
+      "tone": "contrary",
+      "layer": "Company Capture",
+      "title": "F5's filing retains cyber-incident exposure as a separate risk",
+      "summary": "F5's Q3 10-Q said that customers or third parties may assert claims and that it has received a small number of government inquiries related to its previously disclosed 2025 cyber incident.",
+      "thesisRead": "This is not a Wave-2 demand signal, but it is material to the company-capture assessment and should be tracked separately from AI Gateway product potential.",
+      "sourceLabel": "F5 Q3 FY2026 Form 10-Q",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1048695/000104869526000067/ffiv-20260630.htm"
     },
     {
       "date": "2026-08-06",
@@ -68,6 +123,28 @@
       "thesisRead": "A growing AI-adjacent category does not automatically produce broad delivery growth or operating leverage. Keep macro demand and shareholder capture separate.",
       "sourceLabel": "Akamai Q2 2026 results",
       "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
+    },
+    {
+      "date": "2026-08-05",
+      "direction": "Confirming / consumption",
+      "tone": "confirming",
+      "layer": "Company Capture",
+      "title": "Dynatrace reported rapidly rising logs consumption and agent capabilities",
+      "summary": "Dynatrace reported Q1 ARR growth of 17%, revenue growth of 16%, and annualized logs consumption of $200 million growing well over 100% year over year. It also disclosed Autonomous SRE, Cloud SRE, and Agent Building capabilities.",
+      "thesisRead": "The consumption and product signals are relevant, but they do not establish agent-specific revenue, usage, pricing, or retention.",
+      "sourceLabel": "Dynatrace Q1 FY2027 results",
+      "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results"
+    },
+    {
+      "date": "2026-08-05",
+      "direction": "Counter-evidence",
+      "tone": "contrary",
+      "layer": "Company Capture",
+      "title": "Dynatrace's subscription margin reflected higher cloud-hosting costs",
+      "summary": "Dynatrace's Q1 10-Q showed subscription gross margin falling to 85% from 86%; the company attributed the decline primarily to higher cloud-hosting costs supporting SaaS usage and feature adoption.",
+      "thesisRead": "The recurring test is ARR and revenue conversion after hosting costs. More telemetry consumption is not automatically operating leverage.",
+      "sourceLabel": "Dynatrace Q1 FY2027 Form 10-Q",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1773383/000177338326000050/dt-20260630.htm"
     },
     {
       "date": "2026-07-27",

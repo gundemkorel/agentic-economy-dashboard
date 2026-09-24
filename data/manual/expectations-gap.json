@@ -4,6 +4,9 @@
   "rows": [
     {
       "ticker": "AKAM",
+      "companyName": "Akamai",
+      "companyFiscalYearEnd": "12-31",
+      "companyFiscalYearEndLabel": "December 31",
       "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure commitments and agent-traffic controls disclosed",
       "managementGuidance": {
         "issuedDate": "2026-08-06",
@@ -20,7 +23,10 @@
     },
     {
       "ticker": "ESTC",
-      "agenticEvidence": "Q1 sales-led subscription +18%; cRPO +21%; agentic/MCP observability features disclosed",
+      "companyName": "Elastic",
+      "companyFiscalYearEnd": "04-30",
+      "companyFiscalYearEndLabel": "April 30",
+      "agenticEvidence": "Q1 Elastic Cloud +20%; cRPO +21%; agentic / MCP observability features disclosed",
       "managementGuidance": {
         "issuedDate": "2026-08-27",
         "period": "Q2 / FY2027",
@@ -30,12 +36,16 @@
       },
       "streetEstimates": "Eulerpool selected · awaiting first snapshot",
       "valuation": "Eulerpool selected · awaiting first snapshot",
-      "gapRead": "Company outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
-      "state": "Eulerpool pending"
+      "gapRead": "Relevant consumption exposure, but agent-specific revenue and cloud-margin proof are required before calling an expectation gap",
+      "liveGapRead": "Relevant consumption exposure, but agent-specific revenue and cloud-margin proof are required before calling an expectation gap.",
+      "state": "Monitor · fiscal alignment required"
     },
     {
       "ticker": "DT",
-      "agenticEvidence": "Q1 ARR +17%; annualized logs consumption >100% growth; agent capabilities released",
+      "companyName": "Dynatrace",
+      "companyFiscalYearEnd": "03-31",
+      "companyFiscalYearEndLabel": "March 31",
+      "agenticEvidence": "Q1 ARR +17%; logs consumption >100%; agent capabilities and proposed Arize deal disclosed",
       "managementGuidance": {
         "issuedDate": "2026-08-05",
         "period": "Q2 / FY2027",
@@ -45,12 +55,16 @@
       },
       "streetEstimates": "Eulerpool selected · awaiting first snapshot",
       "valuation": "Eulerpool selected · awaiting first snapshot",
-      "gapRead": "Company outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
-      "state": "Eulerpool pending"
+      "gapRead": "Relevant usage signals, but fiscal alignment and post-acquisition margin proof are required before calling an expectation gap",
+      "liveGapRead": "Relevant usage signals, but agent-specific economics and post-acquisition margin proof are required before calling an expectation gap.",
+      "state": "Monitor · fiscal alignment required"
     },
     {
       "ticker": "FFIV",
-      "agenticEvidence": "Q3 product revenue +19%; AI and MCP Gateway product relevance established",
+      "companyName": "F5",
+      "companyFiscalYearEnd": "09-30",
+      "companyFiscalYearEndLabel": "September 30",
+      "agenticEvidence": "Q3 product revenue +19%; systems +32%; AI Gateway includes MCP agent-to-tool controls",
       "managementGuidance": {
         "issuedDate": "2026-07-27",
         "period": "Q4 / FY2026",
@@ -60,8 +74,9 @@
       },
       "streetEstimates": "Eulerpool selected · awaiting first snapshot",
       "valuation": "Eulerpool selected · awaiting first snapshot",
-      "gapRead": "Product relevance and outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
-      "state": "Eulerpool pending"
+      "gapRead": "Gateway product relevance is established, but adoption, attach, and revenue disclosure are required before calling an expectation gap",
+      "liveGapRead": "Gateway product relevance is established, but adoption, attach, and revenue disclosure are required before calling an expectation gap.",
+      "state": "Monitor · fiscal alignment required"
     }
   ]
 }

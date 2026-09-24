@@ -178,8 +178,11 @@ function renderExpectationRow(row, marketSnapshot) {
   const providerName = marketSnapshot?.provider?.name || "Market-data";
   const streetEstimates = marketRecord ? renderMarketEstimate(marketRecord, marketSnapshot) : escapeHtml(row.streetEstimates);
   const valuation = marketRecord ? renderMarketValuation(marketRecord, marketSnapshot) : escapeHtml(row.valuation);
-  const gapRead = marketRecord ? (row.liveGapRead || providerName + " snapshot loaded; align guidance and consensus fiscal periods before a gap conclusion") : row.gapRead;
-  const tone = marketRecord && !row.liveGapRead ? "" : " caution";
+  const estimateYearEnd = marketRecord?.annualEstimate?.fiscalDateEnding;
+  const fiscalMismatch = Boolean(marketRecord && row.companyFiscalYearEnd && estimateYearEnd && !String(estimateYearEnd).endsWith(row.companyFiscalYearEnd));
+  const alignmentRead = fiscalMismatch ? "Current snapshot ends " + formatDate(estimateYearEnd) + "; " + (row.companyName || row.ticker) + "'s fiscal year ends " + (row.companyFiscalYearEndLabel || row.companyFiscalYearEnd) + ". Do not compare this estimate with company guidance." : null;
+  const gapRead = marketRecord ? (alignmentRead || row.liveGapRead || providerName + " snapshot loaded; align guidance and consensus fiscal periods before a gap conclusion") : row.gapRead;
+  const tone = marketRecord && !alignmentRead && !row.liveGapRead ? "" : " caution";
   return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + streetEstimates + "</td><td>" + valuation + "</td><td><span class=\"read" + tone + "\"><i></i>" + escapeHtml(gapRead) + "</span></td></tr>";
 }
 

@@ -35,7 +35,7 @@ Qualitative product or company disclosures are valid evidence when no reproducib
 
 The current Eulerpool adapter publishes a single current, daily static snapshot for the small Expectations Gap watchlist. It must retain the visible `Data by Eulerpool` attribution beside each derived field. Free-plan quote inputs can be delayed or end-of-day, so the dashboard treats them as dated inputs rather than live prices. It stores no raw response or public vendor-data history.
 
-Annual EPS convention and fiscal period are provider-supplied fields, not automatically comparable to company guidance. Forward P/E and target upside are mechanical calculations only. They do not create a gap score or an investment conclusion.
+Annual EPS convention and fiscal period are provider-supplied fields, not automatically comparable to company guidance. The dashboard now checks the snapshot's fiscal-date ending against the company fiscal year-end configured for each ticker and refuses a guide-versus-consensus read when they differ. Forward P/E and target upside are mechanical calculations only. They do not create a gap score or an investment conclusion.
 
 ## Source interpretation
 

@@ -1,6 +1,6 @@
 {
-  "asOfDate": "2026-09-23",
-  "definition": "The four core candidates below contain a first, primary-source company-capture baseline. These are reported operating observations and product disclosures, not stock recommendations or evidence that an agentic tailwind is already monetized.",
+  "asOfDate": "2026-09-24",
+  "definition": "The four core candidates below have dated, primary-source expectation-gap reviews. These are reported operating observations and product disclosures, not stock recommendations or evidence that an agentic tailwind is already monetized.",
   "companies": [
     {
       "ticker": "AKAM",
@@ -24,49 +24,56 @@
     {
       "ticker": "ESTC",
       "mechanism": "Agent retrieval, vector search, and observability workloads could lift cloud consumption and retention.",
-      "state": "Primary-source baseline",
+      "state": "Dated gap review · Monitor",
       "period": "Q1 FY2027 · ended Jul 31, 2026",
       "evidence": [
         { "label": "Total revenue", "value": "$478M · +15% YoY" },
         { "label": "Sales-led subscription revenue", "value": "$399M · +18% YoY" },
+        { "label": "Elastic Cloud revenue", "value": "$235M · +20% YoY · 49% of revenue" },
         { "label": "Current RPO", "value": "$1.153B · +21% YoY" }
       ],
-      "agenticRead": "Elastic disclosed agentic Kubernetes investigations and MCP-based observability skills, alongside growth in cloud and contracted revenue metrics.",
-      "counterpoint": "Agentic product releases are not an agent-specific revenue disclosure; net expansion was approximately 111% and must be followed over time.",
+      "agenticRead": "Elastic Cloud is largely consumption-based and grew 20%; agentic Kubernetes investigations and MCP skills create a plausible usage path. Elastic does not disclose agent-specific revenue, usage, or pricing.",
+      "counterpoint": "Total gross margin fell to 74% from 77% as cloud hosting costs rose faster than subscription revenue. The live market snapshot has a different fiscal-year end from Elastic guidance, so it cannot yet support a guide-versus-consensus read.",
       "sources": [
-        { "label": "Q1 FY2027 results", "url": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/" }
+        { "label": "Q1 FY2027 results", "url": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/" },
+        { "label": "Q1 FY2027 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000054/estc-20260731.htm" }
       ]
     },
     {
       "ticker": "DT",
       "mechanism": "More autonomous software can create more logs, traces, and AI-observability demand.",
-      "state": "Primary-source baseline",
+      "state": "Dated gap review · Monitor",
       "period": "Q1 FY2027 · ended Jun 30, 2026",
       "evidence": [
         { "label": "Total ARR", "value": "$2.136B · +17% YoY" },
         { "label": "Total revenue", "value": "$555M · +16% YoY" },
-        { "label": "Annualized logs consumption", "value": "$200M · >100% YoY" }
+        { "label": "Annualized logs consumption", "value": "$200M · >100% YoY" },
+        { "label": "Remaining performance obligations", "value": "$3.442B · 53% due within 12 months" }
       ],
-      "agenticRead": "The company released autonomous SRE and cloud-SRE agent capabilities while reporting sharply higher logs consumption, a potentially relevant observability-consumption signal.",
-      "counterpoint": "Logs and ARR growth are not proof of agent-led demand; the fiscal-year reported ARR guide incorporates FX headwinds and is lower in reported growth terms than the quarter's ARR growth.",
+      "agenticRead": "Logs consumption, Autonomous SRE / Cloud SRE / Agent Building, and the proposed Arize acquisition create a plausible AI-observability capture path. None is disclosed as agent-specific ARR or revenue.",
+      "counterpoint": "Subscription gross margin declined to 85% from 86% as cloud hosting costs rose. Management expects the proposed Arize deal to dilute FY2027 non-GAAP operating margin, and the live market snapshot is not fiscal-year aligned with company guidance.",
       "sources": [
-        { "label": "Q1 FY2027 results", "url": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results" }
+        { "label": "Q1 FY2027 results", "url": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results" },
+        { "label": "Q1 FY2027 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1773383/000177338326000050/dt-20260630.htm" },
+        { "label": "Proposed Arize acquisition", "url": "https://ir.dynatrace.com/news-events/press-releases/detail/435/dynatrace-to-acquire-ai-observability-leader-arize" }
       ]
     },
     {
       "ticker": "FFIV",
       "mechanism": "AI gateway, MCP gateway, and application-delivery controls may become a necessary part of enterprise agent infrastructure.",
-      "state": "Primary-source baseline",
+      "state": "Dated gap review · Monitor",
       "period": "Q3 FY2026 · ended Jun 30, 2026",
       "evidence": [
         { "label": "Total revenue", "value": "$865M · +11% YoY" },
         { "label": "Product revenue", "value": "+19% YoY" },
-        { "label": "Systems revenue", "value": "$240M · +32% YoY" }
+        { "label": "Systems revenue", "value": "$240M · +32% YoY" },
+        { "label": "Software revenue", "value": "$223M · +7% YoY" }
       ],
-      "agenticRead": "F5 subsequently integrated its AI Gateway with an MCP Gateway for agent-to-tool governance; this establishes product relevance, not monetization or adoption evidence.",
-      "counterpoint": "AI Gateway and MCP Gateway revenue, attach rates, and customer usage are not separately reported, so the capture link remains unproven.",
+      "agenticRead": "F5's August AI Gateway update combines model access, MCP agent-to-tool governance, and guardrails at a potential enforcement point. This establishes product relevance, not commercial adoption or monetization.",
+      "counterpoint": "Q3 growth was led by systems; software grew 7% and services 3%. AI Gateway revenue, attach, customer count, and usage are unreported; the live snapshot uses a different fiscal-year end from F5 guidance.",
       "sources": [
         { "label": "Q3 FY2026 results", "url": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx" },
+        { "label": "Q3 FY2026 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1048695/000104869526000067/ffiv-20260630.htm" },
         { "label": "AI Gateway update", "url": "https://www.f5.com/company/news/press-releases/f5-unleashes-next-generation-agentic-ready-ai-gateway-to-optimize-the-economics-and-governance-of-enterprise-ai-costs" }
       ]
     },

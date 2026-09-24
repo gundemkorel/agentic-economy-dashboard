@@ -1,6 +1,6 @@
 {
   "asOfDate": "2026-09-24",
-  "definition": "This is a connection-readiness map, not a market-data feed. Financial Modeling Prep is the selected pathway, but no FMP value is retrieved, stored, or displayed until its public-display agreement is complete and the protected workflow gate is enabled.",
+  "definition": "This is a connection-readiness map, not a market-data feed. Eulerpool is configured for an owner-confirmed personal, non-commercial daily static snapshot with required public attribution. No provider values appear unless its protected workflow completes successfully.",
   "providers": [
     {
       "id": "company-reporting",
@@ -13,12 +13,22 @@
       "sourceUrl": "https://www.sec.gov/edgar/search/"
     },
     {
+      "id": "eulerpool",
+      "name": "Eulerpool",
+      "status": "Configured · first snapshot pending",
+      "tone": "warning",
+      "capabilities": ["Forward EPS and revenue", "Price targets", "Delayed/EOD market price inputs"],
+      "description": "The primary compact-watchlist integration is limited to a current daily snapshot for this personal, non-commercial dashboard. Its public data cells visibly link to Data by Eulerpool. The build keeps no raw response, Git-tracked vendor data, or vendor-data history.",
+      "sourceLabel": "Eulerpool API pricing and attribution terms",
+      "sourceUrl": "https://eulerpool.com/financial-data-api/pricing"
+    },
+    {
       "id": "fmp",
       "name": "Financial Modeling Prep",
-      "status": "Selected · awaiting FMP API access",
+      "status": "Standby · endpoint access unresolved",
       "tone": "warning",
       "capabilities": ["Forward EPS and revenue", "Price targets", "Market price inputs"],
-      "description": "Selected for the compact watchlist. It will publish a compact current deployment snapshot only when the FMP account grants the configured endpoints and the written agreement permits public display on this static GitHub Pages site, downloadable data files, and the intended retention period. It never stores a raw FMP response or a public repository file.",
+      "description": "Retained as a gated fallback. It will publish a compact current deployment snapshot only when the FMP account grants the configured endpoints and the written agreement permits public display on this static GitHub Pages site, downloadable data files, and the intended retention period. It never stores a raw FMP response or a public repository file.",
       "sourceLabel": "FMP analyst estimates documentation",
       "sourceUrl": "https://site.financialmodelingprep.com/developer/docs/stable/financial-estimates"
     },

@@ -35,6 +35,17 @@
   text-decoration: underline;
 }
 
+.notice-attribution {
+  color: var(--green-2);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.notice-attribution:hover {
+  text-decoration: underline;
+}
+
 .provider-section {
   margin-top: 72px;
 }

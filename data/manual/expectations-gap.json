@@ -1,6 +1,6 @@
 {
   "asOfDate": "2026-09-24",
-  "definition": "Company-issued guidance is populated from primary earnings releases. Financial Modeling Prep is the selected source for a consistent consensus and valuation snapshot, but those fields remain unpopulated until the public-display agreement is complete and the protected ingestion workflow has run. Management outlook is not analyst consensus and must not be used as a substitute for what is priced in.",
+  "definition": "Company-issued guidance is populated from primary earnings releases. Eulerpool is the configured source for a daily, attributed, current consensus and valuation snapshot; its fields remain unpopulated until the protected ingestion workflow completes successfully. Management outlook is not analyst consensus and must not be used as a substitute for what is priced in.",
   "rows": [
     {
       "ticker": "AKAM",
@@ -12,10 +12,10 @@
         "sourceLabel": "Akamai Q2 2026 results",
         "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
       },
-      "streetEstimates": "FMP selected · awaiting API access",
-      "valuation": "FMP selected · awaiting API access",
-      "gapRead": "Company outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
-      "state": "FMP pending"
+      "streetEstimates": "Eulerpool selected · awaiting first snapshot",
+      "valuation": "Eulerpool selected · awaiting first snapshot",
+      "gapRead": "Company outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
+      "state": "Eulerpool pending"
     },
     {
       "ticker": "ESTC",
@@ -27,10 +27,10 @@
         "sourceLabel": "Elastic Q1 FY2027 results",
         "sourceUrl": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/"
       },
-      "streetEstimates": "FMP selected · awaiting API access",
-      "valuation": "FMP selected · awaiting API access",
-      "gapRead": "Company outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
-      "state": "FMP pending"
+      "streetEstimates": "Eulerpool selected · awaiting first snapshot",
+      "valuation": "Eulerpool selected · awaiting first snapshot",
+      "gapRead": "Company outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
+      "state": "Eulerpool pending"
     },
     {
       "ticker": "DT",
@@ -42,10 +42,10 @@
         "sourceLabel": "Dynatrace Q1 FY2027 results",
         "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results"
       },
-      "streetEstimates": "FMP selected · awaiting API access",
-      "valuation": "FMP selected · awaiting API access",
-      "gapRead": "Company outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
-      "state": "FMP pending"
+      "streetEstimates": "Eulerpool selected · awaiting first snapshot",
+      "valuation": "Eulerpool selected · awaiting first snapshot",
+      "gapRead": "Company outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
+      "state": "Eulerpool pending"
     },
     {
       "ticker": "FFIV",
@@ -57,10 +57,10 @@
         "sourceLabel": "F5 Q3 FY2026 results",
         "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
       },
-      "streetEstimates": "FMP selected · awaiting API access",
-      "valuation": "FMP selected · awaiting API access",
-      "gapRead": "Product relevance and outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
-      "state": "FMP pending"
+      "streetEstimates": "Eulerpool selected · awaiting first snapshot",
+      "valuation": "Eulerpool selected · awaiting first snapshot",
+      "gapRead": "Product relevance and outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
+      "state": "Eulerpool pending"
     }
   ]
 }

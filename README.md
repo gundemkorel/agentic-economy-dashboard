@@ -13,7 +13,7 @@ The project separately tracks:
 3. Expectations Gap — operating evidence versus Street estimates and valuation.
 4. Thesis Breakers — evidence that should reduce conviction.
 
-Read the full [thesis](docs/THESIS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), and [FMP public-display setup](docs/FMP_SETUP.md).
+Read the full [thesis](docs/THESIS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
 ## Run locally
 
@@ -57,7 +57,7 @@ The Radar adapter requires `CLOUDFLARE_RADAR_API_TOKEN` locally or as a GitHub A
 
 Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.
 
-The Expectations Gap page includes a visible market-data connection map. Financial Modeling Prep is the selected first integration, but its values remain out of the public site until the applicable display, redistribution, and retention rights are confirmed. Its workflow requires both the protected `FMP_API_KEY` secret and the explicit `FMP_PUBLIC_DISPLAY_APPROVED=true` repository variable. Once enabled, it creates a compact current normalized snapshot only in the deployed Pages artifact—no raw response, public repository snapshot, or vendor-data archive. See the [activation and removal steps](docs/FMP_SETUP.md).
+The Expectations Gap page uses Eulerpool for a compact current daily snapshot of consensus, delayed/EOD quote inputs, and price-target context. It requires the protected `EULERPOOL_API_KEY` Actions secret and preserves a visible `Data by Eulerpool` link beside each Eulerpool-derived field. The owner has confirmed the dashboard's personal, non-commercial daily static-snapshot use with the provider. The workflow creates only a current normalized snapshot in the deployed Pages artifact—no raw response, public repository snapshot, or vendor-data archive. See the [activation and removal steps](docs/EULERPOOL_SETUP.md). Financial Modeling Prep remains a separately gated fallback.
 
 ## GitHub Pages
 

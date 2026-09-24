@@ -31,6 +31,12 @@ These are never mixed without labels. Each observation must retain metric name, 
 
 Qualitative product or company disclosures are valid evidence when no reproducible scalar is available, but they must remain visibly qualitative. A report describing a growing pattern is not permission to invent a growth rate.
 
+## Market-expectation snapshot boundary
+
+The current Eulerpool adapter publishes a single current, daily static snapshot for the small Expectations Gap watchlist. It must retain the visible `Data by Eulerpool` attribution beside each derived field. Free-plan quote inputs can be delayed or end-of-day, so the dashboard treats them as dated inputs rather than live prices. It stores no raw response or public vendor-data history.
+
+Annual EPS convention and fiscal period are provider-supplied fields, not automatically comparable to company guidance. Forward P/E and target upside are mechanical calculations only. They do not create a gap score or an investment conclusion.
+
 ## Source interpretation
 
 No one provider represents the entire internet or enterprise economy. Cloudflare, Fastly, Akamai, and Zscaler are complementary samples. A disagreement may be a clue rather than noise.

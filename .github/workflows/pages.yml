@@ -2,7 +2,7 @@ name: Deploy dashboard to GitHub Pages
 
 on:
   schedule:
-    - cron: "17 22 * * 1-5"
+    - cron: "17 22 * * *"
   push:
     branches: [main]
   workflow_dispatch:
@@ -26,6 +26,7 @@ jobs:
       name: github-pages
     runs-on: ubuntu-latest
     env:
+      EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
       FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
       FMP_PUBLIC_DISPLAY_APPROVED: ${{ vars.FMP_PUBLIC_DISPLAY_APPROVED }}
     steps:
@@ -35,6 +36,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Create attributed Eulerpool snapshot for this deployment
+        id: eulerpool_snapshot
+        if: env.EULERPOOL_API_KEY != ''
+        continue-on-error: true
+        run: node scripts/ingest-eulerpool-market-data.mjs
+      - name: Explain unavailable Eulerpool endpoint access
+        if: steps.eulerpool_snapshot.outcome == 'failure'
+        run: echo "::warning::Eulerpool snapshot omitted because the configured account did not return usable endpoint data. The rest of the dashboard will deploy normally."
+      - name: Explain omitted Eulerpool snapshot
+        if: env.EULERPOOL_API_KEY == ''
+        run: echo "Eulerpool snapshot omitted. Add EULERPOOL_API_KEY as a repository Actions secret; public display must retain the visible Data by Eulerpool attribution."
       - name: Create licensed FMP snapshot for this deployment
         id: fmp_snapshot
         if: env.FMP_API_KEY != '' && env.FMP_PUBLIC_DISPLAY_APPROVED == 'true'

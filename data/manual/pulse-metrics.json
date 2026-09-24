@@ -1,5 +1,5 @@
 {
-  "asOfDate": "2026-09-23",
+  "asOfDate": "2026-09-24",
   "metrics": [
     {
       "id": "mcp_registered_server_count",
@@ -66,6 +66,17 @@
       "dataType": "Observed product-usage sample",
       "sourceId": "anthropic-economic-index",
       "methodology": "Treat the Economic Index as a longitudinal product-usage sample, not a census of all AI activity. Preserve qualitative evidence as qualitative when a comparable scalar is unavailable."
+    },
+    {
+      "id": "akamai_commerce_ai_bot_share",
+      "number": "07",
+      "layer": "Machine Activity",
+      "title": "Commerce AI-bot share",
+      "description": "Akamai's reported share of commerce traffic identified as AI bots, retained as an industry-specific network and security proxy.",
+      "status": "Observed · caveated",
+      "dataType": "Observed industry network/security proxy",
+      "sourceId": "akamai-research",
+      "methodology": "Akamai reported the share for commerce traffic across its own network as of December 2025. It includes source-defined AI bots, which can include scraping, training, search, or malicious traffic; it is not a measure of beneficial agent tasks, all commerce, or all machine activity."
     }
   ]
 }

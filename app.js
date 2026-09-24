@@ -91,6 +91,12 @@ function renderExpectationRow(row) {
   return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + escapeHtml(row.streetEstimates) + "</td><td>" + escapeHtml(row.valuation) + "</td><td><span class=\"read caution\"><i></i>" + escapeHtml(row.gapRead) + "</span></td></tr>";
 }
 
+function renderProvider(provider) {
+  const capabilities = Array.isArray(provider.capabilities) ? provider.capabilities.map((capability) => "<span>" + escapeHtml(capability) + "</span>").join("") : "";
+  const source = provider.sourceUrl ? "<a href=\"" + escapeHtml(provider.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(provider.sourceLabel || "Provider details") + " ↗</a>" : "";
+  return "<article class=\"provider-card\"><div class=\"provider-card-top\"><h3>" + escapeHtml(provider.name) + "</h3><span class=\"tag " + escapeHtml(provider.tone || "neutral") + "\">" + escapeHtml(provider.status) + "</span></div><div class=\"provider-capabilities\">" + capabilities + "</div><p>" + escapeHtml(provider.description) + "</p>" + source + "</article>";
+}
+
 function renderSource(source) {
   const fields = [
     "Supports: " + source.supports.join(", "),
@@ -151,8 +157,13 @@ async function initCompanies() {
 }
 
 async function initExpectations() {
-  const data = await fetchJson("data/manual/expectations-gap.json");
+  const [data, providerMap] = await Promise.all([
+    fetchJson("data/manual/expectations-gap.json"),
+    fetchJson("config/market-data-providers.json").catch(() => ({ providers: [] }))
+  ]);
   $("#expectations-body").innerHTML = data.rows.map(renderExpectationRow).join("");
+  const providerGrid = $("#provider-grid");
+  if (providerGrid) providerGrid.innerHTML = providerMap.providers.map(renderProvider).join("");
 }
 
 async function initBreakers() {

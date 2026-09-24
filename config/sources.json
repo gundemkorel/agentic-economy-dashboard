@@ -36,13 +36,13 @@
     {
       "id": "akamai-research",
       "name": "Akamai research and investor relations",
-      "url": "https://www.ir.akamai.com/",
-      "supports": ["ai_bot_context", "security_context", "akamai_company_capture"],
+      "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-research-commerce-becomes-epicenter-ai-bot-attacks-and",
+      "supports": ["ai_bot_context", "security_context", "akamai_commerce_ai_bot_share", "akamai_company_capture"],
       "updateFrequency": "quarterly / periodic",
       "accessMethod": "manual research review",
-      "automationStatus": "manual",
+      "automationStatus": "manual reviewed (July 2026 report)",
       "dataType": "company-reported and observed network proxy",
-      "caveat": "Akamai is both a measurement source and a candidate company. Keep source evidence separate from the investment conclusion."
+      "caveat": "Akamai's disclosed commerce share is a source-defined AI-bot measure in one industry and includes security-relevant traffic such as scraping and fraud. It is neither all web traffic nor a measure of productive agent actions. Akamai is also a candidate company, so keep its network evidence separate from the investment conclusion."
     },
     {
       "id": "zscaler",
@@ -70,7 +70,7 @@
       "id": "company-ir",
       "name": "Company investor relations and SEC filings",
       "url": "https://www.sec.gov/edgar/search/",
-      "supports": ["company_capture_kpis", "management_guidance", "guidance", "fcf_margin", "rpo", "consensus_inputs"],
+      "supports": ["company_capture_kpis", "management_guidance", "guidance", "fcf_margin", "rpo"],
       "updateFrequency": "quarterly",
       "accessMethod": "manual review; selective API adapter later",
       "automationStatus": "manual",

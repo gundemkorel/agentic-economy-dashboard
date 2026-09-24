@@ -1,0 +1,76 @@
+{
+  "asOfDate": "2026-09-24",
+  "definition": "This is a connection-readiness map, not a market-data feed. A listed capability does not mean that the dashboard has retrieved, stored, displayed, or licensed that provider's data.",
+  "providers": [
+    {
+      "id": "company-reporting",
+      "name": "Company IR and SEC filings",
+      "status": "Active · public baseline",
+      "tone": "positive",
+      "capabilities": ["Reported actuals", "Management guidance", "Filing dates"],
+      "description": "This is the current expectations baseline. It supplies company-issued outlook and reported results, not analyst consensus or a valuation feed.",
+      "sourceLabel": "SEC EDGAR and company investor relations",
+      "sourceUrl": "https://www.sec.gov/edgar/search/"
+    },
+    {
+      "id": "fmp",
+      "name": "Financial Modeling Prep",
+      "status": "Not connected · written display rights required",
+      "tone": "warning",
+      "capabilities": ["Forward EPS and revenue", "Price targets", "Market price inputs"],
+      "description": "Technically suited to the compact watchlist. Do not publish, archive, or render its values here unless the agreement explicitly covers this public static site and its downloadable data files.",
+      "sourceLabel": "FMP analyst estimates documentation",
+      "sourceUrl": "https://site.financialmodelingprep.com/developer/docs/stable/financial-estimates"
+    },
+    {
+      "id": "intrinio",
+      "name": "Intrinio Estimates",
+      "status": "Not connected · enterprise estimates required",
+      "tone": "warning",
+      "capabilities": ["GAAP EPS consensus", "Revenue consensus", "Revision history"],
+      "description": "Its EPS estimates product is presented as enterprise-only. A future order form must also specify public display and data-retention rights before any integration.",
+      "sourceLabel": "Intrinio EPS estimates",
+      "sourceUrl": "https://intrinio.com/products/eps-estimates"
+    },
+    {
+      "id": "sp-capital-iq",
+      "name": "S&P Capital IQ Estimates",
+      "status": "Not connected · enterprise evaluation",
+      "tone": "neutral",
+      "capabilities": ["Point-in-time consensus", "Guidance", "Estimate revisions"],
+      "description": "An institutional route for a durable expectations and revisions history. Licensing, delivery format, and public-display rights remain to be evaluated.",
+      "sourceLabel": "S&P Capital IQ Estimates",
+      "sourceUrl": "https://www.spglobal.com/market-intelligence/en/solutions/products/fundamental-data"
+    },
+    {
+      "id": "lseg-ibes",
+      "name": "LSEG I/B/E/S",
+      "status": "Not connected · enterprise evaluation",
+      "tone": "neutral",
+      "capabilities": ["Global consensus", "Point-in-time history", "Industry KPIs"],
+      "description": "An institutional route when deep history and broad estimate coverage become research requirements. Licensing and delivery terms remain to be evaluated.",
+      "sourceLabel": "LSEG estimates overview",
+      "sourceUrl": "https://www.lseg.com/content/dam/data-analytics/en_us/documents/brochures/lseg-data-for-quant-research-brochure.pdf"
+    },
+    {
+      "id": "factset",
+      "name": "FactSet Estimates",
+      "status": "Not connected · enterprise evaluation",
+      "tone": "neutral",
+      "capabilities": ["Consensus snapshots", "Actuals and guidance", "Price targets"],
+      "description": "An institutional route that combines estimates, actuals, guidance, and analyst context. Licensing and a suitable data-feed agreement remain to be evaluated.",
+      "sourceLabel": "FactSet consensus estimates",
+      "sourceUrl": "https://insight.factset.com/resources/factset-consensus-estimates-datafeed"
+    },
+    {
+      "id": "finnhub",
+      "name": "Finnhub",
+      "status": "Not connected · written approval required",
+      "tone": "warning",
+      "capabilities": ["Forward estimates", "Price targets", "Recommendation trends"],
+      "description": "Its API capability is relevant, but personal plans prohibit sharing or redistributing data or derived results without written approval. Do not use it for this public site without that approval.",
+      "sourceLabel": "Finnhub terms of service",
+      "sourceUrl": "https://finnhub.io/terms-of-service"
+    }
+  ]
+}

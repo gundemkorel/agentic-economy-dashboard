@@ -93,6 +93,29 @@
         "displayChange": "AI requests +30% Jan–May"
       },
       "notes": "Fastly stated that AI requests grew about 30% from January through May, roughly 6.5 times faster than human traffic. Fetchers are a useful agentic-workload proxy because they are tied to user requests, but they are not synonymous with autonomous action; the reported AI mix remains mostly crawler traffic."
+    },
+    {
+      "metricId": "akamai_commerce_ai_bot_share",
+      "metricName": "Akamai commerce AI-bot share",
+      "category": "machine_activity",
+      "value": 47.9,
+      "unit": "% of commerce traffic across Akamai's network",
+      "displayValue": "47.9%",
+      "periodStart": "2025-12-01",
+      "periodEnd": "2025-12-31",
+      "asOfDate": "2025-12-31",
+      "sourceName": "Akamai State of the Internet: Securing the Agentic Storefront",
+      "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-research-commerce-becomes-epicenter-ai-bot-attacks-and",
+      "sourceType": "industry-specific network and security telemetry report",
+      "retrievalDate": "2026-09-24T15:00:00Z",
+      "methodology": "Akamai reported that, as of December 2025, 47.9% of commerce traffic across its global network consisted of AI bots. The dashboard records the disclosed share as a commerce-specific network and security proxy without extrapolating it to all web traffic, all commerce, or all agentic activity.",
+      "isObserved": true,
+      "isEstimate": false,
+      "comparison": {
+        "basis": "Akamai's commerce-network observation as of December 2025",
+        "displayChange": "Commerce-only baseline"
+      },
+      "notes": "The source discusses agentic commerce, malicious activity, scraping, fraud, and application attacks. Its AI-bot definition is not a measure of successful, user-directed, or economically valuable autonomous tasks. Akamai is also a candidate company, so this network evidence must remain separate from its shareholder-capture thesis."
     }
   ]
 }

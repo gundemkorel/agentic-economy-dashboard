@@ -20,8 +20,10 @@ The first reviewed enterprise-adoption baseline lives in `data/manual/enterprise
 
 The same file now includes a Fastly network baseline. Its report covers January–May 2026 through a fixed cohort of Fastly customers and separates source-defined AI crawlers from fetchers. The dashboard records the May fetcher share and the report's stated January–May request-growth context. It does not interpret fetchers as confirmed autonomous actions or aggregate Fastly's sample with Cloudflare's normalized index.
 
+The same manual-observation file also includes an Akamai commerce-specific observation: Akamai reported that 47.9% of traffic across its network in the commerce vertical consisted of AI bots as of December 2025. This is deliberately labeled as an industry-specific network and security proxy. It can include crawler, scraping, fraud, and other nonproductive traffic, so it must not be read as the share of commerce completed by agents or as a global agentic-activity measure.
+
 `data/manual/evidence-log.json` is a separate, rolling record of material developments. Each entry states whether it is confirming, contrary, mixed, or measurement-only and links directly to its source. Do not turn a qualitative source statement into a numerical observation.
 
 ## Market expectations
 
-The Expectations Gap page now includes company-issued guidance from the same primary earnings sources used for Company Capture. That is operating context, not analyst consensus or a valuation input. Price, valuation, and consensus data remain intentionally unpopulated until one provider can support consistent retrieval dates, fiscal-year conventions, and definition labels. Do not add figures merely to fill a dashboard.
+The Expectations Gap page now includes company-issued guidance from the same primary earnings sources used for Company Capture. That is operating context, not analyst consensus or a valuation input. Price, valuation, and consensus data remain intentionally unpopulated until one provider can support consistent retrieval dates, fiscal-year conventions, definition labels, and the required display/retention rights. The visible connection map in `config/market-data-providers.json` is a planning layer only; it contains no vendor data and does not authorize an integration. Do not add figures merely to fill a dashboard.

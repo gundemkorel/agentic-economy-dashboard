@@ -48,6 +48,17 @@
       "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
     },
     {
+      "date": "2026-07-15",
+      "direction": "Mixed",
+      "tone": "mixed",
+      "layer": "Machine Activity",
+      "title": "Akamai reported a large commerce AI-bot share",
+      "summary": "Akamai said that, as of December 2025, 47.9% of commerce traffic across its global network consisted of AI bots.",
+      "thesisRead": "This strengthens the case that nonhuman web activity is material in a key transaction-intensive vertical, while remaining a security/network sample that includes malicious, scraping, and crawler traffic—not a measure of productive agent use.",
+      "sourceLabel": "Akamai State of the Internet: Securing the Agentic Storefront",
+      "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-research-commerce-becomes-epicenter-ai-bot-attacks-and"
+    },
+    {
       "date": "2026-06-26",
       "direction": "Confirming",
       "tone": "confirming",

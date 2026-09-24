@@ -57,6 +57,8 @@ The Radar adapter requires `CLOUDFLARE_RADAR_API_TOKEN` locally or as a GitHub A
 
 Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.
 
+The Expectations Gap page includes a visible market-data connection map. It is a provider-evaluation layer only: it shows which APIs could fill the consensus and valuation columns, while keeping every vendor-derived value out of the public site until the applicable display, redistribution, and retention terms are confirmed.
+
 ## GitHub Pages
 
 The repository includes GitHub Actions workflows for Pages deployment plus weekly MCP Registry and Cloudflare Radar refreshes. Successful refreshes trigger a Pages redeployment. Enable Pages with GitHub Actions as the source in repository settings. The expected public URL is:

@@ -15,6 +15,39 @@
       "sourceUrl": "https://developers.cloudflare.com/radar/"
     },
     {
+      "date": "2026-09-22",
+      "direction": "Confirming / enterprise control",
+      "tone": "mixed",
+      "layer": "Enterprise Adoption & Control",
+      "title": "Akamai reports a governance gap around nonhuman AI activity",
+      "summary": "Akamai's September State of the Internet report said more than 40% of enterprise users had installed AI browser extensions and 25% had altered permissions in the prior 12 months; it also highlighted ungoverned nonhuman identities and MCP exposure.",
+      "thesisRead": "This is relevant demand evidence for controls around agentic deployment, not a company revenue metric. It should be treated as a company-published market observation and verified against adoption and monetization disclosures over time.",
+      "sourceLabel": "Akamai State of the Internet report release",
+      "sourceUrl": "https://www.akamai.com/newsroom/press-release/akamai-report-securing-agentic-ai-requires-shift-to-behavioral-governance"
+    },
+    {
+      "date": "2026-09-03",
+      "direction": "Confirming / measurement",
+      "tone": "confirming",
+      "layer": "Company Capture",
+      "title": "Akamai separates agentic web traffic from generic AI bots",
+      "summary": "Akamai's Bot Directory now separates AI training crawlers, AI search crawlers, and AI fetchers and agents, with the latter category covering requests made on a user's behalf or during autonomous tasks.",
+      "thesisRead": "The change improves measurement and product fit for agentic controls. It does not disclose customer adoption, pricing, attach rate, ARR, or incremental margin.",
+      "sourceLabel": "Akamai Bot Directory update",
+      "sourceUrl": "https://www.akamai.com/blog/security/2026/sep/introducing-more-granular-controls-ai-bot-traffic"
+    },
+    {
+      "date": "2026-08-07",
+      "direction": "Counter-evidence",
+      "tone": "contrary",
+      "layer": "Company Capture",
+      "title": "Akamai flags a cost curve behind cloud and AI capacity growth",
+      "summary": "Akamai's Q2 10-Q says that competition for server, memory, co-location, and data-center capacity is increasing future capital expenditure, depreciation, and other platform costs as it expands cloud infrastructure and AI capabilities.",
+      "thesisRead": "CIS growth alone is insufficient. The shareholder-capture case needs evidence that contract conversion, gross margin, and cash generation overcome the capacity investment curve.",
+      "sourceLabel": "Akamai Q2 2026 Form 10-Q",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm"
+    },
+    {
       "date": "2026-08-06",
       "direction": "Confirming",
       "tone": "confirming",

@@ -4,7 +4,7 @@
   "rows": [
     {
       "ticker": "AKAM",
-      "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure contract commitments disclosed",
+      "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure commitments and agent-traffic controls disclosed",
       "managementGuidance": {
         "issuedDate": "2026-08-06",
         "period": "Q3 / FY2026",
@@ -14,8 +14,9 @@
       },
       "streetEstimates": "Eulerpool selected · awaiting first snapshot",
       "valuation": "Eulerpool selected · awaiting first snapshot",
-      "gapRead": "Company outlook added; Eulerpool snapshot and fiscal-period alignment required before a gap read",
-      "state": "Eulerpool pending"
+      "gapRead": "Early capture evidence, but contract conversion and margin proof are required before calling an expectation gap",
+      "liveGapRead": "Early capture evidence; do not call an expectation gap until CIS commitments convert and the growth / margin trade-off is visible.",
+      "state": "Monitor · early capture"
     },
     {
       "ticker": "ESTC",

@@ -5,17 +5,20 @@
     {
       "ticker": "AKAM",
       "mechanism": "More action-oriented traffic, security inspections, and edge-compute demand could increase billable consumption if Akamai retains the workload.",
-      "state": "Primary-source baseline",
+      "state": "Dated gap review · Monitor",
       "period": "Q2 2026 · ended Jun 30, 2026",
       "evidence": [
         { "label": "Cloud Infrastructure Services revenue", "value": "$99M · +39% YoY" },
         { "label": "Security revenue", "value": "$604M · +10% YoY" },
-        { "label": "CIS contract commitments", "value": ">$2.8B YTD; includes >$600M robotics deal" }
+        { "label": "CIS contract commitments", "value": ">$2.8B YTD; includes >$600M robotics deal" },
+        { "label": "Agent-traffic classification", "value": "AI fetchers and agents separated from training/search crawlers" }
       ],
-      "agenticRead": "The disclosed robotics contract and CIS growth support an AI-infrastructure capture hypothesis, but management does not separately report agent-driven revenue.",
-      "counterpoint": "Delivery and other cloud-applications revenue declined 6% YoY; non-GAAP operating margin was 25%, down five points YoY.",
+      "agenticRead": "CIS growth and commitments support an AI-infrastructure capture hypothesis; more granular agent-traffic controls improve product fit and measurement. Management does not separately report agent-driven revenue, adoption, pricing, or ARR.",
+      "counterpoint": "Delivery and other cloud-applications revenue declined 6% YoY and non-GAAP operating margin was 25%, down five points. The 10-Q expects AI / cloud capacity investment to raise future capital and operating costs.",
       "sources": [
-        { "label": "Q2 2026 results", "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results" }
+        { "label": "Q2 2026 results", "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results" },
+        { "label": "Q2 2026 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm" },
+        { "label": "Agent-traffic controls", "url": "https://www.akamai.com/blog/security/2026/sep/introducing-more-granular-controls-ai-bot-traffic" }
       ]
     },
     {

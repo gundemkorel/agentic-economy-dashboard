@@ -70,6 +70,29 @@
         "displayChange": "Agentic tasks increasingly common"
       },
       "notes": "Anthropic defines automation as directive or feedback-loop conversations in which Claude is asked to complete a task with little to no user input. That definition is useful, but its reported pattern is not a measure of all enterprise automation."
+    },
+    {
+      "metricId": "action_intensity",
+      "metricName": "Fastly AI fetcher mix",
+      "category": "machine_activity",
+      "value": 15,
+      "unit": "% of Fastly AI bot requests classified as fetchers",
+      "displayValue": "15%",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-05-31",
+      "asOfDate": "2026-05-31",
+      "sourceName": "Fastly AI Traffic Growth Report",
+      "sourceUrl": "https://www.fastly.com/blog/ai-traffic-grew-6-5x-faster-than-human-traffic-this-year",
+      "sourceType": "fixed-cohort network telemetry report",
+      "retrievalDate": "2026-09-24T04:05:00Z",
+      "methodology": "Fastly reported that, in May 2026, 15% of AI bot requests on its network were classified as fetchers and 85% as crawlers. Its report used a fixed customer cohort across its global infrastructure for January–May 2026, classified AI traffic with edge-detection signals, and indexed daily request volumes to a January baseline using a 30-day trailing average.",
+      "isObserved": true,
+      "isEstimate": false,
+      "comparison": {
+        "basis": "Fastly's May 2026 AI-bot request mix; source-defined crawler and fetcher labels",
+        "displayChange": "AI requests +30% Jan–May"
+      },
+      "notes": "Fastly stated that AI requests grew about 30% from January through May, roughly 6.5 times faster than human traffic. Fetchers are a useful agentic-workload proxy because they are tied to user requests, but they are not synonymous with autonomous action; the reported AI mix remains mostly crawler traffic."
     }
   ]
 }

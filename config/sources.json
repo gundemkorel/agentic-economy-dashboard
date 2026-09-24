@@ -25,13 +25,13 @@
     {
       "id": "fastly",
       "name": "Fastly research and network reports",
-      "url": "https://www.fastly.com/resources",
-      "supports": ["machine_traffic_context", "origin_request_context", "ai_crawler_fetcher_mix"],
+      "url": "https://www.fastly.com/blog/ai-traffic-grew-6-5x-faster-than-human-traffic-this-year",
+      "supports": ["action_intensity", "machine_traffic_context", "origin_request_context", "ai_crawler_fetcher_mix"],
       "updateFrequency": "periodic",
-      "accessMethod": "manual research review",
-      "automationStatus": "manual",
+      "accessMethod": "official network report; manual review",
+      "automationStatus": "manual reviewed (June 2026 baseline)",
       "dataType": "observed network proxy",
-      "caveat": "Use as an independent network view. Verify publication date, measurement scope, and definitions before adding observations."
+      "caveat": "Fastly's January–May 2026 report used a fixed customer cohort and its own edge-detection labels. Fetchers are a useful agentic-workload proxy, but Fastly's AI traffic is still largely crawler traffic and is not a census of all machine actions."
     },
     {
       "id": "akamai-research",

@@ -18,6 +18,8 @@ Fastly, Akamai, Zscaler, Anthropic, company investor relations, and filings shou
 
 The first reviewed enterprise-adoption baseline lives in `data/manual/enterprise-adoption-observations.json`. It records a Zscaler network-sample observation plus two Anthropic product-usage observations. The Zscaler report covers calendar 2025; the Anthropic report covers an April–June 2026 sample. Neither source is a census of enterprises, agents, or AI activity, so values must retain their source-specific definitions rather than being combined into a synthetic index.
 
+The same file now includes a Fastly network baseline. Its report covers January–May 2026 through a fixed cohort of Fastly customers and separates source-defined AI crawlers from fetchers. The dashboard records the May fetcher share and the report's stated January–May request-growth context. It does not interpret fetchers as confirmed autonomous actions or aggregate Fastly's sample with Cloudflare's normalized index.
+
 `data/manual/evidence-log.json` is a separate, rolling record of material developments. Each entry states whether it is confirming, contrary, mixed, or measurement-only and links directly to its source. Do not turn a qualitative source statement into a numerical observation.
 
 ## Market expectations

@@ -49,6 +49,8 @@ Reviewed public report → data/manual/enterprise-adoption-observations.json →
 
 Material confirming, contrary, and unresolved developments belong in data/manual/evidence-log.json. The Thesis Breakers page renders this as a rolling 90-day log; update it without rewriting older entries.
 
+The first independent network baseline is a reviewed Fastly report. It keeps the source's crawler/fetcher definitions intact and records its fixed-cohort methodology; it is not treated as a measure of all agentic traffic.
+
 The Radar adapter requires `CLOUDFLARE_RADAR_API_TOKEN` locally or as a GitHub Actions secret. No token is committed, and only the derived, source-attributed observation is published. Its first metric is a normalized AI-bot traffic proxy, not a raw request count or an estimate of all agentic activity.
 
 Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.

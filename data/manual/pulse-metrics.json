@@ -27,12 +27,12 @@
       "id": "action_intensity",
       "number": "03",
       "layer": "Machine Activity",
-      "title": "Action intensity",
-      "description": "The relative mix of fetcher, retrieval, and action-oriented traffic versus passive crawler activity.",
-      "status": "Definition in build",
-      "dataType": "Qualitative proxy",
-      "sourceId": "cloudflare-radar",
-      "methodology": "A useful concept, not yet a synthetic index. Populate only when source classifications are robust."
+      "title": "AI fetcher mix",
+      "description": "The share of Fastly AI bot requests classified as fetchers—targeted retrieval tied to a user or agent request—rather than crawlers.",
+      "status": "Observed",
+      "dataType": "Observed network composition",
+      "sourceId": "fastly",
+      "methodology": "Fastly's crawler/fetcher split is a named source classification, not a synthetic action-intensity score. Its fetcher label is a useful but incomplete proxy for agentic workload."
     },
     {
       "id": "enterprise_ai_transactions",

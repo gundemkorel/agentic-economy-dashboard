@@ -175,7 +175,12 @@ results.forEach((result, index) => {
   if (result.status === "fulfilled") rows.push(result.value);
   else unavailableSymbols.push(tickers[index]);
 });
-if (!rows.length) throw new Error("FMP did not return any usable watchlist records. The existing public snapshot was left unchanged.");
+if (!rows.length) {
+  const failures = results
+    .map((result) => result.status === "rejected" ? (result.reason instanceof Error ? result.reason.message : "unknown ticker request failure") : null)
+    .filter(Boolean);
+  throw new Error("FMP did not return any usable watchlist records. " + failures.join(" || "));
+}
 
 const snapshot = {
   provider: {

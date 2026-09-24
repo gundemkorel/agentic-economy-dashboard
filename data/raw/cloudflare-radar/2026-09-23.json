@@ -2,7 +2,7 @@
   "sourceName": "Cloudflare Radar",
   "sourceUrl": "https://api.cloudflare.com/client/v4/radar/ai/bots/timeseries",
   "requestUrl": "https://api.cloudflare.com/client/v4/radar/ai/bots/timeseries?dateRange=30d&dateRange=30dcontrol&aggInterval=1d&format=json",
-  "retrievedAt": "2026-09-24T02:55:13.911Z",
+  "retrievedAt": "2026-09-24T03:06:48.843Z",
   "methodology": "Cloudflare Radar AI bot HTTP request time series. The API returns MIN0_MAX-normalized values rather than raw request counts. This observation is the mean index for the current 30-day window, compared with the preceding 30-day control window in the same API request; it is not all agentic activity or a raw request-volume estimate.",
   "response": {
     "success": true,

@@ -42,6 +42,23 @@ function firstText(record, keys) {
   return null;
 }
 
+function recordWithFields(record, hints, depth = 0) {
+  if (!record || typeof record !== "object" || depth > 4) return record;
+  const candidates = [record];
+  for (const value of Object.values(record)) {
+    if (Array.isArray(value)) candidates.push(...value.filter((item) => item && typeof item === "object"));
+    else if (value && typeof value === "object") candidates.push(value);
+  }
+  const scored = candidates.map((candidate) => {
+    const keys = Object.keys(candidate || {}).map((key) => key.toLowerCase());
+    const score = hints.reduce((total, hint) => total + keys.filter((key) => key.includes(hint)).length, 0);
+    return { candidate, score };
+  }).sort((left, right) => right.score - left.score);
+  const best = scored[0];
+  if (!best || best.score === 0 || best.candidate === record) return record;
+  return recordWithFields(best.candidate, hints, depth + 1);
+}
+
 function recordsFrom(payload, nestedKeys = []) {
   const containers = [
     payload?.data,
@@ -132,11 +149,12 @@ function normalizeEstimate(record) {
 
 function normalizePriceTarget(record) {
   if (!record) return null;
+  const targetRecord = recordWithFields(record, ["target", "consensus", "mean", "average", "median", "high", "low"]);
   return {
-    consensus: firstNumber(record, ["consensus", "targetConsensus", "priceTargetConsensus", "targetMean", "mean", "average", "priceTargetMean"]),
-    median: firstNumber(record, ["median", "targetMedian", "priceTargetMedian"]),
-    high: firstNumber(record, ["high", "targetHigh", "priceTargetHigh"]),
-    low: firstNumber(record, ["low", "targetLow", "priceTargetLow"])
+    consensus: firstNumber(targetRecord, ["consensus", "targetConsensus", "priceTargetConsensus", "price_target_consensus", "targetMean", "meanTarget", "targetAverage", "averageTarget", "mean", "average", "avg", "priceTargetMean", "meanPriceTarget", "priceTarget"]),
+    median: firstNumber(targetRecord, ["median", "targetMedian", "priceTargetMedian", "medianPriceTarget", "target_median"]),
+    high: firstNumber(targetRecord, ["high", "targetHigh", "priceTargetHigh", "highPriceTarget", "target_high"]),
+    low: firstNumber(targetRecord, ["low", "targetLow", "priceTargetLow", "lowPriceTarget", "target_low"])
   };
 }
 

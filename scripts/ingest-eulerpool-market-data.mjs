@@ -22,6 +22,7 @@ const priceTargetDocumentationUrl = "https://eulerpool.com/developers/api/equity
 
 const asFiniteNumber = (value) => {
   if (value === null || value === undefined || value === "") return null;
+  if (typeof value !== "number" && typeof value !== "string") return null;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
 };

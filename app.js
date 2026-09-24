@@ -148,10 +148,15 @@ function renderMarketValuation(record, snapshot) {
   const price = formatUsd(quote.price);
   const forwardPe = finiteNumber(derived.forwardPriceEarnings);
   const target = formatUsd(priceTarget.consensus);
+  const targetHigh = formatUsd(priceTarget.high);
+  const targetLow = formatUsd(priceTarget.low);
   const targetUpside = formatPercent(derived.targetUpsidePercent);
   if (price) details.push("Price " + price);
   if (forwardPe !== null) details.push("Forward P/E " + forwardPe.toFixed(1) + "x");
   if (target) details.push("Target " + target + (targetUpside ? " (" + targetUpside + ")" : ""));
+  else if (targetLow && targetHigh) details.push("Target range " + targetLow + "–" + targetHigh);
+  else if (targetHigh) details.push("Target high " + targetHigh);
+  else if (targetLow) details.push("Target low " + targetLow);
   const asOf = record?.asOfDate || snapshot?.retrievedAt;
   return "<div class=\"market-data-cell\"><span class=\"guidance-label\">" + escapeHtml(providerName) + " snapshot · " + escapeHtml(formatDate(asOf)) + "</span><span>" + escapeHtml(details.length ? details.join(" · ") : "No displayable valuation fields returned") + "</span>" + renderMarketSource(snapshot) + "</div>";
 }

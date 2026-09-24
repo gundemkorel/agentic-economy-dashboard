@@ -27,7 +27,7 @@ As enterprises deploy agents, they need controlled access to models, MCP servers
 
 ## Expectation-gap discipline
 
-The live [Expectations Gap dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) automatically labels the current fiscal mismatch. The appropriate conclusion is **not comparable** until market estimates align to F5's September fiscal year.
+The live [Gap Readiness dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) automatically labels the current fiscal mismatch. The appropriate conclusion is **not comparable** until market estimates align to F5's September fiscal year.
 
 Even with alignment, product relevance alone would not create an expectation gap. The test is whether F5 reports commercial adoption, attach, and revenue quality from AI Gateway / MCP controls that are not reflected in the aligned estimates.
 

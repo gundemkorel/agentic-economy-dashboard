@@ -23,8 +23,8 @@ const fetchJson = async (path) => {
 
 const statusTone = (status) => {
   const text = String(status || "").toLowerCase();
-  if (text.includes("observed") || text.includes("watchlist")) return "positive";
-  if (text.includes("credential") || text.includes("sparse")) return "warning";
+  if (text.includes("observed") || text.includes("defined") || text.includes("active") || text.includes("prototype")) return "positive";
+  if (text.includes("baseline") || text.includes("watch") || text.includes("unresolved") || text.includes("not gap") || text.includes("caution") || text.includes("sparse")) return "warning";
   return "neutral";
 };
 
@@ -48,10 +48,11 @@ function renderPulseCard(metric, source, currentObservation, observationCount) {
   const sourceName = observed?.sourceName || source?.name;
   const sourceUrl = observed?.sourceUrl || source?.url;
   const sourceLink = sourceName && sourceUrl ? "<a href=\"" + escapeHtml(sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(sourceName) + " ↗</a>" : "";
-  const historyNote = observed && observationCount < 2 ? "History begins with this observation" : (observationCount > 1 ? observationCount + " dated observations" : "No history yet");
+  const historyNote = observed && observationCount < 2 ? "First observation — no trend call" : (observationCount < 3 ? observationCount + " dated observations — trend pending" : observationCount + " dated observations — comparable series");
+  const dataType = observed?.dataType || metric.dataType || source?.dataType || "Reviewed evidence";
   return "<article class=\"metric-card metric-card-wide\" id=\"" + escapeHtml(metric.id) + "\">" +
     "<div class=\"metric-top\"><span class=\"metric-number\">" + escapeHtml(metric.number) + " · " + escapeHtml(metric.layer) + "</span><span class=\"tag " + statusTone(metric.status) + "\">" + escapeHtml(metric.status) + "</span></div>" +
-    "<h3>" + escapeHtml(metric.title) + "</h3><p class=\"description\">" + escapeHtml(metric.description) + "</p>" +
+    "<h3>" + escapeHtml(metric.title) + "</h3><p class=\"metric-data-type\">" + escapeHtml(dataType) + "</p><p class=\"description\">" + escapeHtml(metric.description) + "</p>" +
     "<div class=\"metric-bottom\"><div class=\"metric-signal\"><strong>" + value + "</strong><span>" + escapeHtml(direction) + "</span></div>" +
     "<div class=\"metadata-row\"><span>As of <b>" + asOf + "</b></span><span>" + historyNote + "</span></div>" +
     "<p class=\"method-note\">" + escapeHtml(metric.methodology) + "</p>" +
@@ -68,7 +69,37 @@ function renderGap(item) {
 }
 
 function renderBreaker(item) {
-  return "<article class=\"breaker\"><span class=\"severity\">" + escapeHtml(item.severity) + "</span><strong>" + escapeHtml(item.title) + "</strong><p>" + escapeHtml(item.description) + "</p></article>";
+  const details = item.test ? "<dl class=\"breaker-details\"><div><dt>Test</dt><dd>" + escapeHtml(item.test) + "</dd></div><div><dt>Current state</dt><dd>" + escapeHtml(item.status) + "</dd></div><div><dt>Cadence</dt><dd>" + escapeHtml(item.cadence) + "</dd></div><div><dt>Downgrade action</dt><dd>" + escapeHtml(item.downgrade) + "</dd></div></dl>" : "";
+  return "<article class=\"breaker\"><span class=\"severity\">" + escapeHtml(item.severity) + "</span><strong>" + escapeHtml(item.title) + "</strong><p>" + escapeHtml(item.description) + "</p>" + details + "</article>";
+}
+
+function renderResearchGate(gate) {
+  return "<article class=\"research-gate\"><div class=\"research-gate-top\"><span class=\"metric-number\">" + escapeHtml(gate.number) + "</span><span class=\"tag " + escapeHtml(gate.tone || "neutral") + "\">" + escapeHtml(gate.status) + "</span></div><h3>" + escapeHtml(gate.title) + "</h3><p class=\"research-question\">" + escapeHtml(gate.question) + "</p><p class=\"research-definition\">" + escapeHtml(gate.definition) + "</p><p class=\"research-current\"><span>Current read</span>" + escapeHtml(gate.currentRead) + "</p></article>";
+}
+
+function renderCompanyReadiness(row) {
+  return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.stage) + "</td><td>" + escapeHtml(row.state) + "</td><td>" + escapeHtml(row.expectationsState) + "</td><td>" + escapeHtml(row.nextEvidence) + "</td></tr>";
+}
+
+function renderMechanics(company) {
+  const mechanics = company.mechanics;
+  if (!mechanics) return "";
+  const rows = [
+    ["Billable unit", mechanics.billableUnit],
+    ["Agentic trigger", mechanics.agenticTrigger],
+    ["Pricing architecture", mechanics.pricingArchitecture],
+    ["Incremental cost", mechanics.incrementalCost],
+    ["Leading KPI", mechanics.leadingKpi],
+    ["Proof threshold", mechanics.proofThreshold],
+    ["Time to impact", mechanics.timeToImpact],
+    ["Key risk", mechanics.keyRisk]
+  ].map(([label, value]) => "<div><dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(value) + "</dd></div>").join("");
+  const review = company.reviewUrl ? "<a href=\"" + escapeHtml(company.reviewUrl) + "\" target=\"_blank\" rel=\"noreferrer\">Full research note ↗</a>" : "";
+  return "<article class=\"mechanics-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.readiness?.stage || "Core") + "</span></div><dl class=\"mechanics-list\">" + rows + "</dl>" + review + "</article>";
+}
+
+function renderTriangulationRow(row) {
+  return "<tr><td><strong>" + escapeHtml(row.lens) + "</strong><span class=\"table-subtle\">" + escapeHtml(row.source) + "</span></td><td>" + escapeHtml(row.reading) + "</td><td>" + escapeHtml(formatDate(row.asOfDate)) + "<span class=\"table-subtle\">" + escapeHtml(row.sample) + "</span></td><td><span class=\"tag neutral\">" + escapeHtml(row.maturity) + "</span><span class=\"table-subtle\">" + escapeHtml(row.crossSourceRead) + "</span></td></tr>";
 }
 
 function renderEvidenceEntry(entry) {
@@ -82,9 +113,11 @@ function renderEvidenceEntry(entry) {
 function renderCompany(company) {
   const evidence = company.evidence ? company.evidence.map((item) => "<div><dt>" + escapeHtml(item.label) + "</dt><dd>" + escapeHtml(item.value) + "</dd></div>").join("") : "";
   const kpis = company.kpis ? "<p class=\"company-label\">Thesis-relevant KPIs</p><ul>" + company.kpis.map((kpi) => "<li>" + escapeHtml(kpi) + "</li>").join("") + "</ul>" : "";
-  const reviewedEvidence = company.evidence ? "<p class=\"company-period\">" + escapeHtml(company.period) + " · company-reported</p><dl class=\"company-evidence\">" + evidence + "</dl><p class=\"company-read\"><span>Capture read</span>" + escapeHtml(company.agenticRead) + "</p><p class=\"company-counterpoint\"><span>Counterpoint</span>" + escapeHtml(company.counterpoint) + "</p>" : kpis;
-  const sourceLinks = company.sources ? company.sources.map((item) => "<a href=\"" + item.url + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(item.label) + " ↗</a>").join("") : "<a href=\"" + company.source + "\" target=\"_blank\" rel=\"noreferrer\">Primary IR source ↗</a>";
-  return "<article class=\"company-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.state) + "</span></div><p class=\"company-mechanism\">" + escapeHtml(company.mechanism) + "</p>" + reviewedEvidence + "<div class=\"company-sources\">" + sourceLinks + "</div></article>";
+  const readiness = company.readiness ? "<p class=\"company-readiness\"><span>Decision stage " + escapeHtml(company.readiness.stage) + "</span>" + escapeHtml(company.readiness.state) + "<small>Next: " + escapeHtml(company.readiness.nextEvidence) + "</small></p>" : "";
+  const reviewedEvidence = company.evidence ? "<p class=\"company-period\">" + escapeHtml(company.period) + " · company-reported</p><dl class=\"company-evidence\">" + evidence + "</dl><p class=\"company-read\"><span>Capture read</span>" + escapeHtml(company.agenticRead) + "</p><p class=\"company-counterpoint\"><span>Counterpoint</span>" + escapeHtml(company.counterpoint) + "</p>" + readiness : kpis;
+  const sourceLinks = company.sources ? company.sources.map((item) => "<a href=\"" + escapeHtml(item.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(item.label) + " ↗</a>").join("") : "<a href=\"" + escapeHtml(company.source) + "\" target=\"_blank\" rel=\"noreferrer\">Primary IR source ↗</a>";
+  const reviewLink = company.reviewUrl ? "<a href=\"" + escapeHtml(company.reviewUrl) + "\" target=\"_blank\" rel=\"noreferrer\">Full research note ↗</a>" : "";
+  return "<article class=\"company-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.state) + "</span></div><p class=\"company-mechanism\">" + escapeHtml(company.mechanism) + "</p>" + reviewedEvidence + "<div class=\"company-sources\">" + sourceLinks + reviewLink + "</div></article>";
 }
 
 const finiteNumber = (value) => {
@@ -146,27 +179,15 @@ function renderMarketEstimate(record, snapshot) {
 
 function renderMarketValuation(record, snapshot) {
   const quote = record?.quote || {};
-  const priceTarget = record?.priceTarget || {};
   const derived = record?.derived || {};
   const providerName = snapshot?.provider?.name || "Market-data";
   const details = [];
   const price = formatUsd(quote.price);
   const forwardPe = finiteNumber(derived.forwardPriceEarnings);
-  const target = formatUsd(priceTarget.consensus);
-  const targetMedian = formatUsd(priceTarget.median);
-  const targetHigh = formatUsd(priceTarget.high);
-  const targetLow = formatUsd(priceTarget.low);
-  const targetUpside = formatPercent(derived.targetUpsidePercent);
   if (price) details.push("Price " + price);
   if (forwardPe !== null) details.push("Forward P/E " + forwardPe.toFixed(1) + "x");
-  if (target) details.push("Target " + target + (targetUpside ? " (" + targetUpside + ")" : ""));
-  else if (targetMedian && targetLow && targetHigh) details.push("Target median " + targetMedian + " · range " + targetLow + "–" + targetHigh);
-  else if (targetMedian) details.push("Target median " + targetMedian);
-  else if (targetLow && targetHigh) details.push("Target range " + targetLow + "–" + targetHigh);
-  else if (targetHigh) details.push("Target high " + targetHigh);
-  else if (targetLow) details.push("Target low " + targetLow);
   const asOf = record?.asOfDate || snapshot?.retrievedAt;
-  return "<div class=\"market-data-cell\"><span class=\"guidance-label\">" + escapeHtml(providerName) + " snapshot · " + escapeHtml(formatDate(asOf)) + "</span><span>" + escapeHtml(details.length ? details.join(" · ") : "No displayable valuation fields returned") + "</span>" + renderMarketSource(snapshot) + "</div>";
+  return "<div class=\"market-data-cell\"><span class=\"guidance-label\">" + escapeHtml(providerName) + " snapshot · " + escapeHtml(formatDate(asOf)) + "</span><span>" + escapeHtml(details.length ? details.join(" · ") : "No displayable valuation fields returned") + "</span><span class=\"market-context-note\">Price targets are supplemental context and are not used in the gap read.</span>" + renderMarketSource(snapshot) + "</div>";
 }
 
 function renderExpectationRow(row, marketSnapshot) {
@@ -181,8 +202,8 @@ function renderExpectationRow(row, marketSnapshot) {
   const estimateYearEnd = marketRecord?.annualEstimate?.fiscalDateEnding;
   const fiscalMismatch = Boolean(marketRecord && row.companyFiscalYearEnd && estimateYearEnd && !String(estimateYearEnd).endsWith(row.companyFiscalYearEnd));
   const alignmentRead = fiscalMismatch ? "Current snapshot ends " + formatDate(estimateYearEnd) + "; " + (row.companyName || row.ticker) + "'s fiscal year ends " + (row.companyFiscalYearEndLabel || row.companyFiscalYearEnd) + ". Do not compare this estimate with company guidance." : null;
-  const gapRead = marketRecord ? (alignmentRead || row.liveGapRead || providerName + " snapshot loaded; align guidance and consensus fiscal periods before a gap conclusion") : row.gapRead;
-  const tone = marketRecord && !alignmentRead && !row.liveGapRead ? "" : " caution";
+  const gapRead = !marketRecord ? "No current market context — not decision-ready." : (alignmentRead || "Fiscal period aligns, but this is a current snapshot only. Estimate-revision and valuation history are still required before a gap call.");
+  const tone = " caution";
   return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + streetEstimates + "</td><td>" + valuation + "</td><td><span class=\"read" + tone + "\"><i></i>" + escapeHtml(gapRead) + "</span></td></tr>";
 }
 
@@ -193,7 +214,7 @@ function renderProvider(provider, marketSnapshot) {
   const isLiveProvider = provider.id === marketSnapshot?.provider?.id && marketRows.length > 0;
   const status = isLiveProvider ? "Active · current snapshot" : provider.status;
   const tone = isLiveProvider ? "positive" : (provider.tone || "neutral");
-  const description = isLiveProvider ? "A current " + (marketSnapshot?.provider?.name || provider.name) + " snapshot is rendered for " + marketRows.length + " Expectations Gap ticker" + (marketRows.length === 1 ? "" : "s") + ". Review its retrieval date and fiscal-year labels before using it in a gap read." : provider.description;
+  const description = isLiveProvider ? "A current " + (marketSnapshot?.provider?.name || provider.name) + " snapshot is rendered for " + marketRows.length + " core ticker" + (marketRows.length === 1 ? "" : "s") + ". It supplies market context only: fiscal alignment, accounting convention, estimate revisions, and valuation history remain separate requirements for a gap call." : provider.description;
   return "<article class=\"provider-card\"><div class=\"provider-card-top\"><h3>" + escapeHtml(provider.name) + "</h3><span class=\"tag " + escapeHtml(tone) + "\">" + escapeHtml(status) + "</span></div><div class=\"provider-capabilities\">" + capabilities + "</div><p>" + escapeHtml(description) + "</p>" + source + "</article>";
 }
 
@@ -216,7 +237,9 @@ async function initPulse() {
     fetchJson("data/processed/mcp-registry-history.json").catch(() => ({ observations: [] })),
     fetchJson("data/processed/cloudflare-ai-bot-current.json").catch(() => null),
     fetchJson("data/processed/cloudflare-ai-bot-history.json").catch(() => ({ observations: [] })),
-    fetchJson("data/manual/enterprise-adoption-observations.json").catch(() => ({ observations: [] }))
+    fetchJson("data/manual/enterprise-adoption-observations.json").catch(() => ({ observations: [] })),
+    fetchJson("data/manual/research-gates.json"),
+    fetchJson("data/manual/triangulation.json")
   ]);
   const framework = data[0];
   const pulse = data[1];
@@ -226,6 +249,8 @@ async function initPulse() {
   const currentCloudflare = data[5];
   const cloudflareHistory = data[6];
   const manualEnterprise = data[7];
+  const researchGates = data[8];
+  const triangulation = data[9];
   const manualObservations = Array.isArray(manualEnterprise.observations) ? manualEnterprise.observations : [];
   const observations = [currentMcp, currentCloudflare, ...manualObservations].filter(Boolean);
   const histories = {
@@ -236,10 +261,13 @@ async function initPulse() {
     histories[observation.metricId] = [observation];
   });
   const observedCount = pulse.metrics.filter((metric) => observations.some((item) => item.metricId === metric.id)).length;
-  const stagedCount = pulse.metrics.length - observedCount;
+  const trendReadyCount = Object.values(histories).filter((history) => Array.isArray(history) && history.length >= 3).length;
   const mostRecent = [...observations].sort((a, b) => String(b.retrievalDate).localeCompare(String(a.retrievalDate)))[0];
   $("#last-updated").textContent = mostRecent ? formatDate(mostRecent.retrievalDate) : formatDate(pulse.asOfDate);
-  $("#confidence").textContent = observedCount + " observed / " + stagedCount + " staged";
+  $("#confidence").textContent = observedCount + " observed proxies · " + (trendReadyCount ? trendReadyCount + " trend-ready series" : "no trend-ready series");
+  $("#project-state").textContent = researchGates.projectState;
+  $("#project-note").textContent = researchGates.projectNote;
+  $("#research-gate-grid").innerHTML = researchGates.gates.map(renderResearchGate).join("");
   $("#metric-grid").innerHTML = pulse.metrics.map((metric) => {
     const observation = observations.find((item) => item.metricId === metric.id);
     const history = histories[metric.id] || [];
@@ -247,13 +275,21 @@ async function initPulse() {
   }).join("");
   $("#expectation-grid").innerHTML = framework.expectations.map(renderExpectation).join("");
   $("#gap-table-body").innerHTML = framework.gaps.map(renderGap).join("");
-  $("#breaker-grid").innerHTML = framework.breakers.map(renderBreaker).join("");
+  $("#breaker-grid").innerHTML = framework.breakers.slice(0, 3).map(renderBreaker).join("") + "<a class=\"breaker-more\" href=\"breakers.html\">See all 10 measurable thesis breakers →</a>";
+  $("#triangulation-headline").textContent = triangulation.headline;
+  $("#triangulation-summary").textContent = triangulation.summary;
+  $("#triangulation-body").innerHTML = triangulation.rows.map(renderTriangulationRow).join("");
   $("#source-list").innerHTML = sourceRegistry.map(renderSource).join("");
 }
 
 async function initCompanies() {
-  const companyData = await fetchJson("data/manual/company-kpis.json");
+  const [companyData, researchGates] = await Promise.all([
+    fetchJson("data/manual/company-kpis.json"),
+    fetchJson("data/manual/research-gates.json")
+  ]);
+  $("#company-readiness-body").innerHTML = researchGates.companies.map(renderCompanyReadiness).join("");
   $("#company-grid").innerHTML = companyData.companies.map(renderCompany).join("");
+  $("#mechanics-grid").innerHTML = companyData.companies.filter((company) => company.mechanics).map(renderMechanics).join("");
 }
 
 async function initExpectations() {
@@ -269,8 +305,8 @@ async function initExpectations() {
   const attribution = $("#market-data-attribution");
   if (marketRows.length) {
     const providerName = marketSnapshot?.provider?.name || "Market-data";
-    $("#market-data-status").textContent = providerName + " snapshot live · " + marketRows.length + " ticker" + (marketRows.length === 1 ? "" : "s");
-    $("#market-data-notice").textContent = "Management guidance remains company-issued context. The current " + providerName + " snapshot shows its retrieval date and annual fiscal period, but fiscal-year alignment is still required before a gap conclusion.";
+    $("#market-data-status").textContent = providerName + " current-context snapshot · " + marketRows.length + " ticker" + (marketRows.length === 1 ? "" : "s");
+    $("#market-data-notice").textContent = "Management guidance remains company-issued context. The current " + providerName + " snapshot shows a retrieval date and annual fiscal period, but has no retained estimate-revision or valuation-history series. It cannot independently support an expectation-gap conclusion.";
     if (attribution && marketSnapshot?.provider?.attributionText && marketSnapshot?.provider?.attributionUrl) {
       attribution.href = marketSnapshot.provider.attributionUrl;
       attribution.textContent = marketSnapshot.provider.attributionText + " ↗";
@@ -299,6 +335,102 @@ async function initMethodology() {
   $("#source-list").innerHTML = data.sources.map(renderSource).join("");
 }
 
+function formatBillions(value, maximumFractionDigits = 2) {
+  const numeric = finiteNumber(value);
+  if (numeric === null) return "—";
+  return "$" + numeric.toFixed(maximumFractionDigits).replace(/\.0+$/, "").replace(/(\.\d*?)0+$/, "$1") + "B";
+}
+
+function formatPercentPlain(value, maximumFractionDigits = 0) {
+  const numeric = finiteNumber(value);
+  if (numeric === null) return "—";
+  return numeric.toFixed(maximumFractionDigits).replace(/\.0+$/, "") + "%";
+}
+
+function calculatedScenario(scenario, baseline) {
+  const revenue2026 = finiteNumber(baseline.revenueGuideMidpointBillions) || 0;
+  const g27 = (finiteNumber(scenario.revenueGrowth?.fy2027) || 0) / 100;
+  const g28 = (finiteNumber(scenario.revenueGrowth?.fy2028) || 0) / 100;
+  const g30 = (finiteNumber(scenario.revenueGrowth?.fy2029to2030) || 0) / 100;
+  const revenue2027 = revenue2026 * (1 + g27);
+  const revenue2028 = revenue2027 * (1 + g28);
+  const revenue2030 = revenue2028 * Math.pow(1 + g30, 2);
+  const fcfMargin2030 = (finiteNumber(scenario.fcfMargin?.fy2030) || 0) / 100;
+  const fcf2030 = revenue2030 * fcfMargin2030;
+  const enterpriseValue2030 = fcf2030 * (finiteNumber(scenario.exitFcfMultiple) || 0);
+  const equityValue2030 = enterpriseValue2030 - (finiteNumber(baseline.netDebtBridgeBillions) || 0);
+  const dilutedShares = finiteNumber(baseline.dilutedShareBridgeMillions) || 0;
+  const perShare = dilutedShares > 0 ? equityValue2030 * 1000 / dilutedShares : null;
+  return { revenue2027, revenue2028, revenue2030, fcf2030, enterpriseValue2030, equityValue2030, perShare };
+}
+
+function renderModelBaseline(baseline) {
+  const marginRange = formatPercentPlain(baseline.nonGaapOperatingMarginGuideLow) + "–" + formatPercentPlain(baseline.nonGaapOperatingMarginGuideHigh);
+  const cards = [
+    ["FY2026 revenue guide midpoint", formatBillions(baseline.revenueGuideMidpointBillions), "Company-issued guidance"],
+    ["FY2026 non-GAAP operating-margin guide", marginRange, "Company-issued guidance"],
+    ["H1 operating cash flow", formatBillions(baseline.h1OperatingCashFlowBillions), "Company-reported cash flow"],
+    ["H1 capital-investment proxy", formatBillions(baseline.h1CapitalInvestmentProxyBillions), "PPE + capitalized internal-use software"],
+    ["Net-debt bridge", formatBillions(baseline.netDebtBridgeBillions), "Analyst-defined June 30 bridge"],
+    ["Diluted-share bridge", (finiteNumber(baseline.dilutedShareBridgeMillions) || 0).toFixed(0) + "M", "Guidance share-count bridge"]
+  ];
+  return cards.map(([label, value, note]) => "<article class=\"model-baseline-card\"><span>" + escapeHtml(label) + "</span><strong>" + escapeHtml(value) + "</strong><small>" + escapeHtml(note) + "</small></article>").join("");
+}
+
+function renderModelScenario(scenario, baseline, currentPrice) {
+  const calculated = calculatedScenario(scenario, baseline);
+  const growth = [scenario.revenueGrowth?.fy2027, scenario.revenueGrowth?.fy2028, scenario.revenueGrowth?.fy2029to2030].map((value) => formatPercentPlain(value)).join(" / ");
+  const valueNote = currentPrice && calculated.perShare !== null ? formatPercent(((calculated.perShare / currentPrice) - 1) * 100) + " versus current snapshot" : "Current price unavailable";
+  const value = calculated.perShare !== null ? formatUsd(calculated.perShare) : "—";
+  return "<tr><td><span class=\"tag " + escapeHtml(scenario.tone || "neutral") + "\">" + escapeHtml(scenario.title) + "</span><span class=\"table-subtle\">" + escapeHtml(scenario.thesis) + "</span></td><td>" + escapeHtml(growth) + "</td><td>" + escapeHtml(formatBillions(calculated.revenue2030)) + "</td><td>" + escapeHtml(formatPercentPlain(scenario.fcfMargin?.fy2030)) + "</td><td>" + escapeHtml(formatPercentPlain(scenario.capitalInvestmentRatio?.fy2030)) + "</td><td>" + escapeHtml((finiteNumber(scenario.exitFcfMultiple) || 0).toFixed(0) + "x") + "</td><td>" + escapeHtml(formatBillions(calculated.fcf2030)) + "</td><td>" + escapeHtml(value) + "<span class=\"table-subtle\">" + escapeHtml(valueNote) + "</span></td><td>" + escapeHtml(scenario.proof) + "</td></tr>";
+}
+
+function renderReverseExpectationRow(multiple, baseline, currentPrice, referenceRevenue) {
+  const dilutedShares = finiteNumber(baseline.dilutedShareBridgeMillions) || 0;
+  const netDebt = finiteNumber(baseline.netDebtBridgeBillions) || 0;
+  const enterpriseValue = currentPrice * dilutedShares / 1000 + netDebt;
+  const fcfRequired = enterpriseValue / multiple;
+  const marginRequired = referenceRevenue > 0 ? fcfRequired / referenceRevenue * 100 : null;
+  const interpretation = "At the stated multiple, a $" + referenceRevenue.toFixed(1) + "B FY2030 revenue base would require about " + formatPercentPlain(marginRequired, 1) + " FCF margin to support this simple enterprise-value bridge.";
+  return "<tr><td>" + escapeHtml(multiple.toFixed(0) + "x") + "</td><td>" + escapeHtml(formatBillions(enterpriseValue)) + "</td><td>" + escapeHtml(formatBillions(fcfRequired)) + "</td><td>" + escapeHtml(formatPercentPlain(marginRequired, 1)) + "</td><td>" + escapeHtml(interpretation) + "</td></tr>";
+}
+
+async function initModel() {
+  const [model, eulerpoolSnapshot, fmpSnapshot] = await Promise.all([
+    fetchJson("data/manual/akam-scenario-lab.json"),
+    fetchJson(eulerpoolSnapshotPath).catch(() => null),
+    fetchJson("data/processed/fmp-market-expectations.json").catch(() => null)
+  ]);
+  const snapshots = [eulerpoolSnapshot, fmpSnapshot];
+  const marketSnapshot = snapshots.find((snapshot) => Array.isArray(snapshot?.rows) && snapshot.rows.some((row) => row?.ticker === "AKAM" && row?.status === "observed")) || null;
+  const marketRecord = marketSnapshot?.rows?.find((row) => row?.ticker === "AKAM" && row?.status === "observed");
+  const currentPrice = finiteNumber(marketRecord?.quote?.price);
+  const attribution = $("#model-attribution");
+  $("#model-baseline-grid").innerHTML = renderModelBaseline(model.reportedBaseline);
+  $("#model-scenarios-body").innerHTML = model.scenarios.map((scenario) => renderModelScenario(scenario, model.reportedBaseline, currentPrice)).join("");
+  $("#model-source-list").innerHTML = "<div class=\"model-source-notes\">" + model.reportedBaseline.notes.map((note) => "<p>" + escapeHtml(note) + "</p>").join("") + "</div><div class=\"company-sources\">" + model.reportedBaseline.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";
+  if (currentPrice !== null) {
+    const providerName = marketSnapshot?.provider?.name || "Market-data";
+    const asOf = marketRecord?.asOfDate || marketSnapshot?.retrievedAt;
+    $("#model-status").textContent = model.status + " · Current AKAM price " + formatUsd(currentPrice) + " as of " + formatDate(asOf);
+    $("#model-notice").textContent = "The current price is used only to show the gap between a transparent FY2030 scenario bridge and today’s market context. It is not stored in the model, nor does it turn the output into a price target.";
+    if (attribution && marketSnapshot?.provider?.attributionText && marketSnapshot?.provider?.attributionUrl) {
+      attribution.href = marketSnapshot.provider.attributionUrl;
+      attribution.textContent = marketSnapshot.provider.attributionText + " ↗";
+      attribution.hidden = false;
+    }
+    const reverse = model.reverseExpectation;
+    const referenceRevenue = finiteNumber(reverse.referenceRevenueBillions) || 0;
+    $("#reverse-expectation-note").textContent = reverse.note;
+    $("#reverse-expectations-body").innerHTML = reverse.exitFcfMultiples.map((multiple) => renderReverseExpectationRow(multiple, model.reportedBaseline, currentPrice, referenceRevenue)).join("");
+  } else {
+    $("#model-status").textContent = model.status + " · Current market input unavailable";
+    $("#model-notice").textContent = "Reported baseline and scenario assumptions remain available. The reverse-expectations table requires a current attributed market snapshot and will remain blank until one is available.";
+    $("#reverse-expectation-note").textContent = "A current attributed AKAM quote is unavailable, so no reverse-expectations calculation is shown.";
+    $("#reverse-expectations-body").innerHTML = "<tr><td colspan=\"5\">Current attributed market input unavailable.</td></tr>";
+  }
+}
+
 async function boot() {
   const page = document.body.dataset.page || "pulse";
   try {
@@ -306,6 +438,7 @@ async function boot() {
     else if (page === "expectations") await initExpectations();
     else if (page === "breakers") await initBreakers();
     else if (page === "methodology") await initMethodology();
+    else if (page === "model") await initModel();
     else await initPulse();
   } catch (error) {
     const target = document.querySelector("[aria-live]") || document.querySelector(".source-list") || document.querySelector("main");

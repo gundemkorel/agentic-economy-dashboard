@@ -14,8 +14,20 @@ Track A asks whether Wave 2 is accelerating through macro and industry evidence.
 2. Enterprise Adoption & Control: automation composition, enterprise AI transactions, AI data transfer, policy, identity, and security controls.
 3. Company Capture: a small number of thesis-relevant company KPIs.
 4. Market Expectations: estimate revisions, valuation, and stock performance with a consistent source and fiscal convention.
-5. Expectation Gap: compare the first four layers; do not produce a numerical gap score without enough clean history.
+5. Gap Readiness: compare the first four layers; do not call an expectation gap without enough clean history.
 6. Thesis Breakers: define and review contrary evidence explicitly.
+
+## Research decision gates
+
+The dashboard uses a sequence rather than a composite score:
+
+1. Macro trend: at least three comparable observations before classifying acceleration, stability, or deceleration.
+2. Causal mechanism: name the billable unit, agentic trigger, price architecture, incremental cost, proof threshold, time to impact, and company-specific risk.
+3. Company capture: require dated reported revenue-quality, margin, retention, or cash-flow evidence; product relevance is not capture.
+4. Expectation alignment: require fiscal alignment, accounting convention, at least two point-in-time consensus observations, and valuation history.
+5. Scenario model: keep reported facts, consensus, and our own assumptions structurally separate. Scenarios expose required economics; they do not create price targets.
+
+No company is called investable merely because it advances through an early gate.
 
 ## Data distinctions
 
@@ -33,9 +45,9 @@ Qualitative product or company disclosures are valid evidence when no reproducib
 
 ## Market-expectation snapshot boundary
 
-The current Eulerpool adapter publishes a single current, daily static snapshot for the small Expectations Gap watchlist. It must retain the visible `Data by Eulerpool` attribution beside each derived field. Free-plan quote inputs can be delayed or end-of-day, so the dashboard treats them as dated inputs rather than live prices. It stores no raw response or public vendor-data history.
+The current Eulerpool adapter publishes a single current, daily static snapshot for the small Gap Readiness watchlist. It must retain the visible `Data by Eulerpool` attribution beside each derived field. Free-plan quote inputs can be delayed or end-of-day, so the dashboard treats them as dated inputs rather than live prices. It stores no raw response or public vendor-data history.
 
-Annual EPS convention and fiscal period are provider-supplied fields, not automatically comparable to company guidance. The dashboard now checks the snapshot's fiscal-date ending against the company fiscal year-end configured for each ticker and refuses a guide-versus-consensus read when they differ. Forward P/E and target upside are mechanical calculations only. They do not create a gap score or an investment conclusion.
+Annual EPS convention and fiscal period are provider-supplied fields, not automatically comparable to company guidance. The dashboard checks the snapshot's fiscal-date ending against the company fiscal year-end configured for each ticker and refuses a guide-versus-consensus read when they differ. A current snapshot alone cannot establish estimate-revision direction or valuation history. Forward P/E is current market context; price targets are supplemental context and are not used to establish a gap score or investment conclusion.
 
 ## Source interpretation
 
@@ -50,3 +62,11 @@ Cloudflare's initial AI-bot observation is particularly constrained: it is a `MI
 The initial backfill target is January 2026 to the current date where legitimate source history exists. Sparse, date-stamped time series are preferable to synthetic monthly data.
 
 The rolling evidence log is complementary to the time series. It records material confirmations, counter-evidence, and unresolved observations without collapsing them into an early composite score.
+
+## Thesis-breaker discipline
+
+Every breaker must identify a measurable test, current status, cadence, and downgrade action. Separate macro failure (Wave 2 does not develop) from monetization failure (the activity is real but bundled, commoditized, or internalized) and company failure (another supplier captures the economics).
+
+## Definitions
+
+The working definitions for Wave 1–3, agentic activity, AI bots, AI fetchers, AI mediation, revenue elasticity, action intensity, expectation gap, and scenario assumptions live in [DEFINITIONS.md](DEFINITIONS.md).

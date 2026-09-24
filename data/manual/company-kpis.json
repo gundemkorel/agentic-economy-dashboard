@@ -15,6 +15,22 @@
       ],
       "agenticRead": "CIS growth and commitments support an AI-infrastructure capture hypothesis; more granular agent-traffic controls improve product fit and measurement. Management does not separately report agent-driven revenue, adoption, pricing, or ARR.",
       "counterpoint": "Delivery and other cloud-applications revenue declined 6% YoY and non-GAAP operating margin was 25%, down five points. The 10-Q expects AI / cloud capacity investment to raise future capital and operating costs.",
+      "readiness": {
+        "stage": "3 / 5",
+        "state": "Early capture evidence",
+        "nextEvidence": "CIS commitment conversion, agent-control attach or pricing, and a credible free-cash-flow trajectory after capacity investment."
+      },
+      "mechanics": {
+        "billableUnit": "Cloud infrastructure compute / storage / partner solutions, plus security and delivery contracts.",
+        "agenticTrigger": "More action traffic, edge inference, security inspections, and bot / agent controls.",
+        "pricingArchitecture": "Multi-year solution contracts with cloud and traffic usage; no disclosed agent-specific price or attach rate.",
+        "incrementalCost": "Co-location, server and memory, bandwidth, network build-out, partner costs, and depreciation.",
+        "leadingKpi": "CIS revenue and commitment conversion; security growth; delivery trend; operating cash flow versus capital investment.",
+        "proofThreshold": "Commitments convert into recurring revenue while agent-control monetization and cash returns become measurable.",
+        "timeToImpact": "Now to 24 months",
+        "keyRisk": "Capacity intensity or renewal pricing erodes the economics before AI-related demand becomes high-margin."
+      },
+      "reviewUrl": "https://github.com/gundemkorel/agentic-economy-dashboard/blob/main/companies/AKAM.md",
       "sources": [
         { "label": "Q2 2026 results", "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results" },
         { "label": "Q2 2026 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm" },
@@ -34,6 +50,22 @@
       ],
       "agenticRead": "Elastic Cloud is largely consumption-based and grew 20%; agentic Kubernetes investigations and MCP skills create a plausible usage path. Elastic does not disclose agent-specific revenue, usage, or pricing.",
       "counterpoint": "Total gross margin fell to 74% from 77% as cloud hosting costs rose faster than subscription revenue. The live market snapshot has a different fiscal-year end from Elastic guidance, so it cannot yet support a guide-versus-consensus read.",
+      "readiness": {
+        "stage": "2 / 5",
+        "state": "Mechanism and consumption exposure",
+        "nextEvidence": "Agent-specific cloud usage or pricing, retention, and cloud margin / cash-flow proof."
+      },
+      "mechanics": {
+        "billableUnit": "Elastic Cloud consumption and search / observability subscriptions.",
+        "agenticTrigger": "Agent retrieval, vector search, observability, and investigation workloads create more query and data activity.",
+        "pricingArchitecture": "Cloud is predominantly consumption-based; agent-specific pricing and execution volume are unreported.",
+        "incrementalCost": "Cloud hosting and infrastructure costs that currently pressure gross margin.",
+        "leadingKpi": "Elastic Cloud growth, cRPO, net retention / usage disclosure, subscription margin, and free-cash-flow margin.",
+        "proofThreshold": "Agent-related workload lifts durable cloud consumption or retention without worsening the cloud-margin and cash profile.",
+        "timeToImpact": "6 to 24 months",
+        "keyRisk": "Higher usage is absorbed by hosting costs or bundled into an existing platform price."
+      },
+      "reviewUrl": "https://github.com/gundemkorel/agentic-economy-dashboard/blob/main/companies/ESTC.md",
       "sources": [
         { "label": "Q1 FY2027 results", "url": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/" },
         { "label": "Q1 FY2027 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000054/estc-20260731.htm" }
@@ -52,6 +84,22 @@
       ],
       "agenticRead": "Logs consumption, Autonomous SRE / Cloud SRE / Agent Building, and the proposed Arize acquisition create a plausible AI-observability capture path. None is disclosed as agent-specific ARR or revenue.",
       "counterpoint": "Subscription gross margin declined to 85% from 86% as cloud hosting costs rose. Management expects the proposed Arize deal to dilute FY2027 non-GAAP operating margin, and the live market snapshot is not fiscal-year aligned with company guidance.",
+      "readiness": {
+        "stage": "2 / 5",
+        "state": "Mechanism and usage evidence",
+        "nextEvidence": "Agent-specific ARR or consumption, post-Arize margin outcome, and fiscal-aligned market context."
+      },
+      "mechanics": {
+        "billableUnit": "SaaS ARR and usage-linked logs / observability consumption.",
+        "agenticTrigger": "Autonomous software creates more logs, traces, exceptions, and a need for AI observability and control.",
+        "pricingArchitecture": "Subscription and consumption components; no disclosed agent-specific package, price, or retention cohort.",
+        "incrementalCost": "Cloud-hosting costs, product investment, and potential acquisition / integration expenses.",
+        "leadingKpi": "Logs consumption, ARR / net-new ARR, AI-observability adoption, subscription gross margin, and free-cash-flow margin.",
+        "proofThreshold": "Agent-specific workload produces sustained ARR or usage and post-acquisition growth outweighs margin dilution.",
+        "timeToImpact": "6 to 24 months",
+        "keyRisk": "Observability is bundled by cloud platforms or higher telemetry volume carries insufficient margin."
+      },
+      "reviewUrl": "https://github.com/gundemkorel/agentic-economy-dashboard/blob/main/companies/DT.md",
       "sources": [
         { "label": "Q1 FY2027 results", "url": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results" },
         { "label": "Q1 FY2027 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1773383/000177338326000050/dt-20260630.htm" },
@@ -71,6 +119,22 @@
       ],
       "agenticRead": "F5's August AI Gateway update combines model access, MCP agent-to-tool governance, and guardrails at a potential enforcement point. This establishes product relevance, not commercial adoption or monetization.",
       "counterpoint": "Q3 growth was led by systems; software grew 7% and services 3%. AI Gateway revenue, attach, customer count, and usage are unreported; the live snapshot uses a different fiscal-year end from F5 guidance.",
+      "readiness": {
+        "stage": "2 / 5",
+        "state": "Product relevance only",
+        "nextEvidence": "AI Gateway adoption, attach, pricing, revenue mix, and fiscal-aligned market context."
+      },
+      "mechanics": {
+        "billableUnit": "AI Gateway, security, software, and application-delivery products / systems.",
+        "agenticTrigger": "Enterprise agents require model access controls, MCP tool governance, guardrails, and policy enforcement.",
+        "pricingArchitecture": "Product, software, and services mix; no disclosed agent-gateway price, customer count, or attach rate.",
+        "incrementalCost": "Go-to-market, R&D, support, and potential mix pressure between systems and software.",
+        "leadingKpi": "AI Gateway adoption, software / security mix, product growth, customer attach, and margin profile.",
+        "proofThreshold": "Gateway demand appears in paid adoption, attach, recurring software mix, or disclosed revenue rather than product releases alone.",
+        "timeToImpact": "12 to 36 months",
+        "keyRisk": "The gateway becomes a bundled feature or enterprise standardization favors a hyperscaler-native control plane."
+      },
+      "reviewUrl": "https://github.com/gundemkorel/agentic-economy-dashboard/blob/main/companies/FFIV.md",
       "sources": [
         { "label": "Q3 FY2026 results", "url": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx" },
         { "label": "Q3 FY2026 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1048695/000104869526000067/ffiv-20260630.htm" },

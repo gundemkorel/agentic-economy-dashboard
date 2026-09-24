@@ -1,0 +1,72 @@
+{
+  "asOfDate": "2026-09-24",
+  "title": "Akamai scenario lab",
+  "status": "Prototype — assumptions, not a recommendation",
+  "purpose": "Expose the revenue, cash-flow, and valuation conditions required for the market to be right or wrong about Akamai's cloud-infrastructure and agent-control opportunity. This is not a price target, a forecast, or analyst consensus.",
+  "reportedBaseline": {
+    "revenueGuideMidpointBillions": 4.4875,
+    "nonGaapOperatingMarginGuideLow": 25,
+    "nonGaapOperatingMarginGuideHigh": 26,
+    "h1OperatingCashFlowBillions": 0.638774,
+    "h1CapitalInvestmentProxyBillions": 0.4176,
+    "netDebtBridgeBillions": 2.946523,
+    "dilutedShareBridgeMillions": 150,
+    "notes": [
+      "FY2026 revenue and non-GAAP operating-margin guidance are company-issued midpoints / ranges as of the Q2 2026 release.",
+      "The H1 capital-investment proxy is purchases of property and equipment plus capitalization of internal-use software. It is not a company-defined free-cash-flow measure.",
+      "The net-debt bridge uses June 30 cash, cash equivalents, and marketable securities less convertible senior notes. It does not project future cash, debt, dilution, hedges, buybacks, or convertibility effects.",
+      "The current share price is read only from the attributed current market snapshot at render time; no vendor price is stored in this scenario file."
+    ],
+    "sources": [
+      {
+        "label": "Akamai Q2 2026 results",
+        "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
+      },
+      {
+        "label": "Akamai Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm"
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "no-wave-2",
+      "title": "A — No meaningful Wave 2",
+      "tone": "caution",
+      "thesis": "CIS grows but does not create a durable incremental profit pool; delivery pressure and capacity costs dominate.",
+      "revenueGrowth": { "fy2027": 3, "fy2028": 3, "fy2029to2030": 3 },
+      "fcfMargin": { "fy2027": 9, "fy2028": 10, "fy2030": 11 },
+      "capitalInvestmentRatio": { "fy2027": 11, "fy2028": 10, "fy2030": 9 },
+      "exitFcfMultiple": 14,
+      "proof": "CIS commitments fail to convert at attractive returns; delivery pricing or cloud-capacity costs outweigh growth."
+    },
+    {
+      "id": "material-wave-2",
+      "title": "B — Material Wave 2",
+      "tone": "neutral",
+      "thesis": "CIS, security, and control-plane products grow faster than the legacy delivery drag, while capacity spending becomes more productive.",
+      "revenueGrowth": { "fy2027": 6, "fy2028": 7, "fy2029to2030": 7 },
+      "fcfMargin": { "fy2027": 11, "fy2028": 13, "fy2030": 15 },
+      "capitalInvestmentRatio": { "fy2027": 12, "fy2028": 10, "fy2030": 8 },
+      "exitFcfMultiple": 20,
+      "proof": "CIS commitment conversion, agent-control attach or pricing, and free-cash-flow recovery become visible in reported results."
+    },
+    {
+      "id": "strong-agentic-expansion",
+      "title": "C — Strong agentic expansion",
+      "tone": "positive",
+      "thesis": "Akamai becomes a scaled, differentiated edge-inference and control-plane beneficiary; returns on capacity investment and pricing power improve materially.",
+      "revenueGrowth": { "fy2027": 10, "fy2028": 12, "fy2029to2030": 12 },
+      "fcfMargin": { "fy2027": 10, "fy2028": 14, "fy2030": 20 },
+      "capitalInvestmentRatio": { "fy2027": 14, "fy2028": 11, "fy2030": 8 },
+      "exitFcfMultiple": 25,
+      "proof": "Agentic workloads become disclosed, paid, high-retention demand and capacity investment earns an improving cash return."
+    }
+  ],
+  "reverseExpectation": {
+    "horizon": "FY2030",
+    "exitFcfMultiples": [15, 20, 25],
+    "referenceRevenueBillions": 6,
+    "note": "For each selected FY2030 FCF multiple, the lab derives the FCF required to support the current market enterprise value, then expresses it as a margin on a deliberately simple $6.0B revenue reference. This is a reverse-expectations sensitivity, not a DCF."
+  }
+}

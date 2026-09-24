@@ -194,7 +194,7 @@ const snapshot = {
     retention: "Current normalized snapshot only; no raw response and no historical FMP archive are stored in this repository."
   },
   asOfDate,
-  methodology: "For each current Expectations Gap ticker, this snapshot requests the FMP annual analyst-estimates, quote, and price-target-consensus endpoints. It selects the nearest current or future dated annual estimate when dated records are returned. Forward P/E is calculated only as current quote price divided by positive annual consensus EPS. Price-target upside is a mechanical comparison to the quote, not an investment conclusion. Management guidance is not merged with consensus automatically; fiscal-period alignment remains a human review step.",
+  methodology: "For each current Gap Readiness ticker, this snapshot requests the FMP annual analyst-estimates, quote, and price-target-consensus endpoints. It selects the nearest current or future dated annual estimate when dated records are returned. Forward P/E is calculated only as current quote price divided by positive annual consensus EPS. Price-target data is supplemental context, not a gap conclusion. Management guidance is not merged with consensus automatically; fiscal-period alignment remains a human review step. A current snapshot does not provide revision or valuation history.",
   requestedSymbols: tickers,
   unavailableSymbols,
   rows

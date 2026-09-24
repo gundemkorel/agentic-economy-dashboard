@@ -1,9 +1,9 @@
 {
   "meta": {
-    "lastUpdated": "2026-09-23T00:00:00Z",
-    "release": "baseline-0.1",
-    "confidence": "Baseline only",
-    "notes": "Initial structure and watchlist. Numeric values are directional placeholders until the first dated ingestion pass. Replace observations in this file without changing the UI."
+    "lastUpdated": "2026-09-24T00:00:00Z",
+    "release": "decision-gates-0.2",
+    "confidence": "Baseline observations; no trend call",
+    "notes": "The dashboard separates first observations, comparable series, company-reported actuals, consensus context, and scenario assumptions. Never infer a trend or expectation gap from a single category."
   },
   "layers": [
     {
@@ -13,10 +13,8 @@
       "description": "Are autonomous systems creating more requests, tool calls, data movement, traces, and machine-to-machine communication?",
       "status": "Build series",
       "tone": "positive",
-      "signal": "Pending",
-      "direction": "Evidence forming",
-      "progressLabel": "Coverage readiness",
-      "progress": 28,
+      "signal": "Baseline",
+      "direction": "Baseline observations",
       "sources": [
         { "label": "Cloudflare Radar", "url": "https://radar.cloudflare.com/" },
         { "label": "Fastly research", "url": "https://www.fastly.com/resources" },
@@ -31,9 +29,7 @@
       "status": "Observe",
       "tone": "neutral",
       "signal": "Early",
-      "direction": "Mixed evidence",
-      "progressLabel": "Coverage readiness",
-      "progress": 22,
+      "direction": "Mixed, non-comparable evidence",
       "sources": [
         { "label": "Anthropic Economic Index", "url": "https://www.anthropic.com/economic-index" },
         { "label": "Zscaler insights", "url": "https://www.zscaler.com/resources" },
@@ -47,31 +43,152 @@
       "description": "Which public companies convert agentic workload growth into durable revenue, margin, retention, or free-cash-flow improvement?",
       "status": "Watchlist",
       "tone": "accent",
-      "signal": "Unpriced?",
-      "direction": "Needs earnings proof",
-      "progressLabel": "Coverage readiness",
-      "progress": 18,
+      "signal": "Unproven",
+      "direction": "Needs reported economics",
       "sources": [
         { "label": "Akamai IR", "url": "https://www.ir.akamai.com/" },
         { "label": "Elastic IR", "url": "https://ir.elastic.co/" },
-        { "label": "DigitalOcean IR", "url": "https://investors.digitalocean.com/" }
+        { "label": "Dynatrace IR", "url": "https://ir.dynatrace.com/" }
       ]
     }
   ],
   "expectations": [
-    { "theme": "AI infrastructure is already priced", "assumption": "Consensus recognizes training and inference demand, but may underweight the second-order request, telemetry, security, and data footprint of agents.", "watchlist": "Watch: AKAM · FSLY · NET" },
-    { "theme": "Security spend follows risk", "assumption": "Enterprise controls may become a budget line only after identity, data-loss, and agent-permission incidents become visible.", "watchlist": "Watch: ZS · PANW · CRWD" },
-    { "theme": "Application vendors capture first", "assumption": "The application layer may retain the highest willingness-to-pay while infrastructure remains a cost center. This is the key counter-case.", "watchlist": "Watch: ESTC · DT · DDOG" }
+    {
+      "theme": "Research question — is infrastructure already priced?",
+      "assumption": "Test whether market models recognize the second-order request, telemetry, security, and data footprint of agents. Do not presume that they do not.",
+      "watchlist": "Test: AKAM · FSLY · NET"
+    },
+    {
+      "theme": "Research question — when does control spend monetize?",
+      "assumption": "Determine whether identity, data-loss, and agent-permission risk leads to paid control-plane adoption rather than bundled features or deferred spending.",
+      "watchlist": "Test: ZS · PANW · CRWD"
+    },
+    {
+      "theme": "Counter-case — applications capture the value",
+      "assumption": "Test whether willingness to pay remains at the application layer while infrastructure is treated as a cost center. This is a live counter-case, not a bearish afterthought.",
+      "watchlist": "Test: ESTC · DT · DDOG"
+    }
   ],
   "gaps": [
-    { "theme": "Machine requests", "evidence": "No dated series yet", "consensus": "Mostly implicit", "read": "Build measurement", "readTone": "" },
-    { "theme": "Agent governance", "evidence": "Product releases / early controls", "consensus": "Low-to-medium", "read": "Potential gap", "readTone": "" },
-    { "theme": "Infrastructure capture", "evidence": "Company-specific proof required", "consensus": "Varies by name", "read": "Do not generalize", "readTone": "caution" },
-    { "theme": "Security externality", "evidence": "Incident and policy series pending", "consensus": "Likely under-modeled", "read": "Watch for catalyst", "readTone": "" }
+    {
+      "theme": "Machine activity",
+      "evidence": "At least three comparable observations across independent lenses",
+      "consensus": "No company-level expectation read applies until a macro trend is established",
+      "read": "Baseline only — no gap call",
+      "readTone": "caution"
+    },
+    {
+      "theme": "Agent governance",
+      "evidence": "Paid adoption, attach, renewal, or price realization—not a product launch alone",
+      "consensus": "Fiscal-aligned consensus and valuation history",
+      "read": "Research question — unproven",
+      "readTone": "caution"
+    },
+    {
+      "theme": "Infrastructure capture",
+      "evidence": "Revenue conversion plus margin and cash-return evidence by company",
+      "consensus": "At least two point-in-time estimates and a multiple-history view",
+      "read": "Company-by-company only",
+      "readTone": "caution"
+    },
+    {
+      "theme": "Security externality",
+      "evidence": "Recurring incidents, policy change, and paid enterprise-control adoption",
+      "consensus": "Estimate revisions after validated commercial evidence",
+      "read": "No conclusion — track catalysts",
+      "readTone": "caution"
+    }
   ],
   "breakers": [
-    { "severity": "Breaker 01 · macro", "title": "Agents stay assistive, not operational", "description": "Usage grows, but humans remain in the loop for every meaningful action; machine actions per intent fail to compound." },
-    { "severity": "Breaker 02 · economics", "title": "Consumption is bundled away", "description": "Platforms absorb traffic, logs, and security events into flat-price products, preventing infrastructure vendors from capturing the activity." },
-    { "severity": "Breaker 03 · company", "title": "Target companies miss the mix shift", "description": "Wave 2 grows, but workloads consolidate into hyperscaler-native services or accrue to companies outside the watchlist." }
+    {
+      "severity": "Breaker 01 · macro",
+      "title": "Action-oriented activity does not compound",
+      "description": "Generic bot traffic can rise while fetcher, tool, or action-oriented share stays flat or falls.",
+      "test": "After three comparable observations, action-oriented measures fail to improve while generic AI-bot activity grows.",
+      "status": "Unresolved — only baseline observations",
+      "cadence": "Weekly / periodic",
+      "downgrade": "Do not classify a Wave-2 activity acceleration."
+    },
+    {
+      "severity": "Breaker 02 · adoption",
+      "title": "Agents remain assistive, not operational",
+      "description": "Usage grows, but humans remain in the loop for every material action and autonomous workflows fail to deepen.",
+      "test": "Long-running-task, automation, and enterprise deployment evidence does not improve across new source periods.",
+      "status": "Unresolved — qualitative baseline",
+      "cadence": "Monthly / periodic",
+      "downgrade": "Lower the machine-actions-per-intent assumption."
+    },
+    {
+      "severity": "Breaker 03 · mediation",
+      "title": "AI mediation stays narrow",
+      "description": "Models create useful outputs but do not become a material processing layer for routine enterprise events.",
+      "test": "Enterprise AI transaction, data-transfer, model-gateway, or workflow evidence stalls outside a small set of use cases.",
+      "status": "Unresolved — sparse source coverage",
+      "cadence": "Monthly / quarterly",
+      "downgrade": "Treat AI-mediated existing activity as a niche, not a second multiplier."
+    },
+    {
+      "severity": "Breaker 04 · market structure",
+      "title": "Hyperscalers internalize the workload",
+      "description": "Agentic workloads stay within vertically integrated clouds or model platforms rather than using independent toll roads.",
+      "test": "Independent candidates lack usage, attach, or revenue evidence while native cloud services capture the related spend.",
+      "status": "Watch — no comparative capture proof",
+      "cadence": "Quarterly",
+      "downgrade": "Reduce independent-infrastructure exposure assumptions."
+    },
+    {
+      "severity": "Breaker 05 · pricing",
+      "title": "Consumption is bundled away",
+      "description": "Platforms absorb traffic, logs, and security events into flat-price products, preventing incremental monetization.",
+      "test": "Product launches or usage growth occur without disclosed attach, price realization, retention, or revenue acceleration.",
+      "status": "Counterevidence present for all core candidates",
+      "cadence": "Quarterly",
+      "downgrade": "Do not attribute incremental activity to shareholder capture."
+    },
+    {
+      "severity": "Breaker 06 · unit economics",
+      "title": "Pricing falls faster than volume rises",
+      "description": "AI-related workload grows, but renewal pressure or commodity pricing eliminates revenue leverage.",
+      "test": "Traffic or consumption rises while renewal pricing, revenue per unit, or mix deteriorates.",
+      "status": "Watch — Akamai delivery pricing pressure is a relevant warning",
+      "cadence": "Quarterly",
+      "downgrade": "Use lower revenue-elasticity and valuation assumptions."
+    },
+    {
+      "severity": "Breaker 07 · capex",
+      "title": "Capacity investment destroys cash returns",
+      "description": "Network, cloud, and AI capacity spending absorbs the benefit of faster revenue growth.",
+      "test": "Capital investment, hosting, co-location, or depreciation rises faster than revenue and cash flow over multiple periods.",
+      "status": "Watch — explicit Akamai and cloud-hosting cost warnings",
+      "cadence": "Quarterly",
+      "downgrade": "Require a higher cash-return threshold before a capture upgrade."
+    },
+    {
+      "severity": "Breaker 08 · governance",
+      "title": "Enterprises restrict autonomy",
+      "description": "Security, legal, identity, or liability concerns keep deployments read-only or tightly limited.",
+      "test": "Control products are announced but trusted-action deployments, paid governance adoption, or permission scope do not grow.",
+      "status": "Unresolved — product readiness is not deployment evidence",
+      "cadence": "Monthly / quarterly",
+      "downgrade": "Lengthen time-to-impact assumptions for identity, security, and communication layers."
+    },
+    {
+      "severity": "Breaker 09 · commoditization",
+      "title": "Infrastructure demand has no moat",
+      "description": "Usage rises but the service becomes interchangeable and surplus economics flow to buyers.",
+      "test": "Growth is accompanied by falling gross margin, lower NRR, weak RPO, or lack of retention / pricing disclosure.",
+      "status": "Watch — company-specific proof required",
+      "cadence": "Quarterly",
+      "downgrade": "Do not assign high incremental margins or durable multiples."
+    },
+    {
+      "severity": "Breaker 10 · company",
+      "title": "The target company misses the mix shift",
+      "description": "Wave 2 develops, but economics accrue to a different provider or layer of the stack.",
+      "test": "Macro and peer signals improve while the candidate’s relevant KPI, mix, or cash return does not.",
+      "status": "Watch — separate theme success from company success",
+      "cadence": "Quarterly",
+      "downgrade": "Remove the company from the core queue without rejecting the macro thesis."
+    }
   ]
 }

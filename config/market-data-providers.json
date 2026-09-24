@@ -15,10 +15,10 @@
     {
       "id": "eulerpool",
       "name": "Eulerpool",
-      "status": "Configured · first snapshot pending",
-      "tone": "warning",
+      "status": "Configured · current snapshot only",
+      "tone": "neutral",
       "capabilities": ["Forward EPS and revenue", "Price targets", "Delayed/EOD market price inputs"],
-      "description": "The primary compact-watchlist integration is limited to a current daily snapshot for this personal, non-commercial dashboard. Its public data cells visibly link to Data by Eulerpool. The build keeps no raw response, Git-tracked vendor data, or vendor-data history.",
+      "description": "The primary compact-watchlist integration is limited to an attributed current daily snapshot for this personal, non-commercial dashboard. It supplies market context, not a revision series. The build keeps no raw response, Git-tracked vendor data, or vendor-data history.",
       "sourceLabel": "Eulerpool API pricing and attribution terms",
       "sourceUrl": "https://eulerpool.com/financial-data-api/pricing"
     },

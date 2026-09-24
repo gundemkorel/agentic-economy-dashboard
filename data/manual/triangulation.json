@@ -1,0 +1,61 @@
+{
+  "asOfDate": "2026-09-24",
+  "headline": "No all-source direction call yet",
+  "summary": "The sources observe different populations, periods, and definitions. They are retained side by side to expose disagreement; they must not be averaged into an agent-activity index.",
+  "rows": [
+    {
+      "lens": "Network activity",
+      "source": "Cloudflare Radar",
+      "reading": "30-day AI-bot index 72.4; -10.7% versus the preceding 30-day control window.",
+      "asOfDate": "2026-09-23",
+      "sample": "Cloudflare network; MIN0_MAX-normalized index",
+      "maturity": "First scheduled observation",
+      "crossSourceRead": "Useful comparable within-source reading, but neither raw volume nor all agent activity."
+    },
+    {
+      "lens": "Action orientation",
+      "source": "Fastly research",
+      "reading": "15% of AI requests classified as fetchers; AI requests +30% from January to May.",
+      "asOfDate": "2026-05-31",
+      "sample": "Fixed Fastly customer cohort; source-defined crawler/fetcher labels",
+      "maturity": "Periodic baseline",
+      "crossSourceRead": "Fetcher share is more relevant than generic bot volume, but it is not comparable to Cloudflare's index."
+    },
+    {
+      "lens": "Commerce / security traffic",
+      "source": "Akamai research",
+      "reading": "47.9% of commerce traffic identified as AI bots as of December 2025.",
+      "asOfDate": "2025-12-31",
+      "sample": "Akamai commerce traffic; source-defined AI bots include unwanted traffic",
+      "maturity": "Industry-specific baseline",
+      "crossSourceRead": "Shows material nonhuman traffic in one vertical, not productive agent activity or a cross-network trend."
+    },
+    {
+      "lens": "Enterprise AI activity",
+      "source": "Zscaler ThreatLabz",
+      "reading": "Enterprise AI/ML transactions +83% in calendar 2025 versus 2024.",
+      "asOfDate": "2025-12-31",
+      "sample": "Zscaler customer base and security-control plane",
+      "maturity": "Annual baseline",
+      "crossSourceRead": "Enterprise sample supports adoption relevance, but it does not isolate autonomous agent actions."
+    },
+    {
+      "lens": "Workflow depth",
+      "source": "Anthropic Economic Index",
+      "reading": "Long-running agentic tasks increasingly appear in Claude Code and Cowork sessions; artifact yield was reported for a sampled product period.",
+      "asOfDate": "2026-06-26",
+      "sample": "Anthropic product-usage sample",
+      "maturity": "Periodic qualitative baseline",
+      "crossSourceRead": "Supports deeper workflows in one product sample; it is not a census of enterprise autonomy or inference volume."
+    },
+    {
+      "lens": "Tool ecosystem supply",
+      "source": "MCP Registry",
+      "reading": "114,533 registered servers in the first automated snapshot.",
+      "asOfDate": "2026-09-24",
+      "sample": "Public registry records",
+      "maturity": "First scheduled observation",
+      "crossSourceRead": "Shows available integration surfaces, not active production use or machine-action volume."
+    }
+  ]
+}

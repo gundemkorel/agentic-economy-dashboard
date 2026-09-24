@@ -1,0 +1,91 @@
+{
+  "asOfDate": "2026-09-24",
+  "projectState": "Evidence base — no investment conclusion",
+  "projectNote": "A company becomes research-ready only by passing each gate in sequence. A product announcement, a single traffic proxy, or a current price target cannot skip a gate.",
+  "gates": [
+    {
+      "number": "01",
+      "id": "macro-series",
+      "title": "Macro trend",
+      "question": "Do independent, comparable sources show action-oriented machine activity accelerating?",
+      "status": "Baseline only",
+      "tone": "warning",
+      "definition": "Classify a trend only after at least three comparable observations. Treat source disagreement as research, not an average.",
+      "currentRead": "Cloudflare and MCP automated histories each begin with one observation; the remaining signals are periodic source baselines."
+    },
+    {
+      "number": "02",
+      "id": "causal-mechanism",
+      "title": "Causal mechanism",
+      "question": "Would more agentic activity mechanically create a scarce, billable resource for the company?",
+      "status": "Defined",
+      "tone": "positive",
+      "definition": "Name the billable unit, agentic trigger, price architecture, incremental cost, and the condition that would prove or break the mechanism.",
+      "currentRead": "The four core candidates now have a structured mechanism map; product relevance is not counted as monetization."
+    },
+    {
+      "number": "03",
+      "id": "company-capture",
+      "title": "Company capture",
+      "question": "Is the company reporting the revenue quality, margin, retention, or cash-flow evidence implied by the mechanism?",
+      "status": "Early / unproven",
+      "tone": "warning",
+      "definition": "Use dated, company-reported KPIs and retain contrary evidence. Require an agent-specific or clearly causal commercial signal before upgrading the state.",
+      "currentRead": "Akamai, Elastic, Dynatrace, and F5 have plausible routes and dated evidence, but none reports agent-specific revenue or economics."
+    },
+    {
+      "number": "04",
+      "id": "expectation-alignment",
+      "title": "Expectation alignment",
+      "question": "Are fiscal-period-aligned estimates and valuation history moving more slowly than operating evidence?",
+      "status": "Not gap-ready",
+      "tone": "warning",
+      "definition": "A genuine expectation-gap call needs fiscal alignment, explicit accounting convention, and at least two point-in-time consensus and valuation observations.",
+      "currentRead": "The daily Eulerpool view supplies current context. Only Akamai aligns to the displayed annual period, and no provider-backed revision or multiple history is retained."
+    },
+    {
+      "number": "05",
+      "id": "scenario-model",
+      "title": "Scenario model",
+      "question": "What operating and cash-flow path must occur for the market to be right, wrong, or indifferent?",
+      "status": "Akamai prototype",
+      "tone": "neutral",
+      "definition": "Keep reported facts, consensus, and our assumptions separate. Use scenarios to expose the required economics, not to manufacture a price target.",
+      "currentRead": "The first transparent assumption lab is Akamai; other core candidates remain unmodeled until their capture and market-data gates improve."
+    }
+  ],
+  "companies": [
+    {
+      "ticker": "AKAM",
+      "stage": "3 / 5",
+      "state": "Early capture evidence",
+      "nextEvidence": "CIS commitment conversion, agent-control attach or pricing, and a credible free-cash-flow trajectory after capacity investment.",
+      "expectationsState": "Fiscal period aligns, but no revision series",
+      "modelState": "Prototype scenario lab"
+    },
+    {
+      "ticker": "ESTC",
+      "stage": "2 / 5",
+      "state": "Mechanism and consumption exposure",
+      "nextEvidence": "Agent-specific cloud usage or pricing, retention, and cloud margin / cash-flow proof.",
+      "expectationsState": "Current provider fiscal period is misaligned",
+      "modelState": "Not modeled"
+    },
+    {
+      "ticker": "DT",
+      "stage": "2 / 5",
+      "state": "Mechanism and usage evidence",
+      "nextEvidence": "Agent-specific ARR or consumption, post-Arize margin outcome, and fiscal-aligned market context.",
+      "expectationsState": "Current provider fiscal period is misaligned",
+      "modelState": "Not modeled"
+    },
+    {
+      "ticker": "FFIV",
+      "stage": "2 / 5",
+      "state": "Product relevance only",
+      "nextEvidence": "AI Gateway adoption, attach, pricing, revenue mix, and fiscal-aligned market context.",
+      "expectationsState": "Current provider fiscal period is misaligned",
+      "modelState": "Not modeled"
+    }
+  ]
+}

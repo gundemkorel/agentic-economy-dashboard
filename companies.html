@@ -9,12 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="decision-gates.css" />
   </head>
   <body data-page="companies">
     <div class="shell">
       <header class="topbar">
         <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Agentic Economy<br /><strong>Dashboard</strong></span></a>
-        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="companies.html">Company Capture</a><a href="expectations.html">Expectations Gap</a><a href="breakers.html">Thesis Breakers</a><a href="methodology.html">Methods</a></nav>
+        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="companies.html">Company Capture</a><a href="expectations.html">Gap Readiness</a><a href="breakers.html">Thesis Breakers</a><a href="models.html">AKAM Model</a><a href="methodology.html">Methods</a></nav>
       </header>
       <main>
         <section class="page-hero">
@@ -22,8 +23,18 @@
           <h1>Who gets paid<br /><em>when machines act?</em></h1>
           <p>These are research queues, not recommendations. A macro signal matters only if a company converts it into revenue quality, margins, and eventually shareholder value.</p>
         </section>
-        <section class="notice"><strong>Integrity state</strong><span>The four core candidates now have a dated primary-source gap review. Product relevance, reported operating performance, fiscal alignment, and agent-specific monetization remain distinct.</span></section>
+        <section class="notice"><strong>Integrity state</strong><span>The four core candidates have dated primary-source reviews. Product relevance, reported operating performance, fiscal alignment, expectation history, and agent-specific monetization remain separate gates.</span></section>
+        <section class="section-block company-readiness-block">
+          <div class="section-heading"><div><p class="section-number">Decision gate</p><h2>Core-company readiness</h2></div><span class="tag warning">No investment conclusion</span></div>
+          <p class="section-lede">Stages are a research sequence, not a score or ranking. The next required evidence is shown so a company cannot advance on narrative alone.</p>
+          <div class="gap-table-wrap"><table class="gap-table company-readiness-table"><thead><tr><th>Company</th><th>Current stage</th><th>State</th><th>Expectations gate</th><th>Next evidence</th></tr></thead><tbody id="company-readiness-body"></tbody></table></div>
+        </section>
         <section class="company-grid" id="company-grid" aria-live="polite"><div class="loading-state">Loading company capture research queue…</div></section>
+        <section class="section-block mechanics-block">
+          <div class="section-heading"><div><p class="section-number">Causal map</p><h2>How the economics must work</h2></div><span class="tag neutral">Core candidates</span></div>
+          <p class="section-lede">A product story is not enough. Each map names the billable unit, cost burden, proof threshold, and the evidence that would break the mechanism.</p>
+          <div class="mechanics-grid" id="mechanics-grid" aria-live="polite"><div class="loading-state">Loading company mechanics…</div></div>
+        </section>
       </main>
       <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> company capture</span><a class="muted" href="methodology.html">Source and methodology notes →</a></footer>
     </div>

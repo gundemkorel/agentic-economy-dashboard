@@ -260,7 +260,7 @@ const snapshot = {
     marketDataTiming: "Free-plan quote fields may be end-of-day or delayed; do not treat this as real-time market data."
   },
   asOfDate,
-  methodology: "For each current Expectations Gap ticker, this snapshot requests Eulerpool's last-quote, analyst-estimates, and price-target-consensus endpoints. It selects a current or forward annual estimate when the provider identifies one. Forward P/E is calculated only as quote price divided by positive provider-supplied consensus EPS. Price-target upside is a mechanical comparison to the quote, not an investment conclusion. The provider's EPS convention is displayed as supplied; management guidance is not merged with consensus automatically, and fiscal-period alignment remains a human review step.",
+  methodology: "For each current Gap Readiness ticker, this snapshot requests Eulerpool's last-quote, analyst-estimates, and price-target-consensus endpoints. It selects a current or forward annual estimate when the provider identifies one. Forward P/E is calculated only as quote price divided by positive provider-supplied consensus EPS. Price-target data is retained as supplemental context, not a gap conclusion. The provider's EPS convention is displayed as supplied; management guidance is not merged with consensus automatically, and fiscal-period alignment remains a human review step. This current snapshot does not provide a revision or valuation-history series.",
   requestedSymbols: tickers,
   unavailableSymbols,
   rows

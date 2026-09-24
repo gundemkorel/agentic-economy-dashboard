@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Expectation-gap research queue for the Agentic Economy Dashboard." />
-    <title>Expectations Gap · Agentic Economy Dashboard</title>
+    <meta name="description" content="Market-context and gap-readiness research queue for the Agentic Economy Dashboard." />
+    <title>Gap Readiness · Agentic Economy Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,20 +15,21 @@
     <div class="shell">
       <header class="topbar">
         <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Agentic Economy<br /><strong>Dashboard</strong></span></a>
-        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="companies.html">Company Capture</a><a href="expectations.html">Expectations Gap</a><a href="breakers.html">Thesis Breakers</a><a href="methodology.html">Methods</a></nav>
+        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="companies.html">Company Capture</a><a href="expectations.html">Gap Readiness</a><a href="breakers.html">Thesis Breakers</a><a href="models.html">AKAM Model</a><a href="methodology.html">Methods</a></nav>
       </header>
       <main>
         <section class="page-hero">
-          <p class="eyebrow">Track A × Track B <span class="slash">/</span> valuation lens</p>
-          <h1>Evidence versus<br /><em>what is priced in.</em></h1>
-          <p>The desired setup is operating evidence improving faster than Street estimates and valuation. Company-issued outlook is useful context, but it is structurally separate from consensus and what is priced in.</p>
+          <p class="eyebrow">Track A × Track B <span class="slash">/</span> decision gate</p>
+          <h1>Market context before an<br /><em>expectation-gap call.</em></h1>
+          <p>A current price, target, or annual estimate is context—not proof that a stock is under- or over-valued. A gap call requires fiscal alignment, explicit accounting convention, and point-in-time revision and valuation history.</p>
         </section>
-        <section class="notice"><strong id="market-data-status">Eulerpool daily snapshot is selected, awaiting its first build</strong><span id="market-data-notice">Management guidance is primary-source company reporting. The Eulerpool workflow will publish a compact daily snapshot after it confirms the protected API connection. Any live snapshot keeps fiscal-year conventions and retrieval dates visible.</span><a class="notice-attribution" id="market-data-attribution" href="https://eulerpool.com/" target="_blank" rel="noreferrer" hidden>Data by Eulerpool ↗</a></section>
-        <section class="gap-table-wrap gap-page"><table class="gap-table expectations-table"><thead><tr><th>Company</th><th>Agentic evidence</th><th>Management outlook</th><th>Street estimates</th><th>Valuation</th><th>Gap read</th></tr></thead><tbody id="expectations-body"></tbody></table></section>
-        <section class="provider-section"><div class="section-heading"><div><p class="section-number">Connection map</p><h2>What can fill the blank columns?</h2></div><p>Company reporting is the active baseline. Eulerpool is the configured personal-use daily snapshot, with required attribution wherever its data appears. The remaining cards are research-fit assessments, not live feeds.</p></div><div class="provider-grid" id="provider-grid"></div></section>
+        <section class="notice"><strong id="market-data-status">Current market-context snapshot is loading</strong><span id="market-data-notice">Management guidance is primary-source company reporting. A live snapshot retains retrieval date and fiscal-period labels, but it does not create a revision-history series or an expectation-gap conclusion.</span><a class="notice-attribution" id="market-data-attribution" href="https://eulerpool.com/" target="_blank" rel="noreferrer" hidden>Data by Eulerpool ↗</a></section>
+        <section class="gap-table-wrap gap-page"><table class="gap-table expectations-table"><thead><tr><th>Company</th><th>Agentic evidence</th><th>Management outlook</th><th>Current consensus context</th><th>Current valuation context</th><th>Gap readiness</th></tr></thead><tbody id="expectations-body"></tbody></table></section>
+        <section class="section-block gap-criteria-block"><div class="section-heading"><div><p class="section-number">Required inputs</p><h2>When a gap call becomes valid</h2></div><span class="tag warning">All required</span></div><div class="method-grid"><div class="method-card"><span class="method-index">A</span><h3>Comparable operating evidence</h3><p>At least two dated company observations that show a causal KPI improving, with the counterargument tracked alongside it.</p></div><div class="method-card"><span class="method-index">B</span><h3>Aligned expectations history</h3><p>Fiscal-period-aligned consensus, convention labels, and at least two point-in-time estimate observations to establish revision direction.</p></div><div class="method-card"><span class="method-index">C</span><h3>Valuation history</h3><p>A contemporaneous multiple or cash-flow valuation history. Price targets remain supplemental context, never the proof of a gap.</p></div></div></section>
+        <section class="provider-section"><div class="section-heading"><div><p class="section-number">Connection map</p><h2>What can make the gate pass?</h2></div><p>Company reporting is the active baseline. Eulerpool provides an attributed current snapshot only. The remaining cards are research-fit assessments, not live feeds or permission to retain consensus history.</p></div><div class="provider-grid" id="provider-grid"></div></section>
         <section class="method-grid expectation-methods"><div class="method-card"><span class="method-index">1</span><h3>Operating evidence</h3><p>Observed signals and company-reported KPIs are dated and sourced before they influence a gap read.</p></div><div class="method-card"><span class="method-index">2</span><h3>Market expectations</h3><p>Consensus source, retrieval date, fiscal year, and GAAP/non-GAAP convention must be explicit.</p></div><div class="method-card"><span class="method-index">3</span><h3>Judgment</h3><p>The project’s own scenario is separate from observed data and analyst consensus.</p></div></section>
       </main>
-      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> expectations gap</span><a class="muted" href="methodology.html">Source and methodology notes →</a></footer>
+      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> gap readiness</span><a class="muted" href="methodology.html">Source and methodology notes →</a></footer>
     </div>
     <script src="app.js?build=__MARKET_SNAPSHOT_VERSION__" type="module"></script>
   </body>

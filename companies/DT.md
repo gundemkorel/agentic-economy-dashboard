@@ -28,7 +28,7 @@ More autonomous software can generate more traces, logs, security and performanc
 
 ## Expectation-gap discipline
 
-The live [Expectations Gap dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) now flags fiscal-year mismatch automatically. The right current interpretation is **not comparable** rather than a conclusion about valuation or revisions.
+The live [Gap Readiness dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) now flags fiscal-year mismatch automatically. The right current interpretation is **not comparable** rather than a conclusion about valuation or revisions.
 
 If a fiscal-year-aligned consensus becomes available, the important test is whether logs / AI-observability demand and the Arize integration produce ARR acceleration that outweighs margin pressure faster than consensus revises.
 

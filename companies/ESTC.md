@@ -26,7 +26,7 @@ Agentic applications require retrieval, embeddings, vector search, observability
 
 ## Expectation-gap discipline
 
-The live [Expectations Gap dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) shows the provider's current fiscal date beside the company outlook. Until a consensus series is aligned to Elastic's April year-end and GAAP / non-GAAP definitions, the right conclusion is **not comparable**, not cheap or expensive.
+The live [Gap Readiness dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) shows the provider's current fiscal date beside the company outlook. Until a consensus series is aligned to Elastic's April year-end and GAAP / non-GAAP definitions, the right conclusion is **not comparable**, not cheap or expensive.
 
 Even after alignment, the bar for an upside gap is higher than “Elastic is involved in AI.” We would need to see incremental consumption, growth, or retention that is visibly tied to agentic workloads and exceeds what the aligned consensus already assumes.
 

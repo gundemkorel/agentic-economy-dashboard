@@ -10,10 +10,11 @@ The project separately tracks:
 
 1. Wave-2 Pulse — machine activity, enterprise adoption/control, and AI mediation.
 2. Company Capture — whether candidates convert the activity into revenue quality and cash flow.
-3. Expectations Gap — operating evidence versus Street estimates and valuation.
+3. Gap Readiness — whether operating evidence, fiscal-aligned estimates, and valuation history are sufficient for an expectation-gap call.
 4. Thesis Breakers — evidence that should reduce conviction.
+5. Decision Gates & Scenario Labs — the research sequence and explicitly labelled company-assumption models.
 
-Read the full [thesis](docs/THESIS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
+Read the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
 ## Run locally
 
@@ -57,7 +58,9 @@ The Radar adapter requires `CLOUDFLARE_RADAR_API_TOKEN` locally or as a GitHub A
 
 Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.
 
-The Expectations Gap page uses Eulerpool for a compact current daily snapshot of consensus, delayed/EOD quote inputs, and price-target context. It requires the protected `EULERPOOL_API_KEY` Actions secret and preserves a visible `Data by Eulerpool` link beside each Eulerpool-derived field. The owner has confirmed the dashboard's personal, non-commercial daily static-snapshot use with the provider. The workflow creates only a current normalized snapshot in the deployed Pages artifact—no raw response, public repository snapshot, or vendor-data archive. See the [activation and removal steps](docs/EULERPOOL_SETUP.md). Financial Modeling Prep remains a separately gated fallback.
+The Gap Readiness page uses Eulerpool for a compact current daily snapshot of consensus and delayed/EOD quote inputs. It requires the protected `EULERPOOL_API_KEY` Actions secret and preserves a visible `Data by Eulerpool` link beside each Eulerpool-derived field. The owner has confirmed the dashboard's personal, non-commercial daily static-snapshot use with the provider. The workflow creates only a current normalized snapshot in the deployed Pages artifact—no raw response, public repository snapshot, or vendor-data archive. A current snapshot is market context, not a revision-history series or an expectation-gap conclusion. See the [activation and removal steps](docs/EULERPOOL_SETUP.md). Financial Modeling Prep remains a separately gated fallback.
+
+The Akamai scenario lab reads company-issued reported baselines and applies transparent project assumptions. When a current attributed market snapshot is available, it uses that price only at render time for a simplified reverse-expectations bridge; it does not store vendor price history or present a target price.
 
 ## GitHub Pages
 

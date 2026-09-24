@@ -1,6 +1,6 @@
 {
   "asOfDate": "2026-09-24",
-  "definition": "Company-issued guidance is populated from primary earnings releases. Eulerpool is the configured source for a daily, attributed, current consensus and valuation snapshot; its fields remain unpopulated until the protected ingestion workflow completes successfully. Management outlook is not analyst consensus and must not be used as a substitute for what is priced in.",
+  "definition": "Company-issued guidance is populated from primary earnings releases. Eulerpool is the configured source for a daily, attributed, current consensus and valuation-context snapshot; its fields remain unpopulated until the protected ingestion workflow completes successfully. Management outlook is not analyst consensus, and a current snapshot is not a substitute for fiscal-aligned revision or valuation history.",
   "rows": [
     {
       "ticker": "AKAM",

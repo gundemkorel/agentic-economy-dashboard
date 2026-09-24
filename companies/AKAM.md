@@ -27,7 +27,7 @@ More autonomous web activity could increase the need for edge compute, traffic d
 
 ## Expectation-gap discipline
 
-The live [Expectations Gap dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) carries an attributed, current consensus snapshot. It should be compared with company guidance only after fiscal-year and definition alignment. Do not store or rely on a stale consensus number in this research note.
+The live [Gap Readiness dashboard](https://gundemkorel.github.io/agentic-economy-dashboard/expectations.html) carries an attributed, current consensus snapshot. It should be compared with company guidance only after fiscal-year and definition alignment, and it cannot establish a gap without revision and valuation history. Do not store or rely on a stale consensus number in this research note.
 
 The current decision rule is simple: **do not call an upside gap merely because CIS is growing or agent-control products exist.** The case improves only if reported conversion and profitability develop faster than the live consensus view can absorb.
 

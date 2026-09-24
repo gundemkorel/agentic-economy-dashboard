@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="decision-gates.css" />
   </head>
   <body data-page="pulse">
     <div class="shell">
@@ -20,8 +21,9 @@
         <nav class="topnav" aria-label="Primary navigation">
           <a href="index.html">Wave-2 Pulse</a>
           <a href="companies.html">Company Capture</a>
-          <a href="expectations.html">Expectations Gap</a>
+          <a href="expectations.html">Gap Readiness</a>
           <a href="breakers.html">Thesis Breakers</a>
+          <a href="models.html">AKAM Model</a>
           <a href="methodology.html">Methods</a>
           <a class="repo-link" href="https://github.com/gundemkorel/agentic-economy-dashboard" target="_blank" rel="noreferrer">GitHub ↗</a>
         </nav>
@@ -29,7 +31,7 @@
 
       <main id="top">
         <section class="hero" id="dashboard">
-          <div class="eyebrow"><span class="live-dot"></span> Wave 2 evidence monitor <span class="slash">/</span> baseline release</div>
+          <div class="eyebrow"><span class="live-dot"></span> Wave 2 evidence monitor <span class="slash">/</span> decision-gates release</div>
           <div class="hero-grid">
             <div>
               <h1>From human intent<br /><em>to machine activity.</em></h1>
@@ -44,9 +46,15 @@
           <div class="snapshot-row">
             <div class="snapshot-item"><span>Last refresh</span><strong id="last-updated">Loading…</strong></div>
             <div class="snapshot-item"><span>Dashboard stance</span><strong class="stance">Observe / build evidence</strong></div>
-            <div class="snapshot-item"><span>Data confidence</span><strong id="confidence">Baseline only</strong></div>
+            <div class="snapshot-item"><span>Evidence maturity</span><strong id="confidence">Loading…</strong></div>
             <div class="snapshot-item action-item"><a href="#methodology">How to read this →</a></div>
           </div>
+        </section>
+
+        <section class="section-block gates-block" id="research-gates">
+          <div class="section-heading"><div><p class="section-number">Decision discipline</p><h2>Research decision ladder</h2></div><span class="tag warning" id="project-state">Loading…</span></div>
+          <p class="section-lede" id="project-note">A company must pass the gates in sequence. No single traffic point, product launch, or price target can skip to an investment conclusion.</p>
+          <div class="research-gate-grid" id="research-gate-grid" aria-live="polite"><div class="loading-state">Loading research gates…</div></div>
         </section>
 
         <section class="section-intro">
@@ -59,15 +67,21 @@
         </section>
 
         <section class="section-block expectation-block" id="expectations">
-          <div class="section-heading"><div><p class="section-number">04</p><h2>Market expectations</h2></div><span class="tag neutral">Valuation lens</span></div>
-          <p class="section-lede">What the market already assumes about agentic demand. This is the denominator for the expectation gap.</p>
+          <div class="section-heading"><div><p class="section-number">04</p><h2>Market context</h2></div><span class="tag neutral">Current context only</span></div>
+          <p class="section-lede">Questions to test against estimates and valuation. They are not claims about what the market does or does not already understand.</p>
           <div class="expectation-grid" id="expectation-grid"></div>
         </section>
 
         <section class="section-block gap-block" id="gap">
-          <div class="section-heading"><div><p class="section-number">05</p><h2>Expectation gap</h2></div><span class="tag accent">Where edge may exist</span></div>
-          <p class="section-lede">The investable question is not whether agents grow. It is whether the operating evidence is moving faster than estimates and multiples.</p>
-          <div class="gap-table-wrap"><table class="gap-table"><thead><tr><th>Theme</th><th>Operating evidence</th><th>Consensus embed</th><th>Gap read</th></tr></thead><tbody id="gap-table-body"></tbody></table></div>
+          <div class="section-heading"><div><p class="section-number">05</p><h2>Gap readiness</h2></div><span class="tag warning">No conclusion yet</span></div>
+          <p class="section-lede">The investable question is whether operating evidence moves faster than estimates and multiples. Until those inputs are comparable through time, the right output is a research gate—not an upside call.</p>
+          <div class="gap-table-wrap"><table class="gap-table"><thead><tr><th>Theme</th><th>Operating proof needed</th><th>Expectation evidence needed</th><th>Current state</th></tr></thead><tbody id="gap-table-body"></tbody></table></div>
+        </section>
+
+        <section class="section-block triangulation-block" id="triangulation">
+          <div class="section-heading"><div><p class="section-number">Cross-check</p><h2>Triangulation ledger</h2></div><span class="tag neutral" id="triangulation-headline">Loading…</span></div>
+          <p class="section-lede" id="triangulation-summary">Keep sources with different samples and definitions side by side. Disagreement is evidence to investigate, not a problem to average away.</p>
+          <div class="gap-table-wrap"><table class="gap-table triangulation-table"><thead><tr><th>Lens / source</th><th>Latest reading</th><th>Period &amp; sample</th><th>Maturity / cross-source read</th></tr></thead><tbody id="triangulation-body"></tbody></table></div>
         </section>
 
         <section class="section-block breakers-block" id="breakers">

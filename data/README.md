@@ -12,6 +12,8 @@ Cloudflare Radar is a deliberate exception to any temptation to label all values
 
 `data/processed/fmp-market-expectations.json` remains an inactive, gated fallback. Do not create or commit it manually; use the protected workflow and follow `docs/FMP_SETUP.md` if its agreement is ever completed.
 
+`data/manual/research-gates.json` records the defined research sequence and each core company’s current gate, rather than assigning a composite investment score. `data/manual/triangulation.json` keeps non-comparable source samples side by side. `data/manual/akam-scenario-lab.json` contains only company-reported baseline values and the project’s stated assumptions; it never stores current vendor market data.
+
 Recommended observation fields for future adapters:
 
 ~~~json

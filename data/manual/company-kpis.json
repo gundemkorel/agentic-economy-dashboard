@@ -1,11 +1,72 @@
 {
   "asOfDate": "2026-09-23",
-  "definition": "This is a manual research queue, not a statement of current performance. Empty readings mean no verified observation has yet been entered.",
+  "definition": "The four core candidates below contain a first, primary-source company-capture baseline. These are reported operating observations and product disclosures, not stock recommendations or evidence that an agentic tailwind is already monetized.",
   "companies": [
-    { "ticker": "AKAM", "mechanism": "More action-oriented traffic, security inspections, and edge-compute demand could increase billable consumption if Akamai retains the workload.", "kpis": ["CIS revenue growth", "CIS bookings / commitments", "security growth", "capex / revenue", "FCF margin", "delivery decline"], "state": "Evidence queue", "source": "https://www.ir.akamai.com/" },
-    { "ticker": "ESTC", "mechanism": "Agent retrieval, vector search, and observability workloads could lift cloud consumption and retention.", "kpis": ["cRPO", "cloud consumption", "Agent Builder use", "observability growth", "vector / search workloads", "FCF margin"], "state": "Evidence queue", "source": "https://ir.elastic.co/" },
-    { "ticker": "DT", "mechanism": "More autonomous software can create more logs, traces, and AI observability demand.", "kpis": ["logs consumption", "ARR", "net-new ARR", "AI observability", "FCF margin"], "state": "Evidence queue", "source": "https://ir.dynatrace.com/" },
-    { "ticker": "FFIV", "mechanism": "AI gateway, MCP gateway, and application-delivery controls may become a necessary part of enterprise agent infrastructure.", "kpis": ["product growth", "software / security mix", "AI Gateway adoption", "MCP Gateway adoption", "NGINX AI workload usage"], "state": "Evidence queue", "source": "https://investors.f5.com/" },
+    {
+      "ticker": "AKAM",
+      "mechanism": "More action-oriented traffic, security inspections, and edge-compute demand could increase billable consumption if Akamai retains the workload.",
+      "state": "Primary-source baseline",
+      "period": "Q2 2026 · ended Jun 30, 2026",
+      "evidence": [
+        { "label": "Cloud Infrastructure Services revenue", "value": "$99M · +39% YoY" },
+        { "label": "Security revenue", "value": "$604M · +10% YoY" },
+        { "label": "CIS contract commitments", "value": ">$2.8B YTD; includes >$600M robotics deal" }
+      ],
+      "agenticRead": "The disclosed robotics contract and CIS growth support an AI-infrastructure capture hypothesis, but management does not separately report agent-driven revenue.",
+      "counterpoint": "Delivery and other cloud-applications revenue declined 6% YoY; non-GAAP operating margin was 25%, down five points YoY.",
+      "sources": [
+        { "label": "Q2 2026 results", "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results" }
+      ]
+    },
+    {
+      "ticker": "ESTC",
+      "mechanism": "Agent retrieval, vector search, and observability workloads could lift cloud consumption and retention.",
+      "state": "Primary-source baseline",
+      "period": "Q1 FY2027 · ended Jul 31, 2026",
+      "evidence": [
+        { "label": "Total revenue", "value": "$478M · +15% YoY" },
+        { "label": "Sales-led subscription revenue", "value": "$399M · +18% YoY" },
+        { "label": "Current RPO", "value": "$1.153B · +21% YoY" }
+      ],
+      "agenticRead": "Elastic disclosed agentic Kubernetes investigations and MCP-based observability skills, alongside growth in cloud and contracted revenue metrics.",
+      "counterpoint": "Agentic product releases are not an agent-specific revenue disclosure; net expansion was approximately 111% and must be followed over time.",
+      "sources": [
+        { "label": "Q1 FY2027 results", "url": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/" }
+      ]
+    },
+    {
+      "ticker": "DT",
+      "mechanism": "More autonomous software can create more logs, traces, and AI-observability demand.",
+      "state": "Primary-source baseline",
+      "period": "Q1 FY2027 · ended Jun 30, 2026",
+      "evidence": [
+        { "label": "Total ARR", "value": "$2.136B · +17% YoY" },
+        { "label": "Total revenue", "value": "$555M · +16% YoY" },
+        { "label": "Annualized logs consumption", "value": "$200M · >100% YoY" }
+      ],
+      "agenticRead": "The company released autonomous SRE and cloud-SRE agent capabilities while reporting sharply higher logs consumption, a potentially relevant observability-consumption signal.",
+      "counterpoint": "Logs and ARR growth are not proof of agent-led demand; the fiscal-year reported ARR guide incorporates FX headwinds and is lower in reported growth terms than the quarter's ARR growth.",
+      "sources": [
+        { "label": "Q1 FY2027 results", "url": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results" }
+      ]
+    },
+    {
+      "ticker": "FFIV",
+      "mechanism": "AI gateway, MCP gateway, and application-delivery controls may become a necessary part of enterprise agent infrastructure.",
+      "state": "Primary-source baseline",
+      "period": "Q3 FY2026 · ended Jun 30, 2026",
+      "evidence": [
+        { "label": "Total revenue", "value": "$865M · +11% YoY" },
+        { "label": "Product revenue", "value": "+19% YoY" },
+        { "label": "Systems revenue", "value": "$240M · +32% YoY" }
+      ],
+      "agenticRead": "F5 subsequently integrated its AI Gateway with an MCP Gateway for agent-to-tool governance; this establishes product relevance, not monetization or adoption evidence.",
+      "counterpoint": "AI Gateway and MCP Gateway revenue, attach rates, and customer usage are not separately reported, so the capture link remains unproven.",
+      "sources": [
+        { "label": "Q3 FY2026 results", "url": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx" },
+        { "label": "AI Gateway update", "url": "https://www.f5.com/company/news/press-releases/f5-unleashes-next-generation-agentic-ready-ai-gateway-to-optimize-the-economics-and-governance-of-enterprise-ai-costs" }
+      ]
+    },
     { "ticker": "ZS", "mechanism": "Enterprise AI data transfer and policy enforcement could expand the security control plane around agent deployment.", "kpis": ["AI / ML transaction growth", "AI data-transfer growth", "ARR / billings", "security product attach", "agent security offerings"], "state": "Watchlist", "source": "https://ir.zscaler.com/" },
     { "ticker": "TWLO", "mechanism": "Agents communicating with customers or counterparties could compound paid messaging and engagement events.", "kpis": ["organic growth", "DBNER", "communications usage", "agent product adoption", "FCF margin"], "state": "Watchlist", "source": "https://investors.twilio.com/" },
     { "ticker": "FSLY", "mechanism": "Machine and AI traffic reaching origin infrastructure may create incremental edge and delivery consumption.", "kpis": ["AI / machine traffic", "origin requests", "RPO", "NRR", "gross margin", "FCF margin"], "state": "Watchlist", "source": "https://investors.fastly.com/" },

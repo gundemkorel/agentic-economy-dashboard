@@ -64,8 +64,11 @@ function renderBreaker(item) {
 }
 
 function renderCompany(company) {
-  const kpis = company.kpis.map((kpi) => "<li>" + escapeHtml(kpi) + "</li>").join("");
-  return "<article class=\"company-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.state) + "</span></div><p class=\"company-mechanism\">" + escapeHtml(company.mechanism) + "</p><p class=\"company-label\">Thesis-relevant KPIs</p><ul>" + kpis + "</ul><a href=\"" + company.source + "\" target=\"_blank\" rel=\"noreferrer\">Primary IR source ↗</a></article>";
+  const evidence = company.evidence ? company.evidence.map((item) => "<div><dt>" + escapeHtml(item.label) + "</dt><dd>" + escapeHtml(item.value) + "</dd></div>").join("") : "";
+  const kpis = company.kpis ? "<p class=\"company-label\">Thesis-relevant KPIs</p><ul>" + company.kpis.map((kpi) => "<li>" + escapeHtml(kpi) + "</li>").join("") + "</ul>" : "";
+  const reviewedEvidence = company.evidence ? "<p class=\"company-period\">" + escapeHtml(company.period) + " · company-reported</p><dl class=\"company-evidence\">" + evidence + "</dl><p class=\"company-read\"><span>Capture read</span>" + escapeHtml(company.agenticRead) + "</p><p class=\"company-counterpoint\"><span>Counterpoint</span>" + escapeHtml(company.counterpoint) + "</p>" : kpis;
+  const sourceLinks = company.sources ? company.sources.map((item) => "<a href=\"" + item.url + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(item.label) + " ↗</a>").join("") : "<a href=\"" + company.source + "\" target=\"_blank\" rel=\"noreferrer\">Primary IR source ↗</a>";
+  return "<article class=\"company-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.state) + "</span></div><p class=\"company-mechanism\">" + escapeHtml(company.mechanism) + "</p>" + reviewedEvidence + "<div class=\"company-sources\">" + sourceLinks + "</div></article>";
 }
 
 function renderExpectationRow(row) {

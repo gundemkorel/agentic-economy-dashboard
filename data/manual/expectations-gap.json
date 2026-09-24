@@ -2,9 +2,9 @@
   "asOfDate": "2026-09-23",
   "definition": "Intentionally unpopulated until a consistent, licensed or otherwise verifiable market-data source is selected. The structure makes the distinction between observed evidence, consensus, valuation, and our judgment explicit.",
   "rows": [
-    { "ticker": "AKAM", "agenticEvidence": "Research queue", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Requires verified snapshot", "state": "pending" },
-    { "ticker": "ESTC", "agenticEvidence": "Research queue", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Requires verified snapshot", "state": "pending" },
-    { "ticker": "DT", "agenticEvidence": "Research queue", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Requires verified snapshot", "state": "pending" },
-    { "ticker": "FFIV", "agenticEvidence": "Research queue", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Requires verified snapshot", "state": "pending" }
+    { "ticker": "AKAM", "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure contract commitments disclosed", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Operating evidence added; no expectation read", "state": "pending" },
+    { "ticker": "ESTC", "agenticEvidence": "Q1 sales-led subscription +18%; cRPO +21%; agentic/MCP observability features disclosed", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Operating evidence added; no expectation read", "state": "pending" },
+    { "ticker": "DT", "agenticEvidence": "Q1 ARR +17%; annualized logs consumption >100% growth; agent capabilities released", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Operating evidence added; no expectation read", "state": "pending" },
+    { "ticker": "FFIV", "agenticEvidence": "Q3 product revenue +19%; AI and MCP Gateway product relevance established", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Product relevance only; no expectation read", "state": "pending" }
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "asOfDate": "2026-09-23",
+  "definition": "This is a manual research queue, not a statement of current performance. Empty readings mean no verified observation has yet been entered.",
+  "companies": [
+    { "ticker": "AKAM", "mechanism": "More action-oriented traffic, security inspections, and edge-compute demand could increase billable consumption if Akamai retains the workload.", "kpis": ["CIS revenue growth", "CIS bookings / commitments", "security growth", "capex / revenue", "FCF margin", "delivery decline"], "state": "Evidence queue", "source": "https://www.ir.akamai.com/" },
+    { "ticker": "ESTC", "mechanism": "Agent retrieval, vector search, and observability workloads could lift cloud consumption and retention.", "kpis": ["cRPO", "cloud consumption", "Agent Builder use", "observability growth", "vector / search workloads", "FCF margin"], "state": "Evidence queue", "source": "https://ir.elastic.co/" },
+    { "ticker": "DT", "mechanism": "More autonomous software can create more logs, traces, and AI observability demand.", "kpis": ["logs consumption", "ARR", "net-new ARR", "AI observability", "FCF margin"], "state": "Evidence queue", "source": "https://ir.dynatrace.com/" },
+    { "ticker": "FFIV", "mechanism": "AI gateway, MCP gateway, and application-delivery controls may become a necessary part of enterprise agent infrastructure.", "kpis": ["product growth", "software / security mix", "AI Gateway adoption", "MCP Gateway adoption", "NGINX AI workload usage"], "state": "Evidence queue", "source": "https://investors.f5.com/" },
+    { "ticker": "ZS", "mechanism": "Enterprise AI data transfer and policy enforcement could expand the security control plane around agent deployment.", "kpis": ["AI / ML transaction growth", "AI data-transfer growth", "ARR / billings", "security product attach", "agent security offerings"], "state": "Watchlist", "source": "https://ir.zscaler.com/" },
+    { "ticker": "TWLO", "mechanism": "Agents communicating with customers or counterparties could compound paid messaging and engagement events.", "kpis": ["organic growth", "DBNER", "communications usage", "agent product adoption", "FCF margin"], "state": "Watchlist", "source": "https://investors.twilio.com/" },
+    { "ticker": "FSLY", "mechanism": "Machine and AI traffic reaching origin infrastructure may create incremental edge and delivery consumption.", "kpis": ["AI / machine traffic", "origin requests", "RPO", "NRR", "gross margin", "FCF margin"], "state": "Watchlist", "source": "https://investors.fastly.com/" },
+    { "ticker": "OKTA", "mechanism": "Delegated authority and machine identities could create a new identity-management layer for agents.", "kpis": ["machine identities", "agent identity customers", "pricing / monetization", "RPO", "FCF margin"], "state": "Watchlist", "source": "https://investor.okta.com/" }
+  ]
+}

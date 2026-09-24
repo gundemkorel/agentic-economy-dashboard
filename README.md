@@ -1,17 +1,19 @@
-# Agentic Economy Dashboard
+# Agentic Economy Research Project
 
-The Agentic Economy Dashboard is a lightweight, static research instrument for tracking evidence behind the Wave 2 thesis:
+This repository is an investment-research system centered on a simple question:
 
-> As one human intent creates more machine actions, infrastructure consumption should compound before consensus models fully reflect it.
+> Which scarce, billable resources see rising consumption as machines take more actions—and where are those economics not yet reflected in consensus?
 
-The dashboard keeps six questions separate:
+The static dashboard is one component of the system, not a stock-price page or an AI-keyword screen. Its primary focus is Wave 2: models interacting with digital systems through traffic, APIs, context retrieval, security checks, identity, observability, communication, and control planes.
 
-1. Machine Activity — are autonomous systems doing more things?
-2. Enterprise Adoption & Control — are deployments governed deeply enough to change demand?
-3. Company Capture — which businesses monetize the activity?
-4. Market Expectations — what is already in estimates and multiples?
-5. Expectation Gap — where could evidence be moving faster than consensus?
-6. Thesis Breakers — what would falsify the thesis?
+The project separately tracks:
+
+1. Wave-2 Pulse — machine activity, enterprise adoption/control, and AI mediation.
+2. Company Capture — whether candidates convert the activity into revenue quality and cash flow.
+3. Expectations Gap — operating evidence versus Street estimates and valuation.
+4. Thesis Breakers — evidence that should reduce conviction.
+
+Read the full [thesis](docs/THESIS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), and [update playbook](docs/UPDATE_PLAYBOOK.md).
 
 ## Run locally
 
@@ -23,24 +25,30 @@ This is a dependency-free site. Serve the repository root with any static server
 - Monthly: adoption, governance, security, and usage disclosures.
 - Quarterly: earnings, filings, guidance, estimates, valuation, and company capture.
 
-The UI reads from data/metrics.json and data/sources.json. Replace observations in those files; do not hard-code new data into app.js. Each observation should carry a date, source, direction, confidence, and a short note in future ingestion work.
+The user interface reads from structured data under data/ and configuration under config/. Replace observations in data files; do not hard-code research data into app.js.
 
 ## Planned ingestion adapters
 
-The structure is intentionally ready for adapters that can be added later under scripts/ or a separate data pipeline:
+The structure has explicit raw, processed, manual, configuration, scripts, documentation, and company-research layers:
 
-- Cloudflare Radar
-- Fastly
-- Akamai
-- Zscaler
-- Anthropic Economic Index
-- MCP Registry
-- Company investor-relations pages, earnings releases, and SEC filings
+- data/raw/ — immutable dated raw snapshots, where practical
+- data/processed/ — normalized observations used by the site
+- data/manual/ — reviewed research queues and manual observations
+- config/ — source registry and watchlist configuration
+- scripts/ — ingestion and normalization adapters
+- docs/ — durable research methodology
+- companies/ — individual company research files
 
-Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL and retrieval date.
+The first functioning path is the public MCP Registry:
+
+public registry → scripts/ingest-mcp-registry.mjs → dated raw snapshot → normalized observation → dashboard card
+
+Cloudflare Radar is adapter-ready but requires a Radar API token under its current API. No token or fabricated Cloudflare reading is committed. The source registry documents what remains manual and why.
+
+Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.
 
 ## GitHub Pages
 
-The repository includes a GitHub Actions workflow at .github/workflows/pages.yml. Enable Pages with GitHub Actions as the source in repository settings. The expected public URL is:
+The repository includes GitHub Actions workflows for Pages deployment and weekly MCP Registry refresh. Enable Pages with GitHub Actions as the source in repository settings. The expected public URL is:
 
 https://gundemkorel.github.io/agentic-economy-dashboard/

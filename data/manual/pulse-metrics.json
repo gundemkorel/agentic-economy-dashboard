@@ -1,0 +1,71 @@
+{
+  "asOfDate": "2026-09-23",
+  "metrics": [
+    {
+      "id": "mcp_registered_server_count",
+      "number": "01",
+      "layer": "Enterprise Adoption & Control",
+      "title": "MCP Registry breadth",
+      "description": "Registered MCP servers are an observable ecosystem-supply proxy for available integrations and tool surfaces.",
+      "status": "Observed",
+      "dataType": "Observed ecosystem supply proxy",
+      "sourceId": "mcp-registry",
+      "methodology": "Counts records returned by the public MCP Registry endpoint. This does not measure active production use."
+    },
+    {
+      "id": "ai_bot_request_volume",
+      "number": "02",
+      "layer": "Machine Activity",
+      "title": "AI bot request volume",
+      "description": "Track Cloudflare's AI bot request time series separately from generic bot traffic.",
+      "status": "Credential required",
+      "dataType": "Observed network proxy",
+      "sourceId": "cloudflare-radar",
+      "methodology": "Planned token-backed Cloudflare Radar ingestion. A bot measure is not treated as a direct measure of all agent activity."
+    },
+    {
+      "id": "action_intensity",
+      "number": "03",
+      "layer": "Machine Activity",
+      "title": "Action intensity",
+      "description": "The relative mix of fetcher, retrieval, and action-oriented traffic versus passive crawler activity.",
+      "status": "Definition in build",
+      "dataType": "Qualitative proxy",
+      "sourceId": "cloudflare-radar",
+      "methodology": "A useful concept, not yet a synthetic index. Populate only when source classifications are robust."
+    },
+    {
+      "id": "enterprise_ai_transactions",
+      "number": "04",
+      "layer": "Enterprise Adoption & Control",
+      "title": "Enterprise AI transactions",
+      "description": "Observed enterprise AI/ML transaction and data-transfer signals, with policy and control-plane context.",
+      "status": "Manual update",
+      "dataType": "Observed enterprise network proxy",
+      "sourceId": "zscaler",
+      "methodology": "Use Zscaler as one longitudinal enterprise sample. Revalidate every figure, period, and definition."
+    },
+    {
+      "id": "ai_mediation",
+      "number": "05",
+      "layer": "AI Mediation",
+      "title": "Inference on existing activity",
+      "description": "Whether routine enterprise events increasingly receive model processing for classification, routing, policy, retrieval, or action.",
+      "status": "Sparse / proxy only",
+      "dataType": "AI-mediation proxy",
+      "sourceId": "anthropic-economic-index",
+      "methodology": "This branch is intentionally early. It should use proxies and remain visibly incomplete rather than imply a precise penetration rate."
+    },
+    {
+      "id": "automation_composition",
+      "number": "06",
+      "layer": "Enterprise Adoption & Control",
+      "title": "Automation composition",
+      "description": "Task mix, automation/augmentation balance, and longer-running task indicators from longitudinal product-usage samples.",
+      "status": "Manual update",
+      "dataType": "Observed product-usage sample",
+      "sourceId": "anthropic-economic-index",
+      "methodology": "Treat the Economic Index as a longitudinal sample, not a census of all AI activity."
+    }
+  ]
+}

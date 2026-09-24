@@ -1,0 +1,12 @@
+{
+  "companies": [
+    { "ticker": "AKAM", "name": "Akamai", "exposure": "Edge delivery, security, cloud infrastructure", "irUrl": "https://www.ir.akamai.com/" },
+    { "ticker": "ESTC", "name": "Elastic", "exposure": "Search, vector retrieval, observability", "irUrl": "https://ir.elastic.co/" },
+    { "ticker": "DT", "name": "Dynatrace", "exposure": "Observability and AI operations", "irUrl": "https://ir.dynatrace.com/" },
+    { "ticker": "FFIV", "name": "F5", "exposure": "Application delivery, AI and MCP gateways", "irUrl": "https://investors.f5.com/" },
+    { "ticker": "ZS", "name": "Zscaler", "exposure": "Enterprise AI security and policy controls", "irUrl": "https://ir.zscaler.com/" },
+    { "ticker": "TWLO", "name": "Twilio", "exposure": "Communications usage and agent interactions", "irUrl": "https://investors.twilio.com/" },
+    { "ticker": "FSLY", "name": "Fastly", "exposure": "Edge traffic, origin requests, machine delivery", "irUrl": "https://investors.fastly.com/" },
+    { "ticker": "OKTA", "name": "Okta", "exposure": "Machine and agent identity", "irUrl": "https://investor.okta.com/" }
+  ]
+}

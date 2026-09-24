@@ -37,7 +37,7 @@
       "sources": [
         { "label": "Anthropic Economic Index", "url": "https://www.anthropic.com/economic-index" },
         { "label": "Zscaler insights", "url": "https://www.zscaler.com/resources" },
-        { "label": "Company IR", "url": "https://investors.akamai.com/" }
+        { "label": "Company IR", "url": "https://www.ir.akamai.com/" }
       ]
     },
     {
@@ -52,7 +52,7 @@
       "progressLabel": "Coverage readiness",
       "progress": 18,
       "sources": [
-        { "label": "Akamai IR", "url": "https://investors.akamai.com/" },
+        { "label": "Akamai IR", "url": "https://www.ir.akamai.com/" },
         { "label": "Elastic IR", "url": "https://ir.elastic.co/" },
         { "label": "DigitalOcean IR", "url": "https://investors.digitalocean.com/" }
       ]

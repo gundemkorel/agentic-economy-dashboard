@@ -1,0 +1,81 @@
+{
+  "sources": [
+    {
+      "id": "mcp-registry",
+      "name": "Model Context Protocol Registry",
+      "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+      "supports": ["mcp_registered_server_count"],
+      "updateFrequency": "weekly",
+      "accessMethod": "public HTTP endpoint",
+      "automationStatus": "automated",
+      "dataType": "observed ecosystem supply proxy",
+      "caveat": "Registry breadth measures available integrations and ecosystem supply. It is not evidence of production usage or agentic action volume."
+    },
+    {
+      "id": "cloudflare-radar",
+      "name": "Cloudflare Radar",
+      "url": "https://developers.cloudflare.com/radar/",
+      "supports": ["ai_bot_request_volume", "ai_bot_crawl_purpose", "bot_human_request_mix"],
+      "updateFrequency": "weekly",
+      "accessMethod": "Radar API token",
+      "automationStatus": "adapter-ready; credential required",
+      "dataType": "observed network proxy",
+      "caveat": "Cloudflare sees traffic through its own network. AI bot traffic must not be described as all agent activity; crawler and fetcher/action-oriented traffic must remain distinct."
+    },
+    {
+      "id": "fastly",
+      "name": "Fastly research and network reports",
+      "url": "https://www.fastly.com/resources",
+      "supports": ["machine_traffic_context", "origin_request_context", "ai_crawler_fetcher_mix"],
+      "updateFrequency": "periodic",
+      "accessMethod": "manual research review",
+      "automationStatus": "manual",
+      "dataType": "observed network proxy",
+      "caveat": "Use as an independent network view. Verify publication date, measurement scope, and definitions before adding observations."
+    },
+    {
+      "id": "akamai-research",
+      "name": "Akamai research and investor relations",
+      "url": "https://www.ir.akamai.com/",
+      "supports": ["ai_bot_context", "security_context", "akamai_company_capture"],
+      "updateFrequency": "quarterly / periodic",
+      "accessMethod": "manual research review",
+      "automationStatus": "manual",
+      "dataType": "company-reported and observed network proxy",
+      "caveat": "Akamai is both a measurement source and a candidate company. Keep source evidence separate from the investment conclusion."
+    },
+    {
+      "id": "zscaler",
+      "name": "Zscaler ThreatLabz and investor relations",
+      "url": "https://www.zscaler.com/resources",
+      "supports": ["enterprise_ai_transactions", "enterprise_ai_data_transfer", "zscaler_company_capture"],
+      "updateFrequency": "quarterly / periodic",
+      "accessMethod": "manual research review",
+      "automationStatus": "manual",
+      "dataType": "observed enterprise network proxy and company-reported",
+      "caveat": "Zscaler only sees its own customer base. Use its traffic and security observations as a longitudinal sample, not the entire enterprise economy."
+    },
+    {
+      "id": "anthropic-economic-index",
+      "name": "Anthropic Economic Index",
+      "url": "https://www.anthropic.com/economic-index",
+      "supports": ["automation_share", "task_duration", "task_composition"],
+      "updateFrequency": "periodic",
+      "accessMethod": "official reports and datasets",
+      "automationStatus": "manual",
+      "dataType": "observed product-usage sample",
+      "caveat": "This is a valuable longitudinal sample, not a census of the AI economy."
+    },
+    {
+      "id": "company-ir",
+      "name": "Company investor relations and SEC filings",
+      "url": "https://www.sec.gov/edgar/search/",
+      "supports": ["company_capture_kpis", "guidance", "fcf_margin", "rpo", "consensus_inputs"],
+      "updateFrequency": "quarterly",
+      "accessMethod": "manual review; selective API adapter later",
+      "automationStatus": "manual",
+      "dataType": "company-reported",
+      "caveat": "Do not conflate reported KPIs, management guidance, analyst consensus, and our scenarios. Fiscal period and GAAP/non-GAAP definitions are required."
+    }
+  ]
+}

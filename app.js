@@ -13,7 +13,8 @@ const formatDate = (iso) => {
 };
 
 const fetchJson = async (path) => {
-  const response = await fetch(path, { cache: "no-store" });
+  const separator = path.includes("?") ? "&" : "?";
+  const response = await fetch(path + separator + "refresh=" + Date.now(), { cache: "no-store" });
   if (!response.ok) throw new Error("Unable to load " + path);
   return response.json();
 };
@@ -148,12 +149,15 @@ function renderMarketValuation(record, snapshot) {
   const price = formatUsd(quote.price);
   const forwardPe = finiteNumber(derived.forwardPriceEarnings);
   const target = formatUsd(priceTarget.consensus);
+  const targetMedian = formatUsd(priceTarget.median);
   const targetHigh = formatUsd(priceTarget.high);
   const targetLow = formatUsd(priceTarget.low);
   const targetUpside = formatPercent(derived.targetUpsidePercent);
   if (price) details.push("Price " + price);
   if (forwardPe !== null) details.push("Forward P/E " + forwardPe.toFixed(1) + "x");
   if (target) details.push("Target " + target + (targetUpside ? " (" + targetUpside + ")" : ""));
+  else if (targetMedian && targetLow && targetHigh) details.push("Target median " + targetMedian + " · range " + targetLow + "–" + targetHigh);
+  else if (targetMedian) details.push("Target median " + targetMedian);
   else if (targetLow && targetHigh) details.push("Target range " + targetLow + "–" + targetHigh);
   else if (targetHigh) details.push("Target high " + targetHigh);
   else if (targetLow) details.push("Target low " + targetLow);

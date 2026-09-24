@@ -39,5 +39,5 @@ If the project becomes commercial, public-use terms change, or the provider asks
 | --- | --- | --- |
 | Annual revenue and EPS consensus | [Equity estimates](https://eulerpool.com/developers/api/equity/estimates) | Current or forward annual record when the provider identifies one; fiscal period shown |
 | Current price input | [Last quote](https://eulerpool.com/developers/api/market/last/quote) | Delayed/EOD on the free plan; current snapshot only |
-| Price-target range and consensus | [Price-target consensus](https://eulerpool.com/developers/api/equity/price-target-consensus) | Optional when returned by the account and endpoint |
+| Price-target range and median/consensus | [Price-target consensus](https://eulerpool.com/developers/api/equity/price-target-consensus) | Optional when returned by the account and endpoint |
 | Forward P/E and target upside | Dashboard calculation | Mechanical, labeled derived; not an investment recommendation |

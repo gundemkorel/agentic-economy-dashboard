@@ -35,6 +35,8 @@ No one provider represents the entire internet or enterprise economy. Cloudflare
 
 All bot activity is not agent activity. AI crawlers, AI fetchers, generic automation, and action-oriented agent activity must remain distinct whenever the source permits it.
 
+Cloudflare's initial AI-bot observation is particularly constrained: it is a `MIN0_MAX` normalized index, calculated as a current 30-day mean and compared to the preceding 30-day control in the same query. It supports a directional network-activity read; it does not support statements about raw request volume, total agent activity, or long-run values across separately normalized requests.
+
 ## History
 
 The initial backfill target is January 2026 to the current date where legitimate source history exists. Sparse, date-stamped time series are preferable to synthetic monthly data.

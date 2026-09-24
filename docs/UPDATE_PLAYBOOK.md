@@ -3,7 +3,7 @@
 ## Weekly
 
 1. Review automated MCP Registry output and confirm the raw snapshot committed.
-2. Refresh Cloudflare Radar only when a valid token is configured.
+2. Review the automated Cloudflare Radar observation and confirm the API's current/prior 30-day comparison, normalization, and caveat remain valid.
 3. Log material network, agent-platform, identity, security, or gateway developments as dated notes.
 4. Record new contrary evidence in Thesis Breakers.
 

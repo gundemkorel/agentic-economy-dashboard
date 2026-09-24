@@ -36,8 +36,8 @@ function sourceFor(sources, id) {
 
 function renderPulseCard(metric, source, currentObservation, observationCount) {
   const observed = currentObservation && currentObservation.metricId === metric.id ? currentObservation : null;
-  const value = observed ? new Intl.NumberFormat("en-US").format(observed.value) : "—";
-  const direction = observed ? "First observed point" : metric.status;
+  const value = observed ? (observed.displayValue || new Intl.NumberFormat("en-US").format(observed.value)) : "—";
+  const direction = observed ? (observed.comparison?.displayChange || "First observed point") : metric.status;
   const asOf = observed ? formatDate(observed.asOfDate) : "No published value";
   const sourceLink = source ? "<a href=\"" + source.url + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.name) + " ↗</a>" : "";
   const historyNote = observed && observationCount < 2 ? "History begins with this observation" : (observationCount > 1 ? observationCount + " dated observations" : "No history yet");
@@ -88,17 +88,31 @@ async function initPulse() {
     fetchJson("data/manual/pulse-metrics.json"),
     fetchJson("config/sources.json"),
     fetchJson("data/processed/mcp-registry-current.json").catch(() => null),
-    fetchJson("data/processed/mcp-registry-history.json").catch(() => ({ observations: [] }))
+    fetchJson("data/processed/mcp-registry-history.json").catch(() => ({ observations: [] })),
+    fetchJson("data/processed/cloudflare-ai-bot-current.json").catch(() => null),
+    fetchJson("data/processed/cloudflare-ai-bot-history.json").catch(() => ({ observations: [] }))
   ]);
   const framework = data[0];
   const pulse = data[1];
   const sourceRegistry = data[2].sources;
   const currentMcp = data[3];
   const mcpHistory = data[4];
-  const observedCount = currentMcp ? 1 : 0;
-  $("#last-updated").textContent = currentMcp ? formatDate(currentMcp.retrievalDate) : formatDate(pulse.asOfDate);
+  const currentCloudflare = data[5];
+  const cloudflareHistory = data[6];
+  const observations = [currentMcp, currentCloudflare].filter(Boolean);
+  const histories = {
+    mcp_registered_server_count: mcpHistory.observations,
+    ai_bot_request_volume: cloudflareHistory.observations
+  };
+  const observedCount = observations.length;
+  const mostRecent = observations.sort((a, b) => String(b.retrievalDate).localeCompare(String(a.retrievalDate)))[0];
+  $("#last-updated").textContent = mostRecent ? formatDate(mostRecent.retrievalDate) : formatDate(pulse.asOfDate);
   $("#confidence").textContent = observedCount + " observed / " + pulse.metrics.length + " staged";
-  $("#metric-grid").innerHTML = pulse.metrics.map((metric) => renderPulseCard(metric, sourceFor(sourceRegistry, metric.sourceId), currentMcp, mcpHistory.observations.length)).join("");
+  $("#metric-grid").innerHTML = pulse.metrics.map((metric) => {
+    const observation = observations.find((item) => item.metricId === metric.id);
+    const history = histories[metric.id] || [];
+    return renderPulseCard(metric, sourceFor(sourceRegistry, metric.sourceId), observation, history.length);
+  }).join("");
   $("#expectation-grid").innerHTML = framework.expectations.map(renderExpectation).join("");
   $("#gap-table-body").innerHTML = framework.gaps.map(renderGap).join("");
   $("#breaker-grid").innerHTML = framework.breakers.map(renderBreaker).join("");

@@ -17,10 +17,10 @@
       "url": "https://developers.cloudflare.com/radar/",
       "supports": ["ai_bot_request_volume", "ai_bot_crawl_purpose", "bot_human_request_mix"],
       "updateFrequency": "weekly",
-      "accessMethod": "Radar API token",
-      "automationStatus": "adapter-ready; credential required",
-      "dataType": "observed network proxy",
-      "caveat": "Cloudflare sees traffic through its own network. AI bot traffic must not be described as all agent activity; crawler and fetcher/action-oriented traffic must remain distinct."
+      "accessMethod": "Radar API token stored as a GitHub Actions secret",
+      "automationStatus": "automated weekly",
+      "dataType": "observed normalized network proxy",
+      "caveat": "Cloudflare sees traffic through its own network. The initial AI-bot metric is MIN0_MAX-normalized, not a raw request count; compare only current and prior windows returned in the same request. AI bot traffic must not be described as all agent activity."
     },
     {
       "id": "fastly",

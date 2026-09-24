@@ -10,7 +10,7 @@ The MCP Registry ingest script reads the public registry endpoint, stores a date
 
 ## Token-backed source
 
-Cloudflare Radar is planned as the first network telemetry adapter. Current Cloudflare documentation requires a Radar API token. The repository contains no token and the live site shows no Cloudflare measurement until that token is supplied as a GitHub Actions secret.
+Cloudflare Radar is the first network telemetry adapter. It uses a `CLOUDFLARE_RADAR_API_TOKEN` GitHub Actions secret, which is never committed or exposed in the static site. The adapter requests current and prior 30-day AI-bot HTTP time series in one call and publishes their comparable mean-index change. Cloudflare returns `MIN0_MAX`-normalized data for this endpoint, so the dashboard does not call it raw request volume or a complete agentic-activity measure.
 
 ## Manual sources
 

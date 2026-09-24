@@ -1,0 +1,33 @@
+{
+  "metricId": "ai_bot_request_volume",
+  "observations": [
+    {
+      "metricId": "ai_bot_request_volume",
+      "metricName": "Cloudflare AI bot traffic index",
+      "category": "machine_activity",
+      "value": 72.4,
+      "unit": "normalized index (0–100; common 60-day request maximum)",
+      "displayValue": "72.4",
+      "periodStart": "2026-08-25T00:00:00Z",
+      "periodEnd": "2026-09-24T00:00:00Z",
+      "asOfDate": "2026-09-23",
+      "sourceName": "Cloudflare Radar",
+      "sourceUrl": "https://api.cloudflare.com/client/v4/radar/ai/bots/timeseries",
+      "sourceType": "token-backed network telemetry",
+      "retrievalDate": "2026-09-24T02:55:13.911Z",
+      "methodology": "Cloudflare Radar AI bot HTTP request time series. The API returns MIN0_MAX-normalized values rather than raw request counts. This observation is the mean index for the current 30-day window, compared with the preceding 30-day control window in the same API request; it is not all agentic activity or a raw request-volume estimate.",
+      "isObserved": true,
+      "isEstimate": false,
+      "comparison": {
+        "basis": "30-day mean index versus preceding 30-day control window in the same request",
+        "priorValue": 81.1,
+        "changePercent": -10.7,
+        "displayChange": "-10.7% vs prior 30d"
+      },
+      "notes": "MIN0_MAX permits comparison between the two windows returned together, but separate retrievals should not be treated as a raw-volume time series. Cloudflare sees traffic through its own network and AI bot traffic is not synonymous with autonomous agent activity."
+    }
+  ],
+  "metricName": "Cloudflare AI bot traffic index",
+  "category": "machine_activity",
+  "methodology": "Cloudflare Radar AI bot HTTP request time series. The API returns MIN0_MAX-normalized values rather than raw request counts. This observation is the mean index for the current 30-day window, compared with the preceding 30-day control window in the same API request; it is not all agentic activity or a raw request-volume estimate."
+}

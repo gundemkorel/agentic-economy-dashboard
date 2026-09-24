@@ -16,12 +16,12 @@
       "id": "ai_bot_request_volume",
       "number": "02",
       "layer": "Machine Activity",
-      "title": "AI bot request volume",
-      "description": "Track Cloudflare's AI bot request time series separately from generic bot traffic.",
-      "status": "Credential required",
-      "dataType": "Observed network proxy",
+      "title": "AI bot traffic index",
+      "description": "Track Cloudflare's AI bot HTTP traffic index separately from generic bot traffic, using comparable current and prior 30-day windows.",
+      "status": "Observed",
+      "dataType": "Observed normalized network proxy",
       "sourceId": "cloudflare-radar",
-      "methodology": "Planned token-backed Cloudflare Radar ingestion. A bot measure is not treated as a direct measure of all agent activity."
+      "methodology": "Cloudflare returns MIN0_MAX-normalized values rather than raw request counts. The dashboard shows a 30-day average index and the change versus the prior 30-day control window from the same request. AI bot traffic is not a direct measure of all agent activity."
     },
     {
       "id": "action_intensity",

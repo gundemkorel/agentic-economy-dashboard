@@ -6,6 +6,8 @@ When automated ingestion is added, keep this boundary:
 
 public source -> raw dated pull -> normalized observation -> reviewed snapshot -> static site
 
+Cloudflare Radar is a deliberate exception to any temptation to label all values as volumes: its AI-bot endpoint returns `MIN0_MAX`-normalized values. The derived observation keeps the returned normalization, request windows, and prior-window comparison, and it must not be compared as a raw-value series across separate retrievals.
+
 Recommended observation fields for future adapters:
 
 ~~~json

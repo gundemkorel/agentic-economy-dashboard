@@ -39,16 +39,18 @@ The structure has explicit raw, processed, manual, configuration, scripts, docum
 - docs/ — durable research methodology
 - companies/ — individual company research files
 
-The first functioning path is the public MCP Registry:
+The first functioning paths are:
 
 public registry → scripts/ingest-mcp-registry.mjs → dated raw snapshot → normalized observation → dashboard card
 
-Cloudflare Radar is adapter-ready but requires a Radar API token under its current API. No token or fabricated Cloudflare reading is committed. The source registry documents what remains manual and why.
+Cloudflare Radar → scripts/ingest-cloudflare-radar.mjs → dated raw snapshot → normalized observation → dashboard card
+
+The Radar adapter requires `CLOUDFLARE_RADAR_API_TOKEN` locally or as a GitHub Actions secret. No token is committed, and only the derived, source-attributed observation is published. Its first metric is a normalized AI-bot traffic proxy, not a raw request count or an estimate of all agentic activity.
 
 Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.
 
 ## GitHub Pages
 
-The repository includes GitHub Actions workflows for Pages deployment and weekly MCP Registry refresh. Enable Pages with GitHub Actions as the source in repository settings. The expected public URL is:
+The repository includes GitHub Actions workflows for Pages deployment plus weekly MCP Registry and Cloudflare Radar refreshes. Successful refreshes trigger a Pages redeployment. Enable Pages with GitHub Actions as the source in repository settings. The expected public URL is:
 
 https://gundemkorel.github.io/agentic-economy-dashboard/

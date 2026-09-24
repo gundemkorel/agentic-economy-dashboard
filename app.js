@@ -84,17 +84,98 @@ function renderCompany(company) {
   return "<article class=\"company-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.state) + "</span></div><p class=\"company-mechanism\">" + escapeHtml(company.mechanism) + "</p>" + reviewedEvidence + "<div class=\"company-sources\">" + sourceLinks + "</div></article>";
 }
 
-function renderExpectationRow(row) {
+const finiteNumber = (value) => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+};
+
+function formatUsd(value, maximumFractionDigits = 2) {
+  const numeric = finiteNumber(value);
+  if (numeric === null) return null;
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+    maximumFractionDigits
+  }).format(numeric);
+}
+
+function formatUsdCompact(value) {
+  const numeric = finiteNumber(value);
+  if (numeric === null) return null;
+  const absolute = Math.abs(numeric);
+  if (absolute >= 1_000_000_000) return "$" + (numeric / 1_000_000_000).toFixed(2).replace(/\.00$/, "") + "B";
+  if (absolute >= 1_000_000) return "$" + (numeric / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+  return formatUsd(numeric);
+}
+
+function formatPercent(value) {
+  const numeric = finiteNumber(value);
+  if (numeric === null) return null;
+  return (numeric >= 0 ? "+" : "") + numeric.toFixed(1) + "%";
+}
+
+function renderFmpSource(snapshot) {
+  const provider = snapshot?.provider;
+  const sourceUrl = provider?.sourceUrl;
+  if (!sourceUrl) return "";
+  const sourceLabel = provider?.sourceLabel || provider?.name || "FMP";
+  return "<a class=\"table-source\" href=\"" + escapeHtml(sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(sourceLabel) + " ↗</a>";
+}
+
+function renderFmpEstimate(record, snapshot) {
+  const estimate = record?.annualEstimate;
+  if (!estimate) return escapeHtml("FMP snapshot did not return an annual estimate");
+  const details = [];
+  const revenue = formatUsdCompact(estimate.revenueConsensus);
+  const eps = formatUsd(estimate.epsConsensus);
+  if (revenue) details.push("Revenue " + revenue);
+  if (eps) details.push("EPS " + eps);
+  const analystCount = finiteNumber(estimate.revenueAnalystCount) ?? finiteNumber(estimate.epsAnalystCount);
+  if (analystCount !== null) details.push(analystCount + " analyst" + (analystCount === 1 ? "" : "s"));
+  const period = estimate.fiscalPeriod || "annual estimate";
+  const asOf = record.asOfDate || snapshot?.retrievedAt;
+  return "<div class=\"market-data-cell\"><span class=\"guidance-label\">FMP · " + escapeHtml(period) + " · " + escapeHtml(formatDate(asOf)) + "</span><span>" + escapeHtml(details.length ? details.join(" · ") : "No displayable consensus fields returned") + "</span>" + renderFmpSource(snapshot) + "</div>";
+}
+
+function renderFmpValuation(record, snapshot) {
+  const quote = record?.quote || {};
+  const priceTarget = record?.priceTarget || {};
+  const derived = record?.derived || {};
+  const details = [];
+  const price = formatUsd(quote.price);
+  const forwardPe = finiteNumber(derived.forwardPriceEarnings);
+  const target = formatUsd(priceTarget.consensus);
+  const targetUpside = formatPercent(derived.targetUpsidePercent);
+  if (price) details.push("Price " + price);
+  if (forwardPe !== null) details.push("Forward P/E " + forwardPe.toFixed(1) + "x");
+  if (target) details.push("Target " + target + (targetUpside ? " (" + targetUpside + ")" : ""));
+  const asOf = record?.asOfDate || snapshot?.retrievedAt;
+  return "<div class=\"market-data-cell\"><span class=\"guidance-label\">FMP snapshot · " + escapeHtml(formatDate(asOf)) + "</span><span>" + escapeHtml(details.length ? details.join(" · ") : "No displayable valuation fields returned") + "</span>" + renderFmpSource(snapshot) + "</div>";
+}
+
+function renderExpectationRow(row, fmpSnapshot) {
   const guidance = row.managementGuidance;
   const source = guidance?.sourceUrl ? "<a class=\"table-source\" href=\"" + escapeHtml(guidance.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(guidance.sourceLabel || "Primary source") + " ↗</a>" : "";
   const managementOutlook = guidance ? "<div class=\"guidance-cell\"><span class=\"guidance-label\">Company-issued · " + escapeHtml(guidance.period) + " · " + escapeHtml(formatDate(guidance.issuedDate)) + "</span><span>" + escapeHtml(guidance.outlook) + "</span>" + source + "</div>" : "Not loaded";
-  return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + escapeHtml(row.streetEstimates) + "</td><td>" + escapeHtml(row.valuation) + "</td><td><span class=\"read caution\"><i></i>" + escapeHtml(row.gapRead) + "</span></td></tr>";
+  const liveRows = Array.isArray(fmpSnapshot?.rows) ? fmpSnapshot.rows : [];
+  const fmpRecord = liveRows.find((record) => record?.ticker === row.ticker && record?.status === "observed");
+  const streetEstimates = fmpRecord ? renderFmpEstimate(fmpRecord, fmpSnapshot) : escapeHtml(row.streetEstimates);
+  const valuation = fmpRecord ? renderFmpValuation(fmpRecord, fmpSnapshot) : escapeHtml(row.valuation);
+  const gapRead = fmpRecord ? "FMP snapshot loaded; align guidance and consensus fiscal periods before a gap conclusion" : row.gapRead;
+  const tone = fmpRecord ? "" : " caution";
+  return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + streetEstimates + "</td><td>" + valuation + "</td><td><span class=\"read" + tone + "\"><i></i>" + escapeHtml(gapRead) + "</span></td></tr>";
 }
 
-function renderProvider(provider) {
+function renderProvider(provider, fmpSnapshot) {
   const capabilities = Array.isArray(provider.capabilities) ? provider.capabilities.map((capability) => "<span>" + escapeHtml(capability) + "</span>").join("") : "";
   const source = provider.sourceUrl ? "<a href=\"" + escapeHtml(provider.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(provider.sourceLabel || "Provider details") + " ↗</a>" : "";
-  return "<article class=\"provider-card\"><div class=\"provider-card-top\"><h3>" + escapeHtml(provider.name) + "</h3><span class=\"tag " + escapeHtml(provider.tone || "neutral") + "\">" + escapeHtml(provider.status) + "</span></div><div class=\"provider-capabilities\">" + capabilities + "</div><p>" + escapeHtml(provider.description) + "</p>" + source + "</article>";
+  const fmpRows = Array.isArray(fmpSnapshot?.rows) ? fmpSnapshot.rows.filter((row) => row?.status === "observed") : [];
+  const isLiveFmp = provider.id === "fmp" && fmpRows.length > 0;
+  const status = isLiveFmp ? "Active · current snapshot" : provider.status;
+  const tone = isLiveFmp ? "positive" : (provider.tone || "neutral");
+  const description = isLiveFmp ? "A current licensed FMP snapshot is rendered for " + fmpRows.length + " Expectations Gap ticker" + (fmpRows.length === 1 ? "" : "s") + ". Review its retrieval date and fiscal-year labels before using it in a gap read." : provider.description;
+  return "<article class=\"provider-card\"><div class=\"provider-card-top\"><h3>" + escapeHtml(provider.name) + "</h3><span class=\"tag " + escapeHtml(tone) + "\">" + escapeHtml(status) + "</span></div><div class=\"provider-capabilities\">" + capabilities + "</div><p>" + escapeHtml(description) + "</p>" + source + "</article>";
 }
 
 function renderSource(source) {
@@ -157,13 +238,19 @@ async function initCompanies() {
 }
 
 async function initExpectations() {
-  const [data, providerMap] = await Promise.all([
+  const [data, providerMap, fmpSnapshot] = await Promise.all([
     fetchJson("data/manual/expectations-gap.json"),
-    fetchJson("config/market-data-providers.json").catch(() => ({ providers: [] }))
+    fetchJson("config/market-data-providers.json").catch(() => ({ providers: [] })),
+    fetchJson("data/processed/fmp-market-expectations.json").catch(() => null)
   ]);
-  $("#expectations-body").innerHTML = data.rows.map(renderExpectationRow).join("");
+  const fmpRows = Array.isArray(fmpSnapshot?.rows) ? fmpSnapshot.rows.filter((row) => row?.status === "observed") : [];
+  if (fmpRows.length) {
+    $("#market-data-status").textContent = "FMP snapshot live · " + fmpRows.length + " ticker" + (fmpRows.length === 1 ? "" : "s");
+    $("#market-data-notice").textContent = "Management guidance remains company-issued context. The current FMP snapshot shows its retrieval date and annual fiscal period, but fiscal-year alignment is still required before a gap conclusion.";
+  }
+  $("#expectations-body").innerHTML = data.rows.map((row) => renderExpectationRow(row, fmpSnapshot)).join("");
   const providerGrid = $("#provider-grid");
-  if (providerGrid) providerGrid.innerHTML = providerMap.providers.map(renderProvider).join("");
+  if (providerGrid) providerGrid.innerHTML = providerMap.providers.map((provider) => renderProvider(provider, fmpSnapshot)).join("");
 }
 
 async function initBreakers() {

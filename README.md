@@ -13,7 +13,7 @@ The project separately tracks:
 3. Expectations Gap — operating evidence versus Street estimates and valuation.
 4. Thesis Breakers — evidence that should reduce conviction.
 
-Read the full [thesis](docs/THESIS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), and [update playbook](docs/UPDATE_PLAYBOOK.md).
+Read the full [thesis](docs/THESIS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
 ## Run locally
 
@@ -57,7 +57,7 @@ The Radar adapter requires `CLOUDFLARE_RADAR_API_TOKEN` locally or as a GitHub A
 
 Keep raw pulls separate from the curated snapshot used by the site. Every derived metric should remain traceable to a public source URL, period, retrieval date, methodology, and observed/estimated label.
 
-The Expectations Gap page includes a visible market-data connection map. It is a provider-evaluation layer only: it shows which APIs could fill the consensus and valuation columns, while keeping every vendor-derived value out of the public site until the applicable display, redistribution, and retention terms are confirmed.
+The Expectations Gap page includes a visible market-data connection map. Financial Modeling Prep is the selected first integration, but its values remain out of the public site until the applicable display, redistribution, and retention rights are confirmed. Its workflow requires both the protected `FMP_API_KEY` secret and the explicit `FMP_PUBLIC_DISPLAY_APPROVED=true` repository variable. Once enabled, it creates a compact current normalized snapshot only in the deployed Pages artifact—no raw response, public repository snapshot, or vendor-data archive. See the [activation and removal steps](docs/FMP_SETUP.md).
 
 ## GitHub Pages
 

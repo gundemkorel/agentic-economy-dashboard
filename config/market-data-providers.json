@@ -1,6 +1,6 @@
 {
   "asOfDate": "2026-09-24",
-  "definition": "This is a connection-readiness map, not a market-data feed. A listed capability does not mean that the dashboard has retrieved, stored, displayed, or licensed that provider's data.",
+  "definition": "This is a connection-readiness map, not a market-data feed. Financial Modeling Prep is the selected pathway, but no FMP value is retrieved, stored, or displayed until its public-display agreement is complete and the protected workflow gate is enabled.",
   "providers": [
     {
       "id": "company-reporting",
@@ -15,10 +15,10 @@
     {
       "id": "fmp",
       "name": "Financial Modeling Prep",
-      "status": "Not connected · written display rights required",
+      "status": "Selected · awaiting agreement + credential",
       "tone": "warning",
       "capabilities": ["Forward EPS and revenue", "Price targets", "Market price inputs"],
-      "description": "Technically suited to the compact watchlist. Do not publish, archive, or render its values here unless the agreement explicitly covers this public static site and its downloadable data files.",
+      "description": "Selected for the compact watchlist. Its workflow is deliberately blocked until a written agreement explicitly permits public display on this static GitHub Pages site, downloadable data files, and the intended retention period; it writes a compact current deployment snapshot only, never a raw FMP response or a public repository file.",
       "sourceLabel": "FMP analyst estimates documentation",
       "sourceUrl": "https://site.financialmodelingprep.com/developer/docs/stable/financial-estimates"
     },

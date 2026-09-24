@@ -1,6 +1,6 @@
 {
-  "asOfDate": "2026-09-23",
-  "definition": "Company-issued guidance is populated from primary earnings releases. Street consensus and valuation remain intentionally unpopulated until a consistent, licensed or otherwise verifiable market-data source is selected. Management outlook is not analyst consensus and must not be used as a substitute for what is priced in.",
+  "asOfDate": "2026-09-24",
+  "definition": "Company-issued guidance is populated from primary earnings releases. Financial Modeling Prep is the selected source for a consistent consensus and valuation snapshot, but those fields remain unpopulated until the public-display agreement is complete and the protected ingestion workflow has run. Management outlook is not analyst consensus and must not be used as a substitute for what is priced in.",
   "rows": [
     {
       "ticker": "AKAM",
@@ -12,10 +12,10 @@
         "sourceLabel": "Akamai Q2 2026 results",
         "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
       },
-      "streetEstimates": "Provider not selected",
-      "valuation": "Provider not selected",
-      "gapRead": "Company outlook added; consensus and valuation required before a gap read",
-      "state": "guidance only"
+      "streetEstimates": "FMP selected · awaiting approved snapshot",
+      "valuation": "FMP selected · awaiting approved snapshot",
+      "gapRead": "Company outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "state": "FMP pending"
     },
     {
       "ticker": "ESTC",
@@ -27,10 +27,10 @@
         "sourceLabel": "Elastic Q1 FY2027 results",
         "sourceUrl": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/"
       },
-      "streetEstimates": "Provider not selected",
-      "valuation": "Provider not selected",
-      "gapRead": "Company outlook added; consensus and valuation required before a gap read",
-      "state": "guidance only"
+      "streetEstimates": "FMP selected · awaiting approved snapshot",
+      "valuation": "FMP selected · awaiting approved snapshot",
+      "gapRead": "Company outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "state": "FMP pending"
     },
     {
       "ticker": "DT",
@@ -42,10 +42,10 @@
         "sourceLabel": "Dynatrace Q1 FY2027 results",
         "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results"
       },
-      "streetEstimates": "Provider not selected",
-      "valuation": "Provider not selected",
-      "gapRead": "Company outlook added; consensus and valuation required before a gap read",
-      "state": "guidance only"
+      "streetEstimates": "FMP selected · awaiting approved snapshot",
+      "valuation": "FMP selected · awaiting approved snapshot",
+      "gapRead": "Company outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "state": "FMP pending"
     },
     {
       "ticker": "FFIV",
@@ -57,10 +57,10 @@
         "sourceLabel": "F5 Q3 FY2026 results",
         "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
       },
-      "streetEstimates": "Provider not selected",
-      "valuation": "Provider not selected",
-      "gapRead": "Product relevance and outlook added; consensus and valuation required before a gap read",
-      "state": "guidance only"
+      "streetEstimates": "FMP selected · awaiting approved snapshot",
+      "valuation": "FMP selected · awaiting approved snapshot",
+      "gapRead": "Product relevance and outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "state": "FMP pending"
     }
   ]
 }

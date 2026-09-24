@@ -1,6 +1,8 @@
 name: Deploy dashboard to GitHub Pages
 
 on:
+  schedule:
+    - cron: "17 22 * * 1-5"
   push:
     branches: [main]
   workflow_dispatch:
@@ -23,9 +25,22 @@ jobs:
     environment:
       name: github-pages
     runs-on: ubuntu-latest
+    env:
+      FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+      FMP_PUBLIC_DISPLAY_APPROVED: ${{ vars.FMP_PUBLIC_DISPLAY_APPROVED }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Create licensed FMP snapshot for this deployment
+        if: env.FMP_API_KEY != '' && env.FMP_PUBLIC_DISPLAY_APPROVED == 'true'
+        run: node scripts/ingest-fmp-market-data.mjs
+      - name: Explain omitted FMP snapshot
+        if: env.FMP_API_KEY == '' || env.FMP_PUBLIC_DISPLAY_APPROVED != 'true'
+        run: echo "FMP snapshot omitted. Configure FMP_API_KEY and set FMP_PUBLIC_DISPLAY_APPROVED=true only after written public-display and retention rights are confirmed."
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare public artifact

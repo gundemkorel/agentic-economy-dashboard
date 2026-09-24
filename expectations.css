@@ -8,6 +8,12 @@
   min-width: 235px;
 }
 
+.market-data-cell {
+  display: grid;
+  gap: 7px;
+  min-width: 205px;
+}
+
 .guidance-label,
 .table-source {
   font-family: "DM Mono", ui-monospace, monospace;

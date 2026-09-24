@@ -15,6 +15,7 @@ The project separately tracks:
 5. Decision Gates & Scenario Labs — the research sequence and explicitly labelled company-assumption models.
 6. Next Earnings — compact company-capture scorecards that turn the next reported periods into a few explicit tests.
 7. Observation History — the baseline count, comparability rules, collection cadence, and missing proof behind every future conclusion.
+8. Research Queue — four secondary candidates with primary-source baselines and promotion tests, plus three clearly labeled benchmark comparators.
 
 Read the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
@@ -69,6 +70,8 @@ The Akamai scenario lab reads company-issued reported baselines and applies tran
 The same Akamai page now includes a pre-release Q3 earnings scorecard. It compares Q3 results with the Q2 reported baseline and company-issued guide, tests CIS conversion, paid agent-control monetization, delivery trends, cash returns, and contract-fulfillment risk, then records an evidence upgrade, watch, or downgrade without treating any outcome as an expectation-gap call.
 
 The [Next Earnings page](earnings.html) applies the same decision discipline in a deliberately compact form for Elastic, Dynatrace, and F5: one central question, company-issued guidance, three expandable decision checks, and official-source links. Its structured data lives in `data/manual/company-earnings-scorecards.json`, so a quarterly update does not require rewriting the interface.
+
+The [Research Queue page](research-queue.html) keeps the wider universe usable: Zscaler, Twilio, Fastly, and Okta each have a reported baseline, one causal question, three expandable commercial tests, a counterargument, and primary sources. Cloudflare, Datadog, and Palo Alto Networks appear only as benchmark comparators. Their data lives in `data/manual/secondary-company-research.json`; core-company ranking and market-expectation conclusions remain untouched.
 
 ## GitHub Pages
 

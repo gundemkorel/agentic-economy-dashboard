@@ -16,7 +16,9 @@ Cloudflare Radar is a deliberate exception to any temptation to label all values
 
 The observation policy declares each series’ minimum spacing, eligible-observation threshold, comparability condition, permitted decision use, and prohibited inference. The generated observation register joins that policy to automated history, reviewed manual evidence, and the company-capture archive. It may say a series is ready for analyst trend review, but it never assigns a trend direction automatically.
 
-Company baselines belong in data/manual/company-capture-history.json and are appended after each relevant earnings release. Preserve old records before updating current company cards; a single quarter remains a baseline, not a capture trend.
+Company baselines belong in data/manual/company-capture-history.json and are appended after each relevant earnings release. Preserve old records before updating current company cards; a single quarter remains a baseline, not a capture trend. Core companies and secondary candidates have separate but identical evidence standards; benchmarks are intentionally excluded from this sequence.
+
+`data/manual/secondary-company-research.json` powers the Research Queue page. It holds the reported baseline, one causal question, commercial tests, counterarguments, primary-source links, and promotion protocol for each secondary candidate. It also holds the smaller benchmark shelf. Update this file and the corresponding `companies/` note together after a relevant earnings release; do not turn a benchmark into a candidate without recording why its role changed.
 
 Recommended observation fields for future adapters:
 

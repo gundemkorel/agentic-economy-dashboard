@@ -5,7 +5,7 @@
   "summary": {
     "trackedMetrics": 7,
     "metricsReadyForReview": 0,
-    "trackedCompanies": 4,
+    "trackedCompanies": 8,
     "companiesReadyForCaptureReview": 0
   },
   "tracks": [
@@ -286,6 +286,94 @@
         "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx",
         "captureRead": "AI Gateway makes the company product-relevant, but adoption, attach, customer count, pricing, and revenue are not disclosed.",
         "counterpoint": "Growth was led by systems, and the gateway could remain a bundled feature rather than a paid control-plane product."
+      }
+    },
+    {
+      "ticker": "ZS",
+      "title": "Zscaler · secondary candidate",
+      "cadence": "Each earnings release",
+      "decisionUse": "Test whether security-for-agents becomes paid platform adoption while organic ARR remains comparable and cash conversion holds after capacity investment.",
+      "doNotUse": "Do not equate agent-security product relevance, acquisition-assisted ARR, or Zscaler network research with agent-specific shareholder capture.",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "recordedObservationCount": 1,
+      "eligibleObservationCount": 1,
+      "maturity": "Baseline",
+      "nextRequirement": "1 further eligible observation required.",
+      "latestRecord": {
+        "periodLabel": "Q4 FY2026",
+        "periodEnd": "2026-07-31",
+        "reportedDate": "2026-09-03",
+        "sourceLabel": "Zscaler Q4 FY2026 results and FY2027 outlook",
+        "sourceUrl": "https://ir.zscaler.com/node/16456",
+        "captureRead": "Security-for-agents is product-relevant and organic ARR grew, but the company has not disclosed paid agent-security adoption, pricing, revenue, or attach.",
+        "counterpoint": "Red Canary contributed $141M of ARR, while capex and internal-use software reached $218.5M and reduced Q4 free-cash-flow margin."
+      }
+    },
+    {
+      "ticker": "TWLO",
+      "title": "Twilio · secondary candidate",
+      "cadence": "Each earnings release",
+      "decisionUse": "Test whether agent-driven communications create paid activity with durable organic expansion, gross-margin, and cash evidence.",
+      "doNotUse": "Do not equate an agent platform launch or broad communications growth with agent-specific revenue or incremental margin.",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "recordedObservationCount": 1,
+      "eligibleObservationCount": 1,
+      "maturity": "Baseline",
+      "nextRequirement": "1 further eligible observation required.",
+      "latestRecord": {
+        "periodLabel": "Q2 2026",
+        "periodEnd": "2026-06-30",
+        "reportedDate": "2026-08-06",
+        "sourceLabel": "Twilio Q2 2026 results and outlook",
+        "sourceUrl": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-second-quarter-2026-results",
+        "captureRead": "Communications usage and customer expansion are strong, but agent-driven messages, revenue, pricing, retention, and incremental margin are not separately disclosed.",
+        "counterpoint": "The carrier-heavy delivery layer makes the incremental gross-margin and mix outcome essential; broad growth is not proof of a paid agentic-communications mechanism."
+      }
+    },
+    {
+      "ticker": "FSLY",
+      "title": "Fastly · secondary candidate",
+      "cadence": "Each earnings release",
+      "decisionUse": "Test whether machine-heavy traffic converts into paid edge, security, compute, or observability consumption with durable retention and cash returns.",
+      "doNotUse": "Do not treat Fastly network traffic research or a product launch as proof of paid agentic capture.",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "recordedObservationCount": 1,
+      "eligibleObservationCount": 1,
+      "maturity": "Baseline",
+      "nextRequirement": "1 further eligible observation required.",
+      "latestRecord": {
+        "periodLabel": "Q2 2026",
+        "periodEnd": "2026-06-30",
+        "reportedDate": "2026-08-05",
+        "sourceLabel": "Fastly Q2 2026 results and outlook",
+        "sourceUrl": "https://investors.fastly.com/news-releases/news-release-details/fastly-announces-second-quarter-2026-financial-results",
+        "captureRead": "Machine-traffic relevance and relevant products are visible, but paid AI-delivery or agent-security adoption, revenue, and unit economics are not disclosed.",
+        "counterpoint": "Free cash flow remains small and the ten largest customers represented 37% of revenue, so customer concentration and cash conversion remain material tests."
+      }
+    },
+    {
+      "ticker": "OKTA",
+      "title": "Okta · secondary candidate",
+      "cadence": "Each earnings release",
+      "decisionUse": "Test whether delegated agent identity becomes paid, measurable platform demand while RPO, margin, and cash economics remain durable.",
+      "doNotUse": "Do not equate architecture, ecosystem support, or a beta with agent-identity revenue, pricing, or attach.",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "recordedObservationCount": 1,
+      "eligibleObservationCount": 1,
+      "maturity": "Baseline",
+      "nextRequirement": "1 further eligible observation required.",
+      "latestRecord": {
+        "periodLabel": "Q2 FY2027",
+        "periodEnd": "2026-07-31",
+        "reportedDate": "2026-08-26",
+        "sourceLabel": "Okta Q2 FY2027 results and outlook",
+        "sourceUrl": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results/default.aspx",
+        "captureRead": "Agent identity is strategically relevant, but the company has not disclosed agent-identity revenue, pricing, customers, attach, or retention outcomes.",
+        "counterpoint": "A professional-services partner change creates a reported-growth headwind and complicates simple demand comparisons; product announcements remain separate from paid adoption."
       }
     }
   ],

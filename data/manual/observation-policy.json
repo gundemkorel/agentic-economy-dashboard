@@ -145,6 +145,42 @@
       "requiredEligibleObservations": 2,
       "decisionUse": "Test whether AI Gateway controls appear in paid adoption, attach, recurring mix, or margin.",
       "doNotUse": "Do not equate product relevance with commercial adoption."
+    },
+    {
+      "ticker": "ZS",
+      "title": "Zscaler · secondary candidate",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether security-for-agents becomes paid platform adoption while organic ARR remains comparable and cash conversion holds after capacity investment.",
+      "doNotUse": "Do not equate agent-security product relevance, acquisition-assisted ARR, or Zscaler network research with agent-specific shareholder capture."
+    },
+    {
+      "ticker": "TWLO",
+      "title": "Twilio · secondary candidate",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether agent-driven communications create paid activity with durable organic expansion, gross-margin, and cash evidence.",
+      "doNotUse": "Do not equate an agent platform launch or broad communications growth with agent-specific revenue or incremental margin."
+    },
+    {
+      "ticker": "FSLY",
+      "title": "Fastly · secondary candidate",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether machine-heavy traffic converts into paid edge, security, compute, or observability consumption with durable retention and cash returns.",
+      "doNotUse": "Do not treat Fastly network traffic research or a product launch as proof of paid agentic capture."
+    },
+    {
+      "ticker": "OKTA",
+      "title": "Okta · secondary candidate",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether delegated agent identity becomes paid, measurable platform demand while RPO, margin, and cash economics remain durable.",
+      "doNotUse": "Do not equate architecture, ecosystem support, or a beta with agent-identity revenue, pricing, or attach."
     }
   ],
   "marketExpectationHistory": {

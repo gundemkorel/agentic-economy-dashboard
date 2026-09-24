@@ -67,6 +67,12 @@ The observation register is the operational control for this rule. It records ra
 
 Company capture uses a separate earnings sequence. A company needs at least two time-separated, definition-consistent reported periods before repeated revenue-quality, margin, retention, or cash-flow evidence can be reviewed as a capture pattern. Preserve prior records in data/manual/company-capture-history.json; do not overwrite a baseline with the next quarter.
 
+## Candidate tiers and promotion
+
+The core queue contains companies with an established causal map and dated capture research. Secondary candidates receive the same primary-source baseline and earnings sequence, but they have not earned a core seat. They must show at least two comparable reported periods and a commercial outcome—such as paid adoption, pricing, attach, usage-to-revenue, retention, margin, or cash conversion—linked to the named mechanism. A product launch or broad AI commentary is not sufficient.
+
+Benchmarks are deliberate comparison points rather than candidates. They can inform the competitive map, the quality bar, or the risk of platform consolidation, but are not assigned a scenario model or expectation-gap view unless they are formally promoted through the same gates.
+
 ## Thesis-breaker discipline
 
 Every breaker must identify a measurable test, current status, cadence, and downgrade action. Separate macro failure (Wave 2 does not develop) from monetization failure (the activity is real but bundled, commoditized, or internalized) and company failure (another supplier captures the economics).

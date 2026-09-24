@@ -1,12 +1,15 @@
 {
   "companies": [
-    { "ticker": "AKAM", "name": "Akamai", "exposure": "Edge delivery, security, cloud infrastructure", "irUrl": "https://www.ir.akamai.com/" },
-    { "ticker": "ESTC", "name": "Elastic", "exposure": "Search, vector retrieval, observability", "irUrl": "https://ir.elastic.co/" },
-    { "ticker": "DT", "name": "Dynatrace", "exposure": "Observability and AI operations", "irUrl": "https://ir.dynatrace.com/" },
-    { "ticker": "FFIV", "name": "F5", "exposure": "Application delivery, AI and MCP gateways", "irUrl": "https://investors.f5.com/" },
-    { "ticker": "ZS", "name": "Zscaler", "exposure": "Enterprise AI security and policy controls", "irUrl": "https://ir.zscaler.com/" },
-    { "ticker": "TWLO", "name": "Twilio", "exposure": "Communications usage and agent interactions", "irUrl": "https://investors.twilio.com/" },
-    { "ticker": "FSLY", "name": "Fastly", "exposure": "Edge traffic, origin requests, machine delivery", "irUrl": "https://investors.fastly.com/" },
-    { "ticker": "OKTA", "name": "Okta", "exposure": "Machine and agent identity", "irUrl": "https://investor.okta.com/" }
+    { "ticker": "AKAM", "name": "Akamai", "tier": "Core", "exposure": "Edge delivery, security, cloud infrastructure", "irUrl": "https://www.ir.akamai.com/" },
+    { "ticker": "ESTC", "name": "Elastic", "tier": "Core", "exposure": "Search, vector retrieval, observability", "irUrl": "https://ir.elastic.co/" },
+    { "ticker": "DT", "name": "Dynatrace", "tier": "Core", "exposure": "Observability and AI operations", "irUrl": "https://ir.dynatrace.com/" },
+    { "ticker": "FFIV", "name": "F5", "tier": "Core", "exposure": "Application delivery, AI and MCP gateways", "irUrl": "https://investors.f5.com/" },
+    { "ticker": "ZS", "name": "Zscaler", "tier": "Secondary", "exposure": "Enterprise AI security and policy controls", "irUrl": "https://ir.zscaler.com/" },
+    { "ticker": "TWLO", "name": "Twilio", "tier": "Secondary", "exposure": "Communications usage and agent interactions", "irUrl": "https://investors.twilio.com/" },
+    { "ticker": "FSLY", "name": "Fastly", "tier": "Secondary", "exposure": "Edge traffic, origin requests, machine delivery", "irUrl": "https://investors.fastly.com/" },
+    { "ticker": "OKTA", "name": "Okta", "tier": "Secondary", "exposure": "Machine and agent identity", "irUrl": "https://investor.okta.com/" },
+    { "ticker": "NET", "name": "Cloudflare", "tier": "Benchmark", "exposure": "Edge network, developer infrastructure, security, agent controls", "irUrl": "https://cloudflare.net/" },
+    { "ticker": "DDOG", "name": "Datadog", "tier": "Benchmark", "exposure": "Observability, security, autonomous operations", "irUrl": "https://investors.datadoghq.com/" },
+    { "ticker": "PANW", "name": "Palo Alto Networks", "tier": "Benchmark", "exposure": "Platform security and agent control-plane scale", "irUrl": "https://investors.paloaltonetworks.com/" }
   ]
 }

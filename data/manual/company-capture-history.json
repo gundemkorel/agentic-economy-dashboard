@@ -1,6 +1,6 @@
 {
   "asOfDate": "2026-09-24",
-  "definition": "Dated company-reported capture evidence for the core research queue. Each record preserves reported facts, the project interpretation, and a counterpoint. These are not agent-specific revenue disclosures unless the company explicitly says so.",
+  "definition": "Dated company-reported capture evidence for the core research queue and secondary candidates. Each record preserves reported facts, the project interpretation, and a counterpoint. These are not agent-specific revenue disclosures unless the company explicitly says so. Benchmarks are intentionally excluded from this earnings sequence.",
   "records": [
     {
       "ticker": "AKAM",
@@ -65,6 +65,70 @@
       ],
       "captureRead": "AI Gateway makes the company product-relevant, but adoption, attach, customer count, pricing, and revenue are not disclosed.",
       "counterpoint": "Growth was led by systems, and the gateway could remain a bundled feature rather than a paid control-plane product."
+    },
+    {
+      "ticker": "ZS",
+      "periodEnd": "2026-07-31",
+      "reportedDate": "2026-09-03",
+      "periodLabel": "Q4 FY2026",
+      "sourceLabel": "Zscaler Q4 FY2026 results and FY2027 outlook",
+      "sourceUrl": "https://ir.zscaler.com/node/16456",
+      "facts": [
+        "Revenue: $898.2M, +25% year over year",
+        "ARR: $3.771B, +25% year over year; excluding Red Canary, $3.630B, +20%",
+        "Non-GAAP operating margin: 24%",
+        "Free cash flow: $60.8M, or 7% of revenue"
+      ],
+      "captureRead": "Security-for-agents is product-relevant and organic ARR grew, but the company has not disclosed paid agent-security adoption, pricing, revenue, or attach.",
+      "counterpoint": "Red Canary contributed $141M of ARR, while capex and internal-use software reached $218.5M and reduced Q4 free-cash-flow margin."
+    },
+    {
+      "ticker": "TWLO",
+      "periodEnd": "2026-06-30",
+      "reportedDate": "2026-08-06",
+      "periodLabel": "Q2 2026",
+      "sourceLabel": "Twilio Q2 2026 results and outlook",
+      "sourceUrl": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-second-quarter-2026-results",
+      "facts": [
+        "Revenue: $1.499B, +22% reported and +17% organic year over year",
+        "Dollar-based net expansion rate: 116%",
+        "Non-GAAP gross profit: $736M, or 49% margin",
+        "Free cash flow: $353M, or 24% of revenue"
+      ],
+      "captureRead": "Communications usage and customer expansion are strong, but agent-driven messages, revenue, pricing, retention, and incremental margin are not separately disclosed.",
+      "counterpoint": "The carrier-heavy delivery layer makes the incremental gross-margin and mix outcome essential; broad growth is not proof of a paid agentic-communications mechanism."
+    },
+    {
+      "ticker": "FSLY",
+      "periodEnd": "2026-06-30",
+      "reportedDate": "2026-08-05",
+      "periodLabel": "Q2 2026",
+      "sourceLabel": "Fastly Q2 2026 results and outlook",
+      "sourceUrl": "https://investors.fastly.com/news-releases/news-release-details/fastly-announces-second-quarter-2026-financial-results",
+      "facts": [
+        "Revenue: $183.3M, +23% year over year",
+        "Security revenue: $41.7M, +43% year over year",
+        "RPO: $341M, +38% year over year; LTM net retention: 117%",
+        "Free cash flow: $3.6M; operating cash flow: $39.3M"
+      ],
+      "captureRead": "Machine-traffic relevance and relevant products are visible, but paid AI-delivery or agent-security adoption, revenue, and unit economics are not disclosed.",
+      "counterpoint": "Free cash flow remains small and the ten largest customers represented 37% of revenue, so customer concentration and cash conversion remain material tests."
+    },
+    {
+      "ticker": "OKTA",
+      "periodEnd": "2026-07-31",
+      "reportedDate": "2026-08-26",
+      "periodLabel": "Q2 FY2027",
+      "sourceLabel": "Okta Q2 FY2027 results and outlook",
+      "sourceUrl": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results/default.aspx",
+      "facts": [
+        "Revenue: $805M, +11% year over year; subscription revenue: $793M, +12%",
+        "RPO: $4.858B, +17% year over year; cRPO: $2.585B, +14%",
+        "Non-GAAP operating income: $226M, or 28% margin",
+        "Free cash flow: $227M, or 28% of revenue"
+      ],
+      "captureRead": "Agent identity is strategically relevant, but the company has not disclosed agent-identity revenue, pricing, customers, attach, or retention outcomes.",
+      "counterpoint": "A professional-services partner change creates a reported-growth headwind and complicates simple demand comparisons; product announcements remain separate from paid adoption."
     }
   ]
 }

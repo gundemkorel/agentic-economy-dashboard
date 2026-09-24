@@ -1,0 +1,385 @@
+{
+  "asOfDate": "2026-09-24",
+  "title": "Secondary candidates and benchmark shelf",
+  "status": "Reported baseline collected · no investment conclusion",
+  "purpose": "This is the evidence-backed waiting room around the four core companies. Secondary candidates can earn a core seat only through repeated commercial and economic proof. Benchmarks help interpret the wider infrastructure landscape, but are not being promoted as current thesis candidates or expectation-gap calls.",
+  "summary": [
+    {
+      "label": "Secondary candidates",
+      "value": "4 companies",
+      "note": "Zscaler, Twilio, Fastly, and Okta"
+    },
+    {
+      "label": "Benchmark shelf",
+      "value": "3 comparators",
+      "note": "Cloudflare, Datadog, and Palo Alto Networks"
+    },
+    {
+      "label": "What advances a name",
+      "value": "Commercial proof",
+      "note": "Not a product release or AI narrative"
+    },
+    {
+      "label": "Expectation gap",
+      "value": "Not assessed",
+      "note": "History and fiscal alignment remain incomplete"
+    }
+  ],
+  "secondary": [
+    {
+      "ticker": "ZS",
+      "name": "Zscaler",
+      "lens": "Security control plane",
+      "state": "Secondary candidate · first reported baseline",
+      "fiscalPeriod": "Q4 FY2026 · ended July 31, 2026",
+      "question": "Can security for enterprise agents become a paid, durable control plane rather than a feature set embedded in the existing platform?",
+      "reportedBaseline": [
+        {
+          "label": "Q4 revenue",
+          "value": "$898.2M · +25% YoY",
+          "note": "Company-reported total revenue"
+        },
+        {
+          "label": "ARR excluding Red Canary",
+          "value": "$3.630B · +20% YoY",
+          "note": "Keeps acquisition contribution visible"
+        },
+        {
+          "label": "Q4 free cash flow",
+          "value": "$60.8M · 7% margin",
+          "note": "Affected by $218.5M of capex and internal-use software"
+        }
+      ],
+      "mechanism": "More autonomous access to applications, data, and tools could create additional policy, data-protection, and agent-security control points. The relevant billable outcome is paid platform adoption or non-seat-based security spend—not simply more AI traffic.",
+      "tests": [
+        {
+          "number": "01",
+          "title": "Make agent security commercially visible",
+          "upgrade": "Management discloses paid adoption, customer scale, attach, pricing, transaction volume, or revenue contribution for security-for-agents capabilities.",
+          "notEnough": "An agent-security launch, framework support, or generic platform commentary without a commercial measure.",
+          "downgrade": "The capabilities appear bundled, experimental, or commercially immaterial across repeated reports."
+        },
+        {
+          "number": "02",
+          "title": "Keep the ARR read comparable",
+          "upgrade": "Organic ARR, net-new ARR, and non-seat-based solutions sustain quality after separating acquisition effects.",
+          "notEnough": "Reported ARR growth without clear acquisition and organic comparability.",
+          "downgrade": "Organic growth weakens while acquisitions or price changes obscure the underlying demand signal."
+        },
+        {
+          "number": "03",
+          "title": "Protect cash conversion",
+          "upgrade": "Capacity investment supports durable growth while free-cash-flow margin returns toward the guided profile.",
+          "notEnough": "Strong operating cash flow without evidence of the full capital burden.",
+          "downgrade": "Investment remains elevated and cash economics deteriorate without an identifiable paid agent-security return."
+        }
+      ],
+      "boundary": "Zscaler’s own AI-security research can support a macro control-demand proxy, but it is not proof of Zscaler agent-specific revenue. Red Canary also makes reported ARR comparability a continuing requirement.",
+      "sources": [
+        {
+          "label": "Zscaler Q4 FY2026 results and FY2027 outlook",
+          "url": "https://ir.zscaler.com/node/16456"
+        },
+        {
+          "label": "Zscaler agentic-AI security product update",
+          "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-unveils-new-product-innovations-secure-agentic-ai"
+        }
+      ]
+    },
+    {
+      "ticker": "TWLO",
+      "name": "Twilio",
+      "lens": "Communications usage",
+      "state": "Secondary candidate · first reported baseline",
+      "fiscalPeriod": "Q2 2026 · ended June 30, 2026",
+      "question": "Can agent-driven customer and business interactions increase paid communications and engagement use without eroding the economics of the carrier-heavy delivery layer?",
+      "reportedBaseline": [
+        {
+          "label": "Q2 revenue",
+          "value": "$1.499B · +22% reported",
+          "note": "+17% organic growth"
+        },
+        {
+          "label": "Dollar-based net expansion",
+          "value": "116%",
+          "note": "Company-reported customer expansion measure"
+        },
+        {
+          "label": "Q2 free cash flow",
+          "value": "$353M · 24% margin",
+          "note": "Company-reported free cash flow"
+        }
+      ],
+      "mechanism": "An agent that chats, calls, verifies, or follows up creates billable communications and engagement events. The economic test is whether incremental event volume carries attractive gross margin, retention, and cash conversion.",
+      "tests": [
+        {
+          "number": "01",
+          "title": "Show paid agent-driven activity",
+          "upgrade": "The company discloses agent-related message, voice, engagement, customer, revenue, pricing, or retention evidence tied to a paid product.",
+          "notEnough": "A platform or Agent Connect launch without volume, pricing, customer, or gross-profit evidence.",
+          "downgrade": "Agent features are bundled or immaterial and the relevant usage categories do not gain commercial traction."
+        },
+        {
+          "number": "02",
+          "title": "Keep organic expansion durable",
+          "upgrade": "Organic growth and dollar-based net expansion remain healthy across comparable customer cohorts.",
+          "notEnough": "Reported growth without the organic comparison or a durable cohort read.",
+          "downgrade": "Organic growth or expansion weakens despite a stronger AI communications narrative."
+        },
+        {
+          "number": "03",
+          "title": "Convert activity into profitable cash flow",
+          "upgrade": "Gross margin, operating income, and free cash flow show that higher event volume is economically productive.",
+          "notEnough": "More revenue without visibility into carrier costs, mix, margin, and cash conversion.",
+          "downgrade": "Usage grows but carrier costs or mix pressure compress the incremental economics."
+        }
+      ],
+      "boundary": "Twilio does not separately disclose agent-driven communications, revenue, pricing, or retention. General platform growth does not establish the proposed agentic mechanism.",
+      "sources": [
+        {
+          "label": "Twilio Q2 2026 results and outlook",
+          "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-second-quarter-2026-results"
+        },
+        {
+          "label": "Twilio next-generation platform and Agent Connect",
+          "url": "https://investors.twilio.com/news-releases/news-release-details/twilios-next-generation-platform-infrastructure-layer-every"
+        }
+      ]
+    },
+    {
+      "ticker": "FSLY",
+      "name": "Fastly",
+      "lens": "Edge delivery and security",
+      "state": "Secondary candidate · first reported baseline",
+      "fiscalPeriod": "Q2 2026 · ended June 30, 2026",
+      "question": "Can machine-heavy traffic translate into durable, paid edge delivery and security consumption with a materially better cash outcome?",
+      "reportedBaseline": [
+        {
+          "label": "Q2 revenue",
+          "value": "$183.3M · +23% YoY",
+          "note": "Company-reported total revenue"
+        },
+        {
+          "label": "Security revenue",
+          "value": "$41.7M · +43% YoY",
+          "note": "Company-reported security category"
+        },
+        {
+          "label": "Q2 free cash flow",
+          "value": "$3.6M",
+          "note": "Operating cash flow was $39.3M; cash conversion remains a key test"
+        }
+      ],
+      "mechanism": "More machine retrieval, inference-adjacent requests, and AI application delivery can expand usage of edge delivery, security, compute, and observability. The shareholder test is recurring customer economics and cash, not a traffic statistic alone.",
+      "tests": [
+        {
+          "number": "01",
+          "title": "Connect traffic to paid adoption",
+          "upgrade": "The company identifies paid AI-delivery, AI-firewall, compute, security, or observability adoption with customer, usage, price, or revenue evidence.",
+          "notEnough": "A statement that machine traffic is large or growing faster than human traffic.",
+          "downgrade": "Machine-traffic relevance grows while paid adoption and disclosed revenue linkage remain absent."
+        },
+        {
+          "number": "02",
+          "title": "Make growth recurring and diversified",
+          "upgrade": "RPO, net retention, and product-category growth remain strong without increasing customer concentration.",
+          "notEnough": "One quarter of top-line growth without a durable retention or concentration read.",
+          "downgrade": "Retention weakens, commitments slow, or a small group of customers drives the result."
+        },
+        {
+          "number": "03",
+          "title": "Turn activity into cash",
+          "upgrade": "Gross-margin and free-cash-flow evidence improves as growth scales.",
+          "notEnough": "Higher operating cash flow while free cash flow remains de minimis.",
+          "downgrade": "Network, capex, or operating costs prevent meaningful cash conversion."
+        }
+      ],
+      "boundary": "Fastly’s network research is useful machine-activity context, not company-capture proof. The first baseline also includes 37% of revenue from its ten largest customers, so concentration stays visible.",
+      "sources": [
+        {
+          "label": "Fastly Q2 2026 results and outlook",
+          "url": "https://investors.fastly.com/news-releases/news-release-details/fastly-announces-second-quarter-2026-financial-results"
+        },
+        {
+          "label": "Fastly AI Firewall and AI Runtime Control update",
+          "url": "https://investors.fastly.com/news-releases/news-release-details/fastly-launches-ai-firewall-and-ai-runtime-control-secure-and"
+        }
+      ]
+    },
+    {
+      "ticker": "OKTA",
+      "name": "Okta",
+      "lens": "Agent identity and authorization",
+      "state": "Secondary candidate · first reported baseline",
+      "fiscalPeriod": "Q2 FY2027 · ended July 31, 2026",
+      "question": "Can delegated agent identity and authorization become a paid extension of the identity platform rather than an important but bundled security capability?",
+      "reportedBaseline": [
+        {
+          "label": "Q2 revenue",
+          "value": "$805M · +11% YoY",
+          "note": "Subscription revenue was $793M, +12%"
+        },
+        {
+          "label": "Remaining performance obligations",
+          "value": "$4.858B · +17% YoY",
+          "note": "cRPO was $2.585B, +14%"
+        },
+        {
+          "label": "Q2 free cash flow",
+          "value": "$227M · 28% margin",
+          "note": "Company-reported free cash flow"
+        }
+      ],
+      "mechanism": "Agents acting on behalf of users or systems need identity, access policy, delegated authority, and auditability. The economic test is an incremental paid identity workload, not merely a broader identity threat surface.",
+      "tests": [
+        {
+          "number": "01",
+          "title": "Make agent identity paid and measurable",
+          "upgrade": "Management discloses paid agent-identity customers, attach, pricing, identity transactions, revenue, or retention tied to the capability.",
+          "notEnough": "An AI-agent security blueprint, ecosystem integration, beta, or architectural announcement.",
+          "downgrade": "Agent identity remains a free control, partner feature, or non-material roadmap item across repeated reports."
+        },
+        {
+          "number": "02",
+          "title": "Keep the demand signal intact",
+          "upgrade": "Subscription revenue, RPO / cRPO, and guidance continue to support durable identity-platform demand.",
+          "notEnough": "A single RPO improvement without comparable subscription and current-RPO evidence.",
+          "downgrade": "Growth or commitment momentum weakens while the agent identity opportunity stays unquantified."
+        },
+        {
+          "number": "03",
+          "title": "Preserve the return profile",
+          "upgrade": "Operating and free-cash-flow margins hold while the company invests in the new workload.",
+          "notEnough": "A relevant product narrative without a margin or cash outcome.",
+          "downgrade": "Investment or mix pressure erodes returns without an identifiable commercial benefit."
+        }
+      ],
+      "boundary": "Okta does not separately disclose agent-identity revenue, price, customer count, or attach. Professional-services partner changes also affect reported growth comparability and should not be mistaken for product demand.",
+      "sources": [
+        {
+          "label": "Okta Q2 FY2027 results and outlook",
+          "url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results/default.aspx"
+        },
+        {
+          "label": "Okta agentic-enterprise security blueprint",
+          "url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-Announces-New-Blueprint-for-the-Secure-Agentic-Enterprise/default.aspx"
+        }
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "ticker": "NET",
+      "name": "Cloudflare",
+      "lens": "Integrated edge, developer, security, and agent infrastructure",
+      "fiscalPeriod": "Q2 2026 · ended June 30, 2026",
+      "reportedBaseline": [
+        {
+          "label": "Q2 revenue",
+          "value": "$696.1M · +36% YoY"
+        },
+        {
+          "label": "Current RPO",
+          "value": "+35% YoY"
+        },
+        {
+          "label": "Q2 free cash flow",
+          "value": "$56.4M · 8% margin"
+        }
+      ],
+      "whyBenchmark": "A broad reference point for how edge delivery, AI controls, developer tools, identity, and agent payments could converge on one network. It helps frame the competitive ceiling for several candidates.",
+      "whatWouldChangeRole": "Move from benchmark to a formal candidate only after its own billable mechanism, economics, and expectation-gap evidence are researched under the same gates.",
+      "boundary": "This is not a valuation or investment view. Relevant products and high growth do not tell us what is already expected or whether agent infrastructure is the reason for the result.",
+      "sources": [
+        {
+          "label": "Cloudflare Q2 2026 results and outlook",
+          "url": "https://www.cloudflare.com/press/press-releases/2026/cloudflare-announces-second-quarter-2026-financial-results/"
+        },
+        {
+          "label": "Cloudflare agent identity and wallet update",
+          "url": "https://www.cloudflare.com/en-au/press/press-releases/2026/cloudflare-gives-ai-agents-an-identity-and-a-wallet/"
+        }
+      ]
+    },
+    {
+      "ticker": "DDOG",
+      "name": "Datadog",
+      "lens": "Observability, security, and autonomous operations",
+      "fiscalPeriod": "Q2 2026 · ended June 30, 2026",
+      "reportedBaseline": [
+        {
+          "label": "Q2 revenue",
+          "value": "$1.12B · +36% YoY"
+        },
+        {
+          "label": "Non-GAAP operating margin",
+          "value": "23%"
+        },
+        {
+          "label": "Q2 free cash flow",
+          "value": "$279M · 25% margin"
+        }
+      ],
+      "whyBenchmark": "A quality reference for whether AI-enabled monitoring, security, and autonomous remediation can be carried by a software and cash-flow model at scale.",
+      "whatWouldChangeRole": "Move from benchmark to a formal candidate only after the project writes a named billable-agent mechanism, repeated commercial evidence, and expectations history.",
+      "boundary": "AI product activity and fast growth are not agent-specific revenue disclosure. No company-specific expectation-gap conclusion has been made.",
+      "sources": [
+        {
+          "label": "Datadog Q2 2026 results",
+          "url": "https://investors.datadoghq.com/node/17491/pdf"
+        }
+      ]
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks",
+      "lens": "Platform security and control-plane scale",
+      "fiscalPeriod": "Q4 FY2026 · ended July 31, 2026",
+      "reportedBaseline": [
+        {
+          "label": "Q4 revenue",
+          "value": "$3.41B · +34% YoY"
+        },
+        {
+          "label": "Next-Generation Security ARR",
+          "value": "$9.10B · +63% YoY"
+        },
+        {
+          "label": "Remaining performance obligations",
+          "value": "$21.2B · +34% YoY"
+        }
+      ],
+      "whyBenchmark": "A scale reference for how a broad security platform may absorb new agent-control workloads, and a reminder that platform consolidation can limit standalone monetization for smaller control-plane candidates.",
+      "whatWouldChangeRole": "Move from benchmark to a formal candidate only after its agent-specific pricing, demand, economics, and expectations evidence are evaluated independently.",
+      "boundary": "Acquisitions, integration, and a broad product base complicate causal attribution. The project does not infer agent-specific capture from aggregate platform metrics.",
+      "sources": [
+        {
+          "label": "Palo Alto Networks Q4 and FY2026 results",
+          "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-reports-fiscal-fourth-quarter-and-fiscal-10"
+        }
+      ]
+    }
+  ],
+  "promotionProtocol": [
+    {
+      "number": "01",
+      "title": "Two comparable reports",
+      "detail": "Record at least two company-reported periods under a stable definition before claiming a direction of travel."
+    },
+    {
+      "number": "02",
+      "title": "Commercial proof",
+      "detail": "Require a paid adoption, price, usage-to-revenue, attach, retention, margin, or cash outcome linked to the proposed mechanism."
+    },
+    {
+      "number": "03",
+      "title": "Counterargument survives",
+      "detail": "Keep acquisition effects, customer concentration, cost-to-serve, bundling, and alternate growth drivers visible."
+    },
+    {
+      "number": "04",
+      "title": "Only then assess the gap",
+      "detail": "Add fiscal-aligned, point-in-time consensus and valuation history before saying the market may not have priced the evidence."
+    }
+  ]
+}

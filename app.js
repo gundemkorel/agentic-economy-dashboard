@@ -330,9 +330,10 @@ async function initCompanies() {
     fetchJson("data/manual/company-kpis.json"),
     fetchJson("data/manual/research-gates.json")
   ]);
+  const coreCompanies = companyData.companies.filter((company) => company.tier === "Core");
   $("#company-readiness-body").innerHTML = researchGates.companies.map(renderCompanyReadiness).join("");
-  $("#company-grid").innerHTML = companyData.companies.map(renderCompany).join("");
-  $("#mechanics-grid").innerHTML = companyData.companies.filter((company) => company.mechanics).map(renderMechanics).join("");
+  $("#company-grid").innerHTML = coreCompanies.map(renderCompany).join("");
+  $("#mechanics-grid").innerHTML = coreCompanies.filter((company) => company.mechanics).map(renderMechanics).join("");
 }
 
 function renderEarningsSummary(item) {
@@ -370,6 +371,63 @@ async function initEarnings() {
   $("#earnings-summary").innerHTML = data.summary.map(renderEarningsSummary).join("");
   $("#earnings-grid").innerHTML = data.companies.map(renderEarningsCard).join("");
   $("#earnings-protocol").innerHTML = data.postReleaseProtocol.map((step) => "<li>" + escapeHtml(step) + "</li>").join("");
+}
+
+function renderQueueSummary(item) {
+  return "<article class=\"queue-summary-item\"><span>" + escapeHtml(item.label) + "</span><strong>" + escapeHtml(item.value) + "</strong><small>" + escapeHtml(item.note) + "</small></article>";
+}
+
+function renderQueueBaseline(item) {
+  return "<div class=\"queue-baseline-item\"><span>" + escapeHtml(item.label) + "</span><strong>" + escapeHtml(item.value) + "</strong>" + (item.note ? "<small>" + escapeHtml(item.note) + "</small>" : "") + "</div>";
+}
+
+function renderQueueTest(test) {
+  const lines = [
+    ["Evidence upgrade", test.upgrade],
+    ["Not enough", test.notEnough],
+    ["Thesis downgrade", test.downgrade]
+  ].map(([label, value]) => "<div><dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(value) + "</dd></div>").join("");
+  return "<article class=\"queue-test\"><div class=\"queue-test-top\"><span class=\"metric-number\">" + escapeHtml(test.number) + "</span><h3>" + escapeHtml(test.title) + "</h3></div><dl>" + lines + "</dl></article>";
+}
+
+function renderQueueSources(sources) {
+  return (sources || []).map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("");
+}
+
+function renderSecondaryQueueCard(company) {
+  return "<article class=\"queue-card\">" +
+    "<div class=\"queue-card-top\"><div><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><h3 class=\"queue-company-name\">" + escapeHtml(company.name) + "</h3></div><span class=\"tag warning\">Secondary</span></div>" +
+    "<p class=\"queue-lens\">" + escapeHtml(company.lens) + "</p><p class=\"queue-period\">" + escapeHtml(company.fiscalPeriod) + "</p><p class=\"queue-state\">" + escapeHtml(company.state) + "</p>" +
+    "<div class=\"queue-question\"><span>One question</span><p>" + escapeHtml(company.question) + "</p></div>" +
+    "<div class=\"queue-baseline\">" + company.reportedBaseline.map(renderQueueBaseline).join("") + "</div>" +
+    "<p class=\"queue-mechanism\"><span>Mechanism</span>" + escapeHtml(company.mechanism) + "</p>" +
+    "<details class=\"queue-details\"><summary><span>Decision tests</span><strong>" + escapeHtml(company.tests.length + " checkpoints") + "</strong></summary><div class=\"queue-tests\">" + company.tests.map(renderQueueTest).join("") + "</div><p class=\"queue-boundary-text\"><span>Boundary</span>" + escapeHtml(company.boundary) + "</p></details>" +
+    "<div class=\"company-sources\">" + renderQueueSources(company.sources) + "</div></article>";
+}
+
+function renderBenchmarkCard(company) {
+  return "<article class=\"benchmark-card\">" +
+    "<div class=\"benchmark-card-top\"><div><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><h3 class=\"benchmark-company-name\">" + escapeHtml(company.name) + "</h3></div><span class=\"tag neutral\">Benchmark</span></div>" +
+    "<p class=\"benchmark-lens\">" + escapeHtml(company.lens) + "</p><p class=\"benchmark-period\">" + escapeHtml(company.fiscalPeriod) + "</p>" +
+    "<div class=\"queue-baseline\">" + company.reportedBaseline.map(renderQueueBaseline).join("") + "</div>" +
+    "<p class=\"benchmark-why\"><span>Why it is here</span>" + escapeHtml(company.whyBenchmark) + "</p>" +
+    "<p class=\"benchmark-next\"><span>What changes its role</span>" + escapeHtml(company.whatWouldChangeRole) + "</p>" +
+    "<p class=\"benchmark-boundary\"><span>Boundary</span>" + escapeHtml(company.boundary) + "</p>" +
+    "<div class=\"company-sources\">" + renderQueueSources(company.sources) + "</div></article>";
+}
+
+function renderQueueProtocol(item) {
+  return "<article class=\"queue-protocol-item\"><span class=\"metric-number\">" + escapeHtml(item.number) + "</span><h3>" + escapeHtml(item.title) + "</h3><p>" + escapeHtml(item.detail) + "</p></article>";
+}
+
+async function initResearchQueue() {
+  const data = await fetchJson("data/manual/secondary-company-research.json");
+  $("#queue-status").textContent = data.status;
+  $("#queue-purpose").textContent = data.purpose;
+  $("#queue-summary").innerHTML = data.summary.map(renderQueueSummary).join("");
+  $("#queue-candidates").innerHTML = data.secondary.map(renderSecondaryQueueCard).join("");
+  $("#benchmark-grid").innerHTML = data.benchmarks.map(renderBenchmarkCard).join("");
+  $("#queue-protocol").innerHTML = data.promotionProtocol.map(renderQueueProtocol).join("");
 }
 
 async function initExpectations() {
@@ -564,6 +622,7 @@ async function boot() {
   try {
     if (page === "companies") await initCompanies();
     else if (page === "earnings") await initEarnings();
+    else if (page === "research-queue") await initResearchQueue();
     else if (page === "expectations") await initExpectations();
     else if (page === "breakers") await initBreakers();
     else if (page === "methodology") await initMethodology();

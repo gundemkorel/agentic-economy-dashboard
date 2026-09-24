@@ -19,8 +19,8 @@
 
 ## Quarterly
 
-1. Update the company research queue after earnings and filings.
-2. Append a new record to data/manual/company-capture-history.json before replacing current company-card KPIs. Preserve the fiscal period, report date, GAAP/non-GAAP definition, source, capture read, and counterpoint.
+1. Update the core and secondary company research queues after earnings and filings. Keep the benchmark shelf separate unless a documented promotion decision is made.
+2. Append a new record to data/manual/company-capture-history.json before replacing current company-card KPIs or secondary-company baselines. Preserve the fiscal period, report date, GAAP/non-GAAP definition, source, capture read, and counterpoint.
 3. Refresh consensus and valuation only from the selected consistent provider.
 4. Do not upgrade a Gap Readiness state unless fiscal-period alignment, accounting convention, two point-in-time consensus observations, and valuation history are all documented.
 5. Update every relevant thesis-breaker test with current status, a source/date, and an explicit downgrade action.
@@ -30,6 +30,7 @@
 8. Reconfirm that this remains a personal, non-commercial dashboard and that Eulerpool's public-attribution condition remains satisfied. If the scope or terms change, remove the Eulerpool secret and redeploy immediately.
 9. If FMP is ever activated as a fallback, reconfirm that its written agreement still covers public Pages display, downloadable normalized data, requested endpoints, attribution, and retention. If it does not, run the FMP removal workflow immediately.
 10. Reassess whether evidence changed the macro thesis, company capture, or a thesis breaker.
+11. Update `data/manual/secondary-company-research.json` and the matching `companies/` research note together for ZS, TWLO, FSLY, OKTA, NET, DDOG, or PANW. Keep each secondary candidate's one-question card concise; preserve the detailed evidence and counterargument in the structured data and note.
 
 ## Pull request checklist
 

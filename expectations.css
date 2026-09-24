@@ -1,0 +1,30 @@
+.expectations-table {
+  min-width: 1120px;
+}
+
+.guidance-cell {
+  display: grid;
+  gap: 7px;
+  min-width: 235px;
+}
+
+.guidance-label,
+.table-source {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: .04em;
+}
+
+.guidance-label {
+  color: var(--green-2);
+  text-transform: uppercase;
+}
+
+.table-source {
+  color: var(--green-2);
+  text-decoration: none;
+}
+
+.table-source:hover {
+  text-decoration: underline;
+}

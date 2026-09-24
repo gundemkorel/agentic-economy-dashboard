@@ -70,7 +70,7 @@
       "id": "company-ir",
       "name": "Company investor relations and SEC filings",
       "url": "https://www.sec.gov/edgar/search/",
-      "supports": ["company_capture_kpis", "guidance", "fcf_margin", "rpo", "consensus_inputs"],
+      "supports": ["company_capture_kpis", "management_guidance", "guidance", "fcf_margin", "rpo", "consensus_inputs"],
       "updateFrequency": "quarterly",
       "accessMethod": "manual review; selective API adapter later",
       "automationStatus": "manual",

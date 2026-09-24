@@ -1,10 +1,66 @@
 {
   "asOfDate": "2026-09-23",
-  "definition": "Intentionally unpopulated until a consistent, licensed or otherwise verifiable market-data source is selected. The structure makes the distinction between observed evidence, consensus, valuation, and our judgment explicit.",
+  "definition": "Company-issued guidance is populated from primary earnings releases. Street consensus and valuation remain intentionally unpopulated until a consistent, licensed or otherwise verifiable market-data source is selected. Management outlook is not analyst consensus and must not be used as a substitute for what is priced in.",
   "rows": [
-    { "ticker": "AKAM", "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure contract commitments disclosed", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Operating evidence added; no expectation read", "state": "pending" },
-    { "ticker": "ESTC", "agenticEvidence": "Q1 sales-led subscription +18%; cRPO +21%; agentic/MCP observability features disclosed", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Operating evidence added; no expectation read", "state": "pending" },
-    { "ticker": "DT", "agenticEvidence": "Q1 ARR +17%; annualized logs consumption >100% growth; agent capabilities released", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Operating evidence added; no expectation read", "state": "pending" },
-    { "ticker": "FFIV", "agenticEvidence": "Q3 product revenue +19%; AI and MCP Gateway product relevance established", "streetEstimates": "Not loaded", "valuation": "Not loaded", "gapRead": "Product relevance only; no expectation read", "state": "pending" }
+    {
+      "ticker": "AKAM",
+      "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure contract commitments disclosed",
+      "managementGuidance": {
+        "issuedDate": "2026-08-06",
+        "period": "Q3 / FY2026",
+        "outlook": "Q3 revenue $1.105–$1.130B; FY revenue $4.445–$4.530B. Q3 non-GAAP EPS $1.60–$1.80; FY $6.40–$7.05.",
+        "sourceLabel": "Akamai Q2 2026 results",
+        "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
+      },
+      "streetEstimates": "Provider not selected",
+      "valuation": "Provider not selected",
+      "gapRead": "Company outlook added; consensus and valuation required before a gap read",
+      "state": "guidance only"
+    },
+    {
+      "ticker": "ESTC",
+      "agenticEvidence": "Q1 sales-led subscription +18%; cRPO +21%; agentic/MCP observability features disclosed",
+      "managementGuidance": {
+        "issuedDate": "2026-08-27",
+        "period": "Q2 / FY2027",
+        "outlook": "Q2 revenue $486–$487M; FY revenue $1.998–$2.010B. FY sales-led subscription revenue $1.682–$1.694B; adjusted FCF margin about 21.5%.",
+        "sourceLabel": "Elastic Q1 FY2027 results",
+        "sourceUrl": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/"
+      },
+      "streetEstimates": "Provider not selected",
+      "valuation": "Provider not selected",
+      "gapRead": "Company outlook added; consensus and valuation required before a gap read",
+      "state": "guidance only"
+    },
+    {
+      "ticker": "DT",
+      "agenticEvidence": "Q1 ARR +17%; annualized logs consumption >100% growth; agent capabilities released",
+      "managementGuidance": {
+        "issuedDate": "2026-08-05",
+        "period": "Q2 / FY2027",
+        "outlook": "Q2 revenue $565–$570M; FY revenue $2.306–$2.320B. FY ARR $2.359–$2.379B; non-GAAP operating margin 29.5%–29.75%.",
+        "sourceLabel": "Dynatrace Q1 FY2027 results",
+        "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results"
+      },
+      "streetEstimates": "Provider not selected",
+      "valuation": "Provider not selected",
+      "gapRead": "Company outlook added; consensus and valuation required before a gap read",
+      "state": "guidance only"
+    },
+    {
+      "ticker": "FFIV",
+      "agenticEvidence": "Q3 product revenue +19%; AI and MCP Gateway product relevance established",
+      "managementGuidance": {
+        "issuedDate": "2026-07-27",
+        "period": "Q4 / FY2026",
+        "outlook": "Q4 revenue $870–$890M; FY revenue growth approximately 9%–10%, raised from 7%–8%. FY non-GAAP EPS $17.21–$17.33.",
+        "sourceLabel": "F5 Q3 FY2026 results",
+        "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
+      },
+      "streetEstimates": "Provider not selected",
+      "valuation": "Provider not selected",
+      "gapRead": "Product relevance and outlook added; consensus and valuation required before a gap read",
+      "state": "guidance only"
+    }
   ]
 }

@@ -85,7 +85,10 @@ function renderCompany(company) {
 }
 
 function renderExpectationRow(row) {
-  return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + escapeHtml(row.streetEstimates) + "</td><td>" + escapeHtml(row.valuation) + "</td><td><span class=\"read caution\"><i></i>" + escapeHtml(row.gapRead) + "</span></td></tr>";
+  const guidance = row.managementGuidance;
+  const source = guidance?.sourceUrl ? "<a class=\"table-source\" href=\"" + escapeHtml(guidance.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(guidance.sourceLabel || "Primary source") + " ↗</a>" : "";
+  const managementOutlook = guidance ? "<div class=\"guidance-cell\"><span class=\"guidance-label\">Company-issued · " + escapeHtml(guidance.period) + " · " + escapeHtml(formatDate(guidance.issuedDate)) + "</span><span>" + escapeHtml(guidance.outlook) + "</span>" + source + "</div>" : "Not loaded";
+  return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + escapeHtml(row.streetEstimates) + "</td><td>" + escapeHtml(row.valuation) + "</td><td><span class=\"read caution\"><i></i>" + escapeHtml(row.gapRead) + "</span></td></tr>";
 }
 
 function renderSource(source) {

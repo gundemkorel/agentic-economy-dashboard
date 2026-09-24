@@ -24,4 +24,4 @@ The same file now includes a Fastly network baseline. Its report covers Januaryâ
 
 ## Market expectations
 
-No price, valuation, or consensus data are currently published. A future provider must support consistent retrieval dates, fiscal-year conventions, and definition labels. Do not add figures merely to fill a dashboard.
+The Expectations Gap page now includes company-issued guidance from the same primary earnings sources used for Company Capture. That is operating context, not analyst consensus or a valuation input. Price, valuation, and consensus data remain intentionally unpopulated until one provider can support consistent retrieval dates, fiscal-year conventions, and definition labels. Do not add figures merely to fill a dashboard.

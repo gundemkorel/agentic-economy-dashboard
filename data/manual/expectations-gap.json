@@ -12,9 +12,9 @@
         "sourceLabel": "Akamai Q2 2026 results",
         "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
       },
-      "streetEstimates": "FMP selected · awaiting approved snapshot",
-      "valuation": "FMP selected · awaiting approved snapshot",
-      "gapRead": "Company outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "streetEstimates": "FMP selected · awaiting API access",
+      "valuation": "FMP selected · awaiting API access",
+      "gapRead": "Company outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
       "state": "FMP pending"
     },
     {
@@ -27,9 +27,9 @@
         "sourceLabel": "Elastic Q1 FY2027 results",
         "sourceUrl": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/"
       },
-      "streetEstimates": "FMP selected · awaiting approved snapshot",
-      "valuation": "FMP selected · awaiting approved snapshot",
-      "gapRead": "Company outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "streetEstimates": "FMP selected · awaiting API access",
+      "valuation": "FMP selected · awaiting API access",
+      "gapRead": "Company outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
       "state": "FMP pending"
     },
     {
@@ -42,9 +42,9 @@
         "sourceLabel": "Dynatrace Q1 FY2027 results",
         "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results"
       },
-      "streetEstimates": "FMP selected · awaiting approved snapshot",
-      "valuation": "FMP selected · awaiting approved snapshot",
-      "gapRead": "Company outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "streetEstimates": "FMP selected · awaiting API access",
+      "valuation": "FMP selected · awaiting API access",
+      "gapRead": "Company outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
       "state": "FMP pending"
     },
     {
@@ -57,9 +57,9 @@
         "sourceLabel": "F5 Q3 FY2026 results",
         "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
       },
-      "streetEstimates": "FMP selected · awaiting approved snapshot",
-      "valuation": "FMP selected · awaiting approved snapshot",
-      "gapRead": "Product relevance and outlook added; FMP activation and fiscal-period alignment required before a gap read",
+      "streetEstimates": "FMP selected · awaiting API access",
+      "valuation": "FMP selected · awaiting API access",
+      "gapRead": "Product relevance and outlook added; FMP endpoint access and fiscal-period alignment required before a gap read",
       "state": "FMP pending"
     }
   ]

@@ -36,8 +36,13 @@ jobs:
         with:
           node-version: 22
       - name: Create licensed FMP snapshot for this deployment
+        id: fmp_snapshot
         if: env.FMP_API_KEY != '' && env.FMP_PUBLIC_DISPLAY_APPROVED == 'true'
+        continue-on-error: true
         run: node scripts/ingest-fmp-market-data.mjs
+      - name: Explain unavailable FMP endpoint access
+        if: steps.fmp_snapshot.outcome == 'failure'
+        run: echo "::warning::FMP snapshot omitted because the configured account did not return usable endpoint data. The rest of the dashboard will deploy normally."
       - name: Explain omitted FMP snapshot
         if: env.FMP_API_KEY == '' || env.FMP_PUBLIC_DISPLAY_APPROVED != 'true'
         run: echo "FMP snapshot omitted. Configure FMP_API_KEY and set FMP_PUBLIC_DISPLAY_APPROVED=true only after written public-display and retention rights are confirmed."

@@ -15,10 +15,10 @@
     {
       "id": "fmp",
       "name": "Financial Modeling Prep",
-      "status": "Selected · awaiting agreement + credential",
+      "status": "Selected · awaiting FMP API access",
       "tone": "warning",
       "capabilities": ["Forward EPS and revenue", "Price targets", "Market price inputs"],
-      "description": "Selected for the compact watchlist. Its workflow is deliberately blocked until a written agreement explicitly permits public display on this static GitHub Pages site, downloadable data files, and the intended retention period; it writes a compact current deployment snapshot only, never a raw FMP response or a public repository file.",
+      "description": "Selected for the compact watchlist. It will publish a compact current deployment snapshot only when the FMP account grants the configured endpoints and the written agreement permits public display on this static GitHub Pages site, downloadable data files, and the intended retention period. It never stores a raw FMP response or a public repository file.",
       "sourceLabel": "FMP analyst estimates documentation",
       "sourceUrl": "https://site.financialmodelingprep.com/developer/docs/stable/financial-estimates"
     },

@@ -1,0 +1,220 @@
+{
+  "asOfDate": "2026-09-24",
+  "title": "Next earnings company-capture scorecards",
+  "status": "Pre-release · company-issued guidance is the baseline",
+  "purpose": "A compact checklist for the next reported periods. It asks whether each company is converting a plausible Wave-2 mechanism into durable revenue quality and cash economics; it does not rank companies, forecast results, or make an expectation-gap call.",
+  "summary": [
+    {
+      "label": "Scorecards",
+      "value": "3 core companies",
+      "note": "Elastic, Dynatrace, and F5"
+    },
+    {
+      "label": "Read this first",
+      "value": "One question each",
+      "note": "No composite score or ranking"
+    },
+    {
+      "label": "Evidence standard",
+      "value": "Reported facts",
+      "note": "Release, filing, and management commentary"
+    },
+    {
+      "label": "Akamai",
+      "value": "Detailed Q3 lab",
+      "note": "Six company-capture tests"
+    }
+  ],
+  "companies": [
+    {
+      "ticker": "ESTC",
+      "name": "Elastic",
+      "lens": "Consumption economics",
+      "fiscalPeriod": "Q2 FY2027 · quarter ending October 31, 2026",
+      "timing": "Exact reporting date is pending Elastic's announcement.",
+      "question": "Can Elastic Cloud and agent-related workloads grow into durable consumption and retention without further cloud-hosting pressure on margins?",
+      "guide": [
+        {
+          "label": "Q2 revenue guide",
+          "value": "$486–$487M",
+          "note": "Company-issued Q2 FY2027 range"
+        },
+        {
+          "label": "Q2 sales-led subscription guide",
+          "value": "$407.5–$408.5M",
+          "note": "Company-issued Q2 FY2027 range"
+        },
+        {
+          "label": "Q2 non-GAAP operating-margin guide",
+          "value": "≈19%",
+          "note": "Company-issued Q2 FY2027 outlook"
+        }
+      ],
+      "checks": [
+        {
+          "number": "01",
+          "title": "Make cloud growth durable",
+          "upgrade": "Elastic Cloud growth and current RPO remain healthy, with evidence that usage or retention is durable rather than a one-quarter consumption spike.",
+          "notEnough": "A revenue-guide beat by itself. It establishes execution, not an agentic consumption mechanism.",
+          "downgrade": "Cloud growth or demand indicators slow materially while the cost-to-serve remains elevated."
+        },
+        {
+          "number": "02",
+          "title": "Show a paid agentic path",
+          "upgrade": "Management quantifies agent-related cloud usage, a paid capability, customer adoption, or a retention / pricing outcome tied to agentic search, retrieval, or investigation work.",
+          "notEnough": "An agent feature, technical demo, or customer anecdote without usage, pricing, or commercial adoption evidence.",
+          "downgrade": "Management indicates the relevant capabilities are bundled or immaterial, while no commercial KPI emerges."
+        },
+        {
+          "number": "03",
+          "title": "Protect the cash economics",
+          "upgrade": "Gross-margin, operating-margin, and cash-flow evidence shows that more cloud activity is becoming economically productive.",
+          "notEnough": "Higher cloud revenue without enough information about hosting costs, gross margin, or cash conversion.",
+          "downgrade": "Hosting costs accelerate faster than revenue and margin or free-cash-flow evidence deteriorates."
+        }
+      ],
+      "boundary": "Elastic does not separately disclose agent-specific revenue, usage, pricing, or retention. Keep a consumption mechanism separate from proven shareholder capture until a disclosed commercial KPI appears.",
+      "sources": [
+        {
+          "label": "Elastic Q1 FY2027 results and Q2 outlook",
+          "url": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/"
+        },
+        {
+          "label": "Elastic Q1 FY2027 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000054/estc-20260731.htm"
+        }
+      ]
+    },
+    {
+      "ticker": "DT",
+      "name": "Dynatrace",
+      "lens": "Observability and ARR",
+      "fiscalPeriod": "Q2 FY2027 · quarter ending September 30, 2026",
+      "timing": "Exact reporting date is pending Dynatrace's announcement.",
+      "question": "Can rapidly growing logs consumption and AI observability become durable ARR and cash capture without acquisition or hosting costs eroding the economics?",
+      "guide": [
+        {
+          "label": "Q2 revenue guide",
+          "value": "$565–$570M",
+          "note": "Company-issued Q2 FY2027 range"
+        },
+        {
+          "label": "Q2 subscription-revenue guide",
+          "value": "$540–$545M",
+          "note": "Company-issued Q2 FY2027 range"
+        },
+        {
+          "label": "Q2 non-GAAP operating-margin guide",
+          "value": "29.5%–30.0%",
+          "note": "Company-issued Q2 FY2027 range"
+        }
+      ],
+      "checks": [
+        {
+          "number": "01",
+          "title": "Convert telemetry volume into ARR",
+          "upgrade": "ARR and logs-consumption growth remain durable, with a clear link between higher telemetry demand and recurring paid usage or retention.",
+          "notEnough": "A large logs-consumption figure alone; it does not reveal the incremental revenue, margin, or cohort quality.",
+          "downgrade": "ARR growth slows, consumption weakens, or higher volume fails to produce attractive recurring economics."
+        },
+        {
+          "number": "02",
+          "title": "Show paid AI-observability adoption",
+          "upgrade": "Management discloses paid adoption, customer evidence, usage, or revenue contribution for AI observability, Autonomous SRE, Cloud SRE, Agent Building, or the Arize capability set.",
+          "notEnough": "A product announcement, acquisition rationale, or generic AI narrative without a commercial metric.",
+          "downgrade": "The company signals that AI observability is bundled, slow to adopt, or unable to monetize separately."
+        },
+        {
+          "number": "03",
+          "title": "Preserve margin and cash return",
+          "upgrade": "Operating and free-cash-flow performance supports the guided profile while hosting and acquisition effects remain controlled.",
+          "notEnough": "Top-line execution without clarity on margin dilution, integration costs, or cloud-hosting expense.",
+          "downgrade": "Acquisition or hosting costs materially dilute margins or cash returns without evidence of a compensating growth path."
+        }
+      ],
+      "boundary": "Dynatrace does not disclose agent-specific ARR, revenue, pricing, or retention cohorts. Logs growth and relevant products are mechanism evidence—not proof that the agentic thesis has been monetized.",
+      "sources": [
+        {
+          "label": "Dynatrace Q1 FY2027 results and Q2 outlook",
+          "url": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results"
+        },
+        {
+          "label": "Dynatrace Q1 FY2027 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773383/000177338326000050/dt-20260630.htm"
+        },
+        {
+          "label": "Dynatrace proposed Arize acquisition",
+          "url": "https://ir.dynatrace.com/news-events/press-releases/detail/435/dynatrace-to-acquire-ai-observability-leader-arize"
+        }
+      ]
+    },
+    {
+      "ticker": "FFIV",
+      "name": "F5",
+      "lens": "Control-plane commercialization",
+      "fiscalPeriod": "Q4 FY2026 · quarter ending September 30, 2026",
+      "timing": "Exact reporting date is pending F5's announcement.",
+      "question": "Can AI Gateway develop into a paid, recurring control-plane product rather than remain a relevant feature inside a systems-led growth quarter?",
+      "guide": [
+        {
+          "label": "Q4 revenue guide",
+          "value": "$870–$890M",
+          "note": "Company-issued Q4 FY2026 range"
+        },
+        {
+          "label": "Q4 non-GAAP EPS guide",
+          "value": "$4.14–$4.26",
+          "note": "Company-issued Q4 FY2026 range"
+        },
+        {
+          "label": "Q3 reported operating margin",
+          "value": "35.0%",
+          "note": "Non-GAAP baseline; not Q4 guidance"
+        }
+      ],
+      "checks": [
+        {
+          "number": "01",
+          "title": "Deliver the operating baseline",
+          "upgrade": "Q4 results meet or exceed the issued revenue and EPS ranges, with no deterioration in the underlying product or margin profile.",
+          "notEnough": "A guide beat alone; it establishes execution but not AI Gateway monetization.",
+          "downgrade": "A miss or reduced outlook tied to product demand, pricing, security spend, or margins."
+        },
+        {
+          "number": "02",
+          "title": "Make AI Gateway commercially visible",
+          "upgrade": "Management discloses paid customers, attach, pricing, recurring software contribution, usage, or a material pipeline-to-revenue bridge for AI Gateway or MCP governance.",
+          "notEnough": "A gateway launch, framework support, or customer story without commercial adoption evidence.",
+          "downgrade": "The relevant controls appear bundled, experimental, or commercially nonmaterial."
+        },
+        {
+          "number": "03",
+          "title": "Improve the revenue mix",
+          "upgrade": "Software, security, or recurring control-plane revenue gains traction alongside a healthy margin profile, rather than all growth coming from systems.",
+          "notEnough": "Strong product revenue if it is still predominantly hardware / systems-led with no recurring-control evidence.",
+          "downgrade": "Systems-led growth fades while software and recurring control-plane adoption remain slow or unreported."
+        }
+      ],
+      "boundary": "F5 has not disclosed AI Gateway revenue, customer count, pricing, attach rate, or usage. Product relevance is an early gate, not company capture.",
+      "sources": [
+        {
+          "label": "F5 Q3 FY2026 results and Q4 outlook",
+          "url": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx"
+        },
+        {
+          "label": "F5 Q3 FY2026 Form 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1048695/000104869526000067/ffiv-20260630.htm"
+        },
+        {
+          "label": "F5 AI Gateway update",
+          "url": "https://www.f5.com/company/news/press-releases/f5-unleashes-next-generation-agentic-ready-ai-gateway-to-optimize-the-economics-and-governance-of-enterprise-ai-costs"
+        }
+      ]
+    }
+  ],
+  "postReleaseProtocol": [
+    "Record the actual results, guide changes, and management commentary from the earnings release and filing before making an interpretation.",
+    "Append the reported period to the company-capture history before replacing any current dashboard baseline.",
+    "Mark each check as evidence upgrade, unresolved, or contrary. Keep the counterargument visible and do not call an expectation gap without aligned consensus and valuation history."
+  ]
+}

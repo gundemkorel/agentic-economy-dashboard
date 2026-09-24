@@ -26,9 +26,10 @@
 5. Update every relevant thesis-breaker test with current status, a source/date, and an explicit downgrade action.
 6. Review the Akamai scenario lab inputs after earnings. Keep company-reported values, attributed current market context, and project assumptions in separate fields; do not backfill vendor market data into the repository.
    - Complete the Akamai Q3 scorecard from the release, filing, and management commentary; append its company-capture history before revising scenario assumptions.
-7. Reconfirm that this remains a personal, non-commercial dashboard and that Eulerpool's public-attribution condition remains satisfied. If the scope or terms change, remove the Eulerpool secret and redeploy immediately.
-8. If FMP is ever activated as a fallback, reconfirm that its written agreement still covers public Pages display, downloadable normalized data, requested endpoints, attribution, and retention. If it does not, run the FMP removal workflow immediately.
-9. Reassess whether evidence changed the macro thesis, company capture, or a thesis breaker.
+7. Complete each newly reported Elastic, Dynatrace, and F5 scorecard from the earnings release, filing, and management commentary. Update `data/manual/company-earnings-scorecards.json` only after appending the prior-period history record; label each check as upgraded, unresolved, or contrary rather than inferring an overall score.
+8. Reconfirm that this remains a personal, non-commercial dashboard and that Eulerpool's public-attribution condition remains satisfied. If the scope or terms change, remove the Eulerpool secret and redeploy immediately.
+9. If FMP is ever activated as a fallback, reconfirm that its written agreement still covers public Pages display, downloadable normalized data, requested endpoints, attribution, and retention. If it does not, run the FMP removal workflow immediately.
+10. Reassess whether evidence changed the macro thesis, company capture, or a thesis breaker.
 
 ## Pull request checklist
 

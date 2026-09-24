@@ -13,7 +13,8 @@ The project separately tracks:
 3. Gap Readiness — whether operating evidence, fiscal-aligned estimates, and valuation history are sufficient for an expectation-gap call.
 4. Thesis Breakers — evidence that should reduce conviction.
 5. Decision Gates & Scenario Labs — the research sequence and explicitly labelled company-assumption models.
-6. Observation History — the baseline count, comparability rules, collection cadence, and missing proof behind every future conclusion.
+6. Next Earnings — compact company-capture scorecards that turn the next reported periods into a few explicit tests.
+7. Observation History — the baseline count, comparability rules, collection cadence, and missing proof behind every future conclusion.
 
 Read the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
@@ -66,6 +67,8 @@ The Gap Readiness page uses Eulerpool for a compact current daily snapshot of co
 The Akamai scenario lab reads company-issued reported baselines and applies transparent project assumptions. When a current attributed market snapshot is available, it uses that price only at render time for a simplified reverse-expectations bridge; it does not store vendor price history or present a target price.
 
 The same Akamai page now includes a pre-release Q3 earnings scorecard. It compares Q3 results with the Q2 reported baseline and company-issued guide, tests CIS conversion, paid agent-control monetization, delivery trends, cash returns, and contract-fulfillment risk, then records an evidence upgrade, watch, or downgrade without treating any outcome as an expectation-gap call.
+
+The [Next Earnings page](earnings.html) applies the same decision discipline in a deliberately compact form for Elastic, Dynatrace, and F5: one central question, company-issued guidance, three expandable decision checks, and official-source links. Its structured data lives in `data/manual/company-earnings-scorecards.json`, so a quarterly update does not require rewriting the interface.
 
 ## GitHub Pages
 

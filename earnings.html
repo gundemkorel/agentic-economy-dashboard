@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Compact next-earnings company-capture scorecards for the Agentic Economy Dashboard." />
+    <title>Next Earnings · Agentic Economy Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="earnings.css" />
+  </head>
+  <body data-page="earnings">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Agentic Economy<br /><strong>Dashboard</strong></span></a>
+        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="history.html">History</a><a href="companies.html">Company Capture</a><a href="earnings.html">Earnings</a><a href="expectations.html">Gap Readiness</a><a href="breakers.html">Thesis Breakers</a><a href="models.html">AKAM Model</a><a href="methodology.html">Methods</a></nav>
+      </header>
+      <main>
+        <section class="page-hero earnings-hero">
+          <p class="eyebrow">Company capture <span class="slash">/</span> next reported periods</p>
+          <h1>Next earnings,<br /><em>three clear tests.</em></h1>
+          <p>Use this page as a short decision checklist. Each card asks one important question, states management’s baseline, and keeps the deeper evidence tests out of the way until you need them.</p>
+        </section>
+        <section class="notice earnings-notice"><strong id="earnings-status">Loading scorecards…</strong><span id="earnings-purpose">Loading research boundary…</span></section>
+        <section class="earnings-summary" id="earnings-summary" aria-live="polite"><div class="loading-state">Loading scorecard summary…</div></section>
+        <section class="section-block earnings-scorecards-section">
+          <div class="section-heading"><div><p class="section-number">One company at a time</p><h2>What the next reports must prove</h2></div><span class="tag warning">Pre-release checklist</span></div>
+          <p class="section-lede">A good quarter may show execution. It advances the thesis only when the stated business mechanism also becomes visible in revenue quality, margins, or cash returns.</p>
+          <div class="earnings-grid" id="earnings-grid" aria-live="polite"><div class="loading-state">Loading next-earnings scorecards…</div></div>
+        </section>
+        <section class="earnings-bottom">
+          <section class="earnings-protocol"><p class="section-number">After results publish</p><h2>Update without fooling ourselves</h2><ol id="earnings-protocol"><li>Loading update protocol…</li></ol></section>
+          <aside class="earnings-akam-link"><p class="section-number">Akamai deep dive</p><h2>More detail when it matters</h2><p>Akamai has a separate six-test Q3 scorecard and transparent scenario lab because its cloud-infrastructure commitments need more granular conversion and cash-return checks.</p><a href="models.html">Open the AKAM scenario lab →</a></aside>
+        </section>
+      </main>
+      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> next earnings</span><a class="muted" href="companies.html">Return to Company Capture →</a></footer>
+    </div>
+    <script src="app.js?build=__MARKET_SNAPSHOT_VERSION__" type="module"></script>
+  </body>
+</html>

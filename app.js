@@ -335,6 +335,43 @@ async function initCompanies() {
   $("#mechanics-grid").innerHTML = companyData.companies.filter((company) => company.mechanics).map(renderMechanics).join("");
 }
 
+function renderEarningsSummary(item) {
+  return "<article class=\"earnings-summary-item\"><span>" + escapeHtml(item.label) + "</span><strong>" + escapeHtml(item.value) + "</strong><small>" + escapeHtml(item.note) + "</small></article>";
+}
+
+function renderEarningsGuide(item) {
+  return "<div class=\"earnings-guide-item\"><span>" + escapeHtml(item.label) + "</span><strong>" + escapeHtml(item.value) + "</strong><small>" + escapeHtml(item.note) + "</small></div>";
+}
+
+function renderEarningsCheck(check) {
+  const lines = [
+    ["Evidence upgrade", check.upgrade],
+    ["Not enough", check.notEnough],
+    ["Thesis downgrade", check.downgrade]
+  ].map(([label, value]) => "<div><dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(value) + "</dd></div>").join("");
+  return "<article class=\"earnings-check\"><div class=\"earnings-check-top\"><span class=\"metric-number\">" + escapeHtml(check.number) + "</span><h3>" + escapeHtml(check.title) + "</h3></div><dl>" + lines + "</dl></article>";
+}
+
+function renderEarningsCard(company) {
+  const sourceLinks = (company.sources || []).map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("");
+  return "<article class=\"earnings-card\">" +
+    "<div class=\"earnings-card-top\"><div><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><h3 class=\"earnings-company-name\">" + escapeHtml(company.name) + "</h3></div><span class=\"tag warning\">Pre-release</span></div>" +
+    "<p class=\"earnings-lens\">" + escapeHtml(company.lens) + "</p><p class=\"earnings-period\">" + escapeHtml(company.fiscalPeriod) + "</p><p class=\"earnings-timing\">" + escapeHtml(company.timing) + "</p>" +
+    "<div class=\"earnings-question\"><span>One question</span><p>" + escapeHtml(company.question) + "</p></div>" +
+    "<div class=\"earnings-guide\">" + company.guide.map(renderEarningsGuide).join("") + "</div>" +
+    "<details class=\"earnings-details\"><summary><span>Decision checks</span><strong>" + escapeHtml(company.checks.length + " checkpoints") + "</strong></summary><div class=\"earnings-checks\">" + company.checks.map(renderEarningsCheck).join("") + "</div><p class=\"earnings-boundary\"><span>Boundary</span>" + escapeHtml(company.boundary) + "</p></details>" +
+    "<div class=\"company-sources\">" + sourceLinks + "</div></article>";
+}
+
+async function initEarnings() {
+  const data = await fetchJson("data/manual/company-earnings-scorecards.json");
+  $("#earnings-status").textContent = data.status;
+  $("#earnings-purpose").textContent = data.purpose;
+  $("#earnings-summary").innerHTML = data.summary.map(renderEarningsSummary).join("");
+  $("#earnings-grid").innerHTML = data.companies.map(renderEarningsCard).join("");
+  $("#earnings-protocol").innerHTML = data.postReleaseProtocol.map((step) => "<li>" + escapeHtml(step) + "</li>").join("");
+}
+
 async function initExpectations() {
   const [data, providerMap, eulerpoolSnapshot, fmpSnapshot] = await Promise.all([
     fetchJson("data/manual/expectations-gap.json"),
@@ -526,6 +563,7 @@ async function boot() {
   const page = document.body.dataset.page || "pulse";
   try {
     if (page === "companies") await initCompanies();
+    else if (page === "earnings") await initEarnings();
     else if (page === "expectations") await initExpectations();
     else if (page === "breakers") await initBreakers();
     else if (page === "methodology") await initMethodology();

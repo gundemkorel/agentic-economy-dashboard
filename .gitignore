@@ -2,5 +2,6 @@
 .env
 .env.*
 !.env.example
+app-[0-9]*.js
 data/processed/fmp-market-expectations.json
 data/processed/eulerpool-market-expectations*.json

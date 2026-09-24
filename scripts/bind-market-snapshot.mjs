@@ -8,15 +8,21 @@ if (!buildVersion || !/^[A-Za-z0-9_-]+$/.test(buildVersion)) {
 }
 
 const root = process.cwd();
-const files = ["app.js", "index.html", "companies.html", "expectations.html", "breakers.html", "methodology.html"];
+const appSourcePath = path.join(root, "app.js");
+const appSource = await readFile(appSourcePath, "utf8");
+if (!appSource.includes("__MARKET_SNAPSHOT_VERSION__")) {
+  throw new Error("app.js is missing the market-snapshot version marker.");
+}
+await writeFile(path.join(root, "app-" + buildVersion + ".js"), appSource.replaceAll("__MARKET_SNAPSHOT_VERSION__", buildVersion));
 
-await Promise.all(files.map(async (file) => {
+const htmlFiles = ["index.html", "companies.html", "expectations.html", "breakers.html", "methodology.html"];
+await Promise.all(htmlFiles.map(async (file) => {
   const filePath = path.join(root, file);
   const contents = await readFile(filePath, "utf8");
   if (!contents.includes("__MARKET_SNAPSHOT_VERSION__")) {
     throw new Error(file + " is missing the market-snapshot version marker.");
   }
-  await writeFile(filePath, contents.replaceAll("__MARKET_SNAPSHOT_VERSION__", buildVersion));
+  await writeFile(filePath, contents.replace("app.js?build=__MARKET_SNAPSHOT_VERSION__", "app-" + buildVersion + ".js"));
 }));
 
 console.log("Bound market-data asset paths to this deployment.");

@@ -53,6 +53,12 @@ The current decision rule is simple: **do not call an upside gap merely because 
 - Capital expenditure, co-location, server / memory costs, gross margin, operating margin, and free cash flow.
 - Current, attributed consensus versus management outlook only after period alignment.
 
+## Q3 2026 pre-release scorecard
+
+The live [Akamai scenario lab and Q3 scorecard](https://gundemkorel.github.io/agentic-economy-dashboard/models.html) converts this checklist into six structured company-capture tests. It keeps the Q2 reported baseline and Q3 company-issued guidance separate from the project’s scenario assumptions.
+
+When Q3 results publish, append the company-reported record to data/manual/company-capture-history.json first. Then mark each scorecard line as observed, unresolved, or contrary. Do not treat a guide beat, a product announcement, or a contract headline alone as evidence of an expectation gap.
+
 ## Primary sources
 
 - [Akamai Q2 2026 results](https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results)

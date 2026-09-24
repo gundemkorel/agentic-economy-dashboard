@@ -380,7 +380,7 @@ async function initMethodology() {
 
 async function initHistory() {
   const register = await fetchJson("data/processed/observation-register.json");
-  $("#history-as-of").textContent = formatDate(register.asOfDate || register.generatedAt);
+  $("#history-as-of").textContent = formatDate(register.asOfDate);
   $("#history-metric-count").textContent = String(register.summary?.trackedMetrics || 0);
   $("#history-ready-count").textContent = String(register.summary?.metricsReadyForReview || 0);
   $("#history-company-count").textContent = String(register.summary?.trackedCompanies || 0);
@@ -432,6 +432,40 @@ function renderModelBaseline(baseline) {
   return cards.map(([label, value, note]) => "<article class=\"model-baseline-card\"><span>" + escapeHtml(label) + "</span><strong>" + escapeHtml(value) + "</strong><small>" + escapeHtml(note) + "</small></article>").join("");
 }
 
+function renderScorecardBaseline(item) {
+  return "<article class=\"model-baseline-card scorecard-baseline-card\"><span>" + escapeHtml(item.label) + "</span><strong>" + escapeHtml(item.value) + "</strong><small>" + escapeHtml(item.note) + "</small></article>";
+}
+
+function renderScorecardCheck(check) {
+  const lines = [
+    ["Q3 question", check.question],
+    ["Starting point", check.baseline],
+    ["Evidence upgrade", check.upgrade],
+    ["Not enough", check.notEnough],
+    ["Thesis downgrade", check.downgrade],
+    ["Decision impact", check.decisionImpact]
+  ].map(([label, value]) => "<div><dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(value) + "</dd></div>").join("");
+  return "<article class=\"scorecard-check\"><div class=\"scorecard-check-top\"><span class=\"metric-number\">" + escapeHtml(check.number) + "</span><span class=\"tag neutral\">Reported evidence</span></div><h3>" + escapeHtml(check.title) + "</h3><dl>" + lines + "</dl></article>";
+}
+
+function renderScorecardDecision(rule) {
+  const tone = rule.state.toLowerCase().includes("upgrade") ? "positive" : (rule.state.toLowerCase().includes("downgrade") ? "caution" : "warning");
+  return "<article class=\"scorecard-decision\"><span class=\"tag " + tone + "\">" + escapeHtml(rule.state) + "</span><p>" + escapeHtml(rule.definition) + "</p><strong>" + escapeHtml(rule.action) + "</strong></article>";
+}
+
+function initAkamScorecard(scorecard) {
+  $("#akam-scorecard-status").textContent = scorecard.status;
+  $("#akam-scorecard-purpose").textContent = scorecard.purpose;
+  $("#akam-scorecard-period").textContent = scorecard.event.fiscalPeriod;
+  $("#akam-scorecard-timing").textContent = scorecard.event.timing;
+  $("#akam-scorecard-events-link").href = scorecard.event.eventsUrl;
+  $("#akam-scorecard-baseline").innerHTML = scorecard.reportedBaseline.map(renderScorecardBaseline).join("");
+  $("#akam-scorecard-checks").innerHTML = scorecard.checks.map(renderScorecardCheck).join("");
+  $("#akam-scorecard-protocol").innerHTML = scorecard.postReleaseProtocol.map((step) => "<li>" + escapeHtml(step) + "</li>").join("");
+  $("#akam-scorecard-decisions").innerHTML = scorecard.decisionRules.map(renderScorecardDecision).join("");
+  $("#akam-scorecard-sources").innerHTML = "<div class=\"model-source-notes\"><p>The scorecard is pre-release research discipline. Each line must be updated from the earnings release, filing, and management commentary—not from a price move or headline.</p></div><div class=\"company-sources\">" + scorecard.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";
+}
+
 function renderModelScenario(scenario, baseline, currentPrice) {
   const calculated = calculatedScenario(scenario, baseline);
   const growth = [scenario.revenueGrowth?.fy2027, scenario.revenueGrowth?.fy2028, scenario.revenueGrowth?.fy2029to2030].map((value) => formatPercentPlain(value)).join(" / ");
@@ -451,10 +485,11 @@ function renderReverseExpectationRow(multiple, baseline, currentPrice, reference
 }
 
 async function initModel() {
-  const [model, eulerpoolSnapshot, fmpSnapshot] = await Promise.all([
+  const [model, eulerpoolSnapshot, fmpSnapshot, scorecard] = await Promise.all([
     fetchJson("data/manual/akam-scenario-lab.json"),
     fetchJson(eulerpoolSnapshotPath).catch(() => null),
-    fetchJson("data/processed/fmp-market-expectations.json").catch(() => null)
+    fetchJson("data/processed/fmp-market-expectations.json").catch(() => null),
+    fetchJson("data/manual/akam-q3-scorecard.json")
   ]);
   const snapshots = [eulerpoolSnapshot, fmpSnapshot];
   const marketSnapshot = snapshots.find((snapshot) => Array.isArray(snapshot?.rows) && snapshot.rows.some((row) => row?.ticker === "AKAM" && row?.status === "observed")) || null;
@@ -462,6 +497,7 @@ async function initModel() {
   const currentPrice = finiteNumber(marketRecord?.quote?.price);
   const attribution = $("#model-attribution");
   $("#model-baseline-grid").innerHTML = renderModelBaseline(model.reportedBaseline);
+  initAkamScorecard(scorecard);
   $("#model-scenarios-body").innerHTML = model.scenarios.map((scenario) => renderModelScenario(scenario, model.reportedBaseline, currentPrice)).join("");
   $("#model-source-list").innerHTML = "<div class=\"model-source-notes\">" + model.reportedBaseline.notes.map((note) => "<p>" + escapeHtml(note) + "</p>").join("") + "</div><div class=\"company-sources\">" + model.reportedBaseline.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";
   if (currentPrice !== null) {

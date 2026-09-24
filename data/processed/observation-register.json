@@ -1,6 +1,5 @@
 {
   "asOfDate": "2026-09-24",
-  "generatedAt": "2026-09-24T19:12:32.040Z",
   "definition": "The observation register records what has actually been collected, when another point becomes comparable, and what decision it can support. It does not calculate a composite score or automatically classify a trend.",
   "trendReviewRule": "A series becomes ready for analyst trend review only after the stated number of eligible, definition-consistent observations. The analyst must still examine source changes, periods, and counter-evidence before calling acceleration, stability, or deceleration.",
   "summary": {

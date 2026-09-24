@@ -65,6 +65,8 @@ The Gap Readiness page uses Eulerpool for a compact current daily snapshot of co
 
 The Akamai scenario lab reads company-issued reported baselines and applies transparent project assumptions. When a current attributed market snapshot is available, it uses that price only at render time for a simplified reverse-expectations bridge; it does not store vendor price history or present a target price.
 
+The same Akamai page now includes a pre-release Q3 earnings scorecard. It compares Q3 results with the Q2 reported baseline and company-issued guide, tests CIS conversion, paid agent-control monetization, delivery trends, cash returns, and contract-fulfillment risk, then records an evidence upgrade, watch, or downgrade without treating any outcome as an expectation-gap call.
+
 ## GitHub Pages
 
 The repository includes GitHub Actions workflows for Pages deployment plus weekly MCP Registry and Cloudflare Radar refreshes. Successful refreshes trigger a Pages redeployment. Enable Pages with GitHub Actions as the source in repository settings. The expected public URL is:

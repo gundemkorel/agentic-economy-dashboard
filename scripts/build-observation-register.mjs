@@ -135,7 +135,6 @@ const observedDates = [
 ].filter((date) => toUtcDate(date)).map((date) => String(date).slice(0, 10)).sort();
 const register = {
   asOfDate: observedDates.at(-1) || policy.asOfDate,
-  generatedAt: new Date().toISOString(),
   definition: policy.definition,
   trendReviewRule: policy.trendReviewRule,
   summary: {

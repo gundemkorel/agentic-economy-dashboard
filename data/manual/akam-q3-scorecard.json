@@ -1,0 +1,147 @@
+{
+  "asOfDate": "2026-09-24",
+  "title": "Akamai Q3 2026 earnings scorecard",
+  "status": "Pre-release — Q3 results are not yet published",
+  "purpose": "Turn the next Akamai earnings release into a repeatable company-capture test. This scorecard compares reported facts with company-issued guidance and the Q2 baseline; it does not create a forecast, target price, or expectation-gap conclusion.",
+  "event": {
+    "fiscalPeriod": "Q3 2026 · quarter ending September 30, 2026",
+    "timing": "Exact reporting date is pending Akamai's announcement. The company says Q3 results are usually reported near the beginning of November.",
+    "eventsUrl": "https://www.ir.akamai.com/node/5821"
+  },
+  "reportedBaseline": [
+    {
+      "label": "Q3 revenue guide",
+      "value": "$1.105–$1.130B",
+      "note": "Company-issued Q3 2026 range"
+    },
+    {
+      "label": "Q3 non-GAAP operating-margin guide",
+      "value": "24%–26%",
+      "note": "Company-issued Q3 2026 range"
+    },
+    {
+      "label": "Q3 non-GAAP EPS guide",
+      "value": "$1.60–$1.80",
+      "note": "Company-issued Q3 2026 range"
+    },
+    {
+      "label": "Q2 CIS revenue",
+      "value": "$99M · +39% YoY",
+      "note": "Fast-growing but still a small portion of total revenue"
+    },
+    {
+      "label": "Q2 security / delivery mix",
+      "value": "$604M · +10% / $396M · −6%",
+      "note": "Security growth must offset legacy delivery pressure"
+    },
+    {
+      "label": "Q2 CIS commitments",
+      "value": ">$2.8B YTD",
+      "note": "Includes a >$600M four-year robotics-related contract; commitments are not revenue"
+    }
+  ],
+  "checks": [
+    {
+      "number": "01",
+      "title": "Deliver the guide before interpreting the mix",
+      "question": "Did reported Q3 revenue, non-GAAP operating margin, and EPS land within or above the company-issued ranges?",
+      "baseline": "Q3 guidance: revenue $1.105–$1.130B, non-GAAP operating margin 24%–26%, and non-GAAP EPS $1.60–$1.80.",
+      "upgrade": "Results meet or exceed the stated ranges, and management maintains or improves the full-year outlook without relying on an unexplained one-off.",
+      "notEnough": "A guide beat alone establishes execution, not agentic capture or durable economics.",
+      "downgrade": "Results miss the low end, or guidance is reduced because demand, fulfillment, pricing, or capacity economics deteriorated.",
+      "decisionImpact": "A clean guide result keeps the capture test open; a miss strengthens the no-meaningful-Wave-2 path."
+    },
+    {
+      "number": "02",
+      "title": "Convert CIS commitments into revenue quality",
+      "question": "Did CIS revenue remain strong, and did management disclose evidence that signed commitments are converting into revenue, backlog, usage, or a credible deployment schedule?",
+      "baseline": "Q2 CIS revenue was $99M, up 39% year over year; year-to-date CIS commitments exceeded $2.8B.",
+      "upgrade": "CIS growth remains strong and management ties a material portion of commitments to deployment, recognized revenue, recurring usage, or visible backlog conversion.",
+      "notEnough": "Another large contract or a generic pipeline statement without timing, conversion, customer concentration, or economics.",
+      "downgrade": "CIS growth slows sharply, commitments fail to turn into reported activity, or delivery timelines and hardware availability push conversion outward.",
+      "decisionImpact": "Only conversion evidence can begin to support the material-Wave-2 scenario’s revenue bridge."
+    },
+    {
+      "number": "03",
+      "title": "Show paid agent-control monetization",
+      "question": "Did Akamai quantify revenue, customer adoption, attach, price realization, retention, or usage for Bot & Agent Control, AI fetcher controls, inference, or another named agent-related product?",
+      "baseline": "Akamai has separated AI fetchers and agents in its controls, but it has not disclosed agent-specific revenue, pricing, or attach rate.",
+      "upgrade": "Management names a paid product, customer count, attach, revenue contribution, or pricing mechanism linked to agentic workloads or controls.",
+      "notEnough": "A new product feature, taxonomy, security report, or customer anecdote with no commercial metric.",
+      "downgrade": "Management confirms the controls are bundled, free, or nonmaterial, or offers no commercial signal while claiming product relevance.",
+      "decisionImpact": "Without a paid mechanism, agentic traffic remains an infrastructure narrative rather than shareholder-capture evidence."
+    },
+    {
+      "number": "04",
+      "title": "Contain the legacy delivery drag",
+      "question": "Did delivery and other cloud applications stabilize, or was its decline more than offset by durable, appropriately profitable security and CIS growth?",
+      "baseline": "Q2 delivery and other cloud applications revenue was $396M, down 6% year over year; security revenue was $604M, up 10%.",
+      "upgrade": "Delivery trends improve, or the company demonstrates that mix shift toward security and CIS improves growth quality without sacrificing returns.",
+      "notEnough": "A fast-growing CIS category while the larger delivery base continues to deteriorate and masks total-company economics.",
+      "downgrade": "Delivery weakness broadens through pricing pressure, traffic optimization, renewals, or customer cost control and offsets the higher-growth categories.",
+      "decisionImpact": "A durable mix shift is necessary before treating CIS growth as a whole-company rerating engine."
+    },
+    {
+      "number": "05",
+      "title": "Prove capacity investment earns a cash return",
+      "question": "Did reported operating margin, cash from operations, capital investment, and management commentary show that cloud and AI capacity spending is becoming productive rather than simply larger?",
+      "baseline": "Q2 non-GAAP operating margin was 25%, down five points year over year; Q2 cash from operations was $326M. The 10-Q flags rising server, memory, co-location, bandwidth, depreciation, and related capacity costs.",
+      "upgrade": "Margins remain within or above guide while cash generation and disclosed capital investment support a credible improving return path.",
+      "notEnough": "Revenue growth without enough information on capex, hosting costs, depreciation, gross margin, or cash conversion.",
+      "downgrade": "Margin falls below guide, cash conversion weakens, or management raises spending needs without showing conversion, pricing, or return evidence.",
+      "decisionImpact": "This is the critical bridge between a demand signal and the scenario lab’s free-cash-flow assumptions."
+    },
+    {
+      "number": "06",
+      "title": "Interrogate concentration and fulfillment risk",
+      "question": "Did the large CIS contracts create dependency, timing risk, capacity constraints, or customer-specific economics that weaken the quality of the reported growth?",
+      "baseline": "The disclosed greater-than-$600M robotics-related contract runs over four years; Akamai identifies fulfillment, procurement, and projected-capex risk in its filings.",
+      "upgrade": "Management explains deployment timing, diversification, capacity readiness, and contract economics without revealing an adverse concentration or fulfillment dependency.",
+      "notEnough": "A larger commitment headline with no information about timing, service obligations, concentration, or cash needs.",
+      "downgrade": "Customer delay, cancellation, concentration, hardware constraint, or contract economics indicate the commitment is less valuable or more capital-intensive than implied.",
+      "decisionImpact": "Large commitments count only after their economics and execution risks are visible."
+    }
+  ],
+  "postReleaseProtocol": [
+    "Capture results, guidance, and management commentary as company-reported facts with the earnings-release and filing links.",
+    "Append the Q3 record to data/manual/company-capture-history.json before replacing the current AKAM card baseline.",
+    "Mark each scorecard line as observed, unresolved, or contrary. Do not use a single green line to override a contrary margin, cash, or delivery result.",
+    "Revise the Akamai scenario assumptions only if reported conversion, monetization, and cash-return evidence supports a changed economic path.",
+    "Keep Gap Readiness separate: a Q3 result can improve company capture, but cannot establish an expectation gap without aligned consensus-revision and valuation history."
+  ],
+  "decisionRules": [
+    {
+      "state": "Evidence upgrade",
+      "definition": "Guide execution plus visible CIS conversion and no material worsening in delivery, margin, or cash-return evidence. A disclosed paid agent-control mechanism would strengthen the result.",
+      "action": "Advance AKAM to a two-period company-capture review; do not call an expectation gap yet."
+    },
+    {
+      "state": "Stay on watch",
+      "definition": "Guide execution or CIS growth is present, but commercial agent evidence, conversion timing, or return on capacity remains unresolved.",
+      "action": "Keep the existing early-capture state and preserve the counterarguments."
+    },
+    {
+      "state": "Thesis downgrade",
+      "definition": "Guide miss, commitment conversion delay, worsening delivery drag, or capacity economics materially weaken the route to durable free cash flow.",
+      "action": "Move probability weight toward the no-meaningful-Wave-2 scenario and record the breaker."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Akamai Q2 2026 results and Q3 guidance",
+      "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results"
+    },
+    {
+      "label": "Akamai Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm"
+    },
+    {
+      "label": "Akamai investor events",
+      "url": "https://www.ir.akamai.com/node/5821"
+    },
+    {
+      "label": "Akamai investor FAQ",
+      "url": "https://www.ir.akamai.com/investor-faqs"
+    }
+  ]
+}

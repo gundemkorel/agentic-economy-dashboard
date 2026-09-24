@@ -269,12 +269,156 @@
   padding: 12px 0;
 }
 
+.scorecard-event {
+  margin: 28px 0 0;
+}
+
+.scorecard-baseline-grid {
+  margin-top: 18px;
+}
+
+.scorecard-baseline-card {
+  min-height: 130px;
+}
+
+.scorecard-baseline-card strong {
+  font-size: 22px;
+  margin: 13px 0 8px;
+}
+
+.scorecard-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 30px;
+}
+
+.scorecard-check {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 23px;
+}
+
+.scorecard-check-top {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scorecard-check h3 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+  margin: 21px 0;
+}
+
+.scorecard-check dl {
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+.scorecard-check dl div {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.scorecard-check dt {
+  color: var(--green-2);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 8px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.scorecard-check dd {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+
+.scorecard-check dl div:nth-child(3) dd {
+  color: #416657;
+}
+
+.scorecard-check dl div:nth-child(4) dd,
+.scorecard-check dl div:nth-child(5) dd {
+  color: #8a6554;
+}
+
+.scorecard-check dl div:last-child dd {
+  color: var(--ink);
+}
+
+.scorecard-bottom {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-top: 30px;
+}
+
+.scorecard-protocol,
+.scorecard-outcomes {
+  background: var(--mint);
+  padding: 24px;
+}
+
+.scorecard-protocol h3,
+.scorecard-outcomes h3 {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -.03em;
+  margin: 18px 0 16px;
+}
+
+.scorecard-protocol ol {
+  border-top: 1px solid #bad5c3;
+  color: #416657;
+  font-size: 11px;
+  line-height: 1.52;
+  margin: 0;
+  padding: 0 0 0 19px;
+}
+
+.scorecard-protocol li {
+  border-bottom: 1px solid #bad5c3;
+  padding: 10px 0 10px 2px;
+}
+
+.scorecard-decision {
+  border-top: 1px solid #bad5c3;
+  padding: 12px 0;
+}
+
+.scorecard-decision:last-child {
+  border-bottom: 1px solid #bad5c3;
+}
+
+.scorecard-decision p {
+  color: #416657;
+  font-size: 11px;
+  line-height: 1.48;
+  margin: 8px 0;
+}
+
+.scorecard-decision strong {
+  color: var(--green);
+  display: block;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
 @media (max-width: 1100px) {
   .research-gate-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .mechanics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scorecard-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -286,6 +430,10 @@
   }
 
   .breaker-page {
+    grid-template-columns: 1fr;
+  }
+
+  .scorecard-bottom {
     grid-template-columns: 1fr;
   }
 }

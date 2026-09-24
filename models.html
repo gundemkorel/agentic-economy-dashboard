@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Transparent Akamai scenario and reverse-expectations research model." />
-    <title>Akamai Scenario Lab · Agentic Economy Dashboard</title>
+    <meta name="description" content="Transparent Akamai scenario, reverse-expectations, and earnings-scorecard research model." />
+    <title>Akamai Scenario Lab & Earnings Scorecard · Agentic Economy Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,6 +29,18 @@
           <div class="section-heading"><div><p class="section-number">Reported baseline</p><h2>Facts used as a starting point</h2></div><span class="tag neutral">Company-reported</span></div>
           <p class="section-lede">These are inputs, not a forecast. The capital-investment and net-debt items are deliberately labelled as analyst-defined bridges where they are not company-defined measures.</p>
           <div class="model-baseline-grid" id="model-baseline-grid" aria-live="polite"><div class="loading-state">Loading reported baseline…</div></div>
+        </section>
+        <section class="section-block scorecard-section">
+          <div class="section-heading"><div><p class="section-number">Next earnings</p><h2>Q3 company-capture scorecard</h2></div><span class="tag warning" id="akam-scorecard-status">Loading…</span></div>
+          <p class="section-lede" id="akam-scorecard-purpose">Loading Q3 scorecard…</p>
+          <section class="notice scorecard-event"><strong id="akam-scorecard-period">Loading fiscal period…</strong><span id="akam-scorecard-timing">Loading event timing…</span><a class="notice-attribution" id="akam-scorecard-events-link" href="https://www.ir.akamai.com/node/5821" target="_blank" rel="noreferrer">Investor events ↗</a></section>
+          <div class="model-baseline-grid scorecard-baseline-grid" id="akam-scorecard-baseline" aria-live="polite"><div class="loading-state">Loading Q3 baseline…</div></div>
+          <div class="scorecard-grid" id="akam-scorecard-checks" aria-live="polite"><div class="loading-state">Loading decision checks…</div></div>
+          <div class="scorecard-bottom">
+            <section class="scorecard-protocol"><p class="section-number">After results publish</p><h3>Update in this order</h3><ol id="akam-scorecard-protocol"><li>Loading update protocol…</li></ol></section>
+            <section class="scorecard-outcomes"><p class="section-number">Decision discipline</p><h3>What each outcome means</h3><div id="akam-scorecard-decisions"><div class="loading-state">Loading decision rules…</div></div></section>
+          </div>
+          <div class="model-source-list" id="akam-scorecard-sources"></div>
         </section>
         <section class="section-block model-scenarios-section">
           <div class="section-heading"><div><p class="section-number">Three paths</p><h2>Scenario assumptions and outcomes</h2></div><span class="tag warning">Our assumptions</span></div>

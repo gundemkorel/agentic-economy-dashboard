@@ -1,0 +1,70 @@
+{
+  "asOfDate": "2026-09-24",
+  "definition": "Dated company-reported capture evidence for the core research queue. Each record preserves reported facts, the project interpretation, and a counterpoint. These are not agent-specific revenue disclosures unless the company explicitly says so.",
+  "records": [
+    {
+      "ticker": "AKAM",
+      "periodEnd": "2026-06-30",
+      "reportedDate": "2026-08-06",
+      "periodLabel": "Q2 2026",
+      "sourceLabel": "Akamai Q2 2026 results and Form 10-Q",
+      "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results",
+      "facts": [
+        "Cloud Infrastructure Services revenue: $99M, +39% year over year",
+        "Security revenue: $604M, +10% year over year",
+        "CIS contract commitments: more than $2.8B year to date, including a greater-than-$600M robotics contract",
+        "Non-GAAP operating margin: 25%, down five points year over year"
+      ],
+      "captureRead": "Early capture evidence. CIS growth and commitments support an AI-infrastructure hypothesis, but no agent-specific revenue, pricing, or attach rate is disclosed.",
+      "counterpoint": "Delivery and other cloud-applications revenue declined, while future cloud and AI capacity is expected to increase capital and operating costs."
+    },
+    {
+      "ticker": "ESTC",
+      "periodEnd": "2026-07-31",
+      "reportedDate": "2026-08-27",
+      "periodLabel": "Q1 FY2027",
+      "sourceLabel": "Elastic Q1 FY2027 results and Form 10-Q",
+      "sourceUrl": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-First-Quarter-Fiscal-2027-Financial-Results/",
+      "facts": [
+        "Elastic Cloud revenue: $235M, +20% year over year, 49% of revenue",
+        "Sales-led subscription revenue: $399M, +18% year over year",
+        "Current RPO: $1.153B, +21% year over year",
+        "Total gross margin: 74%, down from 77% year over year"
+      ],
+      "captureRead": "Mechanism and consumption exposure are visible, but agent-specific usage, pricing, retention, and cash-flow proof are not disclosed.",
+      "counterpoint": "Cloud-hosting costs rose faster than subscription revenue and pressured gross margin."
+    },
+    {
+      "ticker": "DT",
+      "periodEnd": "2026-06-30",
+      "reportedDate": "2026-08-05",
+      "periodLabel": "Q1 FY2027",
+      "sourceLabel": "Dynatrace Q1 FY2027 results and Form 10-Q",
+      "sourceUrl": "https://ir.dynatrace.com/news-events/press-releases/detail/434/dynatrace-reports-first-quarter-fiscal-year-2027-financial-results",
+      "facts": [
+        "Total ARR: $2.136B, +17% year over year",
+        "Total revenue: $555M, +16% year over year",
+        "Annualized logs consumption: $200M, growing more than 100% year over year",
+        "Subscription gross margin: 85%, down from 86% year over year"
+      ],
+      "captureRead": "Usage and product relevance are visible, but no agent-specific ARR, revenue, pricing, or retention cohort is disclosed.",
+      "counterpoint": "Higher cloud-hosting costs and expected acquisition-related margin dilution remain material tests."
+    },
+    {
+      "ticker": "FFIV",
+      "periodEnd": "2026-06-30",
+      "reportedDate": "2026-07-27",
+      "periodLabel": "Q3 FY2026",
+      "sourceLabel": "F5 Q3 FY2026 results and Form 10-Q",
+      "sourceUrl": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx",
+      "facts": [
+        "Total revenue: $865M, +11% year over year",
+        "Product revenue: +19% year over year",
+        "Systems revenue: $240M, +32% year over year",
+        "Software revenue: $223M, +7% year over year"
+      ],
+      "captureRead": "AI Gateway makes the company product-relevant, but adoption, attach, customer count, pricing, and revenue are not disclosed.",
+      "counterpoint": "Growth was led by systems, and the gateway could remain a bundled feature rather than a paid control-plane product."
+    }
+  ]
+}

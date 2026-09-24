@@ -23,8 +23,8 @@ const fetchJson = async (path) => {
 
 const statusTone = (status) => {
   const text = String(status || "").toLowerCase();
-  if (text.includes("observed") || text.includes("defined") || text.includes("active") || text.includes("prototype")) return "positive";
-  if (text.includes("baseline") || text.includes("watch") || text.includes("unresolved") || text.includes("not gap") || text.includes("caution") || text.includes("sparse")) return "warning";
+  if (text.includes("observed") || text.includes("defined") || text.includes("active") || text.includes("prototype") || text.includes("ready")) return "positive";
+  if (text.includes("baseline") || text.includes("developing") || text.includes("watch") || text.includes("unresolved") || text.includes("not gap") || text.includes("caution") || text.includes("sparse")) return "warning";
   return "neutral";
 };
 
@@ -40,7 +40,7 @@ function sourceFor(sources, id) {
   return sources.find((source) => source.id === id);
 }
 
-function renderPulseCard(metric, source, currentObservation, observationCount) {
+function renderPulseCard(metric, source, currentObservation, observationCount, registerTrack) {
   const observed = currentObservation && currentObservation.metricId === metric.id ? currentObservation : null;
   const value = observed ? (observed.displayValue || new Intl.NumberFormat("en-US").format(observed.value)) : "—";
   const direction = observed ? (observed.comparison?.displayChange || "First observed point") : metric.status;
@@ -48,7 +48,9 @@ function renderPulseCard(metric, source, currentObservation, observationCount) {
   const sourceName = observed?.sourceName || source?.name;
   const sourceUrl = observed?.sourceUrl || source?.url;
   const sourceLink = sourceName && sourceUrl ? "<a href=\"" + escapeHtml(sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(sourceName) + " ↗</a>" : "";
-  const historyNote = observed && observationCount < 2 ? "First observation — no trend call" : (observationCount < 3 ? observationCount + " dated observations — trend pending" : observationCount + " dated observations — comparable series");
+  const historyNote = registerTrack
+    ? registerTrack.recordedObservationCount + " recorded · " + registerTrack.eligibleObservationCount + " eligible · " + registerTrack.maturity
+    : (observed && observationCount < 2 ? "First observation — no trend call" : (observationCount < 3 ? observationCount + " dated observations — trend pending" : observationCount + " dated observations — comparable series"));
   const dataType = observed?.dataType || metric.dataType || source?.dataType || "Reviewed evidence";
   return "<article class=\"metric-card metric-card-wide\" id=\"" + escapeHtml(metric.id) + "\">" +
     "<div class=\"metric-top\"><span class=\"metric-number\">" + escapeHtml(metric.number) + " · " + escapeHtml(metric.layer) + "</span><span class=\"tag " + statusTone(metric.status) + "\">" + escapeHtml(metric.status) + "</span></div>" +
@@ -79,6 +81,44 @@ function renderResearchGate(gate) {
 
 function renderCompanyReadiness(row) {
   return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.stage) + "</td><td>" + escapeHtml(row.state) + "</td><td>" + escapeHtml(row.expectationsState) + "</td><td>" + escapeHtml(row.nextEvidence) + "</td></tr>";
+}
+
+function formatObservationValue(observation) {
+  if (!observation) return "No recorded observation";
+  const value = observation.displayValue;
+  if (typeof value === "number") return new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(value);
+  if (value === null || value === undefined || value === "") return "Qualitative observation";
+  return String(value);
+}
+
+function renderObservationHistoryRow(track) {
+  const latest = track.mostRecentObservation;
+  const source = track.sourceUrl ? "<a class=\"history-link\" href=\"" + escapeHtml(track.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(track.sourceName) + " ↗</a>" : "";
+  const periodStart = latest?.periodStart ? String(latest.periodStart).slice(0, 10) : null;
+  const periodEnd = latest?.periodEnd ? String(latest.periodEnd).slice(0, 10) : null;
+  const sameDayObservation = latest?.asOfDate && periodStart === String(latest.asOfDate).slice(0, 10) && periodEnd === String(latest.asOfDate).slice(0, 10);
+  const period = latest?.periodStart && latest?.periodEnd && !sameDayObservation ? formatDate(latest.periodStart) + " – " + formatDate(latest.periodEnd) : "";
+  const value = latest ? formatObservationValue(latest) + (latest.unit ? " · " + latest.unit : "") : "No recorded observation";
+  return "<tr><td><strong>" + escapeHtml(track.title) + "</strong><span class=\"table-subtle\">" + escapeHtml(track.layer) + "</span>" + source + "</td>" +
+    "<td><span class=\"observation-value\">" + escapeHtml(value) + "</span><span class=\"observation-meta\">" + (latest ? "As of " + escapeHtml(formatDate(latest.asOfDate)) : "Awaiting baseline") + (period ? " · " + escapeHtml(period) : "") + "</span></td>" +
+    "<td><span class=\"tag " + statusTone(track.maturity) + "\">" + escapeHtml(track.maturity) + "</span><span class=\"history-count\">" + escapeHtml(track.recordedObservationCount + " recorded · " + track.eligibleObservationCount + " eligible / " + track.requiredEligibleObservations + " needed") + "</span><span class=\"table-subtle\">" + escapeHtml(track.nextRequirement) + "</span></td>" +
+    "<td>" + escapeHtml(track.comparability) + "<span class=\"table-subtle\">" + escapeHtml(track.cadence) + "</span></td>" +
+    "<td>" + escapeHtml(track.decisionUse) + "<span class=\"table-subtle\">Do not use: " + escapeHtml(track.doNotUse) + "</span></td></tr>";
+}
+
+function renderCompanyHistoryRow(company) {
+  const latest = company.latestRecord;
+  const source = latest?.sourceUrl ? "<a class=\"history-link\" href=\"" + escapeHtml(latest.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(latest.sourceLabel || "Primary source") + " ↗</a>" : "";
+  const reported = latest ? escapeHtml(latest.periodLabel || "Reported period") + "<span class=\"observation-meta\">Ended " + escapeHtml(formatDate(latest.periodEnd)) + " · reported " + escapeHtml(formatDate(latest.reportedDate)) + "</span>" + source : "Awaiting first reported period";
+  return "<tr><td><strong>" + escapeHtml(company.ticker) + "</strong><span class=\"table-subtle\">" + escapeHtml(company.title) + "</span></td>" +
+    "<td>" + reported + "</td>" +
+    "<td><span class=\"tag " + statusTone(company.maturity) + "\">" + escapeHtml(company.maturity) + "</span><span class=\"history-count\">" + escapeHtml(company.recordedObservationCount + " recorded · " + company.eligibleObservationCount + " eligible / " + company.requiredEligibleObservations + " needed") + "</span><span class=\"table-subtle\">" + escapeHtml(company.nextRequirement) + "</span></td>" +
+    "<td>" + escapeHtml(company.decisionUse) + (latest?.captureRead ? "<span class=\"table-subtle\">Current read: " + escapeHtml(latest.captureRead) + "</span>" : "") + "</td>" +
+    "<td>" + escapeHtml(company.doNotUse) + (latest?.counterpoint ? "<span class=\"table-subtle\">Counterpoint: " + escapeHtml(latest.counterpoint) + "</span>" : "") + "</td></tr>";
+}
+
+function renderMarketHistory(history) {
+  return "<h3>" + escapeHtml(history.title) + "</h3><p><strong>Current status:</strong> " + escapeHtml(history.status) + ".</p><p><strong>Missing:</strong> " + escapeHtml(history.missing) + "</p><p><strong>Boundary:</strong> " + escapeHtml(history.boundary) + "</p><p><strong>Next action:</strong> " + escapeHtml(history.nextAction) + "</p>";
 }
 
 function renderMechanics(company) {
@@ -239,7 +279,8 @@ async function initPulse() {
     fetchJson("data/processed/cloudflare-ai-bot-history.json").catch(() => ({ observations: [] })),
     fetchJson("data/manual/enterprise-adoption-observations.json").catch(() => ({ observations: [] })),
     fetchJson("data/manual/research-gates.json"),
-    fetchJson("data/manual/triangulation.json")
+    fetchJson("data/manual/triangulation.json"),
+    fetchJson("data/processed/observation-register.json").catch(() => null)
   ]);
   const framework = data[0];
   const pulse = data[1];
@@ -251,6 +292,7 @@ async function initPulse() {
   const manualEnterprise = data[7];
   const researchGates = data[8];
   const triangulation = data[9];
+  const observationRegister = data[10];
   const manualObservations = Array.isArray(manualEnterprise.observations) ? manualEnterprise.observations : [];
   const observations = [currentMcp, currentCloudflare, ...manualObservations].filter(Boolean);
   const histories = {
@@ -261,17 +303,18 @@ async function initPulse() {
     histories[observation.metricId] = [observation];
   });
   const observedCount = pulse.metrics.filter((metric) => observations.some((item) => item.metricId === metric.id)).length;
-  const trendReadyCount = Object.values(histories).filter((history) => Array.isArray(history) && history.length >= 3).length;
+  const trendReadyCount = observationRegister?.summary?.metricsReadyForReview ?? Object.values(histories).filter((history) => Array.isArray(history) && history.length >= 3).length;
+  const registerTracks = new Map((observationRegister?.tracks || []).map((track) => [track.metricId, track]));
   const mostRecent = [...observations].sort((a, b) => String(b.retrievalDate).localeCompare(String(a.retrievalDate)))[0];
   $("#last-updated").textContent = mostRecent ? formatDate(mostRecent.retrievalDate) : formatDate(pulse.asOfDate);
-  $("#confidence").textContent = observedCount + " observed proxies · " + (trendReadyCount ? trendReadyCount + " trend-ready series" : "no trend-ready series");
+  $("#confidence").textContent = observedCount + " observed proxies · " + (trendReadyCount ? trendReadyCount + " ready for trend review" : "no series ready for trend review");
   $("#project-state").textContent = researchGates.projectState;
   $("#project-note").textContent = researchGates.projectNote;
   $("#research-gate-grid").innerHTML = researchGates.gates.map(renderResearchGate).join("");
   $("#metric-grid").innerHTML = pulse.metrics.map((metric) => {
     const observation = observations.find((item) => item.metricId === metric.id);
     const history = histories[metric.id] || [];
-    return renderPulseCard(metric, sourceFor(sourceRegistry, metric.sourceId), observation, history.length);
+    return renderPulseCard(metric, sourceFor(sourceRegistry, metric.sourceId), observation, history.length, registerTracks.get(metric.id));
   }).join("");
   $("#expectation-grid").innerHTML = framework.expectations.map(renderExpectation).join("");
   $("#gap-table-body").innerHTML = framework.gaps.map(renderGap).join("");
@@ -333,6 +376,18 @@ async function initBreakers() {
 async function initMethodology() {
   const data = await fetchJson("config/sources.json");
   $("#source-list").innerHTML = data.sources.map(renderSource).join("");
+}
+
+async function initHistory() {
+  const register = await fetchJson("data/processed/observation-register.json");
+  $("#history-as-of").textContent = formatDate(register.asOfDate || register.generatedAt);
+  $("#history-metric-count").textContent = String(register.summary?.trackedMetrics || 0);
+  $("#history-ready-count").textContent = String(register.summary?.metricsReadyForReview || 0);
+  $("#history-company-count").textContent = String(register.summary?.trackedCompanies || 0);
+  $("#history-rule").textContent = register.trendReviewRule;
+  $("#observation-register-body").innerHTML = (register.tracks || []).map(renderObservationHistoryRow).join("");
+  $("#company-history-body").innerHTML = (register.companyCapture || []).map(renderCompanyHistoryRow).join("");
+  $("#market-history-card").innerHTML = renderMarketHistory(register.marketExpectationHistory || {});
 }
 
 function formatBillions(value, maximumFractionDigits = 2) {
@@ -438,6 +493,7 @@ async function boot() {
     else if (page === "expectations") await initExpectations();
     else if (page === "breakers") await initBreakers();
     else if (page === "methodology") await initMethodology();
+    else if (page === "history") await initHistory();
     else if (page === "model") await initModel();
     else await initPulse();
   } catch (error) {

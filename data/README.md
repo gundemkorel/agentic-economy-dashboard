@@ -14,6 +14,10 @@ Cloudflare Radar is a deliberate exception to any temptation to label all values
 
 `data/manual/research-gates.json` records the defined research sequence and each core company’s current gate, rather than assigning a composite investment score. `data/manual/triangulation.json` keeps non-comparable source samples side by side. `data/manual/akam-scenario-lab.json` contains only company-reported baseline values and the project’s stated assumptions; it never stores current vendor market data.
 
+The observation policy declares each series’ minimum spacing, eligible-observation threshold, comparability condition, permitted decision use, and prohibited inference. The generated observation register joins that policy to automated history, reviewed manual evidence, and the company-capture archive. It may say a series is ready for analyst trend review, but it never assigns a trend direction automatically.
+
+Company baselines belong in data/manual/company-capture-history.json and are appended after each relevant earnings release. Preserve old records before updating current company cards; a single quarter remains a baseline, not a capture trend.
+
 Recommended observation fields for future adapters:
 
 ~~~json

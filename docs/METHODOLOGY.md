@@ -63,6 +63,10 @@ The initial backfill target is January 2026 to the current date where legitimate
 
 The rolling evidence log is complementary to the time series. It records material confirmations, counter-evidence, and unresolved observations without collapsing them into an early composite score.
 
+The observation register is the operational control for this rule. It records raw observation count, eligible observation count, cadence, minimum time separation, comparability condition, permitted decision use, and prohibited inference for each track. A source reaches “ready for analyst trend review” only after its stated eligible-point threshold; that status does not itself label a trend. Cloudflare’s normalized 30-day current/control windows require 30-day-separated observations for this purpose, even though the pipeline collects monitoring points weekly.
+
+Company capture uses a separate earnings sequence. A company needs at least two time-separated, definition-consistent reported periods before repeated revenue-quality, margin, retention, or cash-flow evidence can be reviewed as a capture pattern. Preserve prior records in data/manual/company-capture-history.json; do not overwrite a baseline with the next quarter.
+
 ## Thesis-breaker discipline
 
 Every breaker must identify a measurable test, current status, cadence, and downgrade action. Separate macro failure (Wave 2 does not develop) from monetization failure (the activity is real but bundled, commoditized, or internalized) and company failure (another supplier captures the economics).

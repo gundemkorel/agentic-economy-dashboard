@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: observation-ingestion
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -21,6 +25,9 @@ jobs:
       - name: Fetch and normalize AI bot traffic proxy
         if: env.CLOUDFLARE_RADAR_API_TOKEN != ''
         run: node scripts/ingest-cloudflare-radar.mjs
+      - name: Refresh observation register
+        if: env.CLOUDFLARE_RADAR_API_TOKEN != ''
+        run: node scripts/build-observation-register.mjs
       - name: Explain skipped refresh
         if: env.CLOUDFLARE_RADAR_API_TOKEN == ''
         run: echo "Skipping Cloudflare Radar refresh because CLOUDFLARE_RADAR_API_TOKEN is not configured."
@@ -29,6 +36,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/cloudflare-radar data/processed/cloudflare-ai-bot-current.json data/processed/cloudflare-ai-bot-history.json
+          git add data/raw/cloudflare-radar data/processed/cloudflare-ai-bot-current.json data/processed/cloudflare-ai-bot-history.json data/processed/observation-register.json
           git diff --cached --quiet || git commit -m "Refresh Cloudflare Radar observation"
           git push

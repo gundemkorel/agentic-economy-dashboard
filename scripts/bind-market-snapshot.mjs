@@ -15,7 +15,7 @@ if (!appSource.includes("__MARKET_SNAPSHOT_VERSION__")) {
 }
 await writeFile(path.join(root, "app-" + buildVersion + ".js"), appSource.replaceAll("__MARKET_SNAPSHOT_VERSION__", buildVersion));
 
-const htmlFiles = ["index.html", "companies.html", "expectations.html", "breakers.html", "methodology.html", "models.html"];
+const htmlFiles = ["index.html", "history.html", "companies.html", "expectations.html", "breakers.html", "methodology.html", "models.html"];
 await Promise.all(htmlFiles.map(async (file) => {
   const filePath = path.join(root, file);
   const contents = await readFile(filePath, "utf8");

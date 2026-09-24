@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Observation history and evidence maturity for the Agentic Economy Dashboard." />
+    <title>Observation History · Agentic Economy Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="history.css" />
+  </head>
+  <body data-page="history">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Agentic Economy<br /><strong>Dashboard</strong></span></a>
+        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="history.html">History</a><a href="companies.html">Company Capture</a><a href="expectations.html">Gap Readiness</a><a href="breakers.html">Thesis Breakers</a><a href="models.html">AKAM Model</a><a href="methodology.html">Methods</a></nav>
+      </header>
+      <main>
+        <section class="page-hero history-hero">
+          <p class="eyebrow">Evidence archive <span class="slash">/</span> maturity before conclusion</p>
+          <h1>History first,<br /><em>conviction later.</em></h1>
+          <p>Each track earns its way from a single baseline to a reviewed directional read. This page records the actual observation count, comparability rule, and missing proof.</p>
+          <div class="history-snapshot" aria-live="polite">
+            <div><span>As of</span><strong id="history-as-of">Loading…</strong></div>
+            <div><span>Tracked metrics</span><strong id="history-metric-count">Loading…</strong></div>
+            <div><span>Ready for trend review</span><strong id="history-ready-count">Loading…</strong></div>
+            <div><span>Company capture sequences</span><strong id="history-company-count">Loading…</strong></div>
+          </div>
+        </section>
+
+        <section class="notice history-notice">
+          <strong>What “ready” means</strong>
+          <span id="history-rule">Loading observation rule…</span>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><p class="section-number">Macro and adoption evidence</p><h2>Observation register</h2></div><span class="tag warning">No automatic trend calls</span></div>
+          <p class="section-lede">Recorded observations and eligible observations are deliberately separate: closely overlapping or definition-changing data does not advance a series just by adding rows.</p>
+          <div class="gap-table-wrap history-table-wrap"><table class="gap-table history-table"><thead><tr><th>Metric</th><th>Latest observation</th><th>History status</th><th>What makes the next point comparable</th><th>Decision boundary</th></tr></thead><tbody id="observation-register-body" aria-live="polite"><tr><td colspan="5">Loading observation register…</td></tr></tbody></table></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><p class="section-number">Company capture</p><h2>Earnings sequences</h2></div><span class="tag warning">Reported facts only</span></div>
+          <p class="section-lede">A product launch or one quarter of AI-adjacent growth is not a capture trend. Each core company needs repeated reported evidence against its own economic proof threshold.</p>
+          <div class="gap-table-wrap history-table-wrap"><table class="gap-table history-table company-history-table"><thead><tr><th>Company</th><th>Latest reported period</th><th>Sequence status</th><th>What the next report must prove</th><th>Boundary</th></tr></thead><tbody id="company-history-body" aria-live="polite"><tr><td colspan="5">Loading company history…</td></tr></tbody></table></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><p class="section-number">Market expectations</p><h2>Why the gap is still unproven</h2></div><span class="tag warning">Current snapshot only</span></div>
+          <div class="market-history-card" id="market-history-card" aria-live="polite">Loading market-expectation boundary…</div>
+        </section>
+
+        <section class="method-grid history-methods">
+          <div class="method-card"><span class="method-index">A</span><h3>Counts are not trends</h3><p>A baseline becomes a trend candidate only after enough time-separated, definition-consistent observations exist.</p></div>
+          <div class="method-card"><span class="method-index">B</span><h3>Mechanism is not capture</h3><p>Company evidence must show revenue quality, pricing, retention, margin, or cash outcomes—not simply a relevant product.</p></div>
+          <div class="method-card"><span class="method-index">C</span><h3>Context is not a gap</h3><p>A current quote or annual estimate is useful context, but it cannot reveal revision direction or what investors already expect.</p></div>
+        </section>
+      </main>
+      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> observation register</span><a class="muted" href="index.html">Return to Wave-2 Pulse →</a></footer>
+    </div>
+    <script src="app.js?build=__MARKET_SNAPSHOT_VERSION__" type="module"></script>
+  </body>
+</html>

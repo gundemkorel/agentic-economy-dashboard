@@ -1,0 +1,157 @@
+{
+  "asOfDate": "2026-09-24",
+  "definition": "The observation register records what has actually been collected, when another point becomes comparable, and what decision it can support. It does not calculate a composite score or automatically classify a trend.",
+  "trendReviewRule": "A series becomes ready for analyst trend review only after the stated number of eligible, definition-consistent observations. The analyst must still examine source changes, periods, and counter-evidence before calling acceleration, stability, or deceleration.",
+  "tracks": [
+    {
+      "metricId": "mcp_registered_server_count",
+      "title": "MCP Registry breadth",
+      "layer": "Enterprise Adoption & Control",
+      "sourceName": "Model Context Protocol Registry",
+      "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers",
+      "historyFile": "data/processed/mcp-registry-history.json",
+      "dataType": "Automated public registry count",
+      "cadence": "Weekly automated collection",
+      "minimumSpacingDays": 7,
+      "requiredEligibleObservations": 3,
+      "comparability": "Use the same public registry endpoint and count the returned server records. If registry pagination, filtering, or record definition changes, start a new series.",
+      "decisionUse": "Monitor ecosystem-supply breadth after a reviewed series exists.",
+      "doNotUse": "Do not infer active production use, enterprise deployment, request volume, or shareholder value capture."
+    },
+    {
+      "metricId": "ai_bot_request_volume",
+      "title": "Cloudflare AI-bot traffic direction",
+      "layer": "Machine Activity",
+      "sourceName": "Cloudflare Radar",
+      "sourceUrl": "https://developers.cloudflare.com/radar/",
+      "historyFile": "data/processed/cloudflare-ai-bot-history.json",
+      "dataType": "Automated normalized network proxy",
+      "cadence": "Weekly collection; only 30-day-separated windows count toward the review threshold",
+      "minimumSpacingDays": 30,
+      "requiredEligibleObservations": 3,
+      "comparability": "Compare the current and preceding 30-day windows returned together in the same query. The MIN0_MAX index is comparable within that request, not a raw long-run volume series across separately normalized pulls.",
+      "decisionUse": "Monitor whether repeated 30-day directional readings persist.",
+      "doNotUse": "Do not infer raw request volume, total autonomous activity, or a long-run index level."
+    },
+    {
+      "metricId": "action_intensity",
+      "title": "Fastly AI fetcher mix",
+      "layer": "Machine Activity",
+      "sourceName": "Fastly research and network reports",
+      "sourceUrl": "https://www.fastly.com/resources/white-papers",
+      "manualObservation": true,
+      "dataType": "Reviewed network-composition observation",
+      "cadence": "When Fastly repeats the same cohort and crawler/fetcher definition",
+      "minimumSpacingDays": 90,
+      "requiredEligibleObservations": 3,
+      "comparability": "Retain Fastly's own fetcher classification, customer cohort, time window, and denominator. A changed classification starts a new series.",
+      "decisionUse": "Test whether action-oriented retrieval becomes a larger share of the named network sample.",
+      "doNotUse": "Do not equate fetchers with autonomous agents or extrapolate the sample to all internet traffic."
+    },
+    {
+      "metricId": "enterprise_ai_transactions",
+      "title": "Enterprise AI/ML transactions",
+      "layer": "Enterprise Adoption & Control",
+      "sourceName": "Zscaler ThreatLabz",
+      "sourceUrl": "https://www.zscaler.com/campaigns/threatlabz",
+      "manualObservation": true,
+      "dataType": "Reviewed enterprise network observation",
+      "cadence": "When Zscaler republishes a definition-consistent report",
+      "minimumSpacingDays": 180,
+      "requiredEligibleObservations": 3,
+      "comparability": "Preserve the customer sample, report window, definition of AI/ML transaction, and comparison basis.",
+      "decisionUse": "Test whether enterprise AI network activity and control needs persist in the same named sample.",
+      "doNotUse": "Do not treat it as an enterprise census or as a measure of autonomous actions."
+    },
+    {
+      "metricId": "ai_mediation",
+      "title": "Claude artifact yield",
+      "layer": "AI Mediation",
+      "sourceName": "Anthropic Economic Index",
+      "sourceUrl": "https://www.anthropic.com/economic-index",
+      "manualObservation": true,
+      "dataType": "Reviewed product-usage sample",
+      "cadence": "When a comparably defined Economic Index release appears",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 3,
+      "comparability": "Preserve the sampled product surfaces, artifact definition, sample window, and denominator.",
+      "decisionUse": "Test whether AI-mediated work increasingly produces concrete outputs in the named sample.",
+      "doNotUse": "Do not use it as a measure of autonomy, agents, enterprise adoption, or total inference."
+    },
+    {
+      "metricId": "automation_composition",
+      "title": "Long-running agentic task signal",
+      "layer": "Enterprise Adoption & Control",
+      "sourceName": "Anthropic Economic Index",
+      "sourceUrl": "https://www.anthropic.com/economic-index",
+      "manualObservation": true,
+      "dataType": "Reviewed qualitative product-usage observation",
+      "cadence": "When a comparably defined Economic Index release appears",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 3,
+      "comparability": "Keep the source definition and sample intact. Qualitative reports remain qualitative even after repeated observations.",
+      "decisionUse": "Track whether the source continues to describe longer-running, less assistive task patterns.",
+      "doNotUse": "Do not convert a qualitative pattern into a synthetic automation rate."
+    },
+    {
+      "metricId": "akamai_commerce_ai_bot_share",
+      "title": "Akamai commerce AI-bot share",
+      "layer": "Machine Activity",
+      "sourceName": "Akamai research",
+      "sourceUrl": "https://www.akamai.com/state-of-the-internet",
+      "manualObservation": true,
+      "dataType": "Reviewed industry network/security observation",
+      "cadence": "When Akamai repeats the commerce sample and AI-bot definition",
+      "minimumSpacingDays": 90,
+      "requiredEligibleObservations": 3,
+      "comparability": "Retain the commerce scope, network sample, traffic denominator, and source-defined AI-bot taxonomy.",
+      "decisionUse": "Track whether nonhuman commerce traffic remains material in the named vertical.",
+      "doNotUse": "Do not infer successful agentic commerce, beneficial activity, global traffic share, or Akamai shareholder capture."
+    }
+  ],
+  "companyCapture": [
+    {
+      "ticker": "AKAM",
+      "title": "Akamai",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether CIS commitments convert into revenue quality, agent-control monetization, and cash returns after capacity investment.",
+      "doNotUse": "Do not upgrade merely because AI-related contracts or product features are announced."
+    },
+    {
+      "ticker": "ESTC",
+      "title": "Elastic",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether agent-related cloud consumption or retention improves without degrading cloud margin and cash conversion.",
+      "doNotUse": "Do not equate Elastic Cloud growth with agent-specific demand."
+    },
+    {
+      "ticker": "DT",
+      "title": "Dynatrace",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether observability consumption and AI capabilities turn into durable ARR or usage after hosting and acquisition costs.",
+      "doNotUse": "Do not equate telemetry volume or an acquisition announcement with shareholder capture."
+    },
+    {
+      "ticker": "FFIV",
+      "title": "F5",
+      "cadence": "Each earnings release",
+      "minimumSpacingDays": 60,
+      "requiredEligibleObservations": 2,
+      "decisionUse": "Test whether AI Gateway controls appear in paid adoption, attach, recurring mix, or margin.",
+      "doNotUse": "Do not equate product relevance with commercial adoption."
+    }
+  ],
+  "marketExpectationHistory": {
+    "title": "Consensus and valuation history",
+    "status": "Current snapshot only",
+    "missing": "At least two fiscal-period-aligned, point-in-time consensus observations and a valuation history.",
+    "boundary": "The current public deployment is limited to an attributed daily Eulerpool snapshot. It deliberately does not commit raw responses or public vendor-data history.",
+    "nextAction": "Do not make a gap call. Add a history only after the selected provider's public-display and retention rights explicitly cover it, or replace it with a source that does."
+  }
+}

@@ -12,6 +12,8 @@ The MCP Registry ingest script reads the public registry endpoint, stores a date
 
 Cloudflare Radar is the first network telemetry adapter. It uses a `CLOUDFLARE_RADAR_API_TOKEN` GitHub Actions secret, which is never committed or exposed in the static site. The adapter requests current and prior 30-day AI-bot HTTP time series in one call and publishes their comparable mean-index change. Cloudflare returns `MIN0_MAX`-normalized data for this endpoint, so the dashboard does not call it raw request volume or a complete agentic-activity measure.
 
+scripts/build-observation-register.mjs runs after automated pulls and during each Pages build. It creates data/processed/observation-register.json from the published histories, reviewed manual observations, and company-capture history. The policy lives in data/manual/observation-policy.json. It preserves source-specific timing requirements—for example, weekly MCP counts are eligible seven days apart, while Cloudflare’s 30-day normalized comparisons require 30-day-separated windows. The register is an audit trail, not a composite score or an automatic trend classifier.
+
 ## Manual sources
 
 Fastly, Akamai, Zscaler, Anthropic, company investor relations, and filings should initially be added through reviewed manual observations. Every manual observation must include a primary source URL, period, retrieval date, and methodological caveat.
@@ -25,6 +27,8 @@ The same manual-observation file also includes an Akamai commerce-specific obser
 `data/manual/evidence-log.json` is a separate, rolling record of material developments. Each entry states whether it is confirming, contrary, mixed, or measurement-only and links directly to its source. Do not turn a qualitative source statement into a numerical observation.
 
 ## Market expectations
+
+The observation register deliberately lists consensus and valuation history as unresolved rather than attempting a workaround. Do not create a public vendor-data archive or infer revisions from a current snapshot until the selected provider's public-display and retention rights explicitly cover the proposed history.
 
 The Gap Readiness page includes company-issued guidance from the same primary earnings sources used for Company Capture. That is operating context, not analyst consensus or a valuation input. Eulerpool is the primary source for a compact current snapshot of annual consensus and delayed/EOD quote inputs. It is constrained to the owner-confirmed personal, non-commercial daily static snapshot and displays the required [Data by Eulerpool](https://eulerpool.com/) attribution next to every rendered Eulerpool-derived field. Price targets are supplemental context and are not used to make a gap call.
 

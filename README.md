@@ -13,6 +13,7 @@ The project separately tracks:
 3. Gap Readiness — whether operating evidence, fiscal-aligned estimates, and valuation history are sufficient for an expectation-gap call.
 4. Thesis Breakers — evidence that should reduce conviction.
 5. Decision Gates & Scenario Labs — the research sequence and explicitly labelled company-assumption models.
+6. Observation History — the baseline count, comparability rules, collection cadence, and missing proof behind every future conclusion.
 
 Read the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
@@ -45,6 +46,8 @@ The first functioning paths are:
 public registry → scripts/ingest-mcp-registry.mjs → dated raw snapshot → normalized observation → dashboard card
 
 Cloudflare Radar → scripts/ingest-cloudflare-radar.mjs → dated raw snapshot → normalized observation → dashboard card
+
+The observation-register build then reads the automated and reviewed histories, counts only time-separated compatible points, and produces data/processed/observation-register.json. It does not calculate a trend direction; reaching a threshold only makes a series ready for analyst review. The public [History page](history.html) exposes that distinction, including company-capture sequences and the market-data retention boundary.
 
 Reviewed public report → data/manual/enterprise-adoption-observations.json → dashboard card
 

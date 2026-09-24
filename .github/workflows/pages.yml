@@ -37,6 +37,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Build observation register
+        run: node scripts/build-observation-register.mjs
       - name: Create attributed Eulerpool snapshot for this deployment
         id: eulerpool_snapshot
         if: env.EULERPOOL_API_KEY != ''

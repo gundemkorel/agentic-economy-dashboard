@@ -138,6 +138,12 @@ function normalizeRecord(ticker, quoteRecords, estimateRecords, priceTargetRecor
   };
 }
 
+function requestResultSummary(label, result) {
+  if (result.status === "fulfilled") return label + " returned " + result.value.length + " record" + (result.value.length === 1 ? "" : "s");
+  const message = result.reason instanceof Error ? result.reason.message : "unknown request failure";
+  return label + " failed: " + message;
+}
+
 async function loadTicker(ticker) {
   const [quoteResult, estimateResult, targetResult] = await Promise.allSettled([
     requestFmp("/stable/quote", { symbol: ticker }),
@@ -149,7 +155,11 @@ async function loadTicker(ticker) {
   const estimateRecords = estimateResult.status === "fulfilled" ? estimateResult.value : [];
   const targetRecords = targetResult.status === "fulfilled" ? targetResult.value : [];
   if (!quoteRecords.length && !estimateRecords.length && !targetRecords.length) {
-    throw new Error("FMP did not return usable quote, estimate, or price-target data for " + ticker + ".");
+    throw new Error("FMP did not return usable data for " + ticker + ". " + [
+      requestResultSummary("Quote", quoteResult),
+      requestResultSummary("Annual estimates", estimateResult),
+      requestResultSummary("Price targets", targetResult)
+    ].join(" | "));
   }
   return normalizeRecord(ticker, quoteRecords, estimateRecords, targetRecords);
 }

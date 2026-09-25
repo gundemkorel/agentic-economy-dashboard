@@ -4,6 +4,17 @@
   "definition": "Rolling evidence log for material, source-linked observations. Entries may confirm, contradict, or simply sharpen the measurement plan; they do not constitute a score or a recommendation.",
   "entries": [
     {
+      "date": "2026-09-25",
+      "direction": "Mixed / announced ramp",
+      "tone": "mixed",
+      "layer": "Company Capture",
+      "title": "Akamai gave a planned Anthropic delivery and capital schedule",
+      "summary": "Akamai's expanded-relationship presentation expects late-Q2 2027 service initiation, $150 million to $300 million of FY2027 delivery, and full contract run-rate by end-2028. It shows about $1.7 billion of Q4 2026 capex within roughly $5.5 billion cumulative capex for the current commitment.",
+      "thesisRead": "The presentation makes the contract timing testable and confirms that capital precedes revenue. These are company estimates rather than reported revenue, utilization, margin, cash conversion, or evidence of an expectation gap.",
+      "sourceLabel": "Akamai expanded-relationship presentation",
+      "sourceUrl": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7"
+    },
+    {
       "date": "2026-09-24",
       "direction": "Mixed / material commitment",
       "tone": "mixed",

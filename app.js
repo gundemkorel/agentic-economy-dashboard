@@ -433,6 +433,55 @@ async function initResearchQueue() {
   $("#queue-protocol").innerHTML = data.promotionProtocol.map(renderQueueProtocol).join("");
 }
 
+function renderCommitteeFacilitation(item) {
+  return "<article class=\"committee-use-card\"><span>Session step</span><h3>" + escapeHtml(item.label) + "</h3><p>" + escapeHtml(item.detail) + "</p></article>";
+}
+
+function renderCommitteeRole(item) {
+  return "<article class=\"committee-role-card\"><span>Role</span><h3>" + escapeHtml(item.title) + "</h3><p>" + escapeHtml(item.detail) + "</p></article>";
+}
+
+function renderCommitteeDebate(item) {
+  const status = String(item.status || "").toLowerCase().includes("open") ? "warning" : "neutral";
+  const rows = [
+    ["Economic chain", item.economicChain],
+    ["Evidence needed", item.evidenceNeeded],
+    ["Strongest countercase", item.counterCase],
+    ["Company discovery lens", item.companySearch]
+  ].map(([label, value]) => "<div><dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(value) + "</dd></div>").join("");
+  return "<article class=\"committee-debate-card\"><div class=\"committee-debate-top\"><span class=\"metric-number\">" + escapeHtml(item.number) + "</span><span class=\"tag " + status + "\">" + escapeHtml(item.status) + "</span></div><h3>" + escapeHtml(item.title) + "</h3><p class=\"committee-proposition\">" + escapeHtml(item.proposition) + "</p><dl>" + rows + "</dl></article>";
+}
+
+function renderCommitteeCaseFact(item) {
+  return "<article class=\"committee-case-fact\"><span>" + escapeHtml(item.label) + "</span><strong>" + escapeHtml(item.value) + "</strong><p>" + escapeHtml(item.detail) + "</p></article>";
+}
+
+function renderCommitteeDiscovery(item) {
+  return "<article class=\"committee-discovery-card\"><span>Discovery rule</span><h3>" + escapeHtml(item.title) + "</h3><p>" + escapeHtml(item.detail) + "</p></article>";
+}
+
+function renderCommitteePlan(item) {
+  return "<article class=\"committee-plan-card\"><span class=\"metric-number\">" + escapeHtml(item.number) + "</span><div><h3>" + escapeHtml(item.title) + "</h3><span class=\"committee-plan-timing\">" + escapeHtml(item.timing) + "</span></div><p>" + escapeHtml(item.detail) + "</p><small><strong>Output</strong>" + escapeHtml(item.output) + "</small></article>";
+}
+
+async function initCommittee() {
+  const data = await fetchJson("data/manual/investment-committee-board.json");
+  $("#committee-purpose").textContent = data.purpose;
+  $("#committee-status").textContent = data.status;
+  $("#committee-question").textContent = data.governingQuestion;
+  $("#committee-facilitation").innerHTML = data.facilitation.map(renderCommitteeFacilitation).join("");
+  $("#committee-roles").innerHTML = data.roles.map(renderCommitteeRole).join("");
+  $("#committee-debates").innerHTML = data.debates.map(renderCommitteeDebate).join("");
+  $("#committee-case-title").textContent = data.caseStudy.title;
+  $("#committee-case-summary").textContent = data.caseStudy.summary;
+  $("#committee-case-facts").innerHTML = data.caseStudy.facts.map(renderCommitteeCaseFact).join("");
+  $("#committee-case-prompt").textContent = data.caseStudy.prompt;
+  $("#committee-discovery").innerHTML = data.discoveryPrinciples.map(renderCommitteeDiscovery).join("");
+  $("#committee-plan").innerHTML = data.researchPlan.map(renderCommitteePlan).join("");
+  $("#committee-guardrails").innerHTML = data.guardrails.map((item) => "<li>" + escapeHtml(item) + "</li>").join("");
+  $("#committee-sources").innerHTML = data.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("");
+}
+
 async function initExpectations() {
   const [data, providerMap, eulerpoolSnapshot, fmpSnapshot] = await Promise.all([
     fetchJson("data/manual/expectations-gap.json"),
@@ -651,6 +700,7 @@ async function boot() {
     else if (page === "methodology") await initMethodology();
     else if (page === "history") await initHistory();
     else if (page === "model") await initModel();
+    else if (page === "committee") await initCommittee();
     else await initPulse();
   } catch (error) {
     const target = document.querySelector("[aria-live]") || document.querySelector(".source-list") || document.querySelector("main");

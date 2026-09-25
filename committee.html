@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Investment-committee discussion board for researching the agentic economy." />
+    <title>Investment Committee · Agentic Economy Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="decision-gates.css" />
+    <link rel="stylesheet" href="committee.css" />
+  </head>
+  <body data-page="committee">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Agentic Economy<br /><strong>Dashboard</strong></span></a>
+        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="history.html">History</a><a href="companies.html">Company Capture</a><a href="earnings.html">Earnings</a><a href="expectations.html">Gap Readiness</a><a href="breakers.html">Thesis Breakers</a><a href="models.html">AKAM Model</a><a href="committee.html">Committee</a><a href="methodology.html">Methods</a></nav>
+      </header>
+      <main>
+        <section class="page-hero committee-hero">
+          <p class="eyebrow">Investment committee <span class="slash">/</span> research expansion</p>
+          <h1>Where does agentic<br /><em>value actually accrue?</em></h1>
+          <p id="committee-purpose">Loading committee board…</p>
+        </section>
+        <section class="notice committee-notice"><strong id="committee-status">Loading…</strong><span id="committee-question">Loading governing question…</span></section>
+        <section class="section-block committee-use-section">
+          <div class="section-heading"><div><p class="section-number">Working format</p><h2>Make the conversation investable</h2></div><span class="tag neutral">Evidence first</span></div>
+          <div class="committee-use-grid" id="committee-facilitation" aria-live="polite"><div class="loading-state">Loading session format…</div></div>
+          <div class="committee-role-row" id="committee-roles" aria-live="polite"><div class="loading-state">Loading committee roles…</div></div>
+        </section>
+        <section class="section-block committee-debates-section">
+          <div class="section-heading"><div><p class="section-number">Seven live debates</p><h2>The dimensions that matter</h2></div><span class="tag warning">Hypotheses, not calls</span></div>
+          <p class="section-lede">Each card is designed to force a useful argument: what changes mechanically, what evidence would prove it, how value can leak away, and where to look for capture.</p>
+          <div class="committee-debate-grid" id="committee-debates" aria-live="polite"><div class="loading-state">Loading discussion prompts…</div></div>
+        </section>
+        <section class="section-block committee-case-section">
+          <div class="section-heading"><div><p class="section-number">Case study</p><h2 id="committee-case-title">Loading current case…</h2></div><span class="tag neutral">Company-announced</span></div>
+          <p class="section-lede" id="committee-case-summary">Loading case context…</p>
+          <div class="committee-case-grid" id="committee-case-facts" aria-live="polite"><div class="loading-state">Loading case facts…</div></div>
+          <p class="committee-case-prompt" id="committee-case-prompt">Loading committee prompt…</p>
+        </section>
+        <section class="section-block committee-discovery-section">
+          <div class="section-heading"><div><p class="section-number">Company discovery</p><h2>How to find durable beneficiaries</h2></div><span class="tag positive">Selection discipline</span></div>
+          <div class="committee-discovery-grid" id="committee-discovery" aria-live="polite"><div class="loading-state">Loading discovery principles…</div></div>
+        </section>
+        <section class="section-block committee-plan-section">
+          <div class="section-heading"><div><p class="section-number">Recommended plan</p><h2>From narrative to an alpha process</h2></div><span class="tag warning">Five steps</span></div>
+          <div class="committee-plan-grid" id="committee-plan" aria-live="polite"><div class="loading-state">Loading research plan…</div></div>
+        </section>
+        <section class="section-block committee-guardrails-section">
+          <div class="section-heading"><div><p class="section-number">What protects the edge</p><h2>Guardrails against false precision</h2></div><span class="tag caution">Required</span></div>
+          <ol class="committee-guardrails" id="committee-guardrails"><li>Loading guardrails…</li></ol>
+          <div class="company-sources committee-sources" id="committee-sources"></div>
+        </section>
+      </main>
+      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> investment committee board</span><a class="muted" href="index.html">Return to Wave-2 Pulse →</a></footer>
+    </div>
+    <script src="app.js?build=__MARKET_SNAPSHOT_VERSION__" type="module"></script>
+  </body>
+</html>

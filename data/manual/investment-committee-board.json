@@ -1,0 +1,213 @@
+{
+  "asOfDate": "2026-09-25",
+  "title": "Agentic Economy investment committee board",
+  "status": "Open discussion · no investment conclusion",
+  "purpose": "A structured working board for investment professionals. It turns broad narratives about agents into falsifiable debates about resource demand, market structure, company capture, and expectations. This public Pages view is a discussion canvas, not a comment system.",
+  "governingQuestion": "As software agents handle more work, which scarce, billable resources become more valuable—and which suppliers can keep the resulting economics after capital intensity, platform bundling, and competition?",
+  "facilitation": [
+    {
+      "label": "Before the session",
+      "detail": "Each participant brings one sourced claim, one contrary case, and one measurable test. A category label or product announcement is not enough."
+    },
+    {
+      "label": "During the session",
+      "detail": "Debate the causal chain first: event → resource consumed → buyer → billable unit → margin / cash return → expectations."
+    },
+    {
+      "label": "After the session",
+      "detail": "Record only changed hypotheses, assigned evidence work, and an explicit disconfirming condition. Do not turn discussion energy into a conviction score."
+    }
+  ],
+  "roles": [
+    {
+      "title": "Thesis owner",
+      "detail": "States the causal chain and the exact condition under which the claim deserves to advance."
+    },
+    {
+      "title": "Technical skeptic",
+      "detail": "Tests architecture, substitution, caching, automation limits, and whether a claimed bottleneck is actually scarce."
+    },
+    {
+      "title": "Public-markets skeptic",
+      "detail": "Tests pricing, incremental margin, capital needs, competitive capture, and what consensus may already reflect."
+    },
+    {
+      "title": "Decision recorder",
+      "detail": "Logs the dated source, the countercase, the owner, and the next evidence event."
+    }
+  ],
+  "debates": [
+    {
+      "number": "01",
+      "title": "Does enterprise information become model-mediated?",
+      "status": "Open hypothesis",
+      "proposition": "A larger share of messages, documents, database events, and workflows may be routed through a model or agent system before action is taken. That is not equivalent to every event requiring a full, expensive LLM call.",
+      "economicChain": "Business event → retrieval / policy → model or rules decision → tool call / data write → telemetry and audit trail.",
+      "evidenceNeeded": "Production workflow share, model / API spend per business process, retrieval volume, agent-task duration, and evidence that the workflow remains in production rather than pilot mode.",
+      "counterCase": "Many events will remain deterministic, be cached or batched, use embeddings / classifiers rather than frontier inference, or be handled inside existing platforms with little incremental vendor spend.",
+      "companySearch": "Data integration, retrieval / search, vector and metadata layers, workflow platforms, and governance suppliers with paid usage, retention, or margin evidence."
+    },
+    {
+      "number": "02",
+      "title": "Where does compute demand actually land?",
+      "status": "Architecture-dependent",
+      "proposition": "Agentic workloads can add orchestration, retrieval, tool execution, memory, network, and inference demand. The mix across CPU, accelerators, memory, storage, and power depends on workload design and deployment location.",
+      "economicChain": "Agent plan → context / retrieval → model inference → tool execution → state / memory → retry and monitoring loops.",
+      "evidenceNeeded": "Capacity commitments by workload type, utilization, delivered revenue per unit of capacity, incremental capex, depreciation, power / memory constraints, and the return on deployed infrastructure.",
+      "counterCase": "Model efficiency, smaller models, batching, caching, dedicated hardware, or workload internalization can reduce third-party consumption or shift economics away from an apparent beneficiary.",
+      "companySearch": "Compute and memory suppliers, cloud / edge providers, data-center and power infrastructure, plus software that raises utilization or lowers cost-to-serve."
+    },
+    {
+      "number": "03",
+      "title": "Do tool loops multiply the network and API plane?",
+      "status": "Mechanism defined",
+      "proposition": "One human intent can create many reads, API calls, retries, tool calls, messages, and state changes. The useful question is whether those events are billable and retained by an independent supplier.",
+      "economicChain": "Intent → planning loop → API / service calls → response / retry → data movement → user or agent action.",
+      "evidenceNeeded": "Request / API growth by category, usage pricing, traffic mix, customer retention, delivery economics, and evidence that agent traffic is not simply bundled or blocked.",
+      "counterCase": "Agents may consolidate calls, use internal APIs, reduce human browsing, or generate unwanted traffic that increases cost without creating paid consumption.",
+      "companySearch": "API management, edge delivery, connectivity, gateway, data-transfer, and service-mesh businesses with disclosed usage economics."
+    },
+    {
+      "number": "04",
+      "title": "Does control become a mandatory toll road?",
+      "status": "High strategic relevance · capture unproven",
+      "proposition": "More autonomous access creates a need for identity, authorization, secrets, policy, fraud controls, security inspection, and auditability. The value may be mandatory, but that does not guarantee stand-alone pricing power.",
+      "economicChain": "Agent identity → permissions → tool access → policy decision → monitored action → audit / remediation.",
+      "evidenceNeeded": "Paid attach, renewal, seat / transaction expansion, security-event volume, control-plane adoption, budget ownership, and gross-margin progression.",
+      "counterCase": "Controls may be bundled by hyperscalers, absorbed into existing security suites, limited by enterprise deployment, or priced as a feature rather than a new profit pool.",
+      "companySearch": "Identity, API security, bot / agent control, policy engines, secrets, fraud, governance, and security telemetry providers."
+    },
+    {
+      "number": "05",
+      "title": "Does observability become the agentic system of record?",
+      "status": "Plausible, needs economics",
+      "proposition": "Autonomous systems can create more traces, logs, evaluations, exception paths, and audit requirements. The resource is valuable only if volume converts into durable paid data retention, workflow importance, and attractive margins.",
+      "economicChain": "Agent action → trace / log / evaluation → anomaly or quality check → human or automated remediation.",
+      "evidenceNeeded": "Consumption growth, retention, pricing, data-ingest cost, gross margin, production adoption, and whether agent observability is separate from general telemetry.",
+      "counterCase": "Sampling, compression, open standards, cloud-native tools, or customer cost controls can cap ingestion and commoditize the layer.",
+      "companySearch": "Observability, security analytics, data-lake, evaluation, and agent-governance providers with unit-economics disclosure."
+    },
+    {
+      "number": "06",
+      "title": "Who owns the toll road—and who gets bypassed?",
+      "status": "Core alpha question",
+      "proposition": "Real demand can accrue to hyperscalers, frontier-model platforms, internal IT teams, open-source stacks, or customers rather than independent public companies. The winner must own a scarce control point and retain pricing power.",
+      "economicChain": "Demand growth → supplier choice → pricing architecture → switching cost / data gravity → incremental margin → shareholder cash flow.",
+      "evidenceNeeded": "Win / loss data, attach, partner economics, product bundling, customer concentration, gross-margin trend, and evidence that a workload cannot be easily internalized.",
+      "counterCase": "A genuine agentic boom can make the macro thesis right while every independent candidate is bypassed, bundled, or forced to fund capacity at weak returns.",
+      "companySearch": "Independent suppliers only after explicit comparison with hyperscaler-native, model-provider, and open-source alternatives."
+    },
+    {
+      "number": "07",
+      "title": "When does operating evidence become an expectation gap?",
+      "status": "Gate remains closed",
+      "proposition": "The best alpha may come from recognizing a durable mechanism before revenue revisions and valuation reflect it—but a narrative is not an expectation gap.",
+      "economicChain": "Leading operational signal → company capture → reported financial change → consensus revision → valuation / ownership response.",
+      "evidenceNeeded": "Fiscal-period-aligned company evidence plus at least two point-in-time consensus and valuation observations from a permitted consistent source.",
+      "counterCase": "The market may correctly anticipate the mechanism, or the benefit may arrive too late, too capital-intensively, or in a different company than expected.",
+      "companySearch": "Prioritize companies where the causal link is visible in reported KPIs before extending the valuation conclusion."
+    }
+  ],
+  "caseStudy": {
+    "title": "Akamai × Anthropic: CPU demand is real; shareholder capture is still a test",
+    "summary": "Akamai says Anthropic will use its distributed infrastructure and software to support CPU-workload growth at scale. The announcement is a concrete capacity-demand signal, but it should be examined as a multi-year contract with capital, timing, customer-concentration, and warrant consequences—not as immediate revenue.",
+    "facts": [
+      {
+        "label": "What is confirmed",
+        "value": "$11.6B / seven-year commitment",
+        "detail": "The company says the relationship supports Anthropic's CPU-workload growth and can expand by about $9B."
+      },
+      {
+        "label": "Management timing plan",
+        "value": "Late Q2 2027 service start",
+        "detail": "Akamai's September presentation describes $150M–$300M of FY2027 delivery, with full contract run-rate targeted by end-2028. These are management estimates, not recognized revenue."
+      },
+      {
+        "label": "Capacity and financing burden",
+        "value": "~$5.5B cumulative capex",
+        "detail": "The company expects about $1.7B of Q4 2026 capex to secure supply-chain components. Test cash generation, debt / funding, and capital returns against the ramp."
+      },
+      {
+        "label": "Critical question",
+        "value": "Does planned conversion hold?",
+        "detail": "Track service delivery, revenue recognition, gross margin, utilization, customer concentration, and warrant / share-count effects through earnings and filings."
+      }
+    ],
+    "prompt": "Is this evidence that an independent cloud / edge supplier can capture CPU-heavy agentic demand at attractive returns, or a customer-specific capacity build whose economics accrue elsewhere?"
+  },
+  "discoveryPrinciples": [
+    {
+      "title": "Start from the work unit",
+      "detail": "Map a concrete agent action—such as resolving a support ticket, changing a database record, or procuring a service—before screening stocks. Identify every resource it consumes and who pays."
+    },
+    {
+      "title": "Find the bottleneck, not the AI label",
+      "detail": "A candidate must own a scarce control point: compute capacity, data access, identity, security enforcement, observability, workflow integration, or a regulated transaction layer."
+    },
+    {
+      "title": "Model the leakages",
+      "detail": "For each candidate, map bundling, hyperscaler internalization, open-source substitution, price compression, capital intensity, and customer concentration before estimating upside."
+    },
+    {
+      "title": "Separate early signals from capture",
+      "detail": "An agentic-activity proxy can nominate a research question. Only revenue quality, retention, margin, and cash conversion can graduate a company."
+    }
+  ],
+  "researchPlan": [
+    {
+      "number": "01",
+      "title": "Build an agentic bill of materials",
+      "timing": "Weeks 1–2",
+      "detail": "Define 8–12 recurring resource layers for an agent action: model / compute, memory / power, data access, network / APIs, security / identity, observability / evaluation, workflow / communication, and transactions.",
+      "output": "A public causal map with a demand trigger, billable unit, incremental cost, likely buyer, and substitution risk for each layer."
+    },
+    {
+      "number": "02",
+      "title": "Add leading indicators by layer",
+      "timing": "Weeks 2–6",
+      "detail": "For each layer, select two or three reproducible public signals and define comparability, cadence, and the prohibited inference. Keep the sources separate rather than making an early composite score.",
+      "output": "A leading-indicator ledger that can distinguish model-mediated work, tool activity, capacity demand, control adoption, and financial capture."
+    },
+    {
+      "number": "03",
+      "title": "Screen companies through a capture matrix",
+      "timing": "Weeks 4–8",
+      "detail": "For each potential beneficiary, document billable unit, pricing model, incremental cost, scarcity / moat, platform risk, financial proof, and the next hard catalyst.",
+      "output": "A wider candidate shelf that promotes only companies with a clear causal mechanism and dated primary-source baseline."
+    },
+    {
+      "number": "04",
+      "title": "Add an expectations monitor only where licensed",
+      "timing": "Ongoing",
+      "detail": "Collect point-in-time, fiscal-aligned consensus and valuation observations under permitted data rights. Use them to test whether operating evidence is moving faster than expectations.",
+      "output": "A true expectation-gap gate, not a current-price or target-price dashboard."
+    },
+    {
+      "number": "05",
+      "title": "Run quarterly decision post-mortems",
+      "timing": "Every earnings cycle",
+      "detail": "Compare the prior causal claim with reported revenue conversion, margin, cash return, and competitive commentary. Record what changed and what was merely narrative.",
+      "output": "A compounding research memory that improves selection and prevents narrative drift."
+    }
+  ],
+  "guardrails": [
+    "Do not assume 100% of enterprise information becomes frontier-model inference. Measure the degree of model mediation, the model type, and the cost per workflow separately.",
+    "Do not treat a large contract as current revenue, free cash flow, or a price target. Separate commitment, deployment, recognition, margin, financing, and share-count effects.",
+    "Do not call a company a beneficiary because it uses the word agent. Require a billable mechanism and reported evidence that the economics reach shareholders.",
+    "Do not call alpha before the operating evidence, consensus history, and valuation history are comparable through time."
+  ],
+  "sources": [
+    {
+      "label": "Akamai Anthropic relationship announcement",
+      "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
+    },
+    {
+      "label": "Akamai expanded-relationship presentation",
+      "url": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7"
+    },
+    {
+      "label": "Anthropic Economic Index: Cadences",
+      "url": "https://www.anthropic.com/research/economic-index-june-2026-report"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "purpose": "Turn the next Akamai earnings release into a repeatable company-capture test. The September Anthropic commitment is a material company-announced demand signal, but Q3 results are still needed to test conversion, capacity economics, and cash return; this scorecard does not create a forecast, target price, or expectation-gap conclusion.",
   "event": {
     "fiscalPeriod": "Q3 2026 · quarter ending September 30, 2026",
-    "timing": "Exact reporting date is pending Akamai's announcement. The company says Q3 results are usually reported near the beginning of November. On September 24, Akamai announced the Anthropic commitment and said it does not change FY2026 revenue guidance.",
+    "timing": "Exact reporting date is pending Akamai's announcement. The company says Q3 results are usually reported near the beginning of November. Akamai's September presentation expects Anthropic service initiation in late Q2 2027, so Q3 results should establish capacity / funding context—not Anthropic revenue conversion.",
     "eventsUrl": "https://www.ir.akamai.com/node/5821"
   },
   "reportedBaseline": [
@@ -38,6 +38,11 @@
       "label": "Anthropic commitment",
       "value": "$11.6B / 7 years",
       "note": "Adds to >$2.8B prior CIS commitments; contract value is not revenue and has no announced FY2026 guide impact"
+    },
+    {
+      "label": "Anthropic timing plan",
+      "value": "Late Q2 ’27 service start",
+      "note": "Management estimates $150M–$300M of FY2027 delivery and full run-rate by end-2028; this is not recognized revenue"
     }
   ],
   "checks": [
@@ -55,8 +60,8 @@
       "number": "02",
       "title": "Convert commitments into revenue quality",
       "question": "Did CIS revenue remain strong, and did management disclose deployment, recognized revenue, backlog / remaining-performance-obligation, usage, or a credible schedule for the Anthropic and other signed commitments?",
-      "baseline": "Q2 CIS revenue was $99M, up 39% year over year. On September 24, Akamai announced a $11.6B Anthropic commitment over seven years, in addition to more than $2.8B of prior CIS commitments.",
-      "upgrade": "CIS growth remains strong and management ties a material portion of commitments to deployment, recognized revenue, recurring usage, or visible backlog conversion with timing and concentration context.",
+      "baseline": "Q2 CIS revenue was $99M, up 39% year over year. Akamai announced a $11.6B Anthropic commitment over seven years and management expects service initiation in late Q2 2027, with $150M–$300M of FY2027 delivery.",
+      "upgrade": "CIS growth remains strong and management ties a material portion of commitments to deployment, recognized revenue, recurring usage, or visible backlog conversion with timing and concentration context. The announced service schedule remains credible.",
       "notEnough": "Another large contract or a generic pipeline statement without deployment timing, conversion, customer concentration, service obligations, or economics.",
       "downgrade": "CIS growth slows sharply, commitments fail to turn into reported activity, or delivery timelines and hardware availability push conversion outward.",
       "decisionImpact": "Only conversion evidence can begin to support the material-Wave-2 scenario’s revenue bridge."
@@ -85,7 +90,7 @@
       "number": "05",
       "title": "Prove capacity investment earns a cash return",
       "question": "Did reported operating margin, cash from operations, capital investment, and management commentary show that cloud and AI capacity spending is becoming productive rather than simply larger?",
-      "baseline": "Q2 non-GAAP operating margin was 25%, down five points year over year; Q2 cash from operations was $326M. Akamai estimates roughly $5.5B of related capex for the current Anthropic commitment, including about $1.7B incremental investment in 2026.",
+      "baseline": "Q2 non-GAAP operating margin was 25%, down five points year over year; Q2 cash from operations was $326M. Akamai estimates roughly $5.5B of related capex for the current Anthropic commitment, including about $1.7B in Q4 2026 before the planned late-Q2 2027 service start.",
       "upgrade": "Margins remain within or above guide while cash generation, funding disclosures, and capital investment support a credible improving return path.",
       "notEnough": "Revenue growth without enough information on capex, hosting costs, depreciation, gross margin, financing, or cash conversion.",
       "downgrade": "Margin falls below guide, cash conversion weakens, or management raises spending needs without showing conversion, pricing, or return evidence.",
@@ -138,6 +143,10 @@
     {
       "label": "Akamai expanded Anthropic relationship announcement",
       "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
+    },
+    {
+      "label": "Akamai expanded-relationship presentation",
+      "url": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7"
     },
     {
       "label": "Akamai investor events",

@@ -2,11 +2,11 @@
   "asOfDate": "2026-09-24",
   "title": "Akamai current decision desk",
   "status": "Material demand signal · execution economics unresolved",
-  "purpose": "Akamai's expanded Anthropic relationship materially strengthens the evidence for cloud-infrastructure demand. It does not yet establish revenue timing, gross margin, cash return, realized dilution, or an expectation gap.",
+  "purpose": "Akamai's expanded Anthropic relationship materially strengthens the evidence for cloud-infrastructure demand. Management has supplied an expected ramp, but the deal does not yet establish recognized revenue, gross margin, cash return, realized dilution, or an expectation gap.",
   "currentDecision": {
     "label": "Decision today",
     "value": "Keep AKAM on watch",
-    "detail": "Treat the announcement as a stronger demand signal, not a reason to change the scenario model or make an investment conclusion. The next decision turns on deployment, revenue conversion, capacity economics, and the warrant's effect."
+    "detail": "Treat the announced ramp as a management plan, not a reason to change the scenario model or make an investment conclusion. The next decision turns on deployment, revenue conversion, capacity economics, and the warrant's effect."
   },
   "facts": [
     {
@@ -18,6 +18,11 @@
       "label": "FY2026 revenue guide",
       "value": "No announced impact",
       "detail": "Akamai said the agreement does not change its FY2026 revenue guidance."
+    },
+    {
+      "label": "Management ramp plan",
+      "value": "Late Q2 ’27 → end ’28",
+      "detail": "Akamai's presentation expects service initiation in late Q2 2027, $150M–$300M of FY2027 delivery, and full contract run-rate by end-2028. These are management estimates, not recognized revenue."
     },
     {
       "label": "Capacity burden",
@@ -33,8 +38,8 @@
   "nextQuestions": [
     {
       "number": "01",
-      "title": "When does it become revenue?",
-      "detail": "Look for deployment milestones, revenue-recognition timing, remaining-performance-obligation or backlog disclosure, and the first reported contribution."
+      "title": "Does the announced ramp hold?",
+      "detail": "Test the late-Q2 2027 service plan against deployment milestones, revenue-recognition, remaining-performance-obligation or backlog disclosure, and the first reported contribution."
     },
     {
       "number": "02",
@@ -53,7 +58,7 @@
     }
   ],
   "boundary": "A signed commitment proves a customer and creates an obligation. It does not by itself prove recognized revenue, attractive gross margin, cash returns, realized dilution, or that market expectations are too low.",
-  "sourceNote": "All figures in this decision desk are from Akamai's September 24, 2026 company announcement. The dashboard preserves the contract-versus-revenue distinction and leaves non-disclosed economics unresolved.",
+  "sourceNote": "The commitment and capital figures come from Akamai's September 24 announcement; its expected timing plan comes from the accompanying company presentation. The schedule is management guidance, not recognized revenue or reported economics.",
   "sources": [
     {
       "label": "Akamai expanded Anthropic relationship announcement",
@@ -62,6 +67,10 @@
     {
       "label": "Akamai investor events",
       "url": "https://www.ir.akamai.com/node/5821"
+    },
+    {
+      "label": "Akamai expanded-relationship presentation",
+      "url": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7"
     }
   ]
 }

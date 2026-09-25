@@ -1,0 +1,67 @@
+{
+  "asOfDate": "2026-09-24",
+  "title": "Akamai current decision desk",
+  "status": "Material demand signal · execution economics unresolved",
+  "purpose": "Akamai's expanded Anthropic relationship materially strengthens the evidence for cloud-infrastructure demand. It does not yet establish revenue timing, gross margin, cash return, realized dilution, or an expectation gap.",
+  "currentDecision": {
+    "label": "Decision today",
+    "value": "Keep AKAM on watch",
+    "detail": "Treat the announcement as a stronger demand signal, not a reason to change the scenario model or make an investment conclusion. The next decision turns on deployment, revenue conversion, capacity economics, and the warrant's effect."
+  },
+  "facts": [
+    {
+      "label": "Contracted commitment",
+      "value": "$11.6B / 7 years",
+      "detail": "Akamai disclosed a contractual Anthropic commitment, with potential for about $9B more. Contract value is not recognized revenue."
+    },
+    {
+      "label": "FY2026 revenue guide",
+      "value": "No announced impact",
+      "detail": "Akamai said the agreement does not change its FY2026 revenue guidance."
+    },
+    {
+      "label": "Capacity burden",
+      "value":"~$5.5B related capex",
+      "detail": "Akamai estimates about $1.7B of incremental 2026 capital investment to secure and pre-purchase memory and related components."
+    },
+    {
+      "label": "Warrant structure",
+      "value": "~2% current · up to ~5%",
+      "detail": "The current commitment is associated with about 2% of common stock on an as-converted basis; further vesting depends on expansion of the relationship."
+    }
+  ],
+  "nextQuestions": [
+    {
+      "number": "01",
+      "title": "When does it become revenue?",
+      "detail": "Look for deployment milestones, revenue-recognition timing, remaining-performance-obligation or backlog disclosure, and the first reported contribution."
+    },
+    {
+      "number": "02",
+      "title": "What are the unit economics?",
+      "detail": "Look for price, gross-margin, cost-to-serve, capacity utilization, and duration information—not just another contract headline."
+    },
+    {
+      "number": "03",
+      "title": "Can Akamai fund it well?",
+      "detail": "Test capex, operating cash flow, free-cash-flow conversion, financing needs, and margin guidance against the added capacity burden."
+    },
+    {
+      "number": "04",
+      "title": "What is the concentration and warrant cost?",
+      "detail": "Clarify customer concentration, service and supply-chain dependencies, warrant accounting and vesting, and any actual share-count effect."
+    }
+  ],
+  "boundary": "A signed commitment proves a customer and creates an obligation. It does not by itself prove recognized revenue, attractive gross margin, cash returns, realized dilution, or that market expectations are too low.",
+  "sourceNote": "All figures in this decision desk are from Akamai's September 24, 2026 company announcement. The dashboard preserves the contract-versus-revenue distinction and leaves non-disclosed economics unresolved.",
+  "sources": [
+    {
+      "label": "Akamai expanded Anthropic relationship announcement",
+      "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
+    },
+    {
+      "label": "Akamai investor events",
+      "url": "https://www.ir.akamai.com/node/5821"
+    }
+  ]
+}

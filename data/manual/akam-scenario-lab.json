@@ -15,6 +15,7 @@
       "FY2026 revenue and non-GAAP operating-margin guidance are company-issued midpoints / ranges as of the Q2 2026 release.",
       "The H1 capital-investment proxy is purchases of property and equipment plus capitalization of internal-use software. It is not a company-defined free-cash-flow measure.",
       "The net-debt bridge uses June 30 cash, cash equivalents, and marketable securities less convertible senior notes. It does not project future cash, debt, dilution, hedges, buybacks, or convertibility effects.",
+      "The September 24 Anthropic agreement is not mechanically incorporated in these scenarios. The 150M diluted-share bridge excludes the agreement's warrant and any contract-specific financing or capital-structure effects; it is not a pro forma share count.",
       "The current share price is read only from the attributed current market snapshot at render time; no vendor price is stored in this scenario file."
     ],
     "sources": [
@@ -25,6 +26,10 @@
       {
         "label": "Akamai Q2 2026 Form 10-Q",
         "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm"
+      },
+      {
+        "label": "Akamai expanded Anthropic relationship announcement",
+        "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
       }
     ]
   },

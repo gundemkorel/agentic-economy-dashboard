@@ -1,11 +1,11 @@
 {
   "asOfDate": "2026-09-24",
   "title": "Akamai Q3 2026 earnings scorecard",
-  "status": "Pre-release — Q3 results are not yet published",
-  "purpose": "Turn the next Akamai earnings release into a repeatable company-capture test. This scorecard compares reported facts with company-issued guidance and the Q2 baseline; it does not create a forecast, target price, or expectation-gap conclusion.",
+  "status": "Pre-release · Anthropic commitment announced",
+  "purpose": "Turn the next Akamai earnings release into a repeatable company-capture test. The September Anthropic commitment is a material company-announced demand signal, but Q3 results are still needed to test conversion, capacity economics, and cash return; this scorecard does not create a forecast, target price, or expectation-gap conclusion.",
   "event": {
     "fiscalPeriod": "Q3 2026 · quarter ending September 30, 2026",
-    "timing": "Exact reporting date is pending Akamai's announcement. The company says Q3 results are usually reported near the beginning of November.",
+    "timing": "Exact reporting date is pending Akamai's announcement. The company says Q3 results are usually reported near the beginning of November. On September 24, Akamai announced the Anthropic commitment and said it does not change FY2026 revenue guidance.",
     "eventsUrl": "https://www.ir.akamai.com/node/5821"
   },
   "reportedBaseline": [
@@ -35,9 +35,9 @@
       "note": "Security growth must offset legacy delivery pressure"
     },
     {
-      "label": "Q2 CIS commitments",
-      "value": ">$2.8B YTD",
-      "note": "Includes a >$600M four-year robotics-related contract; commitments are not revenue"
+      "label": "Anthropic commitment",
+      "value": "$11.6B / 7 years",
+      "note": "Adds to >$2.8B prior CIS commitments; contract value is not revenue and has no announced FY2026 guide impact"
     }
   ],
   "checks": [
@@ -53,11 +53,11 @@
     },
     {
       "number": "02",
-      "title": "Convert CIS commitments into revenue quality",
-      "question": "Did CIS revenue remain strong, and did management disclose evidence that signed commitments are converting into revenue, backlog, usage, or a credible deployment schedule?",
-      "baseline": "Q2 CIS revenue was $99M, up 39% year over year; year-to-date CIS commitments exceeded $2.8B.",
-      "upgrade": "CIS growth remains strong and management ties a material portion of commitments to deployment, recognized revenue, recurring usage, or visible backlog conversion.",
-      "notEnough": "Another large contract or a generic pipeline statement without timing, conversion, customer concentration, or economics.",
+      "title": "Convert commitments into revenue quality",
+      "question": "Did CIS revenue remain strong, and did management disclose deployment, recognized revenue, backlog / remaining-performance-obligation, usage, or a credible schedule for the Anthropic and other signed commitments?",
+      "baseline": "Q2 CIS revenue was $99M, up 39% year over year. On September 24, Akamai announced a $11.6B Anthropic commitment over seven years, in addition to more than $2.8B of prior CIS commitments.",
+      "upgrade": "CIS growth remains strong and management ties a material portion of commitments to deployment, recognized revenue, recurring usage, or visible backlog conversion with timing and concentration context.",
+      "notEnough": "Another large contract or a generic pipeline statement without deployment timing, conversion, customer concentration, service obligations, or economics.",
       "downgrade": "CIS growth slows sharply, commitments fail to turn into reported activity, or delivery timelines and hardware availability push conversion outward.",
       "decisionImpact": "Only conversion evidence can begin to support the material-Wave-2 scenario’s revenue bridge."
     },
@@ -85,25 +85,25 @@
       "number": "05",
       "title": "Prove capacity investment earns a cash return",
       "question": "Did reported operating margin, cash from operations, capital investment, and management commentary show that cloud and AI capacity spending is becoming productive rather than simply larger?",
-      "baseline": "Q2 non-GAAP operating margin was 25%, down five points year over year; Q2 cash from operations was $326M. The 10-Q flags rising server, memory, co-location, bandwidth, depreciation, and related capacity costs.",
-      "upgrade": "Margins remain within or above guide while cash generation and disclosed capital investment support a credible improving return path.",
-      "notEnough": "Revenue growth without enough information on capex, hosting costs, depreciation, gross margin, or cash conversion.",
+      "baseline": "Q2 non-GAAP operating margin was 25%, down five points year over year; Q2 cash from operations was $326M. Akamai estimates roughly $5.5B of related capex for the current Anthropic commitment, including about $1.7B incremental investment in 2026.",
+      "upgrade": "Margins remain within or above guide while cash generation, funding disclosures, and capital investment support a credible improving return path.",
+      "notEnough": "Revenue growth without enough information on capex, hosting costs, depreciation, gross margin, financing, or cash conversion.",
       "downgrade": "Margin falls below guide, cash conversion weakens, or management raises spending needs without showing conversion, pricing, or return evidence.",
       "decisionImpact": "This is the critical bridge between a demand signal and the scenario lab’s free-cash-flow assumptions."
     },
     {
       "number": "06",
-      "title": "Interrogate concentration and fulfillment risk",
-      "question": "Did the large CIS contracts create dependency, timing risk, capacity constraints, or customer-specific economics that weaken the quality of the reported growth?",
-      "baseline": "The disclosed greater-than-$600M robotics-related contract runs over four years; Akamai identifies fulfillment, procurement, and projected-capex risk in its filings.",
-      "upgrade": "Management explains deployment timing, diversification, capacity readiness, and contract economics without revealing an adverse concentration or fulfillment dependency.",
-      "notEnough": "A larger commitment headline with no information about timing, service obligations, concentration, or cash needs.",
-      "downgrade": "Customer delay, cancellation, concentration, hardware constraint, or contract economics indicate the commitment is less valuable or more capital-intensive than implied.",
+      "title": "Interrogate concentration, warrant, and fulfillment risk",
+      "question": "Did the large CIS contracts create dependency, timing risk, capacity constraints, financing strain, or warrant economics that weaken the quality of the reported growth?",
+      "baseline": "The current Anthropic commitment is associated with about 2% of common stock on an as-converted basis, with potential vesting up to about 5% if the relationship expands. Akamai also identifies fulfillment, procurement, and projected-capex risk in its filings.",
+      "upgrade": "Management explains deployment timing, diversification, capacity readiness, funding, and warrant accounting without revealing an adverse concentration or fulfillment dependency.",
+      "notEnough": "A larger commitment headline with no information about timing, service obligations, concentration, warrant treatment, or cash needs.",
+      "downgrade": "Customer delay, cancellation, concentration, hardware constraint, warrant impact, or contract economics indicate the commitment is less valuable or more capital-intensive than implied.",
       "decisionImpact": "Large commitments count only after their economics and execution risks are visible."
     }
   ],
   "postReleaseProtocol": [
-    "Capture results, guidance, and management commentary as company-reported facts with the earnings-release and filing links.",
+    "Capture results, guidance, and management commentary as company-reported facts with the earnings-release and filing links. Record the Anthropic contract separately from recognized revenue.",
     "Append the Q3 record to data/manual/company-capture-history.json before replacing the current AKAM card baseline.",
     "Mark each scorecard line as observed, unresolved, or contrary. Do not use a single green line to override a contrary margin, cash, or delivery result.",
     "Revise the Akamai scenario assumptions only if reported conversion, monetization, and cash-return evidence supports a changed economic path.",
@@ -112,7 +112,7 @@
   "decisionRules": [
     {
       "state": "Evidence upgrade",
-      "definition": "Guide execution plus visible CIS conversion and no material worsening in delivery, margin, or cash-return evidence. A disclosed paid agent-control mechanism would strengthen the result.",
+      "definition": "Guide execution plus visible CIS conversion, clarity on Anthropic deployment / capacity economics, and no material worsening in delivery, margin, or cash-return evidence. A disclosed paid agent-control mechanism would strengthen the result.",
       "action": "Advance AKAM to a two-period company-capture review; do not call an expectation gap yet."
     },
     {
@@ -134,6 +134,10 @@
     {
       "label": "Akamai Q2 2026 Form 10-Q",
       "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm"
+    },
+    {
+      "label": "Akamai expanded Anthropic relationship announcement",
+      "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
     },
     {
       "label": "Akamai investor events",

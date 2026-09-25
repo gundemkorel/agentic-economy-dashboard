@@ -1,12 +1,12 @@
 {
   "asOfDate": "2026-09-24",
-  "definition": "The four core candidates below have dated, primary-source expectation-gap reviews. These are reported operating observations and product disclosures, not stock recommendations or evidence that an agentic tailwind is already monetized.",
+  "definition": "The four core candidates below have dated, primary-source company-capture reviews. These are reported operating observations and product disclosures, not stock recommendations or evidence that an agentic tailwind is already monetized.",
   "companies": [
     {
       "ticker": "AKAM",
       "tier": "Core",
       "mechanism": "More action-oriented traffic, security inspections, and edge-compute demand could increase billable consumption if Akamai retains the workload.",
-      "state": "Dated gap review · Monitor",
+      "state": "Dated capture review · Monitor",
       "period": "Q2 2026 · ended Jun 30, 2026",
       "evidence": [
         { "label": "Cloud Infrastructure Services revenue", "value": "$99M · +39% YoY" },
@@ -14,12 +14,19 @@
         { "label": "CIS contract commitments", "value": ">$2.8B YTD; includes >$600M robotics deal" },
         { "label": "Agent-traffic classification", "value": "AI fetchers and agents separated from training/search crawlers" }
       ],
-      "agenticRead": "CIS growth and commitments support an AI-infrastructure capture hypothesis; more granular agent-traffic controls improve product fit and measurement. Management does not separately report agent-driven revenue, adoption, pricing, or ARR.",
-      "counterpoint": "Delivery and other cloud-applications revenue declined 6% YoY and non-GAAP operating margin was 25%, down five points. The 10-Q expects AI / cloud capacity investment to raise future capital and operating costs.",
+      "agenticRead": "CIS growth and commitments support an AI-infrastructure capture hypothesis; the $11.6B Anthropic commitment materially strengthens demand evidence. Management still does not separately report agent-driven revenue, adoption, pricing, or ARR.",
+      "counterpoint": "Delivery and other cloud-applications revenue declined 6% YoY and non-GAAP operating margin was 25%, down five points. The Anthropic deal has no announced FY2026 revenue-guide impact and brings large capacity and warrant questions that require reported proof.",
+      "currentUpdate": {
+        "label": "September 24 company announcement",
+        "headline": "$11.6B Anthropic cloud commitment over seven years",
+        "detail": "Akamai said the agreement does not change FY2026 revenue guidance. It estimates roughly $5.5B of related capex, including about $1.7B incremental in 2026; the warrant is about 2% on the current commitment and can rise to about 5% if the relationship expands.",
+        "sourceLabel": "Akamai Anthropic announcement",
+        "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
+      },
       "readiness": {
         "stage": "3 / 5",
-        "state": "Early capture evidence",
-        "nextEvidence": "CIS commitment conversion, agent-control attach or pricing, and a credible free-cash-flow trajectory after capacity investment."
+        "state": "Material commitment; early capture evidence",
+        "nextEvidence": "Anthropic deployment and revenue conversion, capacity return / funding and warrant effects, plus agent-control attach or pricing."
       },
       "mechanics": {
         "billableUnit": "Cloud infrastructure compute / storage / partner solutions, plus security and delivery contracts.",
@@ -35,6 +42,7 @@
       "sources": [
         { "label": "Q2 2026 results", "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results" },
         { "label": "Q2 2026 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm" },
+        { "label": "Anthropic relationship announcement", "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic" },
         { "label": "Agent-traffic controls", "url": "https://www.akamai.com/blog/security/2026/sep/introducing-more-granular-controls-ai-bot-traffic" }
       ]
     },
@@ -42,7 +50,7 @@
       "ticker": "ESTC",
       "tier": "Core",
       "mechanism": "Agent retrieval, vector search, and observability workloads could lift cloud consumption and retention.",
-      "state": "Dated gap review · Monitor",
+      "state": "Dated capture review · Monitor",
       "period": "Q1 FY2027 · ended Jul 31, 2026",
       "evidence": [
         { "label": "Total revenue", "value": "$478M · +15% YoY" },
@@ -77,7 +85,7 @@
       "ticker": "DT",
       "tier": "Core",
       "mechanism": "More autonomous software can create more logs, traces, and AI-observability demand.",
-      "state": "Dated gap review · Monitor",
+      "state": "Dated capture review · Monitor",
       "period": "Q1 FY2027 · ended Jun 30, 2026",
       "evidence": [
         { "label": "Total ARR", "value": "$2.136B · +17% YoY" },
@@ -113,7 +121,7 @@
       "ticker": "FFIV",
       "tier": "Core",
       "mechanism": "AI gateway, MCP gateway, and application-delivery controls may become a necessary part of enterprise agent infrastructure.",
-      "state": "Dated gap review · Monitor",
+      "state": "Dated capture review · Monitor",
       "period": "Q3 FY2026 · ended Jun 30, 2026",
       "evidence": [
         { "label": "Total revenue", "value": "$865M · +11% YoY" },

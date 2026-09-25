@@ -5,6 +5,17 @@
   "entries": [
     {
       "date": "2026-09-24",
+      "direction": "Mixed / material commitment",
+      "tone": "mixed",
+      "layer": "Company Capture",
+      "title": "Akamai disclosed an $11.6B Anthropic commitment with a large capacity burden",
+      "summary": "Akamai announced a $11.6 billion contractual commitment from Anthropic over seven years, with potential for about $9 billion more. It said the agreement has no impact on FY2026 revenue guidance and estimated roughly $5.5 billion of related capex, including about $1.7 billion of incremental investment in 2026.",
+      "thesisRead": "This is unusually strong evidence of AI-infrastructure demand and customer commitment. It is not reported revenue or proof of shareholder capture: deployment timing, gross margin, funding, cash conversion, customer concentration, and warrant economics remain unresolved.",
+      "sourceLabel": "Akamai expanded Anthropic relationship announcement",
+      "sourceUrl": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"
+    },
+    {
+      "date": "2026-09-24",
       "direction": "Neutral / build evidence",
       "tone": "neutral",
       "layer": "Machine Activity",

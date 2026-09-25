@@ -43,6 +43,8 @@ These are never mixed without labels. Each observation must retain metric name, 
 
 Qualitative product or company disclosures are valid evidence when no reproducible scalar is available, but they must remain visibly qualitative. A report describing a growing pattern is not permission to invent a growth rate.
 
+Material contracts and commitments are a separate evidence class. They can establish customer demand and future service obligations, but are not recognized revenue, margin, cash flow, or a consensus surprise. Record the announced term, potential expansion, deployment / revenue-recognition timing if disclosed, capacity and funding requirement, and dilution terms. Leave every non-disclosed economic field unresolved rather than translating a contract headline into a forecast.
+
 ## Market-expectation snapshot boundary
 
 The current Eulerpool adapter publishes a single current, daily static snapshot for the small Gap Readiness watchlist. It must retain the visible `Data by Eulerpool` attribution beside each derived field. Free-plan quote inputs can be delayed or end-of-day, so the dashboard treats them as dated inputs rather than live prices. It stores no raw response or public vendor-data history.

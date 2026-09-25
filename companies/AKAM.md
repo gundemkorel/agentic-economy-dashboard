@@ -1,6 +1,6 @@
 # AKAM — Akamai
 
-## Dated gap review — September 24, 2026
+## Dated company-capture review — September 24, 2026
 
 **Research state: monitor / early capture.** Akamai has credible evidence that AI-adjacent infrastructure and control-plane demand is reaching its business. It has not yet disclosed enough agent-specific revenue, conversion, pricing, or margin evidence to support a quantified expectation-gap claim.
 
@@ -16,6 +16,18 @@ More autonomous web activity could increase the need for edge compute, traffic d
 - **Security remains relevant:** Security revenue was $604.4 million, up 10% year over year.
 - **Orders are material:** Akamai disclosed more than $2.8 billion of CIS commitments year to date, including a greater-than-$600 million, four-year contract for robotics development.
 - **The company is preparing to identify agent traffic:** In September, its Bot Directory separated AI training crawlers, AI search crawlers, and AI fetchers and agents. This is useful product and measurement readiness, not evidence of customer adoption or price realization.
+
+## Material Anthropic commitment — what it changes
+
+On September 24, Akamai announced a **$11.6 billion contractual commitment over seven years** from Anthropic, with potential for about $9 billion more. This is a material addition to the demand evidence: it shows a major AI customer committing to Akamai's cloud infrastructure at a scale far above the previously disclosed CIS commitments.
+
+It does **not** yet change the investment conclusion:
+
+- Akamai said the agreement has **no impact on FY2026 revenue guidance**. A contract amount is not recognized revenue, and the announcement does not disclose the revenue-recognition calendar, price, gross margin, or usage ramp.
+- Akamai estimates roughly **$5.5 billion of capex** related to the current commitment, including about **$1.7 billion of incremental 2026 investment** to secure and pre-purchase memory and related components. This makes cash conversion and return on capacity even more important.
+- The agreement includes a warrant associated with about **2% of common stock on an as-converted basis** under the current commitment, with potential vesting up to about **5%** if the relationship expands. Treat any per-share impact as unresolved until the accounting, vesting, and financing effects are disclosed.
+
+The live [Akamai decision desk and Q3 scorecard](https://gundemkorel.github.io/agentic-economy-dashboard/models.html) keeps these facts separate from Q3 results and the scenario lab. The immediate read is **stronger demand evidence; unchanged early-capture status**.
 
 ## Why the capture case is not proven yet
 
@@ -63,5 +75,6 @@ When Q3 results publish, append the company-reported record to data/manual/compa
 
 - [Akamai Q2 2026 results](https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results)
 - [Akamai Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm)
+- [Akamai expanded Anthropic relationship announcement](https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic)
 - [Akamai Bot Directory: more granular AI-bot controls](https://www.akamai.com/blog/security/2026/sep/introducing-more-granular-controls-ai-bot-traffic)
 - [Akamai agentic-security framework](https://www.akamai.com/newsroom/press-release/akamai-unveils-agentic-security-framework-to-power-trusted-ai-driven-interactions-and-commerce)

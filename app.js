@@ -154,7 +154,10 @@ function renderCompany(company) {
   const evidence = company.evidence ? company.evidence.map((item) => "<div><dt>" + escapeHtml(item.label) + "</dt><dd>" + escapeHtml(item.value) + "</dd></div>").join("") : "";
   const kpis = company.kpis ? "<p class=\"company-label\">Thesis-relevant KPIs</p><ul>" + company.kpis.map((kpi) => "<li>" + escapeHtml(kpi) + "</li>").join("") + "</ul>" : "";
   const readiness = company.readiness ? "<p class=\"company-readiness\"><span>Decision stage " + escapeHtml(company.readiness.stage) + "</span>" + escapeHtml(company.readiness.state) + "<small>Next: " + escapeHtml(company.readiness.nextEvidence) + "</small></p>" : "";
-  const reviewedEvidence = company.evidence ? "<p class=\"company-period\">" + escapeHtml(company.period) + " · company-reported</p><dl class=\"company-evidence\">" + evidence + "</dl><p class=\"company-read\"><span>Capture read</span>" + escapeHtml(company.agenticRead) + "</p><p class=\"company-counterpoint\"><span>Counterpoint</span>" + escapeHtml(company.counterpoint) + "</p>" + readiness : kpis;
+  const currentUpdate = company.currentUpdate
+    ? "<section class=\"company-current-update\"><span>" + escapeHtml(company.currentUpdate.label) + "</span><strong>" + escapeHtml(company.currentUpdate.headline) + "</strong><p>" + escapeHtml(company.currentUpdate.detail) + "</p><a href=\"" + escapeHtml(company.currentUpdate.sourceUrl) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(company.currentUpdate.sourceLabel) + " ↗</a></section>"
+    : "";
+  const reviewedEvidence = company.evidence ? "<p class=\"company-period\">" + escapeHtml(company.period) + " · company-reported</p><dl class=\"company-evidence\">" + evidence + "</dl><p class=\"company-read\"><span>Capture read</span>" + escapeHtml(company.agenticRead) + "</p><p class=\"company-counterpoint\"><span>Counterpoint</span>" + escapeHtml(company.counterpoint) + "</p>" + currentUpdate + readiness : kpis;
   const sourceLinks = company.sources ? company.sources.map((item) => "<a href=\"" + escapeHtml(item.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(item.label) + " ↗</a>").join("") : "<a href=\"" + escapeHtml(company.source) + "\" target=\"_blank\" rel=\"noreferrer\">Primary IR source ↗</a>";
   const reviewLink = company.reviewUrl ? "<a href=\"" + escapeHtml(company.reviewUrl) + "\" target=\"_blank\" rel=\"noreferrer\">Full research note ↗</a>" : "";
   return "<article class=\"company-card\"><div class=\"company-card-top\"><span class=\"ticker\">" + escapeHtml(company.ticker) + "</span><span class=\"tag neutral\">" + escapeHtml(company.state) + "</span></div><p class=\"company-mechanism\">" + escapeHtml(company.mechanism) + "</p>" + reviewedEvidence + "<div class=\"company-sources\">" + sourceLinks + reviewLink + "</div></article>";
@@ -548,6 +551,24 @@ function renderScorecardDecision(rule) {
   return "<article class=\"scorecard-decision\"><span class=\"tag " + tone + "\">" + escapeHtml(rule.state) + "</span><p>" + escapeHtml(rule.definition) + "</p><strong>" + escapeHtml(rule.action) + "</strong></article>";
 }
 
+function renderAkamDecisionFact(fact) {
+  return "<article class=\"akam-decision-fact\"><span>" + escapeHtml(fact.label) + "</span><strong>" + escapeHtml(fact.value) + "</strong><p>" + escapeHtml(fact.detail) + "</p></article>";
+}
+
+function renderAkamDecisionQuestion(question) {
+  return "<article class=\"akam-decision-question\"><span class=\"metric-number\">" + escapeHtml(question.number) + "</span><div><h3>" + escapeHtml(question.title) + "</h3><p>" + escapeHtml(question.detail) + "</p></div></article>";
+}
+
+function initAkamDecisionDesk(desk) {
+  $("#akam-decision-status").textContent = desk.status;
+  $("#akam-decision-purpose").textContent = desk.purpose;
+  $("#akam-decision-now").innerHTML = "<span>" + escapeHtml(desk.currentDecision.label) + "</span><strong>" + escapeHtml(desk.currentDecision.value) + "</strong><p>" + escapeHtml(desk.currentDecision.detail) + "</p>";
+  $("#akam-decision-facts").innerHTML = desk.facts.map(renderAkamDecisionFact).join("");
+  $("#akam-decision-questions").innerHTML = desk.nextQuestions.map(renderAkamDecisionQuestion).join("");
+  $("#akam-decision-boundary").innerHTML = "<span>Decision boundary</span>" + escapeHtml(desk.boundary);
+  $("#akam-decision-sources").innerHTML = "<div class=\"model-source-notes\"><p>" + escapeHtml(desk.sourceNote) + "</p></div><div class=\"company-sources\">" + desk.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";
+}
+
 function initAkamScorecard(scorecard) {
   $("#akam-scorecard-status").textContent = scorecard.status;
   $("#akam-scorecard-purpose").textContent = scorecard.purpose;
@@ -580,11 +601,12 @@ function renderReverseExpectationRow(multiple, baseline, currentPrice, reference
 }
 
 async function initModel() {
-  const [model, eulerpoolSnapshot, fmpSnapshot, scorecard] = await Promise.all([
+  const [model, eulerpoolSnapshot, fmpSnapshot, scorecard, decisionDesk] = await Promise.all([
     fetchJson("data/manual/akam-scenario-lab.json"),
     fetchJson(eulerpoolSnapshotPath).catch(() => null),
     fetchJson("data/processed/fmp-market-expectations.json").catch(() => null),
-    fetchJson("data/manual/akam-q3-scorecard.json")
+    fetchJson("data/manual/akam-q3-scorecard.json"),
+    fetchJson("data/manual/akam-decision-desk.json")
   ]);
   const snapshots = [eulerpoolSnapshot, fmpSnapshot];
   const marketSnapshot = snapshots.find((snapshot) => Array.isArray(snapshot?.rows) && snapshot.rows.some((row) => row?.ticker === "AKAM" && row?.status === "observed")) || null;
@@ -592,6 +614,7 @@ async function initModel() {
   const currentPrice = finiteNumber(marketRecord?.quote?.price);
   const attribution = $("#model-attribution");
   $("#model-baseline-grid").innerHTML = renderModelBaseline(model.reportedBaseline);
+  initAkamDecisionDesk(decisionDesk);
   initAkamScorecard(scorecard);
   $("#model-scenarios-body").innerHTML = model.scenarios.map((scenario) => renderModelScenario(scenario, model.reportedBaseline, currentPrice)).join("");
   $("#model-source-list").innerHTML = "<div class=\"model-source-notes\">" + model.reportedBaseline.notes.map((note) => "<p>" + escapeHtml(note) + "</p>").join("") + "</div><div class=\"company-sources\">" + model.reportedBaseline.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";

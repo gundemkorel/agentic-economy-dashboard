@@ -69,6 +69,8 @@ The Akamai scenario lab reads company-issued reported baselines and applies tran
 
 The same Akamai page now includes a pre-release Q3 earnings scorecard. It compares Q3 results with the Q2 reported baseline and company-issued guide, tests CIS conversion, paid agent-control monetization, delivery trends, cash returns, and contract-fulfillment risk, then records an evidence upgrade, watch, or downgrade without treating any outcome as an expectation-gap call.
 
+Material non-earnings developments sit above that scorecard in a compact current decision desk. The desk records what was announced, what it does not establish, and the few questions that can change the capture case. Its structured source is `data/manual/akam-decision-desk.json`; a contract headline is never mechanically added to revenue, free-cash-flow, share-count, or expectation-gap assumptions.
+
 The [Next Earnings page](earnings.html) applies the same decision discipline in a deliberately compact form for Elastic, Dynatrace, and F5: one central question, company-issued guidance, three expandable decision checks, and official-source links. Its structured data lives in `data/manual/company-earnings-scorecards.json`, so a quarterly update does not require rewriting the interface.
 
 The [Research Queue page](research-queue.html) keeps the wider universe usable: Zscaler, Twilio, Fastly, and Okta each have a reported baseline, one causal question, three expandable commercial tests, a counterargument, and primary sources. Cloudflare, Datadog, and Palo Alto Networks appear only as benchmark comparators. Their data lives in `data/manual/secondary-company-research.json`; core-company ranking and market-expectation conclusions remain untouched.

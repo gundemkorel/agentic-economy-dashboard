@@ -31,7 +31,7 @@
       "status": "Early / unproven",
       "tone": "warning",
       "definition": "Use dated, company-reported KPIs and retain contrary evidence. Require an agent-specific or clearly causal commercial signal before upgrading the state.",
-      "currentRead": "Akamai, Elastic, Dynatrace, and F5 have plausible routes and dated evidence, but none reports agent-specific revenue or economics."
+      "currentRead": "Akamai's $11.6B Anthropic commitment materially strengthens CIS demand evidence, while its revenue recognition, margin, cash-return, and warrant economics remain unproven. Elastic, Dynatrace, and F5 likewise have plausible routes and dated evidence but no agent-specific revenue or economics."
     },
     {
       "number": "04",
@@ -58,8 +58,8 @@
     {
       "ticker": "AKAM",
       "stage": "3 / 5",
-      "state": "Early capture evidence",
-      "nextEvidence": "CIS commitment conversion, agent-control attach or pricing, and a credible free-cash-flow trajectory after capacity investment.",
+      "state": "Material commitment; execution economics unresolved",
+      "nextEvidence": "Anthropic deployment and revenue conversion, capacity return / funding and warrant effects, plus agent-control attach or pricing.",
       "expectationsState": "Fiscal period aligns, but no revision series",
       "modelState": "Prototype scenario lab"
     },

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Agentic bill of materials and company-capture matrix with cash-flow hurdles and thesis breakers." />
+    <title>Economic Map · Agentic Economy Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?rev=economic-map-20260925" />
+    <link rel="stylesheet" href="decision-gates.css" />
+    <link rel="stylesheet" href="economic-map.css?rev=economic-map-20260925" />
+  </head>
+  <body data-page="economic-map">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Agentic Economy<br /><strong>Dashboard</strong></span></a>
+        <nav class="topnav" aria-label="Primary navigation"><a href="index.html">Wave-2 Pulse</a><a href="history.html">History</a><a href="companies.html">Company Capture</a><a href="economic-map.html" aria-current="page">Economic Map</a><a href="earnings.html">Earnings</a><a href="expectations.html">Gap Readiness</a><a href="breakers.html">Thesis Breakers</a><a href="models.html">AKAM Model</a><a href="committee.html">Committee</a><a href="methodology.html">Methods</a></nav>
+      </header>
+      <main>
+        <section class="page-hero economics-hero">
+          <p class="eyebrow">Causal research <span class="slash">/</span> bill of materials</p>
+          <h1>Who gets paid<br /><em>when an agent acts?</em></h1>
+          <p id="economics-purpose">Loading the economic map…</p>
+        </section>
+
+        <section class="notice economics-notice"><strong id="economics-status">Loading research state…</strong><span>Research leads are not stock recommendations. No company below has a demonstrated expectation gap. <span id="economics-as-of"></span></span></section>
+        <p class="economics-quick-links"><a href="#capture-matrix">Jump to company capture matrix →</a><a href="#resource-layers">See resource layers →</a></p>
+
+        <section class="economics-gates" id="economics-gates" aria-label="Three evidence gates" aria-live="polite"><div class="loading-state">Loading evidence gates…</div></section>
+
+        <section class="section-block economics-work-section">
+          <div class="section-heading"><div><p class="section-number">Start with the task</p><h2>Three concrete work units</h2></div><span class="tag neutral">Examples, not forecasts</span></div>
+          <p class="section-lede">An agent task is the unit of analysis. One task can consume several resources, but that does not make every event separately billable.</p>
+          <div class="economics-work-grid" id="economics-work-units" aria-live="polite"><div class="loading-state">Loading work units…</div></div>
+        </section>
+
+        <section class="section-block economics-layers-section" id="resource-layers">
+          <div class="section-heading"><div><p class="section-number">Agentic bill of materials</p><h2>Where the work lands</h2></div><span class="tag warning">Eight resource layers</span></div>
+          <p class="section-lede">The meter is only a possible route to revenue. The last column asks what evidence would prove cash capture.</p>
+          <div class="gap-table-wrap"><table class="gap-table economics-layer-table"><thead><tr><th>Resource layer</th><th>Consumed</th><th>Possible paid unit</th><th>Leakage or substitution</th><th>Proof needed</th></tr></thead><tbody id="economics-layers-body"><tr><td colspan="5">Loading resource map…</td></tr></tbody></table></div>
+        </section>
+
+        <section class="section-block economics-capture-section" id="capture-matrix">
+          <div class="section-heading"><div><p class="section-number">Company capture matrix</p><h2>From meter to owner cash</h2></div><span class="tag caution">No underpricing call</span></div>
+          <p class="section-lede">The materiality hurdles are sensitivities, not expected results. Open a company below for the exact causal chain, assumption, breaker, and primary sources.</p>
+          <div class="gap-table-wrap"><table class="gap-table economics-capture-table"><thead><tr><th>Company / lens</th><th>Actual or proposed paid unit</th><th>Illustrative hurdle</th><th>Research state</th></tr></thead><tbody id="economics-capture-body"><tr><td colspan="4">Loading company-capture matrix…</td></tr></tbody></table></div>
+          <div class="economics-company-grid" id="economics-company-details" aria-live="polite"><div class="loading-state">Loading company details…</div></div>
+        </section>
+
+        <section class="section-block economics-method-section">
+          <div class="section-heading"><div><p class="section-number">Read this before comparing</p><h2>Method and update rule</h2></div><span class="tag neutral">Explicit assumptions</span></div>
+          <ol class="economics-method-list" id="economics-methodology"><li>Loading methodology…</li></ol>
+          <p class="economics-method-link"><a href="expectations.html">Why the expectation-gap gate remains closed →</a> <a href="methodology.html">Full methodology →</a></p>
+        </section>
+      </main>
+      <footer class="footer"><span>Agentic Economy Dashboard <span class="muted">/</span> economic map</span><a class="muted" href="companies.html">Return to Company Capture →</a></footer>
+    </div>
+    <script src="app.js?build=__MARKET_SNAPSHOT_VERSION__" type="module"></script>
+  </body>
+</html>

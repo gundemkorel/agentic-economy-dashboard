@@ -482,6 +482,90 @@ async function initCommittee() {
   $("#committee-sources").innerHTML = data.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("");
 }
 
+function economicsAmount(value, currency, digits = 1) {
+  const symbol = currency === "GBP" ? "£" : "$";
+  if (value >= 1000) return symbol + new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value / 1000) + "B";
+  return symbol + new Intl.NumberFormat("en-US", { maximumFractionDigits: digits }).format(value) + "M";
+}
+
+function economicsCount(value) {
+  if (value >= 1e9) return new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value / 1e9) + "B";
+  if (value >= 1e6) return new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(value / 1e6) + "M";
+  if (value >= 1e3) return new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(value / 1e3) + "K";
+  return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
+}
+
+function economicMateriality(item) {
+  const m = item.materiality;
+  if (m.type === "project") {
+    const ratio = 100 * m.capexMillions / m.contractMillions;
+    return { headline: ratio.toFixed(1) + "% of contract receipts for nominal capex recovery", detail: "That share must remain as cash after operating costs merely to recover planned capex. " + m.note };
+  }
+  const cashTarget = m.baselineMillions * m.targetPercent / 100;
+  const targetText = economicsAmount(cashTarget, m.currency) + " incremental cash for +" + m.targetPercent + "% of " + m.basis + ". ";
+  if (m.type === "unit") {
+    const units = cashTarget * 1e6 / (m.pricePerUnit * m.assumedCashConversion);
+    return { headline: economicsCount(units) + " " + m.unit, detail: targetText + m.note };
+  }
+  if (m.type === "revenue") {
+    const revenue = cashTarget / m.assumedCashConversion;
+    return { headline: economicsAmount(revenue, m.currency) + " extra revenue " + m.period, detail: targetText + m.note };
+  }
+  if (m.type === "outcome-range") {
+    const low = cashTarget * 1e6 / (m.assumedCommission * m.feeRateHigh * m.assumedCashConversion);
+    const high = cashTarget * 1e6 / (m.assumedCommission * m.feeRateLow * m.assumedCashConversion);
+    return { headline: economicsCount(low) + "–" + economicsCount(high) + " " + m.unit, detail: targetText + m.note };
+  }
+  return { headline: "Materiality not quantified", detail: "Awaiting an attributable cash baseline and paid unit." };
+}
+
+function renderEconomicGate(gate) {
+  return "<article class=\"economics-gate\"><span>" + escapeHtml(gate.label) + "</span><p>" + escapeHtml(gate.detail) + "</p></article>";
+}
+
+function renderEconomicWorkUnit(unit) {
+  return "<article class=\"economics-work-card\"><span>Work unit</span><h3>" + escapeHtml(unit.title) + "</h3><p class=\"economics-path\">" + escapeHtml(unit.path) + "</p><p>" + escapeHtml(unit.question) + "</p><small>Resource layers: " + escapeHtml(unit.layers) + "</small></article>";
+}
+
+function renderEconomicLayer(layer) {
+  return "<tr><td data-label=\"Resource layer\">" + escapeHtml(layer.name) + "</td><td data-label=\"Consumed\">" + escapeHtml(layer.resource) + "</td><td data-label=\"Possible paid unit\">" + escapeHtml(layer.possibleMeter) + "</td><td data-label=\"Leakage or substitution\">" + escapeHtml(layer.leakage) + "</td><td data-label=\"Proof needed\">" + escapeHtml(layer.evidenceNeeded) + "</td></tr>";
+}
+
+function renderEconomicCompanyRow(company) {
+  const materiality = economicMateriality(company);
+  return "<tr><td data-label=\"Company / lens\"><a href=\"#economic-" + escapeHtml(company.ticker) + "\"><strong>" + escapeHtml(company.ticker) + "</strong></a><span class=\"table-subtle\">" + escapeHtml(company.lens) + "</span></td>" +
+    "<td data-label=\"Paid unit\">" + escapeHtml(company.paidUnit) + "</td><td data-label=\"Illustrative hurdle\">" + escapeHtml(materiality.headline) + "<span class=\"table-subtle\">Illustrative, not a forecast</span></td>" +
+    "<td data-label=\"Research state\"><span class=\"tag warning\">" + escapeHtml(company.priority) + "</span><span class=\"table-subtle\">Gap not established</span></td></tr>";
+}
+
+function renderEconomicCompanyDetail(company) {
+  const materiality = economicMateriality(company);
+  const sources = company.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("");
+  const details = [
+    ["Work unit → resource → paid unit", company.workUnit + " → " + company.resource + " → " + company.paidUnit],
+    ["Observed, not inferred", company.observed],
+    ["5% / project hurdle", materiality.headline + ". " + materiality.detail],
+    ["Cash bridge still missing", company.cashUnknown],
+    ["Next evidence event", company.nextTest],
+    ["Expectations gate", company.expectations]
+  ].map(([label, value]) => "<p><strong>" + escapeHtml(label) + "</strong>" + escapeHtml(value) + "</p>").join("");
+  return "<details class=\"economics-company\" id=\"economic-" + escapeHtml(company.ticker) + "\"><summary><div><span class=\"economics-detail-label\">" + escapeHtml(company.priority) + " · " + escapeHtml(company.lens) + "</span><h3>" + escapeHtml(company.ticker) + " · " + escapeHtml(company.name) + "</h3></div></summary>" +
+    "<div class=\"economics-detail-body\">" + details + "<p class=\"economics-breaker\"><strong>Thesis breaker</strong>" + escapeHtml(company.breaker) + "</p><div class=\"economics-source-row\">" + sources + "</div></div></details>";
+}
+
+async function initEconomicMap() {
+  const data = await fetchJson("data/manual/agentic-economics-map.json");
+  $("#economics-purpose").textContent = data.purpose;
+  $("#economics-status").textContent = data.status;
+  $("#economics-as-of").textContent = "Reviewed " + formatDate(data.asOfDate) + ".";
+  $("#economics-gates").innerHTML = data.gates.map(renderEconomicGate).join("");
+  $("#economics-work-units").innerHTML = data.workUnits.map(renderEconomicWorkUnit).join("");
+  $("#economics-layers-body").innerHTML = data.layers.map(renderEconomicLayer).join("");
+  $("#economics-capture-body").innerHTML = data.companies.map(renderEconomicCompanyRow).join("");
+  $("#economics-company-details").innerHTML = data.companies.map(renderEconomicCompanyDetail).join("");
+  $("#economics-methodology").innerHTML = data.methodology.map((note) => "<li>" + escapeHtml(note) + "</li>").join("");
+}
+
 async function initExpectations() {
   const [data, providerMap, eulerpoolSnapshot, fmpSnapshot] = await Promise.all([
     fetchJson("data/manual/expectations-gap.json"),
@@ -701,6 +785,7 @@ async function boot() {
     else if (page === "history") await initHistory();
     else if (page === "model") await initModel();
     else if (page === "committee") await initCommittee();
+    else if (page === "economic-map") await initEconomicMap();
     else await initPulse();
   } catch (error) {
     const target = document.querySelector("[aria-live]") || document.querySelector(".source-list") || document.querySelector("main");

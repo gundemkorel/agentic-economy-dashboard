@@ -1,0 +1,235 @@
+{
+  "asOfDate": "2026-09-25",
+  "status": "Research map · no demonstrated expectation gap",
+  "purpose": "Trace a completed agent task through resources consumed, the supplier's actual paid unit, incremental cash, and market expectations. A category's growth is not a company or stock conclusion.",
+  "gates": [
+    { "label": "1 · Incremental work", "detail": "Is the task or resource use new, rather than a displaced human or digital channel?" },
+    { "label": "2 · Supplier cash", "detail": "Does paid usage survive allowances, discounts, variable costs, capital needs, and dilution?" },
+    { "label": "3 · Expectations", "detail": "Do dated, fiscal-aligned estimate vintages and market prices omit the cash benefit?" }
+  ],
+  "workUnits": [
+    {
+      "title": "Resolve an inbound customer call",
+      "path": "Customer intent → voice session → retrieval → agent answer or handoff → completed appointment",
+      "question": "Did the agent recover a job that would otherwise be lost, and did the supplier earn more net cash?",
+      "layers": "Model inference · data access · communication · telemetry"
+    },
+    {
+      "title": "Change a business record",
+      "path": "User request → identity and policy → context retrieval → API write → audit trail",
+      "question": "Which checks and executions are separately paid, and which are bundled or cached?",
+      "layers": "Data access · APIs · identity · security · observability"
+    },
+    {
+      "title": "Complete a purchase or booking",
+      "path": "Discovery → comparison → authorization → payment or referral → fulfilled outcome",
+      "question": "Was the transaction incremental, or did an agent simply reroute an existing buyer?",
+      "layers": "Network · fraud decisions · payments · workflow"
+    }
+  ],
+  "layers": [
+    {
+      "name": "Inference and model mediation",
+      "resource": "Tokens, model calls, and orchestration time",
+      "possibleMeter": "Paid tokens or inference capacity",
+      "leakage": "Smaller models, deterministic rules, caching, batching, and model-provider bundling",
+      "evidenceNeeded": "Production task share and net inference cash cost per completed outcome"
+    },
+    {
+      "name": "Physical compute and memory",
+      "resource": "CPU time, servers, memory, power, and colocation",
+      "possibleMeter": "Delivered capacity or manufactured systems",
+      "leakage": "Build capex, power, depreciation, financing, buyer concentration, and refresh cycles",
+      "evidenceNeeded": "Contracted delivery, utilization, and lifecycle cash return"
+    },
+    {
+      "name": "Retrieval and data access",
+      "resource": "Search, indexing, context retrieval, and data movement",
+      "possibleMeter": "Paid executions, compute units, or data operations",
+      "leakage": "Included quotas, self-hosting, caching, and cheaper retrieval paths",
+      "evidenceNeeded": "Paid agent-attributed usage and realized contribution after hosting cost"
+    },
+    {
+      "name": "Network and APIs",
+      "resource": "Requests, tool calls, retries, and egress",
+      "possibleMeter": "Billable requests, CPU time, or bytes",
+      "leakage": "Internal APIs, low list prices, request consolidation, and free gateway tiers",
+      "evidenceNeeded": "Net paid usage per completed task, not raw bot traffic"
+    },
+    {
+      "name": "Identity, fraud, and security",
+      "resource": "Authorization, risk decisions, and protected legitimate API actions",
+      "possibleMeter": "Paid decisions or protected Good Requests",
+      "leakage": "Cached decisions, pooled entitlements, blocked traffic, and suite bundling",
+      "evidenceNeeded": "Agent-tagged paid volume, net yield, and incremental security gross profit"
+    },
+    {
+      "name": "Observability and audit",
+      "resource": "Traces, logs, evaluations, and retention",
+      "possibleMeter": "Billable retained spans or ingest volume",
+      "leakage": "Sampling, short retention, excluded tool spans, and open-source substitutes",
+      "evidenceNeeded": "Paid span mix and margin after data-processing cost"
+    },
+    {
+      "name": "Workflow and communication",
+      "resource": "Calls, messages, workflow steps, and human handoffs",
+      "possibleMeter": "Paid minutes, sends, or completed runs",
+      "leakage": "Shorter calls, direct APIs, channel displacement, and carrier or speech cost",
+      "evidenceNeeded": "Net new outcomes and supplier cash per completed job"
+    },
+    {
+      "name": "Transactions and referrals",
+      "resource": "Payments, orders, bookings, and closed referrals",
+      "possibleMeter": "Net processing spread or success fee",
+      "leakage": "Existing transactions rerouted through agents and take-rate compression",
+      "evidenceNeeded": "Controlled incremental completed outcomes and retained cash after partner fees"
+    }
+  ],
+  "companies": [
+    {
+      "ticker": "AKAM",
+      "name": "Akamai",
+      "lens": "Physical capacity",
+      "priority": "Focused diligence",
+      "workUnit": "CPU-heavy model or tool workload",
+      "resource": "Dedicated cloud capacity",
+      "paidUnit": "Service payments after contracted capacity is delivered and available",
+      "observed": "$11.6B conditional, seven-year Anthropic commitment; management plans about $5.5B of related capex. Contract value is not recognized revenue.",
+      "materiality": { "type": "project", "currency": "USD", "contractMillions": 11600, "capexMillions": 5500, "note": "Nominal capital recovery only; excludes discounting, replacement, financing, taxes, and warrant effects." },
+      "cashUnknown": "Power and colocation pass-through, service cost, funding, refresh or residual value, and diluted shares.",
+      "breaker": "Delivered capacity earns too little lifecycle owner cash after the build and warrant effects.",
+      "nextTest": "Read the full MSA and subsequent filings; reconcile payments, capex, cash returns, and pre/post-announcement fiscal-aligned estimates.",
+      "expectations": "No matched dated FCF-estimate revision panel; the announcement and price reaction alone do not prove mispricing.",
+      "sources": [
+        { "label": "Akamai announcement · Sep 24", "url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand" },
+        { "label": "SEC 8-K", "url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm" },
+        { "label": "Akamai investor plan", "url": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7" }
+      ]
+    },
+    {
+      "ticker": "TWLO",
+      "name": "Twilio",
+      "lens": "Communication",
+      "priority": "Focused diligence",
+      "workUnit": "Resolve an inbound customer call",
+      "resource": "ConversationRelay and Voice minutes",
+      "paidUnit": "Relay list price of $0.07 per minute, with Voice billed separately",
+      "observed": "A vendor-hosted Scorpion case reports 6,500 otherwise-missed appointments; it is not a controlled estimate of Twilio's incremental profit.",
+      "materiality": { "type": "unit", "currency": "USD", "basis": "FY2025 company-reported FCF", "baselineMillions": 945.4, "targetPercent": 5, "pricePerUnit": 0.07, "assumedCashConversion": 0.5, "unit": "extra paid Relay minutes per year", "note": "List price and 50% incremental cash conversion are illustrative; realized yield and margin are undisclosed." },
+      "cashUnknown": "Incremental paid Relay minutes, net price, carrier and speech costs, and channel displacement.",
+      "breaker": "Agents complete more jobs but shorten calls, reroute customers to APIs, or replace existing paid channels.",
+      "nextTest": "Compare matched customer locations on total completed jobs, paid Voice/Relay minutes, and supplier gross profit.",
+      "expectations": "No agent-specific gross-profit or dated pre/post FCF consensus bridge.",
+      "sources": [
+        { "label": "Relay pricing", "url": "https://www.twilio.com/en-us/products/conversational-ai/pricing" },
+        { "label": "Scorpion case", "url": "https://customers.twilio.com/en-us/scorpion-conversation-relay" },
+        { "label": "FY2025 results", "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-fourth-quarter-and-full-year-2025-results" }
+      ]
+    },
+    {
+      "ticker": "RELX",
+      "name": "RELX Risk",
+      "lens": "Risk decisions",
+      "priority": "Measurement watch",
+      "workUnit": "Authorize an external transaction or account action",
+      "resource": "Identity and fraud data decisions",
+      "paidUnit": "Transaction-class or volume-linked contracts; a network event is not necessarily a new paid decision",
+      "observed": "61% of FY2025 Risk revenue was transaction-class, including long-term volumetric contracts. Reported agentic traffic growth began from a tiny base.",
+      "materiality": { "type": "unit", "currency": "GBP", "basis": "FY2025 FCF before dividends", "baselineMillions": 2313, "targetPercent": 5, "pricePerUnit": 1, "assumedCashConversion": 0.6, "unit": "extra paid decisions per year", "note": "£1 net fee and 60% incremental cash conversion are hypothetical, not RELX disclosed prices or margins." },
+      "cashUnknown": "Agent-tagged paid decision count, net fee, and cash contribution apart from ordinary fraud and digitalization.",
+      "breaker": "Credentials or decisions are reused, batched, or absorbed in existing volume commitments.",
+      "nextTest": "Find matched agent-exposed customer cohorts with paid decision volume and realized yield.",
+      "expectations": "No Risk-specific agent cash bridge or matched estimate vintages.",
+      "sources": [
+        { "label": "RELX FY2025 Risk segment", "url": "https://www.relx.com/~/media/Files/R/RELX-Group/documents/reports/annual-reports/2025-ar-sections/relx-2025-market-segments.pdf" },
+        { "label": "RELX FY2025 report", "url": "https://www.relx.com/~/media/Files/R/RELX-Group/documents/reports/annual-reports/relx-2025-annual-report.pdf" },
+        { "label": "LexisNexis cybercrime release", "url": "https://risk.lexisnexis.com/about-us/press-room/press-release/20260326-ccr-global-fraud" },
+        { "label": "LexisNexis study methodology", "url": "https://risk.lexisnexis.com/-/media/files/financial%20services/research/lexisnexis-risk-solutions-cybercrime-report-2026.pdf" }
+      ]
+    },
+    {
+      "ticker": "FFIV",
+      "name": "F5",
+      "lens": "API control",
+      "priority": "Measurement watch",
+      "workUnit": "Inspect a legitimate agent API request",
+      "resource": "Distributed Cloud API protection",
+      "paidUnit": "Good Requests forwarded to origin, subject to contract terms and allowances",
+      "observed": "F5 defines the protected-request meter, but does not publish agent-specific paid volume or realized price per million.",
+      "materiality": { "type": "revenue", "currency": "USD", "basis": "Nine months ended June 2026 CFO less PP&E", "baselineMillions": 777.7, "targetPercent": 5, "assumedCashConversion": 0.6, "period": "same nine-month period", "note": "60% incremental cash conversion is illustrative; the required revenue cannot be converted to requests without a net price." },
+      "cashUnknown": "Agent-classified Good Requests beyond included pools, realized price, and associated gross profit.",
+      "breaker": "New governance is bundled, blocked traffic does not bill, or optimized requests reduce paid usage.",
+      "nextTest": "Seek disclosed paid request growth and security revenue in matched agent-exposed accounts.",
+      "expectations": "No attributable revenue or dated estimate revision series.",
+      "sources": [
+        { "label": "F5 billing definitions", "url": "https://docs.cloud.f5.com/docs-v2/purchasing-and-billing/purchase-bill/billing-usage" },
+        { "label": "F5 Q3 FY2026 results", "url": "https://investors.f5.com/news/news-details/2026/F5-Reports-Third-Quarter-Results-with-19-Product-Revenue-Growth/default.aspx" }
+      ]
+    },
+    {
+      "ticker": "JBL",
+      "name": "Jabil",
+      "lens": "Hardware integration",
+      "priority": "Conditional supplier",
+      "workUnit": "Build servers for additional cloud capacity",
+      "resource": "Customized systems, assembly, and spares",
+      "paidUnit": "Recognized manufacturing sales and services, not Akamai's memory authorization",
+      "observed": "Akamai named Jabil in its build arrangements; the $1.7B customer-funded memory authorization is not disclosed Jabil revenue.",
+      "materiality": { "type": "revenue", "currency": "USD", "basis": "FY2026 adjusted FCF guidance floor", "baselineMillions": 1400, "targetPercent": 5, "assumedCashConversion": 0.03, "period": "per year", "note": "3% incremental after-tax cash yield on truly new manufacturing sales is assumed, not company guidance." },
+      "cashUnknown": "Recognized contract sales, true program margin, inventory, tooling, receivable financing, and warranty costs.",
+      "breaker": "AI program sales replace other cloud builds or consume cash through working capital.",
+      "nextTest": "Reconcile Intelligent Infrastructure segment growth with cash conversion and customer-funded input accounting.",
+      "expectations": "AI infrastructure growth is already a public company narrative; no matched expectation gap.",
+      "sources": [
+        { "label": "Akamai SEC 8-K", "url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm" },
+        { "label": "Jabil Q3 FY2026 results", "url": "https://investors.jabil.com/news/news-details/2026/Jabil-Posts-Third-Quarter-Results/default.aspx" },
+        { "label": "Jabil Q3 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026046138/jbl-20260531.htm" }
+      ]
+    },
+    {
+      "ticker": "ESTC",
+      "name": "Elastic",
+      "lens": "Paid execution control",
+      "priority": "Scale control",
+      "workUnit": "Complete an agent workflow execution",
+      "resource": "Agent Builder execution and search compute",
+      "paidUnit": "Serverless completed execution after free allowances; other deployments may be bundled",
+      "observed": "Published Agent Builder starting price is $0.025 per completed execution after 1,000 free per project.",
+      "materiality": { "type": "unit", "currency": "USD", "basis": "FY2026 conventional CFO less PP&E", "baselineMillions": 321.8, "targetPercent": 5, "pricePerUnit": 0.025, "assumedCashConversion": 0.6, "unit": "extra paid executions per year", "note": "Starting list price and 60% incremental cash conversion are illustrative; discounts, free usage, and hosting cost matter." },
+      "cashUnknown": "Paid execution count by deployment, realized price, and incremental hosting margin.",
+      "breaker": "Execution growth is absorbed by free quotas, self-managed use, or enterprise bundles.",
+      "nextTest": "Seek paid serverless execution revenue and cash contribution separately from existing search workloads.",
+      "expectations": "AI positioning is overt; no dated attributable FCF revision panel.",
+      "sources": [
+        { "label": "Elastic Serverless pricing", "url": "https://www.elastic.co/pricing/serverless-search" },
+        { "label": "FY2026 results", "url": "https://ir.elastic.co/News--Events/news/news-details/2026/Elastic-Reports-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx" }
+      ]
+    },
+    {
+      "ticker": "ZG",
+      "name": "Zillow Preferred",
+      "lens": "Outcome-linked referral",
+      "priority": "Exploratory",
+      "workUnit": "Find a home and close a Zillow-sourced connection",
+      "resource": "Buyer intent, agent match, tour, and referral",
+      "paidUnit": "15–40% of the agent commission on a closed Preferred transaction",
+      "observed": "The success-fee mechanism is disclosed, but no AI-originated incremental paid-close cohort is reported.",
+      "materiality": { "type": "outcome-range", "currency": "USD", "basis": "H1 2026 adjusted FCF annualized", "baselineMillions": 446, "targetPercent": 5, "assumedCommission": 10000, "feeRateLow": 0.15, "feeRateHigh": 0.4, "assumedCashConversion": 0.3, "unit": "extra paid closes per year", "note": "$10,000 commission and 30% incremental cash conversion are hypothetical; H1 FCF annualization ignores seasonality." },
+      "cashUnknown": "AI-attributed net-new Preferred closes and cash retained after incentives and model costs.",
+      "breaker": "Existing buyers move through Zillow Pro, competing listing-agent paths, or AI search without a new paid referral.",
+      "nextTest": "Compare AI and matched non-AI markets on new unrepresented-buyer connections, then collected close fees with a housing-cycle lag.",
+      "expectations": "No AI-paid-close disclosure or dated attribution in analyst FCF revisions.",
+      "sources": [
+        { "label": "Preferred fee FAQ", "url": "https://www.zillow.com/preferred/faq/" },
+        { "label": "Zillow H1 2026 filing", "url": "https://www.sec.gov/Archives/edgar/data/1617640/000161764026000052/z-20260630.htm" },
+        { "label": "Zillow Pro", "url": "https://www.zillow.com/news/agents-using-zillow-pro-see-80-more-meetings-with-linked-contacts/" }
+      ]
+    }
+  ],
+  "methodology": [
+    "The 5% hurdle is an illustrative materiality screen: 5% × the stated cash-flow baseline, with share count held constant. It is not a forecast, valuation, or price target.",
+    "Unit thresholds use the displayed list or hypothetical net price and assumed incremental cash conversion; actual realized yield, marginal cost, stock-based compensation, dilution, and capital needs may be different.",
+    "Periods and accounting definitions differ across companies. Do not compare the numerical hurdles as if they were normalized returns.",
+    "No candidate is marked underpriced until the same fiscal periods have dated pre/post estimates, valuation context, and attributable owner-cash evidence. Missing disclosure leaves a thesis unverified, not disproved."
+  ]
+}

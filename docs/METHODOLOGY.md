@@ -29,6 +29,14 @@ The dashboard uses a sequence rather than a composite score:
 
 No company is called investable merely because it advances through an early gate.
 
+## Agentic bill of materials and capture matrix
+
+Start with one completed task, not an AI-labeled company. Map the work unit to every resource it consumes, then ask who buys each resource, what event the supplier actually bills, and whether the supplier retains cash after discounts, allowances, carrier or hosting cost, capital spending, and dilution. The [Economic Map](../economic-map.html) keeps these links visible across physical compute, data, APIs, identity/security, observability, communication, and transactions.
+
+Its illustrative 5% hurdle is `0.05 × the stated free-cash-flow baseline` with diluted shares held constant. For a unit-priced product, required additional paid units equal that cash hurdle divided by `net price per unit × assumed incremental cash conversion`. For revenue-priced products, divide by assumed cash conversion. Those calculations are sensitivity tests; list prices, hypothetical net fees, chosen conversion rates, annualized periods, and project capex are labeled. They are not management forecasts, analyst consensus, comparable company valuations, or a recommendation. A contract's nominal capital-recovery ratio is not a discounted project return.
+
+Never infer a company-wide 5% cash impact from task count, bot traffic, customer bookings, or disclosed contract value alone. Promotion requires a controlled or otherwise credible estimate of *incremental* paid units, realized yield, marginal cash contribution, and a dated same-provider, fiscal-aligned expectations comparison. Missing disclosure means unverified, not falsified. Keep a negative control for each mechanism—such as ordinary cloud refresh for hardware or existing web/phone channels for agent-assisted orders.
+
 ## Data distinctions
 
 Every entry must be one of:

@@ -39,6 +39,10 @@ jobs:
           node-version: 22
       - name: Build observation register
         run: node scripts/build-observation-register.mjs
+      - name: Validate economic map
+        run: |
+          node --check app.js
+          node scripts/validate-economic-map.mjs
       - name: Create attributed Eulerpool snapshot for this deployment
         id: eulerpool_snapshot
         if: env.EULERPOOL_API_KEY != ''

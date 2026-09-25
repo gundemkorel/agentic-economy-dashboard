@@ -17,6 +17,7 @@ The project separately tracks:
 7. Observation History — the baseline count, comparability rules, collection cadence, and missing proof behind every future conclusion.
 8. Research Queue — four secondary candidates with primary-source baselines and promotion tests, plus three clearly labeled benchmark comparators.
 9. Investment Committee — a structured discussion board covering model mediation, compute mix, tools and network demand, control planes, observability, market structure, and expectation gaps.
+10. Economic Map — an agentic bill of materials and cross-company capture matrix that makes the paid unit, illustrative cash-flow hurdle, missing proof, and thesis breaker visible together.
 
 Read the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
@@ -77,6 +78,8 @@ The [Next Earnings page](earnings.html) applies the same decision discipline in 
 The [Research Queue page](research-queue.html) keeps the wider universe usable: Zscaler, Twilio, Fastly, and Okta each have a reported baseline, one causal question, three expandable commercial tests, a counterargument, and primary sources. Cloudflare, Datadog, and Palo Alto Networks appear only as benchmark comparators. Their data lives in `data/manual/secondary-company-research.json`; core-company ranking and market-expectation conclusions remain untouched.
 
 The [Investment Committee board](committee.html) is a source-controlled discussion canvas for a professional research session. It does not offer public comments or create a conviction score. Instead, each live debate documents the proposed causal chain, evidence required, strongest countercase, and company-discovery lens. Its structured source is `data/manual/investment-committee-board.json`.
+
+The [Economic Map](economic-map.html) is the next research layer. It begins with a concrete agent work unit, maps eight resource layers, and compares seven company mechanisms without ranking stocks by expected return. Its structured source is `data/manual/agentic-economics-map.json`. The 5% cash-flow hurdles are explicitly assumed materiality screens, not forecasts; no candidate has an established expectations gap. Run `node scripts/validate-economic-map.mjs` after updating it.
 
 ## GitHub Pages
 

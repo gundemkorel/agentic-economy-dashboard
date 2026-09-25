@@ -12,6 +12,7 @@
 7. Treat a material contract, customer commitment, or product announcement as a separate dated event—not as revenue. Log the announced amount, timing, capacity / funding obligations, and dilution terms when disclosed; leave revenue, margin, cash return, and expectation-gap fields unresolved until reported.
 8. Review the Eulerpool snapshot's retrieval date, coverage, annual fiscal periods, quote timing, and any unavailable fields. Confirm the visible `Data by Eulerpool` attribution remains present. If the snapshot fiscal date differs from the configured company fiscal year-end, leave the dashboard's “do not compare” read in place rather than forcing a gap conclusion.
 9. If a new agent-workflow or supplier disclosure changes the bill of materials, update `data/manual/agentic-economics-map.json`: record the actual paid unit separately from raw activity, the substitution path, and the next falsifying observation. Do not refresh a numeric hurdle from an undated third-party quote.
+   - Recheck the three priority proof tests and `docs/WORKLOG.md`. Change the status only when a source adds a cash-bridge input or a comparable expectations observation, not merely another customer logo.
 
 ## Monthly
 
@@ -35,6 +36,7 @@
 10. Reassess whether evidence changed the macro thesis, company capture, or a thesis breaker.
 11. Update `data/manual/secondary-company-research.json` and the matching `companies/` research note together for ZS, TWLO, FSLY, OKTA, NET, DDOG, or PANW. Keep each secondary candidate's one-question card concise; preserve the detailed evidence and counterargument in the structured data and note.
 12. Recalculate the Economic Map's cash-flow screens from the newly reported company period. Keep fiscal period, currency, FCF definition, price/fee assumption, and conversion assumption explicit. Revisit AKAM's contract cash obligations and TWLO's paid-minute bridge first; leave the gap state closed without matched estimate vintages. Run `node scripts/validate-economic-map.mjs` before publishing.
+13. For AKAM's September-quarter 10-Q, inspect the promised full Anthropic MSA, project plans, Lenovo agreement, and Jabil agreement. Reconcile material redactions, termination/outage conditions, payment schedule, costs, and warrant vesting before updating any project-cash claim. For TWLO, separate multi-product AI customer wins from Relay-specific paid units and gross profit.
 
 ## Pull request checklist
 

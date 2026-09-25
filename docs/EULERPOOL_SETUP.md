@@ -17,9 +17,9 @@ This document records the dashboard's implementation boundaries. Eulerpool's cur
 1. In the GitHub repository, go to **Settings → Secrets and variables → Actions → Secrets**.
 2. Create a repository secret named `EULERPOOL_API_KEY`. Do not paste its value into chat, code, an issue, or a commit.
 3. Run **Actions → Deploy dashboard to GitHub Pages → Run workflow**, or push a change to `main`.
-4. On the live Gap Readiness page, verify all four tickers, the retrieval date, the fiscal-period labels, and the visible [Data by Eulerpool](https://eulerpool.com/) links.
+4. On the live Gap Readiness page, verify the configured watchlist (currently AKAM, ESTC, DT, FFIV, and TWLO), the retrieval date, the fiscal-period labels, and the visible [Data by Eulerpool](https://eulerpool.com/) links. A ticker may be absent if the provider returns no usable endpoint data.
 
-The pipeline requests the current watchlist (AKAM, ESTC, DT, and FFIV) once per deployment and creates a deployment-specific `data/processed/eulerpool-market-expectations-<build>.json` only inside the Pages build workspace. It also generates an asset-versioned dashboard script for that deployment, so the page binds itself to an immutable snapshot path rather than a CDN-cached filename. The files are ignored by Git: they are served in the deployment artifact but never committed to the public repository. The daily scheduled deployment runs at 22:17 UTC.
+The pipeline requests the current watchlist (AKAM, ESTC, DT, FFIV, and TWLO) once per deployment and creates a deployment-specific `data/processed/eulerpool-market-expectations-<build>.json` only inside the Pages build workspace. It also generates an asset-versioned dashboard script for that deployment, so the page binds itself to an immutable snapshot path rather than a CDN-cached filename. The files are ignored by Git: they are served in the deployment artifact but never committed to the public repository. The daily scheduled deployment runs at 22:17 UTC.
 
 ## What is displayed
 

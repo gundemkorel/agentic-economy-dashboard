@@ -8,6 +8,15 @@
 .economics-gate { background: var(--green); color: #e8f4eb; padding: 20px; min-height: 118px; }
 .economics-gate span, .economics-work-card > span, .economics-detail-label { color: var(--lime); display: block; font-family: "DM Mono", ui-monospace, monospace; font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
 .economics-gate p { font-size: 13px; line-height: 1.5; margin: 13px 0 0; }
+.economics-priority-section { scroll-margin-top: 20px; }
+.economics-priority-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 25px; }
+.economics-priority-card { background: var(--card); border: 1px solid var(--line); padding: 21px; display: flex; flex-direction: column; }
+.economics-priority-state { color: #9b4d29; font-family: "DM Mono", ui-monospace, monospace; font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
+.economics-priority-card h3 { color: var(--green); font-size: 18px; font-weight: 500; letter-spacing: -.03em; margin: 11px 0 7px; }
+.economics-priority-card p { color: var(--muted); font-size: 11px; line-height: 1.55; margin: 10px 0; }
+.economics-priority-card p strong { color: var(--green); display: block; font-family: "DM Mono", ui-monospace, monospace; font-size: 9px; font-weight: 500; letter-spacing: .06em; margin-bottom: 3px; text-transform: uppercase; }
+.economics-priority-card .economics-next-evidence { border-left: 2px solid var(--green-2); padding-left: 10px; }
+.economics-priority-card .economics-source-row { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 13px; }
 .economics-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
 .economics-work-card { background: var(--card); border: 1px solid var(--line); padding: 22px; }
 .economics-work-card > span { color: var(--green-2); }
@@ -48,7 +57,7 @@
 .economics-method-link a { color: var(--green-2); font-size: 12px; text-decoration: none; }
 .economics-method-link a:hover { text-decoration: underline; }
 @media (max-width: 900px) {
-  .economics-gates, .economics-work-grid { grid-template-columns: 1fr; }
+  .economics-gates, .economics-work-grid, .economics-priority-grid { grid-template-columns: 1fr; }
   .economics-gate { min-height: auto; }
 }
 @media (max-width: 650px) {

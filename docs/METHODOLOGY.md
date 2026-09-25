@@ -37,6 +37,8 @@ Its illustrative 5% hurdle is `0.05 × the stated free-cash-flow baseline` with 
 
 Never infer a company-wide 5% cash impact from task count, bot traffic, customer bookings, or disclosed contract value alone. Promotion requires a controlled or otherwise credible estimate of *incremental* paid units, realized yield, marginal cash contribution, and a dated same-provider, fiscal-aligned expectations comparison. Missing disclosure means unverified, not falsified. Keep a negative control for each mechanism—such as ordinary cloud refresh for hardware or existing web/phone channels for agent-assisted orders.
 
+The [research worklog](WORKLOG.md) narrows the current diligence queue to AKAM's project cash return, TWLO's paid usage and gross profit, and dated market expectations. The Economic Map's three priority cards are a reader-facing summary of those open tests. For AKAM, treat the September 2026 8-K as evidence of dedicated cloud-capacity demand, not proof of a CPU-only workload or attractive project NPV; its warrant tranche is conditional, not already vested dilution. For TWLO, distinguish growth in Voice AI *customer* revenue and named multi-product wins from Relay-only contribution profit. A vendor case study's customer outcome is not a controlled estimate of supplier cash.
+
 ## Data distinctions
 
 Every entry must be one of:
@@ -58,6 +60,8 @@ Material contracts and commitments are a separate evidence class. They can estab
 The current Eulerpool adapter publishes a single current, daily static snapshot for the small Gap Readiness watchlist. It must retain the visible `Data by Eulerpool` attribution beside each derived field. Free-plan quote inputs can be delayed or end-of-day, so the dashboard treats them as dated inputs rather than live prices. It stores no raw response or public vendor-data history.
 
 Annual EPS convention and fiscal period are provider-supplied fields, not automatically comparable to company guidance. The dashboard checks the snapshot's fiscal-date ending against the company fiscal year-end configured for each ticker and refuses a guide-versus-consensus read when they differ. A current snapshot alone cannot establish estimate-revision direction or valuation history. Forward P/E is current market context; price targets are supplemental context and are not used to establish a gap score or investment conclusion.
+
+The current watchlist adds TWLO alongside the four core names for market context; it remains a secondary research candidate. A legitimate pre/post test needs the *same provider* and fiscal year, estimate convention, date/time before and after the relevant event, an estimate measure that captures the hypothesized cash effect, and contemporaneous valuation. The approved Eulerpool deployment retains no history and does not supply a free-cash-flow consensus series here. Do not reconstruct a purported pre-event consensus from today's endpoint or republish vendor snapshots outside approved rights; leave the gate open until suitable rights and observations exist.
 
 ## Source interpretation
 

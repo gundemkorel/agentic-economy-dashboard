@@ -30,9 +30,9 @@
       "detail": "Akamai estimates about $1.7B of incremental 2026 capital investment to secure and pre-purchase memory and related components."
     },
     {
-      "label": "Warrant structure",
-      "value": "~2% current · up to ~5%",
-      "detail": "The current commitment is associated with about 2% of common stock on an as-converted basis; further vesting depends on expansion of the relationship."
+      "label": "Conditional warrant",
+      "value": "40% first tranche · up to 7.74M common-equivalent shares",
+      "detail": "The first 40% of warrant shares vests only on the first Project Plan 3 payment, subject to conditions; each later 20% tranche requires an additional $3B commitment. This is not already vested dilution."
     }
   ],
   "nextQuestions": [
@@ -58,8 +58,12 @@
     }
   ],
   "boundary": "A signed commitment proves a customer and creates an obligation. It does not by itself prove recognized revenue, attractive gross margin, cash returns, realized dilution, or that market expectations are too low.",
-  "sourceNote": "The commitment and capital figures come from Akamai's September 24 announcement; its expected timing plan comes from the accompanying company presentation. The schedule is management guidance, not recognized revenue or reported economics.",
+  "sourceNote": "The conditional commitment, service/termination rights, supplier arrangements, and warrant triggers come from Akamai's September 24 Form 8-K; the capex and delivery plan come from the company presentation. The complete services and supplier agreements are expected as September-quarter 10-Q exhibits. These plans are not recognized revenue or reported project economics.",
   "sources": [
+    {
+      "label": "Akamai September 24 Form 8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm"
+    },
     {
       "label": "Akamai expanded Anthropic relationship announcement",
       "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic"

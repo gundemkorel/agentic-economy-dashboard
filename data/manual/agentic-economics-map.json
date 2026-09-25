@@ -7,6 +7,45 @@
     { "label": "2 · Supplier cash", "detail": "Does paid usage survive allowances, discounts, variable costs, capital needs, and dilution?" },
     { "label": "3 · Expectations", "detail": "Do dated, fiscal-aligned estimate vintages and market prices omit the cash benefit?" }
   ],
+  "priorityTests": [
+    {
+      "id": "akam-cash",
+      "title": "AKAM · capacity to owner cash",
+      "state": "Demand evidenced · cash unverified",
+      "observed": "The September 24 8-K describes dedicated cloud capacity and about $11.6B of payments conditional on delivery, service availability, and termination terms. The first warrant tranche is not vested merely because the contract was signed.",
+      "missing": "Full services and project-plan terms, delivered-capacity costs, financing, cash receipts, refresh needs, and realized dilution. The filing does not specify that the entire contract is CPU-only.",
+      "nextEvidence": "September-quarter 10-Q exhibits, then deployment and project cash-flow disclosures against management's 2026–28 capex plan.",
+      "sources": [
+        { "label": "Akamai 8-K · Sep 24", "url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm" },
+        { "label": "Akamai presentation", "url": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7" }
+      ]
+    },
+    {
+      "id": "twlo-cohort",
+      "title": "TWLO · paid usage to gross profit",
+      "state": "Commercial signals · margin unverified",
+      "observed": "Twilio reported 49% FY2025 Voice AI customer-revenue growth from an undisclosed base and named multiple AI-related Q2 2026 customer wins. A vendor case reports more bookings, but not a controlled supplier-profit result.",
+      "missing": "ConversationRelay-only paid minutes, realized net price, incremental carrier/speech cost, channel displacement, and matched net-new completed jobs.",
+      "nextEvidence": "A paid Relay/Voice cohort with usage, revenue, gross profit, and completed outcomes versus comparable non-agent locations or customers.",
+      "sources": [
+        { "label": "Twilio 2026 proxy", "url": "https://investors.twilio.com/static-files/da2d1a42-a366-4cd4-be89-c107b3655b44" },
+        { "label": "Twilio Q2 deck", "url": "https://investors.twilio.com/static-files/7f468de7-8d16-4581-9a85-38e5b317f3ab" },
+        { "label": "Scorpion case", "url": "https://customers.twilio.com/en-us/scorpion-conversation-relay" }
+      ]
+    },
+    {
+      "id": "expectations-history",
+      "title": "AKAM + TWLO · expectation gap",
+      "state": "Current context · no dated pair",
+      "observed": "Company guidance and an attributed current Eulerpool snapshot can be displayed separately. Neither is a pre/post Street free-cash-flow revision history.",
+      "missing": "Same-provider pre- and post-event FCF estimates for matching fiscal years, accounting definitions, valuation observations, and rights to retain or display that history.",
+      "nextEvidence": "Secure permitted point-in-time history, then compare operating cash changes with the same fiscal-year estimate revisions and contemporaneous valuation.",
+      "sources": [
+        { "label": "Twilio Q2 outlook", "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-second-quarter-2026-results" },
+        { "label": "Eulerpool API terms", "url": "https://eulerpool.com/financial-data-api/pricing" }
+      ]
+    }
+  ],
   "workUnits": [
     {
       "title": "Resolve an inbound customer call",
@@ -94,11 +133,11 @@
       "workUnit": "CPU-heavy model or tool workload",
       "resource": "Dedicated cloud capacity",
       "paidUnit": "Service payments after contracted capacity is delivered and available",
-      "observed": "$11.6B conditional, seven-year Anthropic commitment; management plans about $5.5B of related capex. Contract value is not recognized revenue.",
+      "observed": "$11.6B of conditional Anthropic payments for dedicated cloud capacity over seven-year project plans; management plans about $5.5B of related capex. The 8-K does not define this as CPU-only, and contract value is not recognized revenue.",
       "materiality": { "type": "project", "currency": "USD", "contractMillions": 11600, "capexMillions": 5500, "note": "Nominal capital recovery only; excludes discounting, replacement, financing, taxes, and warrant effects." },
-      "cashUnknown": "Power and colocation pass-through, service cost, funding, refresh or residual value, and diluted shares.",
+      "cashUnknown": "Full MSA terms, power and colocation economics, service cost, funding, refresh or residual value, and warrant-adjusted diluted shares. The first warrant tranche depends on a Project Plan 3 payment.",
       "breaker": "Delivered capacity earns too little lifecycle owner cash after the build and warrant effects.",
-      "nextTest": "Read the full MSA and subsequent filings; reconcile payments, capex, cash returns, and pre/post-announcement fiscal-aligned estimates.",
+      "nextTest": "Read the full MSA and project plans when filed with the September-quarter 10-Q; reconcile payments, capex, cash returns, and pre/post-announcement fiscal-aligned estimates.",
       "expectations": "No matched dated FCF-estimate revision panel; the announcement and price reaction alone do not prove mispricing.",
       "sources": [
         { "label": "Akamai announcement · Sep 24", "url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand" },
@@ -114,7 +153,7 @@
       "workUnit": "Resolve an inbound customer call",
       "resource": "ConversationRelay and Voice minutes",
       "paidUnit": "Relay list price of $0.07 per minute, with Voice billed separately",
-      "observed": "A vendor-hosted Scorpion case reports 6,500 otherwise-missed appointments; it is not a controlled estimate of Twilio's incremental profit.",
+      "observed": "Twilio reports 49% FY2025 Voice AI customer-revenue growth from an undisclosed base and named Q2 2026 AI-related wins. A vendor-hosted Scorpion case reports 6,500 otherwise-missed appointments; none isolates incremental ConversationRelay gross profit.",
       "materiality": { "type": "unit", "currency": "USD", "basis": "FY2025 company-reported FCF", "baselineMillions": 945.4, "targetPercent": 5, "pricePerUnit": 0.07, "assumedCashConversion": 0.5, "unit": "extra paid Relay minutes per year", "note": "List price and 50% incremental cash conversion are illustrative; realized yield and margin are undisclosed." },
       "cashUnknown": "Incremental paid Relay minutes, net price, carrier and speech costs, and channel displacement.",
       "breaker": "Agents complete more jobs but shorten calls, reroute customers to APIs, or replace existing paid channels.",
@@ -123,7 +162,9 @@
       "sources": [
         { "label": "Relay pricing", "url": "https://www.twilio.com/en-us/products/conversational-ai/pricing" },
         { "label": "Scorpion case", "url": "https://customers.twilio.com/en-us/scorpion-conversation-relay" },
-        { "label": "FY2025 results", "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-fourth-quarter-and-full-year-2025-results" }
+        { "label": "FY2025 results", "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-fourth-quarter-and-full-year-2025-results" },
+        { "label": "Twilio 2026 proxy", "url": "https://investors.twilio.com/static-files/da2d1a42-a366-4cd4-be89-c107b3655b44" },
+        { "label": "Twilio Q2 deck", "url": "https://investors.twilio.com/static-files/7f468de7-8d16-4581-9a85-38e5b317f3ab" }
       ]
     },
     {

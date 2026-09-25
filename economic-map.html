@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?rev=economic-map-20260925" />
     <link rel="stylesheet" href="decision-gates.css" />
-    <link rel="stylesheet" href="economic-map.css?rev=economic-map-20260925" />
+    <link rel="stylesheet" href="economic-map.css?rev=proof-gates-20260925" />
   </head>
   <body data-page="economic-map">
     <div class="shell">
@@ -26,9 +26,15 @@
         </section>
 
         <section class="notice economics-notice"><strong id="economics-status">Loading research state…</strong><span>Research leads are not stock recommendations. No company below has a demonstrated expectation gap. <span id="economics-as-of"></span></span></section>
-        <p class="economics-quick-links"><a href="#capture-matrix">Jump to company capture matrix →</a><a href="#resource-layers">See resource layers →</a></p>
+        <p class="economics-quick-links"><a href="#priority-tests">Start with today's proof tests →</a><a href="#capture-matrix">Company capture matrix →</a><a href="#resource-layers">Resource layers →</a></p>
 
         <section class="economics-gates" id="economics-gates" aria-label="Three evidence gates" aria-live="polite"><div class="loading-state">Loading evidence gates…</div></section>
+
+        <section class="section-block economics-priority-section" id="priority-tests">
+          <div class="section-heading"><div><p class="section-number">Current research focus</p><h2>Three tests that can change the call</h2></div><span class="tag warning">All open</span></div>
+          <p class="section-lede">What we know, what remains missing, and the next evidence event. A stronger demand signal is not yet a cash-flow or underpricing conclusion.</p>
+          <div class="economics-priority-grid" id="economics-priority-tests" aria-live="polite"><div class="loading-state">Loading priority tests…</div></div>
+        </section>
 
         <section class="section-block economics-work-section">
           <div class="section-heading"><div><p class="section-number">Start with the task</p><h2>Three concrete work units</h2></div><span class="tag neutral">Examples, not forecasts</span></div>

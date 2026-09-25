@@ -8,12 +8,25 @@ const positive = (value) => typeof value === "number" && Number.isFinite(value) 
 assert.match(map.asOfDate, /^\d{4}-\d{2}-\d{2}$/);
 assert.ok(present(map.status) && present(map.purpose));
 assert.equal(map.gates.length, 3);
+assert.equal(map.priorityTests.length, 3);
 assert.ok(map.workUnits.length >= 3);
 assert.ok(map.layers.length >= 8);
 assert.ok(map.companies.length >= 5);
 assert.ok(map.methodology.length >= 3);
 
 const tickers = new Set();
+const priorityIds = new Set();
+for (const test of map.priorityTests) {
+  assert.ok(present(test.id) && !priorityIds.has(test.id), `Duplicate or missing priority test id: ${test.id}`);
+  priorityIds.add(test.id);
+  for (const field of ["title", "state", "observed", "missing", "nextEvidence"]) {
+    assert.ok(present(test[field]), `${test.id}: missing ${field}`);
+  }
+  assert.ok(test.sources.length >= 2, `${test.id}: at least two sources required`);
+  for (const source of test.sources) {
+    assert.ok(present(source.label) && source.url.startsWith("https://"), `${test.id}: invalid source`);
+  }
+}
 for (const company of map.companies) {
   assert.ok(present(company.ticker) && !tickers.has(company.ticker), `Duplicate or missing ticker: ${company.ticker}`);
   tickers.add(company.ticker);

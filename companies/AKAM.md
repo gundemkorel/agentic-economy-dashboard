@@ -25,7 +25,8 @@ It does **not** yet change the investment conclusion:
 
 - Akamai said the agreement has **no impact on FY2026 revenue guidance**. A contract amount is not recognized revenue. Its September presentation sets out an expected service start in late Q2 2027, $150–300 million of FY2027 delivery, and full run-rate by end-2028—but those remain management estimates rather than recorded revenue, price, gross margin, or usage.
 - Akamai estimates roughly **$5.5 billion of capex** related to the current commitment, including about **$1.7 billion in Q4 2026** to secure and pre-purchase memory and related components before the planned service start. This makes cash conversion and return on capacity even more important.
-- The agreement includes a warrant associated with about **2% of common stock on an as-converted basis** under the current commitment, with potential vesting up to about **5%** if the relationship expands. Treat any per-share impact as unresolved until the accounting, vesting, and financing effects are disclosed.
+- The 8-K describes a warrant for up to **7.74 million common-equivalent shares**. Its first 40% tranche vests only after Anthropic's first payment under Project Plan 3, subject to conditions; each of the remaining 20% tranches requires a further $3 billion commitment. Thus the roughly 2% initial tranche is **not already vested dilution**. Actual per-share impact depends on payment, exercise, share treatment, and financing.
+- The 8-K calls the service **dedicated cloud computing capacity and related managed support**, not a CPU-only contract. Akamai expects to file the full MSA and project plans with its September-quarter 10-Q; detailed hardware mix, service costs, and project cash returns remain unavailable.
 
 The live [Akamai decision desk and Q3 scorecard](https://gundemkorel.github.io/agentic-economy-dashboard/models.html) keeps these facts separate from Q3 results and the scenario lab. The immediate read is **stronger demand evidence; unchanged early-capture status**.
 
@@ -76,6 +77,7 @@ When Q3 results publish, append the company-reported record to data/manual/compa
 - [Akamai Q2 2026 results](https://www.ir.akamai.com/news-releases/news-release-details/akamai-reports-second-quarter-2026-financial-results)
 - [Akamai Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1086222/000108622226000086/akam-20260630.htm)
 - [Akamai expanded Anthropic relationship announcement](https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic)
+- [Akamai September 24 Form 8-K](https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm)
 - [Akamai expanded-relationship presentation](https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7)
 - [Akamai Bot Directory: more granular AI-bot controls](https://www.akamai.com/blog/security/2026/sep/introducing-more-granular-controls-ai-bot-traffic)
 - [Akamai agentic-security framework](https://www.akamai.com/newsroom/press-release/akamai-unveils-agentic-security-framework-to-power-trusted-ai-driven-interactions-and-commerce)

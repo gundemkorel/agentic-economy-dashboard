@@ -100,7 +100,7 @@
       "number": "06",
       "title": "Interrogate concentration, warrant, and fulfillment risk",
       "question": "Did the large CIS contracts create dependency, timing risk, capacity constraints, financing strain, or warrant economics that weaken the quality of the reported growth?",
-      "baseline": "The current Anthropic commitment is associated with about 2% of common stock on an as-converted basis, with potential vesting up to about 5% if the relationship expands. Akamai also identifies fulfillment, procurement, and projected-capex risk in its filings.",
+      "baseline": "The first 40% of the warrant shares vests only after the first Project Plan 3 payment, subject to conditions; three further 20% tranches require successive additional $3B commitments. Up to 7.74M common-equivalent shares could ultimately be issued. The full MSA and supplier agreements are expected in the September-quarter 10-Q. Akamai also identifies fulfillment, procurement, and projected-capex risk.",
       "upgrade": "Management explains deployment timing, diversification, capacity readiness, funding, and warrant accounting without revealing an adverse concentration or fulfillment dependency.",
       "notEnough": "A larger commitment headline with no information about timing, service obligations, concentration, warrant treatment, or cash needs.",
       "downgrade": "Customer delay, cancellation, concentration, hardware constraint, warrant impact, or contract economics indicate the commitment is less valuable or more capital-intensive than implied.",

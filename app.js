@@ -240,12 +240,13 @@ function renderExpectationRow(row, marketSnapshot) {
   const liveRows = Array.isArray(marketSnapshot?.rows) ? marketSnapshot.rows : [];
   const marketRecord = liveRows.find((record) => record?.ticker === row.ticker && record?.status === "observed");
   const providerName = marketSnapshot?.provider?.name || "Market-data";
-  const streetEstimates = marketRecord ? renderMarketEstimate(marketRecord, marketSnapshot) : escapeHtml(row.streetEstimates);
-  const valuation = marketRecord ? renderMarketValuation(marketRecord, marketSnapshot) : escapeHtml(row.valuation);
+  const noMarketContext = marketSnapshot ? "No usable provider record for this ticker." : "No current provider snapshot for this deployment.";
+  const streetEstimates = marketRecord ? renderMarketEstimate(marketRecord, marketSnapshot) : escapeHtml(noMarketContext);
+  const valuation = marketRecord ? renderMarketValuation(marketRecord, marketSnapshot) : escapeHtml(noMarketContext);
   const estimateYearEnd = marketRecord?.annualEstimate?.fiscalDateEnding;
   const fiscalMismatch = Boolean(marketRecord && row.companyFiscalYearEnd && estimateYearEnd && !String(estimateYearEnd).endsWith(row.companyFiscalYearEnd));
-  const alignmentRead = fiscalMismatch ? "Current snapshot ends " + formatDate(estimateYearEnd) + "; " + (row.companyName || row.ticker) + "'s fiscal year ends " + (row.companyFiscalYearEndLabel || row.companyFiscalYearEnd) + ". Do not compare this estimate with company guidance." : null;
-  const gapRead = !marketRecord ? "No current market context — not decision-ready." : (alignmentRead || "Fiscal period aligns, but this is a current snapshot only. Estimate-revision and valuation history are still required before a gap call.");
+  const alignmentRead = !estimateYearEnd ? "Current provider record has no fiscal-end date. Do not compare it with company guidance." : (fiscalMismatch ? "Current snapshot ends " + formatDate(estimateYearEnd) + "; " + (row.companyName || row.ticker) + "'s fiscal year ends " + (row.companyFiscalYearEndLabel || row.companyFiscalYearEnd) + ". Do not compare this estimate with company guidance." : null);
+  const gapRead = !marketRecord ? "No current market context — not decision-ready." : (alignmentRead || "Fiscal year-end appears aligned, but accounting convention, estimate-revision history, and valuation history are still required before a gap call.");
   const tone = " caution";
   return "<tr><td><strong>" + escapeHtml(row.ticker) + "</strong></td><td>" + escapeHtml(row.agenticEvidence) + "</td><td>" + managementOutlook + "</td><td>" + streetEstimates + "</td><td>" + valuation + "</td><td><span class=\"read" + tone + "\"><i></i>" + escapeHtml(gapRead) + "</span></td></tr>";
 }
@@ -257,7 +258,7 @@ function renderProvider(provider, marketSnapshot) {
   const isLiveProvider = provider.id === marketSnapshot?.provider?.id && marketRows.length > 0;
   const status = isLiveProvider ? "Active · current snapshot" : provider.status;
   const tone = isLiveProvider ? "positive" : (provider.tone || "neutral");
-  const description = isLiveProvider ? "A current " + (marketSnapshot?.provider?.name || provider.name) + " snapshot is rendered for " + marketRows.length + " core ticker" + (marketRows.length === 1 ? "" : "s") + ". It supplies market context only: fiscal alignment, accounting convention, estimate revisions, and valuation history remain separate requirements for a gap call." : provider.description;
+  const description = isLiveProvider ? "A current " + (marketSnapshot?.provider?.name || provider.name) + " snapshot is rendered for " + marketRows.length + " watchlist ticker" + (marketRows.length === 1 ? "" : "s") + ". It supplies market context only: fiscal alignment, accounting convention, estimate revisions, and valuation history remain separate requirements for a gap call." : provider.description;
   return "<article class=\"provider-card\"><div class=\"provider-card-top\"><h3>" + escapeHtml(provider.name) + "</h3><span class=\"tag " + escapeHtml(tone) + "\">" + escapeHtml(status) + "</span></div><div class=\"provider-capabilities\">" + capabilities + "</div><p>" + escapeHtml(description) + "</p>" + source + "</article>";
 }
 
@@ -523,6 +524,13 @@ function renderEconomicGate(gate) {
   return "<article class=\"economics-gate\"><span>" + escapeHtml(gate.label) + "</span><p>" + escapeHtml(gate.detail) + "</p></article>";
 }
 
+function renderEconomicPriorityTest(item) {
+  const sources = item.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("");
+  return "<article class=\"economics-priority-card\"><span class=\"economics-priority-state\">" + escapeHtml(item.state) + "</span><h3>" + escapeHtml(item.title) + "</h3>" +
+    "<p><strong>Observed</strong>" + escapeHtml(item.observed) + "</p><p><strong>Still missing</strong>" + escapeHtml(item.missing) + "</p>" +
+    "<p class=\"economics-next-evidence\"><strong>Next evidence</strong>" + escapeHtml(item.nextEvidence) + "</p><div class=\"economics-source-row\">" + sources + "</div></article>";
+}
+
 function renderEconomicWorkUnit(unit) {
   return "<article class=\"economics-work-card\"><span>Work unit</span><h3>" + escapeHtml(unit.title) + "</h3><p class=\"economics-path\">" + escapeHtml(unit.path) + "</p><p>" + escapeHtml(unit.question) + "</p><small>Resource layers: " + escapeHtml(unit.layers) + "</small></article>";
 }
@@ -559,6 +567,7 @@ async function initEconomicMap() {
   $("#economics-status").textContent = data.status;
   $("#economics-as-of").textContent = "Reviewed " + formatDate(data.asOfDate) + ".";
   $("#economics-gates").innerHTML = data.gates.map(renderEconomicGate).join("");
+  $("#economics-priority-tests").innerHTML = data.priorityTests.map(renderEconomicPriorityTest).join("");
   $("#economics-work-units").innerHTML = data.workUnits.map(renderEconomicWorkUnit).join("");
   $("#economics-layers-body").innerHTML = data.layers.map(renderEconomicLayer).join("");
   $("#economics-capture-body").innerHTML = data.companies.map(renderEconomicCompanyRow).join("");
@@ -586,6 +595,9 @@ async function initExpectations() {
       attribution.textContent = marketSnapshot.provider.attributionText + " ↗";
       attribution.hidden = false;
     }
+  } else {
+    $("#market-data-status").textContent = "No current market snapshot for this deployment";
+    $("#market-data-notice").textContent = "Company-issued guidance is shown below. The provider returned no usable current records or its protected feed was unavailable; no consensus or valuation comparison is possible.";
   }
   $("#expectations-body").innerHTML = data.rows.map((row) => renderExpectationRow(row, marketSnapshot)).join("");
   const providerGrid = $("#provider-grid");

@@ -1,5 +1,5 @@
 {
-  "asOfDate": "2026-09-24",
+  "asOfDate": "2026-09-25",
   "definition": "Company-issued guidance is populated from primary earnings releases. Eulerpool is the configured source for a daily, attributed, current consensus and valuation-context snapshot; its fields remain unpopulated until the protected ingestion workflow completes successfully. Management outlook is not analyst consensus, and a current snapshot is not a substitute for fiscal-aligned revision or valuation history.",
   "rows": [
     {
@@ -77,6 +77,25 @@
       "gapRead": "Gateway product relevance is established, but adoption, attach, and revenue disclosure are required before calling an expectation gap",
       "liveGapRead": "Gateway product relevance is established, but adoption, attach, and revenue disclosure are required before calling an expectation gap.",
       "state": "Monitor · fiscal alignment required"
+    },
+    {
+      "ticker": "TWLO",
+      "companyName": "Twilio",
+      "companyFiscalYearEnd": "12-31",
+      "companyFiscalYearEndLabel": "December 31",
+      "agenticEvidence": "FY2025 Voice AI customer revenue +49% from undisclosed base; Q2 2026 deck names AI-related multi-product wins, but no Relay gross-profit cohort",
+      "managementGuidance": {
+        "issuedDate": "2026-08-06",
+        "period": "Q3 / FY2026",
+        "outlook": "Q3 revenue $1.505–$1.515B. FY2026 revenue growth 18%–18.5%; company-defined FCF $1.135–$1.155B. This is company guidance, not analyst consensus or agent-attributable FCF.",
+        "sourceLabel": "Twilio Q2 2026 results",
+        "sourceUrl": "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-second-quarter-2026-results"
+      },
+      "streetEstimates": "Eulerpool selected · current snapshot only",
+      "valuation": "Eulerpool selected · current snapshot only",
+      "gapRead": "Commercial activity is visible, but agent-paid gross profit and dated, same-period FCF estimate history are absent",
+      "liveGapRead": "Commercial activity is visible, but agent-paid gross profit and dated, same-period FCF estimate history are absent.",
+      "state": "Monitor · focused diligence"
     }
   ]
 }

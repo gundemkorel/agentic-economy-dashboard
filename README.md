@@ -19,7 +19,7 @@ The project separately tracks:
 9. Investment Committee — a structured discussion board covering model mediation, compute mix, tools and network demand, control planes, observability, market structure, and expectation gaps.
 10. Economic Map — an agentic bill of materials and cross-company capture matrix that makes the paid unit, illustrative cash-flow hurdle, missing proof, and thesis breaker visible together.
 
-Read the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
+Read the [compact research worklog](docs/WORKLOG.md) for the current objective and priorities, plus the full [thesis](docs/THESIS.md), [definitions](docs/DEFINITIONS.md), [methodology](docs/METHODOLOGY.md), [source guide](docs/DATA_SOURCES.md), [update playbook](docs/UPDATE_PLAYBOOK.md), [Eulerpool personal-use setup](docs/EULERPOOL_SETUP.md), and [FMP public-display setup](docs/FMP_SETUP.md).
 
 ## Run locally
 
@@ -79,7 +79,7 @@ The [Research Queue page](research-queue.html) keeps the wider universe usable: 
 
 The [Investment Committee board](committee.html) is a source-controlled discussion canvas for a professional research session. It does not offer public comments or create a conviction score. Instead, each live debate documents the proposed causal chain, evidence required, strongest countercase, and company-discovery lens. Its structured source is `data/manual/investment-committee-board.json`.
 
-The [Economic Map](economic-map.html) is the next research layer. It begins with a concrete agent work unit, maps eight resource layers, and compares seven company mechanisms without ranking stocks by expected return. Its structured source is `data/manual/agentic-economics-map.json`. The 5% cash-flow hurdles are explicitly assumed materiality screens, not forecasts; no candidate has an established expectations gap. Run `node scripts/validate-economic-map.mjs` after updating it.
+The [Economic Map](economic-map.html) is the next research layer. It begins with three current proof tests, then a concrete agent work unit, eight resource layers, and seven company mechanisms without ranking stocks by expected return. Its structured source is `data/manual/agentic-economics-map.json`. The 5% cash-flow hurdles are explicitly assumed materiality screens, not forecasts; no candidate has an established expectations gap. TWLO is also in the current Gap Readiness watchlist, but remains a secondary candidate and the approved market feed still lacks retained revision history. Run `node scripts/validate-economic-map.mjs` after updating the map.
 
 ## GitHub Pages
 

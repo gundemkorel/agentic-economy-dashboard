@@ -7,7 +7,7 @@
       "companyName": "Akamai",
       "companyFiscalYearEnd": "12-31",
       "companyFiscalYearEndLabel": "December 31",
-      "agenticEvidence": "Q2 CIS revenue +39%; security +10%; AI-infrastructure commitments and agent-traffic controls disclosed",
+      "agenticEvidence": "Q2 CIS revenue +39%; security +10%; September 24 Anthropic conditional $11.6B capacity commitment and related ~$5.5B planned capex disclosed",
       "managementGuidance": {
         "issuedDate": "2026-08-06",
         "period": "Q3 / FY2026",
@@ -17,8 +17,8 @@
       },
       "streetEstimates": "Eulerpool selected · awaiting first snapshot",
       "valuation": "Eulerpool selected · awaiting first snapshot",
-      "gapRead": "Early capture evidence, but contract conversion and margin proof are required before calling an expectation gap",
-      "liveGapRead": "Early capture evidence; do not call an expectation gap until CIS commitments convert and the growth / margin trade-off is visible.",
+      "gapRead": "The new contract is a demand signal, but project cash return and matched pre/post estimate vintages are absent; no expectation-gap call",
+      "liveGapRead": "New conditional contract does not prove cash return or underpricing; matched pre/post estimate vintages are absent.",
       "state": "Monitor · early capture"
     },
     {

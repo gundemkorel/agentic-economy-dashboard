@@ -1,0 +1,23 @@
+{
+  "asOfDate": "2026-09-25",
+  "title": "Anthropic project: minimum cash-recovery hurdle",
+  "classification": "Company estimates + our hypothetical sensitivity",
+  "contractedRevenueBillions": 11.6,
+  "plannedCapexBillions": 5.5,
+  "extraCapexStressBillions": 1,
+  "retentionScenariosPercent": [40, 50, 60],
+  "definition": "Pre-capex cash retention is the share of ultimately collected customer payments left after all contract-attributable cash service costs, cash taxes, and working-capital needs, but before project capex, financing, and warrant effects.",
+  "condition": "The calculation assumes the entire conditional $11.6B is delivered, earned, and collected. If less is collected, the required retention rate rises.",
+  "interpretation": "These are nominal recovery floors, not an IRR, NPV, attractive-return threshold, or per-share value. They omit the timing cost of front-loaded capex, financing, equipment refresh, and the contingent warrant. No retention rate or overrun here is management guidance.",
+  "nextProof": "Before estimating a project return, obtain the full payment and service schedule, cash cost-to-serve, refresh and financing plan, collection and termination conditions, and realized warrant/share effects.",
+  "sources": [
+    {
+      "label": "Akamai September 24 Form 8-K — conditional payments and seven-year plans",
+      "url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm"
+    },
+    {
+      "label": "Akamai expanded-relationship presentation — estimated capex and ramp",
+      "url": "https://www.ir.akamai.com/static-files/59654fd2-bd7c-4090-9ded-737b72ab2bb7"
+    }
+  ]
+}

@@ -63,6 +63,8 @@ Annual EPS convention and fiscal period are provider-supplied fields, not automa
 
 The current watchlist adds TWLO alongside the four core names for market context; it remains a secondary research candidate. A legitimate pre/post test needs the *same provider* and fiscal year, estimate convention, date/time before and after the relevant event, an estimate measure that captures the hypothesized cash effect, and contemporaneous valuation. The approved Eulerpool deployment retains no history and does not supply a free-cash-flow consensus series here. Do not reconstruct a purported pre-event consensus from today's endpoint or republish vendor snapshots outside approved rights; leave the gate open until suitable rights and observations exist.
 
+The [event-pair protocol](EXPECTATION_GAP_PROTOCOL.md) states the minimum AKAM and TWLO comparison and the present provider/rights limits. AKAM's [cash-recovery screen](../models.html) uses company-disclosed conditional commitment and estimated capex with explicitly hypothetical retention rates. A positive nominal surplus is not a discounted return or proof of per-share value.
+
 ## Source interpretation
 
 No one provider represents the entire internet or enterprise economy. Cloudflare, Fastly, Akamai, and Zscaler are complementary samples. A disagreement may be a clue rather than noise.

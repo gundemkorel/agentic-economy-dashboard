@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="expectations.css" />
-    <link rel="stylesheet" href="decision-gates.css" />
+    <link rel="stylesheet" href="decision-gates.css?v=akam-hurdle-v3-20260925" />
   </head>
   <body data-page="model">
     <div class="shell">
@@ -35,6 +35,14 @@
           <div class="akam-decision-question-grid" id="akam-decision-questions" aria-live="polite"><div class="loading-state">Loading next diligence questions…</div></div>
           <p class="akam-decision-boundary" id="akam-decision-boundary">Loading decision boundary…</p>
           <div class="model-source-list" id="akam-decision-sources"></div>
+        </section>
+        <section class="section-block akam-hurdle-section">
+          <div class="section-heading"><div><p class="section-number">Minimum viability screen</p><h2>How much cash must the deal retain?</h2></div><span class="tag warning">Hypothetical · nominal</span></div>
+          <p class="section-lede">If every conditional dollar of the $11.6B commitment is earned and collected, what share must remain after cash service costs and taxes to recover Akamai’s estimated project capex? This is a recovery floor, not a return forecast.</p>
+          <div class="akam-hurdle-grid" id="akam-hurdle-grid" aria-live="polite"><div class="loading-state">Loading cash-recovery hurdle…</div></div>
+          <div class="gap-table-wrap"><table class="gap-table akam-hurdle-table"><thead><tr><th>Assumed pre-capex cash retention</th><th id="akam-hurdle-base-head">After estimated capex</th><th id="akam-hurdle-stress-head">After extra-capex stress</th></tr></thead><tbody id="akam-hurdle-body"><tr><td colspan="3">Loading sensitivity…</td></tr></tbody></table></div>
+          <div class="akam-hurdle-boundary" id="akam-hurdle-boundary">Loading calculation boundary…</div>
+          <div class="model-source-list" id="akam-hurdle-sources"></div>
         </section>
         <section class="section-block model-baseline-section">
           <div class="section-heading"><div><p class="section-number">Reported baseline</p><h2>Facts used as a starting point</h2></div><span class="tag neutral">Company-reported</span></div>

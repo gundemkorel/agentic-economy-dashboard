@@ -14,6 +14,8 @@ The research direction has narrowed from broad category coverage to three proof 
 
 ## Decisions this cycle
 
+- Add a compact AKAM nominal cash-recovery screen: if all conditional $11.6B is earned and collected, the estimated $5.5B capex alone requires 47.4% pre-capex cash retention; a hypothetical extra $1B of capex raises that floor to 56.0%. The screen is not an NPV, IRR, or evidence that the deal earns an attractive return. Do not add its hypothetical numbers to the company scenario forecast.
+- Formalize the [expectation-gap event-pair protocol](EXPECTATION_GAP_PROTOCOL.md). Today's Eulerpool snapshot is not a September 23 pre-event estimate. FMP's stable estimates feed is also described by FMP as current state, so neither should be used to invent an AKAM pre/post revision. Leave the gap unproven.
 - Keep AKAM and TWLO as *focused diligence*, not recommendations. The new Twilio commercial evidence improves proof of demand, but does not close the paid-minute or incremental-cash gate.
 - Add TWLO to current Gap Readiness coverage so its fiscal period and management outlook are visible next to a permitted current market snapshot. This does not create a historical expectation gap.
 - Correct Akamai warrant shorthand: the first 40% tranche of the warrant shares is conditional on the first payment under Project Plan 3; three further 20% tranches require successive additional $3B commitments. “About 2% current” must not be read as already vested dilution.

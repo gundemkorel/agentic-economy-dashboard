@@ -69,6 +69,8 @@ The Gap Readiness page uses Eulerpool for a compact current daily snapshot of co
 
 The Akamai scenario lab reads company-issued reported baselines and applies transparent project assumptions. When a current attributed market snapshot is available, it uses that price only at render time for a simplified reverse-expectations bridge; it does not store vendor price history or present a target price.
 
+The AKAM page also includes a small nominal cash-recovery screen for the Anthropic project. It calculates the pre-capex cash-retention rate needed to recover estimated project capex **if the entire conditional commitment is collected**, plus an explicitly hypothetical extra-capex stress. It is not a discounted project return. The [expectation-gap protocol](docs/EXPECTATION_GAP_PROTOCOL.md) records what same-provider, pre/post estimate history and rights would be needed before claiming market underpricing.
+
 The same Akamai page now includes a pre-release Q3 earnings scorecard. It compares Q3 results with the Q2 reported baseline and company-issued guide, tests CIS conversion, paid agent-control monetization, delivery trends, cash returns, and contract-fulfillment risk, then records an evidence upgrade, watch, or downgrade without treating any outcome as an expectation-gap call.
 
 Material non-earnings developments sit above that scorecard in a compact current decision desk. The desk records what was announced, what it does not establish, and the few questions that can change the capture case. Its structured source is `data/manual/akam-decision-desk.json`; a contract headline is never mechanically added to revenue, free-cash-flow, share-count, or expectation-gap assumptions.

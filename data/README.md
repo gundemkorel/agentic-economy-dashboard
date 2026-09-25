@@ -22,6 +22,8 @@ Company baselines belong in data/manual/company-capture-history.json and are app
 
 `data/manual/agentic-economics-map.json` powers the Economic Map page. Its `priorityTests` summarize the three current proof gaps in `docs/WORKLOG.md`; update them only from dated evidence. Update the work-unit examples and resource layers when an architecture actually changes; update a company only from a dated primary source. Keep paid units, cash-flow baselines, list or hypothetical prices, assumed incremental cash conversion, missing proof, thesis breakers, and expectations status in separate fields. The page derives illustrative 5% materiality thresholds from the numeric fields. Run `node scripts/validate-economic-map.mjs` after every edit. It contains no licensed market-data snapshots or consensus history.
 
+The AKAM deal-hurdle data file powers the minimum cash-recovery screen. Only the disclosed conditional commitment and management-estimated capex are company inputs; retention rates and extra capex are hypothetical. Keep it reconciled with the Economic Map's AKAM project amounts and run the deal-hurdle validator after every edit. No provider consensus or current market quote belongs in this file.
+
 Recommended observation fields for future adapters:
 
 ~~~json

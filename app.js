@@ -714,6 +714,27 @@ function initAkamDecisionDesk(desk) {
   $("#akam-decision-sources").innerHTML = "<div class=\"model-source-notes\"><p>" + escapeHtml(desk.sourceNote) + "</p></div><div class=\"company-sources\">" + desk.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";
 }
 
+function initAkamDealHurdle(hurdle) {
+  const revenue = finiteNumber(hurdle.contractedRevenueBillions);
+  const capex = finiteNumber(hurdle.plannedCapexBillions);
+  const extraCapex = finiteNumber(hurdle.extraCapexStressBillions);
+  if (!(revenue > 0 && capex >= 0 && extraCapex >= 0)) throw new Error("Invalid AKAM deal hurdle inputs");
+  const cards = [
+    ["Base recovery floor", ((capex / revenue) * 100).toFixed(1) + "%", "$" + capex.toFixed(1) + "B estimated capex ÷ $" + revenue.toFixed(1) + "B conditional commitment"],
+    ["With $" + extraCapex.toFixed(0) + "B extra capex", (((capex + extraCapex) / revenue) * 100).toFixed(1) + "%", "A hypothetical cost overrun, not company guidance"]
+  ];
+  $("#akam-hurdle-base-head").textContent = "After estimated $" + capex.toFixed(1) + "B capex";
+  $("#akam-hurdle-stress-head").textContent = "After $" + extraCapex.toFixed(0) + "B extra-capex stress";
+  $("#akam-hurdle-grid").innerHTML = cards.map(([label, value, note]) => "<article class=\"akam-hurdle-card\"><span>" + escapeHtml(label) + "</span><strong>" + escapeHtml(value) + "</strong><small>" + escapeHtml(note) + "</small></article>").join("");
+  const result = (retention, spending) => {
+    const surplus = revenue * retention / 100 - spending;
+    return (surplus < 0 ? "−$" : "+$") + Math.abs(surplus).toFixed(2) + "B " + (surplus < 0 ? "shortfall" : "surplus");
+  };
+  $("#akam-hurdle-body").innerHTML = hurdle.retentionScenariosPercent.map((retention) => "<tr><td data-label=\"Assumed retention\">" + escapeHtml(retention.toFixed(0) + "%") + "<span class=\"table-subtle\">Hypothetical</span></td><td data-label=\"Estimated capex\">" + escapeHtml(result(retention, capex)) + "</td><td data-label=\"+$" + escapeHtml(extraCapex.toFixed(0)) + "B capex stress\">" + escapeHtml(result(retention, capex + extraCapex)) + "</td></tr>").join("");
+  $("#akam-hurdle-boundary").innerHTML = [hurdle.definition, hurdle.condition, hurdle.interpretation].map((note) => "<p>" + escapeHtml(note) + "</p>").join("");
+  $("#akam-hurdle-sources").innerHTML = "<div class=\"model-source-notes\"><p><strong>Next proof:</strong> " + escapeHtml(hurdle.nextProof) + "</p></div><div class=\"company-sources\">" + hurdle.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";
+}
+
 function initAkamScorecard(scorecard) {
   $("#akam-scorecard-status").textContent = scorecard.status;
   $("#akam-scorecard-purpose").textContent = scorecard.purpose;
@@ -746,12 +767,13 @@ function renderReverseExpectationRow(multiple, baseline, currentPrice, reference
 }
 
 async function initModel() {
-  const [model, eulerpoolSnapshot, fmpSnapshot, scorecard, decisionDesk] = await Promise.all([
+  const [model, eulerpoolSnapshot, fmpSnapshot, scorecard, decisionDesk, dealHurdle] = await Promise.all([
     fetchJson("data/manual/akam-scenario-lab.json"),
     fetchJson(eulerpoolSnapshotPath).catch(() => null),
     fetchJson("data/processed/fmp-market-expectations.json").catch(() => null),
     fetchJson("data/manual/akam-q3-scorecard.json"),
-    fetchJson("data/manual/akam-decision-desk.json")
+    fetchJson("data/manual/akam-decision-desk.json"),
+    fetchJson("data/manual/akam-deal-hurdle.json")
   ]);
   const snapshots = [eulerpoolSnapshot, fmpSnapshot];
   const marketSnapshot = snapshots.find((snapshot) => Array.isArray(snapshot?.rows) && snapshot.rows.some((row) => row?.ticker === "AKAM" && row?.status === "observed")) || null;
@@ -760,6 +782,7 @@ async function initModel() {
   const attribution = $("#model-attribution");
   $("#model-baseline-grid").innerHTML = renderModelBaseline(model.reportedBaseline);
   initAkamDecisionDesk(decisionDesk);
+  initAkamDealHurdle(dealHurdle);
   initAkamScorecard(scorecard);
   $("#model-scenarios-body").innerHTML = model.scenarios.map((scenario) => renderModelScenario(scenario, model.reportedBaseline, currentPrice)).join("");
   $("#model-source-list").innerHTML = "<div class=\"model-source-notes\">" + model.reportedBaseline.notes.map((note) => "<p>" + escapeHtml(note) + "</p>").join("") + "</div><div class=\"company-sources\">" + model.reportedBaseline.sources.map((source) => "<a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noreferrer\">" + escapeHtml(source.label) + " ↗</a>").join("") + "</div>";

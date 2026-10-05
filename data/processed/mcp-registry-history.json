@@ -36,6 +36,24 @@
       "isObserved": true,
       "isEstimate": false,
       "notes": "Do not interpret as production agent activity."
+    },
+    {
+      "metricId": "mcp_registered_server_count",
+      "metricName": "Registered MCP servers",
+      "category": "enterprise_adoption_control",
+      "value": 134492,
+      "unit": "registered servers",
+      "periodStart": "2026-10-05",
+      "periodEnd": "2026-10-05",
+      "asOfDate": "2026-10-05",
+      "sourceName": "Model Context Protocol Registry",
+      "sourceUrl": "https://registry.modelcontextprotocol.io/v0.1/servers",
+      "sourceType": "public registry",
+      "retrievalDate": "2026-10-05T21:29:57.162Z",
+      "methodology": "Counts registered server records returned by the public registry endpoint. This is an observed ecosystem-supply proxy, not a measure of active production usage.",
+      "isObserved": true,
+      "isEstimate": false,
+      "notes": "Do not interpret as production agent activity."
     }
   ],
   "metricName": "Registered MCP servers",

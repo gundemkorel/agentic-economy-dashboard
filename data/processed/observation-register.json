@@ -1,5 +1,5 @@
 {
-  "asOfDate": "2026-10-05",
+  "asOfDate": "2026-10-11",
   "definition": "The observation register records what has actually been collected, when another point becomes comparable, and what decision it can support. It does not calculate a composite score or automatically classify a trend.",
   "trendReviewRule": "A series becomes ready for analyst trend review only after the stated number of eligible, definition-consistent observations. The analyst must still examine source changes, periods, and counter-evidence before calling acceleration, stability, or deceleration.",
   "summary": {
@@ -49,16 +49,16 @@
       "doNotUse": "Do not infer raw request volume, total autonomous activity, or a long-run index level.",
       "minimumSpacingDays": 30,
       "requiredEligibleObservations": 3,
-      "recordedObservationCount": 2,
+      "recordedObservationCount": 3,
       "eligibleObservationCount": 1,
       "maturity": "Baseline",
       "nextRequirement": "2 further eligible observations required.",
       "firstObservedDate": "2026-09-23",
       "mostRecentObservation": {
-        "asOfDate": "2026-09-27",
-        "periodStart": "2026-08-29T00:00:00Z",
-        "periodEnd": "2026-09-28T00:00:00Z",
-        "displayValue": "75.2",
+        "asOfDate": "2026-10-11",
+        "periodStart": "2026-09-12T00:00:00Z",
+        "periodEnd": "2026-10-12T00:00:00Z",
+        "displayValue": "85.5",
         "unit": "normalized index (0–100; common 60-day request maximum)",
         "notes": "MIN0_MAX permits comparison between the two windows returned together, but separate retrievals should not be treated as a raw-volume time series. Cloudflare sees traffic through its own network and AI bot traffic is not synonymous with autonomous agent activity."
       }

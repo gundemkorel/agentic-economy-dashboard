@@ -1,5 +1,5 @@
 {
-  "asOfDate": "2026-10-19",
+  "asOfDate": "2026-10-26",
   "definition": "The observation register records what has actually been collected, when another point becomes comparable, and what decision it can support. It does not calculate a composite score or automatically classify a trend.",
   "trendReviewRule": "A series becomes ready for analyst trend review only after the stated number of eligible, definition-consistent observations. The analyst must still examine source changes, periods, and counter-evidence before calling acceleration, stability, or deceleration.",
   "summary": {
@@ -22,16 +22,16 @@
       "doNotUse": "Do not infer active production use, enterprise deployment, request volume, or shareholder value capture.",
       "minimumSpacingDays": 7,
       "requiredEligibleObservations": 3,
-      "recordedObservationCount": 4,
-      "eligibleObservationCount": 3,
+      "recordedObservationCount": 5,
+      "eligibleObservationCount": 4,
       "maturity": "Ready for analyst trend review",
       "nextRequirement": "Threshold met; review the direction, definitions, and counter-evidence manually.",
       "firstObservedDate": "2026-09-24",
       "mostRecentObservation": {
-        "asOfDate": "2026-10-19",
-        "periodStart": "2026-10-19",
-        "periodEnd": "2026-10-19",
-        "displayValue": 160943,
+        "asOfDate": "2026-10-26",
+        "periodStart": "2026-10-26",
+        "periodEnd": "2026-10-26",
+        "displayValue": 181535,
         "unit": "registered servers",
         "notes": "Do not interpret as production agent activity."
       }

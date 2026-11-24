@@ -49,16 +49,16 @@
       "doNotUse": "Do not infer raw request volume, total autonomous activity, or a long-run index level.",
       "minimumSpacingDays": 30,
       "requiredEligibleObservations": 3,
-      "recordedObservationCount": 7,
+      "recordedObservationCount": 8,
       "eligibleObservationCount": 2,
       "maturity": "Developing",
       "nextRequirement": "1 further eligible observation required.",
       "firstObservedDate": "2026-09-23",
       "mostRecentObservation": {
-        "asOfDate": "2026-11-08",
-        "periodStart": "2026-10-10T00:00:00Z",
-        "periodEnd": "2026-11-09T00:00:00Z",
-        "displayValue": "74.2",
+        "asOfDate": "2026-11-23",
+        "periodStart": "2026-10-25T00:00:00Z",
+        "periodEnd": "2026-11-24T00:00:00Z",
+        "displayValue": "59.5",
         "unit": "normalized index (0–100; common 60-day request maximum)",
         "notes": "MIN0_MAX permits comparison between the two windows returned together, but separate retrievals should not be treated as a raw-volume time series. Cloudflare sees traffic through its own network and AI bot traffic is not synonymous with autonomous agent activity."
       }
